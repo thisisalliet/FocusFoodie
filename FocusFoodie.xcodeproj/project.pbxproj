@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		060D04DD9AEE9708F108A30D /* Pods_FocusFoodie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B10A2329D8AD6B769D677516 /* Pods_FocusFoodie.framework */; };
 		09524F76271FF4A00061C36B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524F75271FF4A00061C36B /* AppDelegate.swift */; };
 		09524F78271FF4A00061C36B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524F77271FF4A00061C36B /* SceneDelegate.swift */; };
 		09524F7A271FF4A00061C36B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524F79271FF4A00061C36B /* ViewController.swift */; };
@@ -17,7 +18,6 @@
 		09524F94271FFCB00061C36B /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524F93271FFCB00061C36B /* UIScreen+Extension.swift */; };
 		09524F96271FFCC00061C36B /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524F95271FFCC00061C36B /* UIView+Extension.swift */; };
 		09524F98271FFCE70061C36B /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524F97271FFCE60061C36B /* UITableView+Extension.swift */; };
-		09524F9A271FFCF40061C36B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524F99271FFCF40061C36B /* UIViewController+Extension.swift */; };
 		09524F9C271FFD390061C36B /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524F9B271FFD390061C36B /* UICollectionView+Extension.swift */; };
 		09524F9E271FFD910061C36B /* Picker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09524F9D271FFD910061C36B /* Picker.storyboard */; };
 		09524FA0271FFD9C0061C36B /* Record.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09524F9F271FFD9C0061C36B /* Record.storyboard */; };
@@ -28,6 +28,7 @@
 		09524FAD271FFEF00061C36B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524FAA271FFEF00061C36B /* BaseViewController.swift */; };
 		09524FAE271FFEF00061C36B /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524FAB271FFEF00061C36B /* TabBarViewController.swift */; };
 		09524FAF271FFEF00061C36B /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524FAC271FFEF00061C36B /* BaseNavigationController.swift */; };
+		09524FB1272003480061C36B /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524FB0272003480061C36B /* UIImage+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +44,6 @@
 		09524F93271FFCB00061C36B /* UIScreen+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
 		09524F95271FFCC00061C36B /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		09524F97271FFCE60061C36B /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
-		09524F99271FFCF40061C36B /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Extension.swift"; path = "../../../Extension copy/UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		09524F9B271FFD390061C36B /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		09524F9D271FFD910061C36B /* Picker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Picker.storyboard; sourceTree = "<group>"; };
 		09524F9F271FFD9C0061C36B /* Record.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Record.storyboard; sourceTree = "<group>"; };
@@ -54,6 +54,10 @@
 		09524FAA271FFEF00061C36B /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		09524FAB271FFEF00061C36B /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		09524FAC271FFEF00061C36B /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		09524FB0272003480061C36B /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		290B1C7432FC0558604112FB /* Pods-FocusFoodie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FocusFoodie.debug.xcconfig"; path = "Target Support Files/Pods-FocusFoodie/Pods-FocusFoodie.debug.xcconfig"; sourceTree = "<group>"; };
+		393F58596B0720378D428E8F /* Pods-FocusFoodie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FocusFoodie.release.xcconfig"; path = "Target Support Files/Pods-FocusFoodie/Pods-FocusFoodie.release.xcconfig"; sourceTree = "<group>"; };
+		B10A2329D8AD6B769D677516 /* Pods_FocusFoodie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FocusFoodie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				060D04DD9AEE9708F108A30D /* Pods_FocusFoodie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +77,8 @@
 			children = (
 				09524F74271FF4A00061C36B /* FocusFoodie */,
 				09524F73271FF4A00061C36B /* Products */,
+				1493E2A44FC9F6CAADF931E3 /* Pods */,
+				5CE05856FD5DF560752D47CF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,10 +109,10 @@
 			isa = PBXGroup;
 			children = (
 				09524F95271FFCC00061C36B /* UIView+Extension.swift */,
+				09524FB0272003480061C36B /* UIImage+Extension.swift */,
 				09524F93271FFCB00061C36B /* UIScreen+Extension.swift */,
 				09524F97271FFCE60061C36B /* UITableView+Extension.swift */,
 				09524F8F271FFA000061C36B /* UIStoryboard+Extension.swift */,
-				09524F99271FFCF40061C36B /* UIViewController+Extension.swift */,
 				09524F9B271FFD390061C36B /* UICollectionView+Extension.swift */,
 			);
 			path = Extension;
@@ -160,6 +167,24 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		1493E2A44FC9F6CAADF931E3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				290B1C7432FC0558604112FB /* Pods-FocusFoodie.debug.xcconfig */,
+				393F58596B0720378D428E8F /* Pods-FocusFoodie.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5CE05856FD5DF560752D47CF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B10A2329D8AD6B769D677516 /* Pods_FocusFoodie.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -167,10 +192,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 09524F86271FF4A10061C36B /* Build configuration list for PBXNativeTarget "FocusFoodie" */;
 			buildPhases = (
+				CCCFCA2ABB8F951F84F49049 /* [CP] Check Pods Manifest.lock */,
 				09524F6E271FF4A00061C36B /* Sources */,
 				09524F6F271FF4A00061C36B /* Frameworks */,
 				09524F70271FF4A00061C36B /* Resources */,
 				09524F89271FF63C0061C36B /* SwiftLint */,
+				955B7E717273C67995E6C3B5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -249,6 +276,45 @@
 			shellPath = /bin/sh;
 			shellScript = "if test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nexport PATH\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		955B7E717273C67995E6C3B5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FocusFoodie/Pods-FocusFoodie-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FocusFoodie/Pods-FocusFoodie-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FocusFoodie/Pods-FocusFoodie-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CCCFCA2ABB8F951F84F49049 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FocusFoodie-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -259,7 +325,6 @@
 				09524FAD271FFEF00061C36B /* BaseViewController.swift in Sources */,
 				09524FA4271FFE2D0061C36B /* PickerViewController.swift in Sources */,
 				09524F9C271FFD390061C36B /* UICollectionView+Extension.swift in Sources */,
-				09524F9A271FFCF40061C36B /* UIViewController+Extension.swift in Sources */,
 				09524FAE271FFEF00061C36B /* TabBarViewController.swift in Sources */,
 				09524F7A271FF4A00061C36B /* ViewController.swift in Sources */,
 				09524F96271FFCC00061C36B /* UIView+Extension.swift in Sources */,
@@ -267,6 +332,7 @@
 				09524FAF271FFEF00061C36B /* BaseNavigationController.swift in Sources */,
 				09524F76271FF4A00061C36B /* AppDelegate.swift in Sources */,
 				09524F90271FFA000061C36B /* UIStoryboard+Extension.swift in Sources */,
+				09524FB1272003480061C36B /* UIImage+Extension.swift in Sources */,
 				09524FA8271FFEA70061C36B /* CommunityViewController.swift in Sources */,
 				09524F78271FF4A00061C36B /* SceneDelegate.swift in Sources */,
 				09524F94271FFCB00061C36B /* UIScreen+Extension.swift in Sources */,
@@ -331,8 +397,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -392,6 +460,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -414,12 +483,14 @@
 		};
 		09524F87271FF4A10061C36B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 290B1C7432FC0558604112FB /* Pods-FocusFoodie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WK4Z34T3L8;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FocusFoodie/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -442,6 +513,7 @@
 		};
 		09524F88271FF4A10061C36B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 393F58596B0720378D428E8F /* Pods-FocusFoodie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

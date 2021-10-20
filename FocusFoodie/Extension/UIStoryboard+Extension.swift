@@ -32,34 +32,4 @@ extension UIStoryboard {
 
         return UIStoryboard(name: name, bundle: nil)
     }
-
-    static func getViewController(for viewControllerCategory: ViewControllerCategory) -> UIViewController {
-
-        var controller: UIViewController
-
-        switch viewControllerCategory {
-
-        case .main:
-
-            controller = UIStoryboard.main
-                .instantiateViewController(withIdentifier: viewControllerCategory.rawValue)
-
-        case .picker:
-
-            controller = UIStoryboard.picker
-                .instantiateViewController(withIdentifier: viewControllerCategory.rawValue)
-
-        case .record:
-
-            controller = UIStoryboard.record
-                .instantiateViewController(withIdentifier: viewControllerCategory.rawValue)
-
-        case .community:
-
-            controller = UIStoryboard.community
-                .instantiateViewController(withIdentifier: viewControllerCategory.rawValue)
-        }
-
-        return controller
-    }
 }

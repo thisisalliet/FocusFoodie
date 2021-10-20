@@ -9,8 +9,6 @@ import UIKit
 
 private enum Tab {
 
-    case main
-
     case picker
     
     case record
@@ -23,13 +21,11 @@ private enum Tab {
 
         switch self {
 
-        case .timer: controller = UIStoryboard.timer.instantiateInitialViewController()!
+        case .picker: controller = UIStoryboard.picker.instantiateInitialViewController()!
 
         case .record: controller = UIStoryboard.record.instantiateInitialViewController()!
-
-        case .friend: controller = UIStoryboard.friend.instantiateInitialViewController()!
             
-        case .cooking: controller = UIStoryboard.cooking.instantiateInitialViewController()!
+        case .community: controller = UIStoryboard.community.instantiateInitialViewController()!
         }
 
         controller.tabBarItem = tabBarItem()
