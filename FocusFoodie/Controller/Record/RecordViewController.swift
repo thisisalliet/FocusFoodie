@@ -17,6 +17,8 @@ class RecordViewController: BaseViewController, UITableViewDataSource, UITableVi
         
         didSet {
             
+            recordTableView.cornerRadius = 15
+            
             recordTableView.dataSource = self
             
             recordTableView.delegate = self
@@ -54,6 +56,22 @@ class RecordViewController: BaseViewController, UITableViewDataSource, UITableVi
         guard let cell = cell as? RecordTableViewCell else { return cell }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let detailVC = UIStoryboard
+            .record
+            .instantiateViewController(
+                withIdentifier: String(describing: DetailViewController.self)
+            ) as? DetailViewController else {
+                
+                return
+        }
+        
+//        detailVC.product = datas[indexPath.section].products[indexPath.row]
+        
+        show(detailVC, sender: nil)
     }
     
     // MARK: - UITableViewDelegate -

@@ -7,11 +7,13 @@
 
 import UIKit
 
-@IBDesignable class ProfileView: UIView {
+class ProfileView: UIView {
 
     @IBOutlet weak var profileImage: UIImageView! {
         
         didSet {
+
+            profileImage.cornerRadius = 15
             
             profileImage.image = UIImage.asset(.Icons_36px_Profile_Normal)
         }

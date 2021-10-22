@@ -31,9 +31,19 @@
 		09524FB1272003480061C36B /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524FB0272003480061C36B /* UIImage+Extension.swift */; };
 		09524FD327201DA90061C36B /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09524FD227201DA90061C36B /* ProfileView.xib */; };
 		09524FD62720213B0061C36B /* RecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524FD42720213B0061C36B /* RecordTableViewCell.swift */; };
-		09524FD72720213B0061C36B /* RecordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09524FD52720213B0061C36B /* RecordTableViewCell.xib */; };
 		09524FDB272025E10061C36B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524FDA272025E10061C36B /* ProfileView.swift */; };
 		09524FDD2720494A0061C36B /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524FDC2720494A0061C36B /* Bundle+Extension.swift */; };
+		09524FE027214F990061C36B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524FDF27214F990061C36B /* DetailViewController.swift */; };
+		09524FE4272163B20061C36B /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524FE3272163B20061C36B /* Day.swift */; };
+		09524FE6272164560061C36B /* CalendarPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524FE5272164560061C36B /* CalendarPickerViewController.swift */; };
+		09524FEA272168E80061C36B /* DetailSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524FE8272168E80061C36B /* DetailSelectionCell.swift */; };
+		09524FEB272168E80061C36B /* DetailSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09524FE9272168E80061C36B /* DetailSelectionCell.xib */; };
+		09524FF42721B2B80061C36B /* RecordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09524FF62721B2B80061C36B /* RecordTableViewCell.xib */; };
+		09524FF82721B3DC0061C36B /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524FF72721B3DC0061C36B /* CategoryView.swift */; };
+		09524FFA2721B4140061C36B /* CategoryTagView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09524FF92721B4140061C36B /* CategoryTagView.xib */; };
+		09C1C7CB2722675400D2C9B2 /* BasicDisplayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C7C92722675400D2C9B2 /* BasicDisplayTableViewCell.swift */; };
+		09C1C7CC2722675400D2C9B2 /* BasicDisplayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09C1C7CA2722675400D2C9B2 /* BasicDisplayTableViewCell.xib */; };
+		09C1C7CE2722833000D2C9B2 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C7CD2722833000D2C9B2 /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,9 +72,19 @@
 		09524FB0272003480061C36B /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		09524FD227201DA90061C36B /* ProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
 		09524FD42720213B0061C36B /* RecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewCell.swift; sourceTree = "<group>"; };
-		09524FD52720213B0061C36B /* RecordTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordTableViewCell.xib; sourceTree = "<group>"; };
 		09524FDA272025E10061C36B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		09524FDC2720494A0061C36B /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		09524FDF27214F990061C36B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		09524FE3272163B20061C36B /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		09524FE5272164560061C36B /* CalendarPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPickerViewController.swift; sourceTree = "<group>"; };
+		09524FE8272168E80061C36B /* DetailSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSelectionCell.swift; sourceTree = "<group>"; };
+		09524FE9272168E80061C36B /* DetailSelectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailSelectionCell.xib; sourceTree = "<group>"; };
+		09524FF52721B2B80061C36B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RecordTableViewCell.xib; sourceTree = "<group>"; };
+		09524FF72721B3DC0061C36B /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		09524FF92721B4140061C36B /* CategoryTagView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTagView.xib; sourceTree = "<group>"; };
+		09C1C7C92722675400D2C9B2 /* BasicDisplayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicDisplayTableViewCell.swift; sourceTree = "<group>"; };
+		09C1C7CA2722675400D2C9B2 /* BasicDisplayTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasicDisplayTableViewCell.xib; sourceTree = "<group>"; };
+		09C1C7CD2722833000D2C9B2 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		290B1C7432FC0558604112FB /* Pods-FocusFoodie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FocusFoodie.debug.xcconfig"; path = "Target Support Files/Pods-FocusFoodie/Pods-FocusFoodie.debug.xcconfig"; sourceTree = "<group>"; };
 		393F58596B0720378D428E8F /* Pods-FocusFoodie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FocusFoodie.release.xcconfig"; path = "Target Support Files/Pods-FocusFoodie/Pods-FocusFoodie.release.xcconfig"; sourceTree = "<group>"; };
 		B10A2329D8AD6B769D677516 /* Pods_FocusFoodie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FocusFoodie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +138,7 @@
 		09524F8A271FF8F00061C36B /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				09C1C7CD2722833000D2C9B2 /* UIColor+Extension.swift */,
 				09524FDC2720494A0061C36B /* Bundle+Extension.swift */,
 				09524F95271FFCC00061C36B /* UIView+Extension.swift */,
 				09524FB0272003480061C36B /* UIImage+Extension.swift */,
@@ -142,11 +163,8 @@
 			children = (
 				09524F7B271FF4A00061C36B /* Main.storyboard */,
 				09524F9D271FFD910061C36B /* Picker.storyboard */,
-				09524F9F271FFD9C0061C36B /* Record.storyboard */,
-				09524FD227201DA90061C36B /* ProfileView.xib */,
-				09524FDA272025E10061C36B /* ProfileView.swift */,
-				09524FD42720213B0061C36B /* RecordTableViewCell.swift */,
-				09524FD52720213B0061C36B /* RecordTableViewCell.xib */,
+				09524FEE272169350061C36B /* Base */,
+				09524FDE272050FF0061C36B /* Record */,
 				09524FA1271FFDA90061C36B /* Community.storyboard */,
 				09524F80271FF4A10061C36B /* LaunchScreen.storyboard */,
 			);
@@ -156,9 +174,9 @@
 		09524F8D271FF9490061C36B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				09524FE7272164630061C36B /* Record */,
 				09524F79271FF4A00061C36B /* ViewController.swift */,
 				09524FA3271FFE2D0061C36B /* PickerViewController.swift */,
-				09524FA5271FFE620061C36B /* RecordViewController.swift */,
 				09524FA7271FFEA70061C36B /* CommunityViewController.swift */,
 				09524FA9271FFEF00061C36B /* Base */,
 			);
@@ -168,6 +186,7 @@
 		09524F8E271FF95A0061C36B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				09524FE3272163B20061C36B /* Day.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -178,6 +197,41 @@
 				09524FAA271FFEF00061C36B /* BaseViewController.swift */,
 				09524FAB271FFEF00061C36B /* TabBarViewController.swift */,
 				09524FAC271FFEF00061C36B /* BaseNavigationController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		09524FDE272050FF0061C36B /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				09524F9F271FFD9C0061C36B /* Record.storyboard */,
+				09524FDA272025E10061C36B /* ProfileView.swift */,
+				09524FD227201DA90061C36B /* ProfileView.xib */,
+				09524FF62721B2B80061C36B /* RecordTableViewCell.xib */,
+				09524FD42720213B0061C36B /* RecordTableViewCell.swift */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
+		09524FE7272164630061C36B /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				09524FDF27214F990061C36B /* DetailViewController.swift */,
+				09524FA5271FFE620061C36B /* RecordViewController.swift */,
+				09524FE5272164560061C36B /* CalendarPickerViewController.swift */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
+		09524FEE272169350061C36B /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				09524FF72721B3DC0061C36B /* CategoryView.swift */,
+				09524FF92721B4140061C36B /* CategoryTagView.xib */,
+				09524FE8272168E80061C36B /* DetailSelectionCell.swift */,
+				09524FE9272168E80061C36B /* DetailSelectionCell.xib */,
+				09C1C7C92722675400D2C9B2 /* BasicDisplayTableViewCell.swift */,
+				09C1C7CA2722675400D2C9B2 /* BasicDisplayTableViewCell.xib */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -262,12 +316,15 @@
 			files = (
 				09524FA2271FFDA90061C36B /* Community.storyboard in Resources */,
 				09524F82271FF4A10061C36B /* LaunchScreen.storyboard in Resources */,
-				09524FD72720213B0061C36B /* RecordTableViewCell.xib in Resources */,
+				09524FF42721B2B80061C36B /* RecordTableViewCell.xib in Resources */,
 				09524FD327201DA90061C36B /* ProfileView.xib in Resources */,
 				09524F7F271FF4A10061C36B /* Assets.xcassets in Resources */,
+				09C1C7CC2722675400D2C9B2 /* BasicDisplayTableViewCell.xib in Resources */,
 				09524F9E271FFD910061C36B /* Picker.storyboard in Resources */,
 				09524F7D271FF4A00061C36B /* Main.storyboard in Resources */,
 				09524FA0271FFD9C0061C36B /* Record.storyboard in Resources */,
+				09524FEB272168E80061C36B /* DetailSelectionCell.xib in Resources */,
+				09524FFA2721B4140061C36B /* CategoryTagView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,20 +398,27 @@
 				09524FAD271FFEF00061C36B /* BaseViewController.swift in Sources */,
 				09524FDD2720494A0061C36B /* Bundle+Extension.swift in Sources */,
 				09524FA4271FFE2D0061C36B /* PickerViewController.swift in Sources */,
+				09524FEA272168E80061C36B /* DetailSelectionCell.swift in Sources */,
 				09524F9C271FFD390061C36B /* UICollectionView+Extension.swift in Sources */,
+				09C1C7CB2722675400D2C9B2 /* BasicDisplayTableViewCell.swift in Sources */,
 				09524FAE271FFEF00061C36B /* TabBarViewController.swift in Sources */,
 				09524F7A271FF4A00061C36B /* ViewController.swift in Sources */,
 				09524F96271FFCC00061C36B /* UIView+Extension.swift in Sources */,
+				09C1C7CE2722833000D2C9B2 /* UIColor+Extension.swift in Sources */,
 				09524FD62720213B0061C36B /* RecordTableViewCell.swift in Sources */,
 				09524FA6271FFE620061C36B /* RecordViewController.swift in Sources */,
 				09524FAF271FFEF00061C36B /* BaseNavigationController.swift in Sources */,
+				09524FE027214F990061C36B /* DetailViewController.swift in Sources */,
+				09524FF82721B3DC0061C36B /* CategoryView.swift in Sources */,
 				09524FDB272025E10061C36B /* ProfileView.swift in Sources */,
 				09524F76271FF4A00061C36B /* AppDelegate.swift in Sources */,
 				09524F90271FFA000061C36B /* UIStoryboard+Extension.swift in Sources */,
 				09524FB1272003480061C36B /* UIImage+Extension.swift in Sources */,
 				09524FA8271FFEA70061C36B /* CommunityViewController.swift in Sources */,
+				09524FE6272164560061C36B /* CalendarPickerViewController.swift in Sources */,
 				09524F78271FF4A00061C36B /* SceneDelegate.swift in Sources */,
 				09524F94271FFCB00061C36B /* UIScreen+Extension.swift in Sources */,
+				09524FE4272163B20061C36B /* Day.swift in Sources */,
 				09524F98271FFCE70061C36B /* UITableView+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,6 +440,14 @@
 				09524F81271FF4A10061C36B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		09524FF62721B2B80061C36B /* RecordTableViewCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				09524FF52721B2B80061C36B /* Base */,
+			);
+			name = RecordTableViewCell.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -9,9 +9,9 @@ import UIKit
 
 private enum Tab {
 
-    case picker
-    
     case record
+
+    case timer
     
     case community
 
@@ -21,9 +21,9 @@ private enum Tab {
 
         switch self {
 
-        case .picker: controller = UIStoryboard.picker.instantiateInitialViewController()!
-
         case .record: controller = UIStoryboard.record.instantiateInitialViewController()!
+
+        case .timer: controller = UIStoryboard.picker.instantiateInitialViewController()!
             
         case .community: controller = UIStoryboard.community.instantiateInitialViewController()!
         }
@@ -39,14 +39,14 @@ private enum Tab {
 
         switch self {
 
-        case .picker:
+        case .record:
             return UITabBarItem(
                 title: nil,
                 image: UIImage.init(systemName: "1.circle"),
                 selectedImage: UIImage.init(systemName: "1.circle")
             )
-
-        case .record:
+            
+        case .timer:
             return UITabBarItem(
                 title: nil,
                 image: UIImage.init(systemName: "2.circle"),
@@ -65,7 +65,7 @@ private enum Tab {
 
 class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
 
-    private let tabs: [Tab] = [.picker, .record, .community]
+    private let tabs: [Tab] = [.record, .timer, .community]
 
     override func viewDidLoad() {
         super.viewDidLoad()
