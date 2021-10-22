@@ -23,7 +23,7 @@ private enum Tab {
 
         case .record: controller = UIStoryboard.record.instantiateInitialViewController()!
 
-        case .timer: controller = UIStoryboard.picker.instantiateInitialViewController()!
+        case .timer: controller = UIStoryboard.timer.instantiateInitialViewController()!
             
         case .community: controller = UIStoryboard.community.instantiateInitialViewController()!
         }

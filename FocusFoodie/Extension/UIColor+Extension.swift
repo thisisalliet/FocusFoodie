@@ -26,7 +26,9 @@ private enum Color: String {
     case B7
     
     case B8
-    
+
+    case B9
+
     case L1
 
     case L2
@@ -46,40 +48,42 @@ private enum Color: String {
 
 extension UIColor {
 
-    static let B1 = Color(.B1)
+    static let B1 = color(.B1)
 
-    static let B2 = Color(.B2)
+    static let B2 = color(.B2)
     
-    static let B3 = Color(.B3)
+    static let B3 = color(.B3)
 
-    static let B4 = Color(.B4)
+    static let B4 = color(.B4)
 
-    static let B5 = Color(.B5)
+    static let B5 = color(.B5)
 
-    static let B6 = Color(.B6)
+    static let B6 = color(.B6)
 
-    static let B7 = Color(.B7)
+    static let B7 = color(.B7)
     
-    static let B8 = Color(.B8)
-    
-    static let L1 = Color(.L1)
-    
-    static let L2 = Color(.L2)
+    static let B8 = color(.B8)
 
-    static let L3 = Color(.L3)
+    static let B9 = color(.B9)
+
+    static let L1 = color(.L1)
     
-    static let L4 = Color(.L4)
+    static let L2 = color(.L2)
+
+    static let L3 = color(.L3)
     
-    static let L5 = Color(.L5)
+    static let L4 = color(.L4)
+    
+    static let L5 = color(.L5)
 
-    static let L6 = Color(.L6)
+    static let L6 = color(.L6)
 
-    static let L7 = Color(.L7)
+    static let L7 = color(.L7)
 
-    static let L8 = Color(.L8)
+    static let L8 = color(.L8)
     // swiftlint:enable identifier_name
     
-    private static func Color(_ color: Color) -> UIColor? {
+    private static func color(_ color: Color) -> UIColor? {
 
         return UIColor(named: color.rawValue)
     }

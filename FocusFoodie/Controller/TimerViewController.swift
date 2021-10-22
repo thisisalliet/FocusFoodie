@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PickerViewController: UIViewController {
+class TimerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
