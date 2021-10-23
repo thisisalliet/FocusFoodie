@@ -71,8 +71,8 @@
                     <constraint firstItem="iGV-Yy-8tP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="fmY-zs-ufr"/>
                     <constraint firstItem="iGV-Yy-8tP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="gDX-cz-zOx"/>
                     <constraint firstItem="Ow9-CG-lpf" firstAttribute="leading" secondItem="ZXD-yS-O7s" secondAttribute="trailing" constant="4" id="kcY-W4-P4h"/>
+                    <constraint firstAttribute="trailing" secondItem="Ow9-CG-lpf" secondAttribute="trailing" constant="16" id="wGx-vj-x4f"/>
                     <constraint firstItem="kr2-Xb-dvs" firstAttribute="leading" secondItem="iGV-Yy-8tP" secondAttribute="trailing" constant="8" id="whC-aF-vIg"/>
-                    <constraint firstAttribute="trailing" secondItem="Ow9-CG-lpf" secondAttribute="trailing" constant="16" id="yY7-Eu-Fcm"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

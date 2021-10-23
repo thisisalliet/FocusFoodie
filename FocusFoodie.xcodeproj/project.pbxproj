@@ -48,6 +48,32 @@
 		09C1C7D72722935800D2C9B2 /* DetailImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09C1C7D52722935800D2C9B2 /* DetailImageTableViewCell.xib */; };
 		09C1C7D927229B9900D2C9B2 /* RecordContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C7D827229B9900D2C9B2 /* RecordContent.swift */; };
 		09C1C7DB27229D3D00D2C9B2 /* RecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C7DA27229D3D00D2C9B2 /* RecordManager.swift */; };
+		09C1C7DD2722AACB00D2C9B2 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C7DC2722AACB00D2C9B2 /* UIFont+Extension.swift */; };
+		09C1C80D2722B55900D2C9B2 /* RobotoMono-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09C1C7FA2722B55900D2C9B2 /* RobotoMono-VariableFont_wght.ttf */; };
+		09C1C80E2722B55900D2C9B2 /* RobotoMono-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09C1C7FB2722B55900D2C9B2 /* RobotoMono-Italic-VariableFont_wght.ttf */; };
+		09C1C80F2722B55900D2C9B2 /* RobotoMono-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09C1C7FD2722B55900D2C9B2 /* RobotoMono-Medium.ttf */; };
+		09C1C8102722B55900D2C9B2 /* RobotoMono-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09C1C7FE2722B55900D2C9B2 /* RobotoMono-SemiBold.ttf */; };
+		09C1C8112722B55900D2C9B2 /* RobotoMono-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09C1C7FF2722B55900D2C9B2 /* RobotoMono-SemiBoldItalic.ttf */; };
+		09C1C8122722B55900D2C9B2 /* RobotoMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09C1C8002722B55900D2C9B2 /* RobotoMono-Regular.ttf */; };
+		09C1C8132722B55900D2C9B2 /* RobotoMono-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09C1C8012722B55900D2C9B2 /* RobotoMono-LightItalic.ttf */; };
+		09C1C8142722B55900D2C9B2 /* RobotoMono-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09C1C8022722B55900D2C9B2 /* RobotoMono-BoldItalic.ttf */; };
+		09C1C8152722B55900D2C9B2 /* RobotoMono-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09C1C8032722B55900D2C9B2 /* RobotoMono-ExtraLight.ttf */; };
+		09C1C8162722B55900D2C9B2 /* RobotoMono-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09C1C8042722B55900D2C9B2 /* RobotoMono-ThinItalic.ttf */; };
+		09C1C8172722B55900D2C9B2 /* RobotoMono-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09C1C8052722B55900D2C9B2 /* RobotoMono-ExtraLightItalic.ttf */; };
+		09C1C8182722B55900D2C9B2 /* RobotoMono-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09C1C8062722B55900D2C9B2 /* RobotoMono-Light.ttf */; };
+		09C1C8192722B55900D2C9B2 /* RobotoMono-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09C1C8072722B55900D2C9B2 /* RobotoMono-MediumItalic.ttf */; };
+		09C1C81A2722B55900D2C9B2 /* RobotoMono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09C1C8082722B55900D2C9B2 /* RobotoMono-Bold.ttf */; };
+		09C1C81B2722B55900D2C9B2 /* RobotoMono-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09C1C8092722B55900D2C9B2 /* RobotoMono-Italic.ttf */; };
+		09C1C81C2722B55900D2C9B2 /* RobotoMono-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09C1C80A2722B55900D2C9B2 /* RobotoMono-Thin.ttf */; };
+		09C1C81D2722B55900D2C9B2 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 09C1C80B2722B55900D2C9B2 /* README.txt */; };
+		09C1C81E2722B55900D2C9B2 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 09C1C80C2722B55900D2C9B2 /* LICENSE.txt */; };
+		09C1C8202722BBE600D2C9B2 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C81F2722BBE600D2C9B2 /* UILabel+Extension.swift */; };
+		09C1C8242724024100D2C9B2 /* MonthMetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C8232724024100D2C9B2 /* MonthMetaData.swift */; };
+		09C1C829272409C600D2C9B2 /* CalendarDateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C828272409C600D2C9B2 /* CalendarDateCollectionViewCell.swift */; };
+		09C1C82B27240BC700D2C9B2 /* CalendarPickerFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C82A27240BC700D2C9B2 /* CalendarPickerFooterView.swift */; };
+		09C1C82D27240BFB00D2C9B2 /* CalendarPickerHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C82C27240BFB00D2C9B2 /* CalendarPickerHeaderView.swift */; };
+		09C1C830272447D600D2C9B2 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C82E272447D600D2C9B2 /* CollectionViewCell.swift */; };
+		09C1C831272447D600D2C9B2 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09C1C82F272447D600D2C9B2 /* CollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +119,32 @@
 		09C1C7D52722935800D2C9B2 /* DetailImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailImageTableViewCell.xib; sourceTree = "<group>"; };
 		09C1C7D827229B9900D2C9B2 /* RecordContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordContent.swift; sourceTree = "<group>"; };
 		09C1C7DA27229D3D00D2C9B2 /* RecordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordManager.swift; sourceTree = "<group>"; };
+		09C1C7DC2722AACB00D2C9B2 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		09C1C7FA2722B55900D2C9B2 /* RobotoMono-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		09C1C7FB2722B55900D2C9B2 /* RobotoMono-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		09C1C7FD2722B55900D2C9B2 /* RobotoMono-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Medium.ttf"; sourceTree = "<group>"; };
+		09C1C7FE2722B55900D2C9B2 /* RobotoMono-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-SemiBold.ttf"; sourceTree = "<group>"; };
+		09C1C7FF2722B55900D2C9B2 /* RobotoMono-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		09C1C8002722B55900D2C9B2 /* RobotoMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Regular.ttf"; sourceTree = "<group>"; };
+		09C1C8012722B55900D2C9B2 /* RobotoMono-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-LightItalic.ttf"; sourceTree = "<group>"; };
+		09C1C8022722B55900D2C9B2 /* RobotoMono-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-BoldItalic.ttf"; sourceTree = "<group>"; };
+		09C1C8032722B55900D2C9B2 /* RobotoMono-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-ExtraLight.ttf"; sourceTree = "<group>"; };
+		09C1C8042722B55900D2C9B2 /* RobotoMono-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-ThinItalic.ttf"; sourceTree = "<group>"; };
+		09C1C8052722B55900D2C9B2 /* RobotoMono-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		09C1C8062722B55900D2C9B2 /* RobotoMono-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Light.ttf"; sourceTree = "<group>"; };
+		09C1C8072722B55900D2C9B2 /* RobotoMono-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-MediumItalic.ttf"; sourceTree = "<group>"; };
+		09C1C8082722B55900D2C9B2 /* RobotoMono-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Bold.ttf"; sourceTree = "<group>"; };
+		09C1C8092722B55900D2C9B2 /* RobotoMono-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Italic.ttf"; sourceTree = "<group>"; };
+		09C1C80A2722B55900D2C9B2 /* RobotoMono-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Thin.ttf"; sourceTree = "<group>"; };
+		09C1C80B2722B55900D2C9B2 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		09C1C80C2722B55900D2C9B2 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		09C1C81F2722BBE600D2C9B2 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		09C1C8232724024100D2C9B2 /* MonthMetaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthMetaData.swift; sourceTree = "<group>"; };
+		09C1C828272409C600D2C9B2 /* CalendarDateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDateCollectionViewCell.swift; sourceTree = "<group>"; };
+		09C1C82A27240BC700D2C9B2 /* CalendarPickerFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalendarPickerFooterView.swift; path = FocusFoodie/View/Record/Detail/Calendar/CalendarPickerFooterView.swift; sourceTree = SOURCE_ROOT; };
+		09C1C82C27240BFB00D2C9B2 /* CalendarPickerHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPickerHeaderView.swift; sourceTree = "<group>"; };
+		09C1C82E272447D600D2C9B2 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		09C1C82F272447D600D2C9B2 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		290B1C7432FC0558604112FB /* Pods-FocusFoodie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FocusFoodie.debug.xcconfig"; path = "Target Support Files/Pods-FocusFoodie/Pods-FocusFoodie.debug.xcconfig"; sourceTree = "<group>"; };
 		393F58596B0720378D428E8F /* Pods-FocusFoodie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FocusFoodie.release.xcconfig"; path = "Target Support Files/Pods-FocusFoodie/Pods-FocusFoodie.release.xcconfig"; sourceTree = "<group>"; };
 		B10A2329D8AD6B769D677516 /* Pods_FocusFoodie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FocusFoodie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,9 +198,11 @@
 		09524F8A271FF8F00061C36B /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				09C1C7CD2722833000D2C9B2 /* UIColor+Extension.swift */,
 				09524FDC2720494A0061C36B /* Bundle+Extension.swift */,
+				09C1C7DC2722AACB00D2C9B2 /* UIFont+Extension.swift */,
 				09524F95271FFCC00061C36B /* UIView+Extension.swift */,
+				09C1C7CD2722833000D2C9B2 /* UIColor+Extension.swift */,
+				09C1C81F2722BBE600D2C9B2 /* UILabel+Extension.swift */,
 				09524FB0272003480061C36B /* UIImage+Extension.swift */,
 				09524F93271FFCB00061C36B /* UIScreen+Extension.swift */,
 				09524F97271FFCE60061C36B /* UITableView+Extension.swift */,
@@ -162,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				09524F7E271FF4A10061C36B /* Assets.xcassets */,
+				09C1C7F92722B55900D2C9B2 /* Roboto_Mono */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -197,6 +252,7 @@
 				09C1C7D827229B9900D2C9B2 /* RecordContent.swift */,
 				09C1C7DA27229D3D00D2C9B2 /* RecordManager.swift */,
 				09524FE3272163B20061C36B /* Day.swift */,
+				09C1C8232724024100D2C9B2 /* MonthMetaData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -252,8 +308,54 @@
 				09C1C7D02722903800D2C9B2 /* DetailNoteTableViewCell.xib */,
 				09C1C7D42722935800D2C9B2 /* DetailImageTableViewCell.swift */,
 				09C1C7D52722935800D2C9B2 /* DetailImageTableViewCell.xib */,
+				09C1C82E272447D600D2C9B2 /* CollectionViewCell.swift */,
+				09C1C82F272447D600D2C9B2 /* CollectionViewCell.xib */,
+				09C1C8272724062C00D2C9B2 /* Calendar */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		09C1C7F92722B55900D2C9B2 /* Roboto_Mono */ = {
+			isa = PBXGroup;
+			children = (
+				09C1C7FA2722B55900D2C9B2 /* RobotoMono-VariableFont_wght.ttf */,
+				09C1C7FB2722B55900D2C9B2 /* RobotoMono-Italic-VariableFont_wght.ttf */,
+				09C1C7FC2722B55900D2C9B2 /* static */,
+				09C1C80B2722B55900D2C9B2 /* README.txt */,
+				09C1C80C2722B55900D2C9B2 /* LICENSE.txt */,
+			);
+			path = Roboto_Mono;
+			sourceTree = "<group>";
+		};
+		09C1C7FC2722B55900D2C9B2 /* static */ = {
+			isa = PBXGroup;
+			children = (
+				09C1C7FD2722B55900D2C9B2 /* RobotoMono-Medium.ttf */,
+				09C1C7FE2722B55900D2C9B2 /* RobotoMono-SemiBold.ttf */,
+				09C1C7FF2722B55900D2C9B2 /* RobotoMono-SemiBoldItalic.ttf */,
+				09C1C8002722B55900D2C9B2 /* RobotoMono-Regular.ttf */,
+				09C1C8012722B55900D2C9B2 /* RobotoMono-LightItalic.ttf */,
+				09C1C8022722B55900D2C9B2 /* RobotoMono-BoldItalic.ttf */,
+				09C1C8032722B55900D2C9B2 /* RobotoMono-ExtraLight.ttf */,
+				09C1C8042722B55900D2C9B2 /* RobotoMono-ThinItalic.ttf */,
+				09C1C8052722B55900D2C9B2 /* RobotoMono-ExtraLightItalic.ttf */,
+				09C1C8062722B55900D2C9B2 /* RobotoMono-Light.ttf */,
+				09C1C8072722B55900D2C9B2 /* RobotoMono-MediumItalic.ttf */,
+				09C1C8082722B55900D2C9B2 /* RobotoMono-Bold.ttf */,
+				09C1C8092722B55900D2C9B2 /* RobotoMono-Italic.ttf */,
+				09C1C80A2722B55900D2C9B2 /* RobotoMono-Thin.ttf */,
+			);
+			path = static;
+			sourceTree = "<group>";
+		};
+		09C1C8272724062C00D2C9B2 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				09C1C82A27240BC700D2C9B2 /* CalendarPickerFooterView.swift */,
+				09C1C82C27240BFB00D2C9B2 /* CalendarPickerHeaderView.swift */,
+				09C1C828272409C600D2C9B2 /* CalendarDateCollectionViewCell.swift */,
+			);
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 		1493E2A44FC9F6CAADF931E3 /* Pods */ = {
@@ -334,18 +436,37 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09C1C8192722B55900D2C9B2 /* RobotoMono-MediumItalic.ttf in Resources */,
+				09C1C8182722B55900D2C9B2 /* RobotoMono-Light.ttf in Resources */,
+				09C1C8122722B55900D2C9B2 /* RobotoMono-Regular.ttf in Resources */,
 				09524FA2271FFDA90061C36B /* Community.storyboard in Resources */,
+				09C1C81E2722B55900D2C9B2 /* LICENSE.txt in Resources */,
 				09524F82271FF4A10061C36B /* LaunchScreen.storyboard in Resources */,
 				09524FF42721B2B80061C36B /* RecordTableViewCell.xib in Resources */,
+				09C1C8102722B55900D2C9B2 /* RobotoMono-SemiBold.ttf in Resources */,
+				09C1C80F2722B55900D2C9B2 /* RobotoMono-Medium.ttf in Resources */,
 				09524FD327201DA90061C36B /* ProfileView.xib in Resources */,
+				09C1C81A2722B55900D2C9B2 /* RobotoMono-Bold.ttf in Resources */,
 				09524F7F271FF4A10061C36B /* Assets.xcassets in Resources */,
 				09524F9E271FFD910061C36B /* Timer.storyboard in Resources */,
 				09524F7D271FF4A00061C36B /* Main.storyboard in Resources */,
 				09C1C7D22722903800D2C9B2 /* DetailNoteTableViewCell.xib in Resources */,
+				09C1C8152722B55900D2C9B2 /* RobotoMono-ExtraLight.ttf in Resources */,
+				09C1C8112722B55900D2C9B2 /* RobotoMono-SemiBoldItalic.ttf in Resources */,
+				09C1C8162722B55900D2C9B2 /* RobotoMono-ThinItalic.ttf in Resources */,
 				09524FA0271FFD9C0061C36B /* Record.storyboard in Resources */,
 				09524FEB272168E80061C36B /* DetailSelectionCell.xib in Resources */,
+				09C1C80E2722B55900D2C9B2 /* RobotoMono-Italic-VariableFont_wght.ttf in Resources */,
+				09C1C8142722B55900D2C9B2 /* RobotoMono-BoldItalic.ttf in Resources */,
+				09C1C831272447D600D2C9B2 /* CollectionViewCell.xib in Resources */,
+				09C1C8172722B55900D2C9B2 /* RobotoMono-ExtraLightItalic.ttf in Resources */,
+				09C1C81C2722B55900D2C9B2 /* RobotoMono-Thin.ttf in Resources */,
+				09C1C81B2722B55900D2C9B2 /* RobotoMono-Italic.ttf in Resources */,
+				09C1C80D2722B55900D2C9B2 /* RobotoMono-VariableFont_wght.ttf in Resources */,
 				09C1C7D72722935800D2C9B2 /* DetailImageTableViewCell.xib in Resources */,
 				09524FFA2721B4140061C36B /* CategoryTagView.xib in Resources */,
+				09C1C81D2722B55900D2C9B2 /* README.txt in Resources */,
+				09C1C8132722B55900D2C9B2 /* RobotoMono-LightItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,25 +539,32 @@
 			files = (
 				09524FAD271FFEF00061C36B /* BaseViewController.swift in Sources */,
 				09524FDD2720494A0061C36B /* Bundle+Extension.swift in Sources */,
+				09C1C8202722BBE600D2C9B2 /* UILabel+Extension.swift in Sources */,
 				09524FA4271FFE2D0061C36B /* TimerViewController.swift in Sources */,
 				09524FEA272168E80061C36B /* DetailSelectionCell.swift in Sources */,
 				09C1C7D62722935800D2C9B2 /* DetailImageTableViewCell.swift in Sources */,
+				09C1C82B27240BC700D2C9B2 /* CalendarPickerFooterView.swift in Sources */,
 				09524F9C271FFD390061C36B /* UICollectionView+Extension.swift in Sources */,
 				09524FAE271FFEF00061C36B /* TabBarViewController.swift in Sources */,
 				09524F7A271FF4A00061C36B /* ViewController.swift in Sources */,
+				09C1C830272447D600D2C9B2 /* CollectionViewCell.swift in Sources */,
 				09524F96271FFCC00061C36B /* UIView+Extension.swift in Sources */,
 				09C1C7CE2722833000D2C9B2 /* UIColor+Extension.swift in Sources */,
+				09C1C82D27240BFB00D2C9B2 /* CalendarPickerHeaderView.swift in Sources */,
 				09524FD62720213B0061C36B /* RecordTableViewCell.swift in Sources */,
 				09524FA6271FFE620061C36B /* RecordViewController.swift in Sources */,
 				09C1C7DB27229D3D00D2C9B2 /* RecordManager.swift in Sources */,
 				09524FAF271FFEF00061C36B /* BaseNavigationController.swift in Sources */,
+				09C1C829272409C600D2C9B2 /* CalendarDateCollectionViewCell.swift in Sources */,
 				09524FE027214F990061C36B /* DetailViewController.swift in Sources */,
 				09524FF82721B3DC0061C36B /* CategoryView.swift in Sources */,
 				09524FDB272025E10061C36B /* ProfileView.swift in Sources */,
 				09524F76271FF4A00061C36B /* AppDelegate.swift in Sources */,
 				09524F90271FFA000061C36B /* UIStoryboard+Extension.swift in Sources */,
+				09C1C8242724024100D2C9B2 /* MonthMetaData.swift in Sources */,
 				09524FB1272003480061C36B /* UIImage+Extension.swift in Sources */,
 				09524FA8271FFEA70061C36B /* CommunityViewController.swift in Sources */,
+				09C1C7DD2722AACB00D2C9B2 /* UIFont+Extension.swift in Sources */,
 				09C1C7D12722903800D2C9B2 /* DetailNoteTableViewCell.swift in Sources */,
 				09524FE6272164560061C36B /* CalendarPickerViewController.swift in Sources */,
 				09524F78271FF4A00061C36B /* SceneDelegate.swift in Sources */,

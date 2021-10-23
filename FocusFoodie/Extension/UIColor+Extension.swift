@@ -22,12 +22,8 @@ private enum Color: String {
     case B5
 
     case B6
-    
-    case B7
-    
-    case B8
 
-    case B9
+    case B7
 
     case L1
 
@@ -61,10 +57,6 @@ extension UIColor {
     static let B6 = color(.B6)
 
     static let B7 = color(.B7)
-    
-    static let B8 = color(.B8)
-
-    static let B9 = color(.B9)
 
     static let L1 = color(.L1)
     

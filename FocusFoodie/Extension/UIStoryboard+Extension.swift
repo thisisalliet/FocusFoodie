@@ -16,8 +16,6 @@ private enum StoryboardCategory: String {
     case timer = "Timer"
     
     case community = "Community"
-    
-//    case detail = "Detail"
 }
 
 extension UIStoryboard {
@@ -29,8 +27,6 @@ extension UIStoryboard {
     static var timer: UIStoryboard { return storyBoard(name: StoryboardCategory.timer.rawValue) }
 
     static var community: UIStoryboard { return storyBoard(name: StoryboardCategory.community.rawValue) }
-
-//    static var detail: UIStoryboard { return storyBoard(name: StoryboardCategory.detail.rawValue) }
 
     private static func storyBoard(name: String) -> UIStoryboard {
 

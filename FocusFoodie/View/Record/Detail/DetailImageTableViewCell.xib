@@ -19,19 +19,34 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kKk-qL-ypt">
                         <rect key="frame" x="16" y="16" width="291" height="218"/>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJj-tb-eib">
+                        <rect key="frame" x="251" y="178" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="1OQ-WE-cI1"/>
+                            <constraint firstAttribute="height" constant="40" id="RLA-ZS-JmC"/>
+                        </constraints>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" backgroundImage="favourite_default"/>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="kKk-qL-ypt" secondAttribute="bottom" constant="16" id="fZj-xl-Vdr"/>
+                    <constraint firstAttribute="bottom" secondItem="TJj-tb-eib" secondAttribute="bottom" constant="32" id="fmb-PR-DCR"/>
                     <constraint firstAttribute="trailing" secondItem="kKk-qL-ypt" secondAttribute="trailing" constant="16" id="hA0-8M-HQx"/>
                     <constraint firstItem="kKk-qL-ypt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="nMW-0t-aTt"/>
                     <constraint firstItem="kKk-qL-ypt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="qkM-eY-jDi"/>
+                    <constraint firstAttribute="trailing" secondItem="TJj-tb-eib" secondAttribute="trailing" constant="32" id="tjm-Yc-cje"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="endImageView" destination="kKk-qL-ypt" id="Ybu-uE-2SP"/>
+                <outlet property="favouriteButton" destination="TJj-tb-eib" id="sk7-P9-4IL"/>
             </connections>
             <point key="canvasLocation" x="139.85507246376812" y="209.59821428571428"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="favourite_default" width="512" height="512"/>
+    </resources>
 </document>

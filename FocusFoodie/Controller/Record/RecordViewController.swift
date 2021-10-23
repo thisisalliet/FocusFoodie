@@ -9,21 +9,44 @@ import UIKit
 
 class RecordViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet weak var calendarButton: UIButton!
-    
-    @IBOutlet weak var profileView: ProfileView!
+    private struct Segue {
+
+        static let picker = "SeguePicker"
+    }
     
     @IBOutlet weak var recordTableView: UITableView! {
         
         didSet {
-            
-            recordTableView.cornerRadius = 15
             
             recordTableView.dataSource = self
             
             recordTableView.delegate = self
         }
     }
+    
+    @IBOutlet weak var profileView: ProfileView! {
+        
+        didSet {
+            
+            profileView.cornerRadius = 10
+        }
+    }
+    
+    @IBOutlet weak var calendarPickerView: UIView!
+    
+    @IBOutlet weak var calendarButton: UIButton! {
+        
+        didSet {
+            
+            calendarButton.backgroundColor = .B2
+            
+            calendarButton.setTitleColor(.B5, for: .normal)
+        }
+    }
+    
+    @IBOutlet weak var baseView: UIView!
+    
+    var pickerViewController: CalendarPickerViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +59,89 @@ class RecordViewController: BaseViewController, UITableViewDataSource, UITableVi
         recordTableView.registerCellWithNib(identifier:
             String(describing: RecordTableViewCell.self),
                                             bundle: nil
+        )
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if segue.identifier == Segue.picker,
+           let pickerVC = segue.destination as? CalendarPickerViewController {
+
+//            pickerVC.delegate = self
+
+//            pickerVC.product = product
+
+            pickerViewController = pickerVC
+        }
+    }
+    
+    // MARK: - Action
+    @IBAction func didTouchCalendarBtn(_ sender: UIButton) {
+        
+//        if calendarPickerView.superview == nil {
+
+            showCalendarPickerView()
+
+//        } else {
+//
+//            guard let color = pickerViewController?.selectedColor,
+//                  let size = pickerViewController?.selectedSize,
+//                  let amount = pickerViewController?.selectedAmount,
+//                  let product = product
+//            else { return }
+//
+//            StorageManager.shared.saveOrder(
+//                color: color, size: size, amount: amount, product: product,
+//                completion: { result in
+//
+//                    switch result {
+//
+//                    case .success:
+//
+//                        LKProgressHUD.showSuccess()
+//
+//                        dismissPicker(pickerViewController!)
+//
+//                    case .failure:
+//
+//                        LKProgressHUD.showFailure(text: "儲存失敗！")
+//                    }
+//                })
+//        }
+    }
+    
+    func showCalendarPickerView() {
+
+        let maxY = recordTableView.frame.maxY
+        
+        calendarPickerView.frame = CGRect(
+            x: 0,
+            y: maxY,
+            width: UIScreen.width,
+            height: 0.0
+        )
+        
+        baseView.insertSubview(calendarPickerView, belowSubview: calendarButton.superview!)
+
+//        baseView.insertSubview(blurView, belowSubview: calendarPickerView)
+
+        UIView.animate(
+            withDuration: 0.3,
+            animations: { [weak self] in
+
+                guard let strongSelf = self else { return }
+
+                let height =
+                451.0 / 586.0 * strongSelf.recordTableView.frame.height
+                
+                self?.calendarPickerView.frame = CGRect(
+                    x: 0,
+                    y: maxY - height,
+                    width: UIScreen.width,
+                    height: height
+                )
+
+            }
         )
     }
     

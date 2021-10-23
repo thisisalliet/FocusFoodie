@@ -9,6 +9,15 @@ import UIKit
 
 class DetailNoteTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var noteLabel: UILabel! {
+        
+        didSet {
+            
+            noteLabel.textColor = UIColor.B5
+            
+            noteLabel.text = "Note"
+        }
+    }
     @IBOutlet weak var noteTextField: UITextField! {
         
         didSet {

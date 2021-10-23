@@ -55,7 +55,8 @@ enum ImageAsset: String {
     //Drop down
 //    case Icons_24px_DropDown
     
-    case like
+    case favourite_default
+    case favourite_selected
 }
 
 // swiftlint:enable identifier_name

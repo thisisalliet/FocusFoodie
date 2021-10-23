@@ -8,11 +8,11 @@
 import UIKit
 
 class DetailImageTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var endImageView: UIImageView! {
         
         didSet {
-                        
+            
             endImageView.frame = CGRect(
                 x: 0,
                 y: 0,
@@ -24,4 +24,17 @@ class DetailImageTableViewCell: UITableViewCell {
             endImageView.contentMode = .scaleAspectFit
         }
     }
+    
+    @IBOutlet weak var favouriteButton: UIButton!
+        
+//        didSet {
+                        
+//            favouriteButton.setBackgroundImage(UIImage.asset(.like), for: .normal)
+            
+//            favouriteButton.setTitle("", for: .normal)
+            
+//            favouriteButton.borderColor = UIColor.B7
+            
+//            favouriteButton.borderWidth = 3
+//        }
 }

@@ -17,20 +17,29 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nFn-jv-aYT">
-                        <rect key="frame" x="16" y="16" width="304" height="254"/>
+                        <rect key="frame" x="16" y="44.5" width="304" height="225.5"/>
                         <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebv-fM-YMd">
+                        <rect key="frame" x="16" y="16" width="37" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="nFn-jv-aYT" firstAttribute="top" secondItem="ebv-fM-YMd" secondAttribute="bottom" constant="8" id="4c6-h9-zc7"/>
                     <constraint firstItem="nFn-jv-aYT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="8Ur-hQ-pEk"/>
-                    <constraint firstItem="nFn-jv-aYT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="G5u-cS-hRg"/>
+                    <constraint firstItem="ebv-fM-YMd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="8ow-KC-D0D"/>
                     <constraint firstAttribute="trailing" secondItem="nFn-jv-aYT" secondAttribute="trailing" constant="16" id="NJ0-wV-cEY"/>
                     <constraint firstAttribute="bottom" secondItem="nFn-jv-aYT" secondAttribute="bottom" constant="16" id="bWF-r5-5wZ"/>
+                    <constraint firstItem="ebv-fM-YMd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="tIi-2n-Cwp"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="noteLabel" destination="ebv-fM-YMd" id="Jy1-pp-IZ7"/>
                 <outlet property="noteTextField" destination="nFn-jv-aYT" id="REN-LO-bCO"/>
             </connections>
             <point key="canvasLocation" x="149.27536231884059" y="221.65178571428569"/>

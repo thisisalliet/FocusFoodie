@@ -29,9 +29,9 @@ class RecordTableViewCell: UITableViewCell {
         
         didSet {
             
-            greyView.cornerRadius = 10
+            greyView.cornerRadius = 5
             
-            greyView.backgroundColor = .systemGroupedBackground
+            greyView.backgroundColor = .B3
         }
     }
     
@@ -43,7 +43,7 @@ class RecordTableViewCell: UITableViewCell {
             
             categoryLabel.contentMode = .center
             
-            categoryLabel.textColor = .darkGray
+            categoryLabel.textColor = .B5
         }
     }
     

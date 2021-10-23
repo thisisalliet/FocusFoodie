@@ -19,18 +19,6 @@ class DetailViewController: BaseViewController, UITableViewDataSource, UITableVi
         }
     }
     
-    @IBOutlet weak var favouriteButton: UIButton! {
-        
-        didSet {
-            
-            favouriteButton.setBackgroundImage(UIImage.asset(.like), for: .normal)
-            
-            favouriteButton.borderColor = UIColor.B8
-            
-            favouriteButton.borderWidth = 3
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,17 +28,17 @@ class DetailViewController: BaseViewController, UITableViewDataSource, UITableVi
     private func setUpTableView() {
         
         detailTableView.registerCellWithNib(identifier:
-                                                String(describing: DetailImageTableViewCell.self),
+            String(describing: DetailImageTableViewCell.self),
                                             bundle: nil
         )
         
         detailTableView.registerCellWithNib(identifier:
-                                                String(describing: DetailSelectionCell.self),
+            String(describing: DetailSelectionCell.self),
                                             bundle: nil
         )
         
         detailTableView.registerCellWithNib(identifier:
-                                                String(describing: DetailNoteTableViewCell.self),
+            String(describing: DetailNoteTableViewCell.self),
                                             bundle: nil
         )
     }

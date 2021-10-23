@@ -14,6 +14,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+//        UILabel.appearance().substituteFontName = "Avenir"
+        
+        UILabel.appearance().textColor =  UIColor { tc in
+            switch tc.userInterfaceStyle {
+            case .dark:
+                return UIColor.B1 ?? .white
+            default:
+                return UIColor.B5 ?? .label
+            }
+        }
+        
         return true
     }
 

@@ -15,10 +15,10 @@ class BaseViewController: UIViewController {
         return String(describing: self)
     }
 
-    var isHideNavigationBar: Bool {
-
-        return true
-    }
+//    var isHideNavigationBar: Bool {
+//
+//        return true
+//    }
 
     var isEnableResignOnTouchOutside: Bool {
 
@@ -33,9 +33,9 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if isHideNavigationBar {
-            navigationItem.hidesBackButton = true
-        }
+//        if isHideNavigationBar {
+//            navigationItem.hidesBackButton = true
+//        }
 
         navigationController?.navigationBar.barTintColor = UIColor.white.withAlphaComponent(0.9)
 
@@ -44,14 +44,16 @@ class BaseViewController: UIViewController {
         navigationController?.navigationBar.backIndicatorImage = UIImage.asset(.arrow_left_circle)
 
         navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage.asset(.arrow_left_circle)
+        
+        self.view.backgroundColor = .B2
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        if isHideNavigationBar {
-            navigationController?.setNavigationBarHidden(true, animated: true)
-        }
+//        if isHideNavigationBar {
+//            navigationController?.setNavigationBarHidden(true, animated: true)
+//        }
 
         if !isEnableIQKeyboard {
             IQKeyboardManager.shared.enable = false
@@ -71,9 +73,9 @@ class BaseViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
-        if isHideNavigationBar {
-            navigationController?.setNavigationBarHidden(false, animated: true)
-        }
+//        if isHideNavigationBar {
+//            navigationController?.setNavigationBarHidden(false, animated: true)
+//        }
 
         if !isEnableIQKeyboard {
             IQKeyboardManager.shared.enable = true
