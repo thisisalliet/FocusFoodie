@@ -15,14 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-//        UILabel.appearance().textColor =  UIColor { tc in
-//            switch tc.userInterfaceStyle {
-//            case .dark:
-//                return UIColor.B1 ?? .white
-//            default:
-//                return UIColor.B5 ?? .label
-//            }
-//        }
+        printFonts()
+        
+        setupGlobalAppearance()
         
         return true
     }
@@ -41,15 +36,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
     
-    func setupGlobalAppearance(){
-            
-         let customFont = UIFont.regular(size: 16)
-//        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: customFont ?? default value], for: .normal)
-        UITextField.appearance().substituteFontName =  UIFont.regular
-         UILabel.appearance().substituteFontName = Constants.App.regularFont
-         UILabel.appearance().substituteFontNameBold = Constants.App.boldFont
-            
-      }
+    // MARK: - Appearance.
+    func setupGlobalAppearance() {
+        
+        let customFont = UIFont.regular(size: 16)
+        
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: customFont ?? .systemFont(ofSize: 16)], for: .normal)
+        
+        UITextField.appearance().substituteFontName = FontName.regular.rawValue
+        
+        UILabel.appearance().substituteFontName = FontName.regular.rawValue
+        
+        UILabel.appearance().substituteFontNameBold = FontName.regular.rawValue
+    }
+    
+    func printFonts(){
+        for family: String in UIFont.familyNames
+        {
+            print("\(family)")
+            for names: String in UIFont.fontNames(forFamilyName: family)
+            {
+                print("== \(names)")
+            }
+        }
+    }
 
 
 }

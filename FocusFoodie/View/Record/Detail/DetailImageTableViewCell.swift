@@ -19,22 +19,21 @@ class DetailImageTableViewCell: UITableViewCell {
                 width: UIScreen.width,
                 height: UIScreen.height * 2 / 3)
             
-            endImageView.image = UIImage.asset(.loading)
+            endImageView.image = UIImage.asset(.icon_loading)
             
             endImageView.contentMode = .scaleAspectFit
         }
     }
     
-    @IBOutlet weak var favouriteButton: UIButton!
+    @IBOutlet weak var likeButton: UIButton! {
         
-//        didSet {
-                        
-//            favouriteButton.setBackgroundImage(UIImage.asset(.like), for: .normal)
+        didSet {
             
-//            favouriteButton.setTitle("", for: .normal)
+            likeButton.setBackgroundImage(UIImage.asset(.icon_heart_normal), for: .normal)
             
-//            favouriteButton.borderColor = UIColor.B7
+            likeButton.setBackgroundImage(UIImage.asset(.icon_heart_selected), for: .selected)
             
-//            favouriteButton.borderWidth = 3
-//        }
+            likeButton.setTitle("", for: .normal)
+        }
+    }
 }

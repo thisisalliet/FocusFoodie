@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "arrow-left-circle.png",
+      "filename" : "loading (1).png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "arrow-left-circle@2x.png",
+      "filename" : "loading (1)@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "arrow-left-circle@3x.png",
+      "filename" : "loading (1)@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

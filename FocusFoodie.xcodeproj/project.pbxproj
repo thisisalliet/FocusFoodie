@@ -61,6 +61,7 @@
 		09C1C84B2725742A00D2C9B2 /* RobotoMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09C1C8392725713200D2C9B2 /* RobotoMono-Regular.ttf */; };
 		09C1C84D2725742A00D2C9B2 /* RobotoMono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09C1C8412725713200D2C9B2 /* RobotoMono-Bold.ttf */; };
 		09C1C84E2725749A00D2C9B2 /* RobotoMono-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09C1C83F2725713200D2C9B2 /* RobotoMono-Light.ttf */; };
+		09C1C8502725D78700D2C9B2 /* UITextfield+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C84F2725D78700D2C9B2 /* UITextfield+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -133,6 +134,7 @@
 		09C1C8442725713200D2C9B2 /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		09C1C8452725713200D2C9B2 /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		09C1C848272571E800D2C9B2 /* Roboto_Mono */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Roboto_Mono; sourceTree = "<group>"; };
+		09C1C84F2725D78700D2C9B2 /* UITextfield+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextfield+Extension.swift"; sourceTree = "<group>"; };
 		290B1C7432FC0558604112FB /* Pods-FocusFoodie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FocusFoodie.debug.xcconfig"; path = "Target Support Files/Pods-FocusFoodie/Pods-FocusFoodie.debug.xcconfig"; sourceTree = "<group>"; };
 		393F58596B0720378D428E8F /* Pods-FocusFoodie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FocusFoodie.release.xcconfig"; path = "Target Support Files/Pods-FocusFoodie/Pods-FocusFoodie.release.xcconfig"; sourceTree = "<group>"; };
 		B10A2329D8AD6B769D677516 /* Pods_FocusFoodie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FocusFoodie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,6 +193,7 @@
 				09524F95271FFCC00061C36B /* UIView+Extension.swift */,
 				09C1C7CD2722833000D2C9B2 /* UIColor+Extension.swift */,
 				09C1C81F2722BBE600D2C9B2 /* UILabel+Extension.swift */,
+				09C1C84F2725D78700D2C9B2 /* UITextfield+Extension.swift */,
 				09524FB0272003480061C36B /* UIImage+Extension.swift */,
 				09524F93271FFCB00061C36B /* UIScreen+Extension.swift */,
 				09524F97271FFCE60061C36B /* UITableView+Extension.swift */,
@@ -523,6 +526,7 @@
 				09C1C82B27240BC700D2C9B2 /* CalendarPickerFooterView.swift in Sources */,
 				09524F9C271FFD390061C36B /* UICollectionView+Extension.swift in Sources */,
 				09524FAE271FFEF00061C36B /* TabBarViewController.swift in Sources */,
+				09C1C8502725D78700D2C9B2 /* UITextfield+Extension.swift in Sources */,
 				09524F7A271FF4A00061C36B /* ViewController.swift in Sources */,
 				09C1C830272447D600D2C9B2 /* CollectionViewCell.swift in Sources */,
 				09524F96271FFCC00061C36B /* UIView+Extension.swift in Sources */,

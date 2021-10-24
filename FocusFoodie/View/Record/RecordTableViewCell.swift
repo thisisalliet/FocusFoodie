@@ -13,9 +13,9 @@ class RecordTableViewCell: UITableViewCell {
         
         didSet {
             
-            timerImage.image = UIImage.asset(.loading)
+            timerImage.image = UIImage.asset(.icon_loading)
             
-            timerImage.contentMode = .center
+            timerImage.contentMode = .scaleAspectFit
         }
     }
     
@@ -56,6 +56,7 @@ class RecordTableViewCell: UITableViewCell {
             minLabel.text = "180"
             
             minLabel.textColor = .B5
+            
         }
     }
     

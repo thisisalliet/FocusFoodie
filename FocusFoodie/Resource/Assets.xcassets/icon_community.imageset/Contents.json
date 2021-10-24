@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "like (1).png",
+      "filename" : "chef-hat.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "chef-hat@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "chef-hat@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

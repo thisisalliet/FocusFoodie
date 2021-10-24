@@ -16,7 +16,7 @@ class ProfileView: UIView {
         
         didSet {
             
-            profileImage.image = UIImage.asset(.loading)
+            profileImage.image = UIImage.asset(.icon_loading)
         }
     }
     

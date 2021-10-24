@@ -9,44 +9,41 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="250" id="KGk-i7-Jjw" customClass="DetailImageTableViewCell" customModule="FocusFoodie" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="323" height="250"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="355" id="KGk-i7-Jjw" customClass="DetailImageTableViewCell" customModule="FocusFoodie" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="323" height="355"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="323" height="250"/>
+                <rect key="frame" x="0.0" y="0.0" width="323" height="355"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kKk-qL-ypt">
-                        <rect key="frame" x="16" y="16" width="291" height="218"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="243" placeholderIntrinsicHeight="295" translatesAutoresizingMaskIntoConstraints="NO" id="0bS-dQ-WHl">
+                        <rect key="frame" x="16" y="16" width="291" height="323"/>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJj-tb-eib">
-                        <rect key="frame" x="251" y="178" width="40" height="40"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PFa-Ao-0jQ">
+                        <rect key="frame" x="267" y="299" width="40" height="40"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="40" id="1OQ-WE-cI1"/>
-                            <constraint firstAttribute="height" constant="40" id="RLA-ZS-JmC"/>
+                            <constraint firstAttribute="width" constant="40" id="cuy-tK-ayr"/>
+                            <constraint firstAttribute="height" constant="40" id="qwY-LC-xMA"/>
                         </constraints>
-                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                        <state key="normal" backgroundImage="favourite_default"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" title=""/>
                     </button>
                 </subviews>
-                <constraints>
-                    <constraint firstAttribute="bottom" secondItem="kKk-qL-ypt" secondAttribute="bottom" constant="16" id="fZj-xl-Vdr"/>
-                    <constraint firstAttribute="bottom" secondItem="TJj-tb-eib" secondAttribute="bottom" constant="32" id="fmb-PR-DCR"/>
-                    <constraint firstAttribute="trailing" secondItem="kKk-qL-ypt" secondAttribute="trailing" constant="16" id="hA0-8M-HQx"/>
-                    <constraint firstItem="kKk-qL-ypt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="nMW-0t-aTt"/>
-                    <constraint firstItem="kKk-qL-ypt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="qkM-eY-jDi"/>
-                    <constraint firstAttribute="trailing" secondItem="TJj-tb-eib" secondAttribute="trailing" constant="32" id="tjm-Yc-cje"/>
-                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <constraints>
+                <constraint firstItem="njF-e1-oar" firstAttribute="trailing" secondItem="PFa-Ao-0jQ" secondAttribute="trailing" constant="16" id="3WH-cn-LNQ"/>
+                <constraint firstItem="0bS-dQ-WHl" firstAttribute="top" secondItem="njF-e1-oar" secondAttribute="top" constant="16" id="E7J-5A-zw2"/>
+                <constraint firstItem="njF-e1-oar" firstAttribute="bottom" secondItem="PFa-Ao-0jQ" secondAttribute="bottom" constant="16" id="Krv-lU-qVY"/>
+                <constraint firstItem="njF-e1-oar" firstAttribute="trailing" secondItem="0bS-dQ-WHl" secondAttribute="trailing" constant="16" id="bfO-e7-kKM"/>
+                <constraint firstItem="0bS-dQ-WHl" firstAttribute="leading" secondItem="njF-e1-oar" secondAttribute="leading" constant="16" id="kP3-LK-LdZ"/>
+                <constraint firstItem="njF-e1-oar" firstAttribute="bottom" secondItem="0bS-dQ-WHl" secondAttribute="bottom" constant="16" id="tSv-db-MQO"/>
+            </constraints>
             <connections>
-                <outlet property="endImageView" destination="kKk-qL-ypt" id="Ybu-uE-2SP"/>
-                <outlet property="favouriteButton" destination="TJj-tb-eib" id="sk7-P9-4IL"/>
+                <outlet property="endImageView" destination="0bS-dQ-WHl" id="ckb-eQ-69Q"/>
+                <outlet property="likeButton" destination="PFa-Ao-0jQ" id="tT7-Pk-3VM"/>
             </connections>
-            <point key="canvasLocation" x="139.85507246376812" y="209.59821428571428"/>
+            <point key="canvasLocation" x="139.85507246376812" y="244.08482142857142"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="favourite_default" width="512" height="512"/>
-    </resources>
 </document>
