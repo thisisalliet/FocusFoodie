@@ -24,13 +24,7 @@ class RecordViewController: BaseViewController, UITableViewDataSource, UITableVi
         }
     }
     
-    @IBOutlet weak var profileView: ProfileView! {
-        
-        didSet {
-            
-            profileView.cornerRadius = 10
-        }
-    }
+    @IBOutlet weak var profileImage: UIImageView!
     
     @IBOutlet weak var calendarPickerView: UIView!
     
@@ -41,6 +35,13 @@ class RecordViewController: BaseViewController, UITableViewDataSource, UITableVi
             calendarButton.backgroundColor = .B2
             
             calendarButton.setTitleColor(.B5, for: .normal)
+            
+            calendarButton.setTitleColor(.B5, for: .selected)
+            
+            calendarButton.setTitle("Today ▾ ", for: .normal)
+            
+            calendarButton.cornerRadius = 10
+            
         }
     }
     

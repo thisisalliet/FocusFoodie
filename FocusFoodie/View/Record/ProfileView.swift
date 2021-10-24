@@ -9,13 +9,39 @@ import UIKit
 
 class ProfileView: UIView {
 
-    @IBOutlet weak var profileImage: UIImageView! {
+    @IBOutlet weak var contentView: UIView!
+    
+    @IBOutlet weak var profileImage: UIImageView!
+    {
         
         didSet {
-
-            profileImage.cornerRadius = 15
             
-            profileImage.image = UIImage.asset(.Icons_36px_Profile_Normal)
+            profileImage.image = UIImage.asset(.loading)
         }
     }
+    
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//
+//        initContentView()
+//    }
+//
+//    required init?(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//
+//        initContentView()
+//    }
+//
+//    private func initContentView() {
+//
+//        backgroundColor = UIColor.white
+
+//        Bundle.main.loadNibNamed(
+//            String(describing: ProfileView.self),
+//            owner: self,
+//            options: nil
+//        )
+
+//        stickSubView(contentView)
+//    }
 }

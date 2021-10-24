@@ -14,6 +14,8 @@ class RecordTableViewCell: UITableViewCell {
         didSet {
             
             timerImage.image = UIImage.asset(.loading)
+            
+            timerImage.contentMode = .center
         }
     }
     
@@ -31,7 +33,7 @@ class RecordTableViewCell: UITableViewCell {
             
             greyView.cornerRadius = 5
             
-            greyView.backgroundColor = .B3
+            greyView.backgroundColor = .B2
         }
     }
     
@@ -47,25 +49,13 @@ class RecordTableViewCell: UITableViewCell {
         }
     }
     
-//    @IBOutlet weak var categoryView: CategoryView! {
-//
-//        didSet {
-//
-//            categoryView.cornerRadius = 15
-//
-//            categoryView.backgroundColor = .gray
-//
-//            categoryView.awakeFromNib()
-//        }
-//    }
-    
     @IBOutlet weak var minLabel: UILabel! {
         
         didSet {
             
             minLabel.text = "180"
             
-            minLabel.textColor = .darkGray
+            minLabel.textColor = .B5
         }
     }
     
@@ -75,7 +65,7 @@ class RecordTableViewCell: UITableViewCell {
             
             unitLabel.text = "min"
             
-            unitLabel.textColor = .darkGray
+            unitLabel.textColor = .B5
         }
     }
 }

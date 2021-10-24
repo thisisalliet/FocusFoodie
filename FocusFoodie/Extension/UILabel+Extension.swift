@@ -8,14 +8,28 @@
 import Foundation
 import UIKit
 
-@IBDesignable
 extension UILabel {
-    
-    var substituteFontName: String {
-        
+    var substituteFontName : String {
         get { return self.font.fontName }
-
-        set { self.font = UIFont(name: newValue, size: self.font.pointSize) }
+        set {
+            if self.font.fontName.range(of:"-Bd") == nil {
+                self.font = UIFont(name: newValue, size: self.font.pointSize)
+            }
+        }
+    }
+    var substituteFontNameBold : String {
+        get { return self.font.fontName }
+        set {
+            if self.font.fontName.range(of:"-Bd") != nil {
+                self.font = UIFont(name: newValue, size: self.font.pointSize)
+            }
+        }
+    }
+}
+extension UITextField {
+    var substituteFontName : String {
+        get { return self.font!.fontName }
+        set { self.font = UIFont(name: newValue, size: (self.font?.pointSize)!) }
     }
 }
 

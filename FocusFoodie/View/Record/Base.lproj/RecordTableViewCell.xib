@@ -30,6 +30,9 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ow9-CG-lpf">
                         <rect key="frame" x="280" y="37" width="24" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="24" id="89f-jK-n4f"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -66,13 +69,13 @@
                     <constraint firstAttribute="bottom" secondItem="iGV-Yy-8tP" secondAttribute="bottom" constant="8" id="HP4-zF-9Yp"/>
                     <constraint firstItem="iGV-Yy-8tP" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="VC8-yY-V0g"/>
                     <constraint firstItem="ZXD-yS-O7s" firstAttribute="firstBaseline" secondItem="Ow9-CG-lpf" secondAttribute="firstBaseline" id="VkJ-ry-qbS"/>
-                    <constraint firstItem="2xY-x7-Zs0" firstAttribute="leading" secondItem="iGV-Yy-8tP" secondAttribute="trailing" constant="8" id="ajs-qU-MSc"/>
+                    <constraint firstItem="2xY-x7-Zs0" firstAttribute="leading" secondItem="iGV-Yy-8tP" secondAttribute="trailing" constant="16" id="ajs-qU-MSc"/>
                     <constraint firstItem="2xY-x7-Zs0" firstAttribute="top" secondItem="iGV-Yy-8tP" secondAttribute="top" id="ewl-p6-0FD"/>
                     <constraint firstItem="iGV-Yy-8tP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="fmY-zs-ufr"/>
                     <constraint firstItem="iGV-Yy-8tP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="gDX-cz-zOx"/>
                     <constraint firstItem="Ow9-CG-lpf" firstAttribute="leading" secondItem="ZXD-yS-O7s" secondAttribute="trailing" constant="4" id="kcY-W4-P4h"/>
                     <constraint firstAttribute="trailing" secondItem="Ow9-CG-lpf" secondAttribute="trailing" constant="16" id="wGx-vj-x4f"/>
-                    <constraint firstItem="kr2-Xb-dvs" firstAttribute="leading" secondItem="iGV-Yy-8tP" secondAttribute="trailing" constant="8" id="whC-aF-vIg"/>
+                    <constraint firstItem="kr2-Xb-dvs" firstAttribute="leading" secondItem="iGV-Yy-8tP" secondAttribute="trailing" constant="16" id="whC-aF-vIg"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

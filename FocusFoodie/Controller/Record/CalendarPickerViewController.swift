@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-class CalendarPickerViewController: UIViewController {
+class CalendarPickerViewController: BaseViewController {
     // MARK: Views
 //    private lazy var dimmedBackgroundView: UIView = {
 //        let view = UIView()

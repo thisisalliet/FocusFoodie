@@ -9,31 +9,13 @@ import UIKit
 
 class DetailSelectionCell: UITableViewCell {
     
-    @IBOutlet weak var categoryButton: UIButton! {
+    @IBOutlet weak var dateLabel: UILabel! {
         
         didSet {
             
-            categoryButton.backgroundColor = UIColor.B3
+            dateLabel.text = "2021 / 10 / 20"
             
-            categoryButton.cornerRadius = 10
-            
-            categoryButton.setTitle("Coding", for: .normal)
-            
-            categoryButton.setTitleColor(UIColor.B4, for: .normal)
-        }
-    }
-    
-    @IBOutlet weak var dateButton: UIButton! {
-        
-        didSet {
-            
-            dateButton.backgroundColor = UIColor.B3
-            
-            dateButton.cornerRadius = 10
-            
-            dateButton.setTitle("2021.10.21", for: .normal)
-            
-            dateButton.setTitleColor(UIColor.B5, for: .normal)
+            dateLabel.textColor = .B5
         }
     }
     
@@ -41,9 +23,19 @@ class DetailSelectionCell: UITableViewCell {
         
         didSet {
             
-            timeLabel.text = "180"
+            timeLabel.text = "17:00 - 18:00"
             
-            timeLabel.textColor = UIColor.B5
+            timeLabel.textColor = .B5
+        }
+    }
+    
+    @IBOutlet weak var focusTimeLabel: UILabel! {
+        
+        didSet {
+            
+            focusTimeLabel.text = "180"
+            
+            focusTimeLabel.textColor = .B5
         }
     }
     
@@ -53,7 +45,7 @@ class DetailSelectionCell: UITableViewCell {
             
             unitLabel.text = "min"
             
-            unitLabel.textColor = UIColor.B6
+            unitLabel.textColor = .B5
         }
     }
 }

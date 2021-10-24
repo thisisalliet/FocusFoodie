@@ -13,6 +13,8 @@ class DetailViewController: BaseViewController, UITableViewDataSource, UITableVi
         
         didSet {
             
+            detailTableView.separatorStyle = .none
+            
             detailTableView.dataSource = self
             
             detailTableView.delegate = self

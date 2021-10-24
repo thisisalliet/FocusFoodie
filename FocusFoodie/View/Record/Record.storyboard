@@ -25,6 +25,13 @@
                                     <action selector="didTouchCalendarBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="F0n-aI-xKp"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons_36px_Profile_Normal" translatesAutoresizingMaskIntoConstraints="NO" id="F3b-CT-745">
+                                <rect key="frame" x="328" y="88" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="rff-C8-zSj"/>
+                                    <constraint firstAttribute="width" constant="70" id="tic-Vf-aw3"/>
+                                </constraints>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UK4-Pw-qPm">
                                 <rect key="frame" x="0.0" y="174" width="414" height="688"/>
                                 <subviews>
@@ -87,15 +94,6 @@
                                     <constraint firstAttribute="bottom" secondItem="hnL-0y-DRZ" secondAttribute="bottom" id="mkh-wC-Epq"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" id="2Ix-IB-cI5" customClass="ProfileView" customModule="FocusFoodie" customModuleProvider="target">
-                                <rect key="frame" x="321" y="88" width="73" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="o0D-Lm-yR4"/>
-                                    <constraint firstAttribute="height" constant="70" id="zbu-Ly-YX9"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -104,7 +102,9 @@
                             <constraint firstItem="UK4-Pw-qPm" firstAttribute="top" secondItem="LzH-QS-sAV" secondAttribute="bottom" constant="16" id="6y0-9D-Egv"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="UK4-Pw-qPm" secondAttribute="bottom" id="MOG-1U-1sc"/>
                             <constraint firstItem="LzH-QS-sAV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="MZx-7G-igu"/>
-                            <constraint firstItem="LzH-QS-sAV" firstAttribute="bottom" secondItem="2Ix-IB-cI5" secondAttribute="bottom" id="TjL-Eh-NWh"/>
+                            <constraint firstItem="LzH-QS-sAV" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="39" id="ORi-i0-IXG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="F3b-CT-745" secondAttribute="trailing" constant="16" id="Xcn-C2-IJj"/>
+                            <constraint firstItem="F3b-CT-745" firstAttribute="bottom" secondItem="LzH-QS-sAV" secondAttribute="bottom" id="fmz-Sh-zoL"/>
                             <constraint firstItem="UK4-Pw-qPm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="l7j-N1-YpT"/>
                         </constraints>
                     </view>
@@ -113,7 +113,7 @@
                         <outlet property="baseView" destination="UK4-Pw-qPm" id="1lZ-3t-2k7"/>
                         <outlet property="calendarButton" destination="LzH-QS-sAV" id="DvQ-8x-U0Q"/>
                         <outlet property="calendarPickerView" destination="n6r-7y-nrK" id="zrC-Xt-beG"/>
-                        <outlet property="profileView" destination="2Ix-IB-cI5" id="bZp-kk-49P"/>
+                        <outlet property="profileImage" destination="F3b-CT-745" id="tUb-HL-fte"/>
                         <outlet property="recordTableView" destination="hnL-0y-DRZ" id="Jy0-xf-UK6"/>
                     </connections>
                 </viewController>
@@ -189,7 +189,6 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fzb-jM-VGV" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8wa-1b-1DW">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -206,8 +205,9 @@
             <objects>
                 <viewController id="Scj-bF-tAO" customClass="CalendarPickerViewController" customModule="FocusFoodie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LTs-vm-GNa">
-                        <rect key="frame" x="0.0" y="0.0" width="413" height="498"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Aqb-6p-dUu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
@@ -217,6 +217,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Icons_36px_Profile_Normal" width="36" height="36"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -15,16 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-//        UILabel.appearance().substituteFontName = "Avenir"
-        
-        UILabel.appearance().textColor =  UIColor { tc in
-            switch tc.userInterfaceStyle {
-            case .dark:
-                return UIColor.B1 ?? .white
-            default:
-                return UIColor.B5 ?? .label
-            }
-        }
+//        UILabel.appearance().textColor =  UIColor { tc in
+//            switch tc.userInterfaceStyle {
+//            case .dark:
+//                return UIColor.B1 ?? .white
+//            default:
+//                return UIColor.B5 ?? .label
+//            }
+//        }
         
         return true
     }
@@ -42,6 +40,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+    
+    func setupGlobalAppearance(){
+            
+         let customFont = UIFont.regular(size: 16)
+//        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: customFont ?? default value], for: .normal)
+        UITextField.appearance().substituteFontName =  UIFont.regular
+         UILabel.appearance().substituteFontName = Constants.App.regularFont
+         UILabel.appearance().substituteFontNameBold = Constants.App.boldFont
+            
+      }
 
 
 }
