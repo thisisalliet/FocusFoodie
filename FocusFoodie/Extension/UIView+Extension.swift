@@ -10,7 +10,7 @@ import UIKit
 @IBDesignable
 extension UIView {
 
-    //Border Color
+    // Border Color
     @IBInspectable var borderColor: UIColor? {
 
         get {
@@ -28,7 +28,7 @@ extension UIView {
         }
     }
 
-    //Border width
+    // Border width
     @IBInspectable var borderWidth: CGFloat {
 
         get {
@@ -41,9 +41,9 @@ extension UIView {
         }
     }
 
-    //Corner radius
+    // Corner radius
     @IBInspectable var cornerRadius: CGFloat {
-
+        
         get {
 
             return layer.cornerRadius
@@ -87,5 +87,15 @@ extension UIView {
 
         objectView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -inset.bottom).isActive = true
     }
-
+    
+//    func loadNib() -> UIView {
+//
+//        let bundle = Bundle(for: type(of: self))
+//
+//        let nibName = type(of: self).description().components(separatedBy: ".").last!
+//
+//        let nib = UINib(nibName: nibName, bundle: bundle)
+//
+//        return nib.instantiate(withOwner: self, options: nil).first as! UIView
+//    }
 }

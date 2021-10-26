@@ -9,9 +9,9 @@ import UIKit
 
 private enum Tab {
 
-    case picker
-    
     case record
+
+    case timer
     
     case community
 
@@ -21,16 +21,18 @@ private enum Tab {
 
         switch self {
 
-        case .picker: controller = UIStoryboard.picker.instantiateInitialViewController()!
-
         case .record: controller = UIStoryboard.record.instantiateInitialViewController()!
+
+        case .timer: controller = UIStoryboard.timer.instantiateInitialViewController()!
             
         case .community: controller = UIStoryboard.community.instantiateInitialViewController()!
         }
-
+                
         controller.tabBarItem = tabBarItem()
-
-        controller.tabBarItem.imageInsets = UIEdgeInsets(top: 6.0, left: 0.0, bottom: -6.0, right: 0.0)
+        
+        controller.tabBarItem.standardAppearance?.selectionIndicatorTintColor = .L4
+        
+        controller.tabBarItem.imageInsets = UIEdgeInsets(top: 30.0, left: 0.0, bottom: -30.0, right: 0.0)
 
         return controller
     }
@@ -39,14 +41,14 @@ private enum Tab {
 
         switch self {
 
-        case .picker:
+        case .record:
             return UITabBarItem(
                 title: nil,
                 image: UIImage.init(systemName: "1.circle"),
                 selectedImage: UIImage.init(systemName: "1.circle")
             )
-
-        case .record:
+            
+        case .timer:
             return UITabBarItem(
                 title: nil,
                 image: UIImage.init(systemName: "2.circle"),
@@ -65,7 +67,7 @@ private enum Tab {
 
 class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
 
-    private let tabs: [Tab] = [.picker, .record, .community]
+    private let tabs: [Tab] = [.record, .timer, .community]
 
     override func viewDidLoad() {
         super.viewDidLoad()
