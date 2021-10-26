@@ -24,6 +24,10 @@ enum ImageAsset: String {
     
     // Placeholder
     case icon_loading
+    
+    // Timer
+    case icon_knife
+    case icon_oil
 
     // Profile
     case icon_profile
