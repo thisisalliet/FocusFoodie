@@ -26,7 +26,13 @@ class RecordViewController: BaseViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet weak var profileImage: UIImageView!
     
-    @IBOutlet weak var calendarPickerView: UIView!
+    @IBOutlet weak var calendarPickerView: UIView! {
+        
+        didSet {
+            
+            calendarPickerView.cornerRadius = 10
+        }
+    }
     
     @IBOutlet weak var calendarButton: UIButton! {
         
@@ -63,58 +69,16 @@ class RecordViewController: BaseViewController, UITableViewDataSource, UITableVi
         )
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-        if segue.identifier == Segue.picker,
-           let pickerVC = segue.destination as? CalendarPickerViewController {
-
-//            pickerVC.delegate = self
-
-//            pickerVC.product = product
-
-            pickerViewController = pickerVC
-        }
-    }
-    
     // MARK: - Action
     @IBAction func didTouchCalendarBtn(_ sender: UIButton) {
         
-//        if calendarPickerView.superview == nil {
-
             showCalendarPickerView()
-
-//        } else {
-//
-//            guard let color = pickerViewController?.selectedColor,
-//                  let size = pickerViewController?.selectedSize,
-//                  let amount = pickerViewController?.selectedAmount,
-//                  let product = product
-//            else { return }
-//
-//            StorageManager.shared.saveOrder(
-//                color: color, size: size, amount: amount, product: product,
-//                completion: { result in
-//
-//                    switch result {
-//
-//                    case .success:
-//
-//                        LKProgressHUD.showSuccess()
-//
-//                        dismissPicker(pickerViewController!)
-//
-//                    case .failure:
-//
-//                        LKProgressHUD.showFailure(text: "儲存失敗！")
-//                    }
-//                })
-//        }
     }
     
     func showCalendarPickerView() {
 
         let maxY = recordTableView.frame.maxY
-        
+
         calendarPickerView.frame = CGRect(
             x: 0,
             y: maxY,
@@ -123,7 +87,7 @@ class RecordViewController: BaseViewController, UITableViewDataSource, UITableVi
         )
         
         baseView.insertSubview(calendarPickerView, belowSubview: calendarButton.superview!)
-
+//        baseView.addSubview(calendarPickerView)
 //        baseView.insertSubview(blurView, belowSubview: calendarPickerView)
 
         UIView.animate(
@@ -134,12 +98,12 @@ class RecordViewController: BaseViewController, UITableViewDataSource, UITableVi
 
                 let height =
                 451.0 / 586.0 * strongSelf.recordTableView.frame.height
-                
+
                 self?.calendarPickerView.frame = CGRect(
                     x: 0,
                     y: maxY - height,
                     width: UIScreen.width,
-                    height: height
+                    height: maxY
                 )
 
             }

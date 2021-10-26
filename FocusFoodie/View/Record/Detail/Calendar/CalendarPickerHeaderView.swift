@@ -8,51 +8,78 @@
 import UIKit
 
 //class CalendarPickerHeaderView: UIView {
+//    
 //  lazy var monthLabel: UILabel = {
+//      
 //    let label = UILabel()
+//      
 //    label.translatesAutoresizingMaskIntoConstraints = false
+//      
 //    label.font = .systemFont(ofSize: 26, weight: .bold)
+//      
 //    label.text = "Month"
+//      
 //    label.accessibilityTraits = .header
+//      
 //    label.isAccessibilityElement = true
 //    return label
 //  }()
 //
 //  lazy var closeButton: UIButton = {
+//      
 //    let button = UIButton()
+//      
 //    button.translatesAutoresizingMaskIntoConstraints = false
 //
 //    let configuration = UIImage.SymbolConfiguration(scale: .large)
+//      
 //    let image = UIImage(systemName: "xmark.circle.fill", withConfiguration: configuration)
 //    button.setImage(image, for: .normal)
 //
 //    button.tintColor = .secondaryLabel
+//      
 //    button.contentMode = .scaleAspectFill
+//      
 //    button.isUserInteractionEnabled = true
+//      
 //    button.isAccessibilityElement = true
+//      
 //    button.accessibilityLabel = "Close Picker"
 //    return button
 //  }()
 //
 //  lazy var dayOfWeekStackView: UIStackView = {
+//      
 //    let stackView = UIStackView()
+//      
 //    stackView.translatesAutoresizingMaskIntoConstraints = false
+//      
 //    stackView.distribution = .fillEqually
+//      
 //    return stackView
 //  }()
 //
 //  lazy var separatorView: UIView = {
+//      
 //    let view = UIView()
+//      
 //    view.translatesAutoresizingMaskIntoConstraints = false
+//      
 //    view.backgroundColor = UIColor.label.withAlphaComponent(0.2)
+//      
 //    return view
 //  }()
 //
 //  private lazy var dateFormatter: DateFormatter = {
+//      
 //    let dateFormatter = DateFormatter()
+//      
 //    dateFormatter.calendar = Calendar(identifier: .gregorian)
+//      
 //    dateFormatter.locale = Locale.autoupdatingCurrent
+//      
 //    dateFormatter.setLocalizedDateFormatFromTemplate("MMMM y")
+//      
 //    return dateFormatter
 //  }()
 //
@@ -81,21 +108,30 @@ import UIKit
 //    layer.cornerRadius = 15
 //
 //    addSubview(monthLabel)
+//      
 //    addSubview(closeButton)
+//      
 //    addSubview(dayOfWeekStackView)
+//      
 //    addSubview(separatorView)
 //
 //    for dayNumber in 1...7 {
+//        
 //      let dayLabel = UILabel()
+//        
 //      dayLabel.font = .systemFont(ofSize: 12, weight: .bold)
+//        
 //      dayLabel.textColor = .secondaryLabel
+//        
 //      dayLabel.textAlignment = .center
+//        
 //      dayLabel.text = dayOfWeekLetter(for: dayNumber)
-
-      // VoiceOver users don't need to hear these days of the week read to them, nor do SwitchControl or Voice Control users need to select them
-      // If fact, they get in the way!
-      // When a VoiceOver user highlights a day of the month, the day of the week is read to them.
-      // That method provides the same amount of context as this stack view does to visual users
+//        /* VoiceOver users don't need to hear these days of the week read to them, nor do SwitchControl or Voice Control users need to select them
+//       If fact, they get in the way!
+//       When a VoiceOver user highlights a day of the month, the day of the week is read to them.
+//       That method provides the same amount of context as this stack view does to visual users
+//         */
+//        
 //      dayLabel.isAccessibilityElement = false
 //      dayOfWeekStackView.addArrangedSubview(dayLabel)
 //    }
@@ -112,21 +148,30 @@ import UIKit
 //  }
 //
 //  private func dayOfWeekLetter(for dayNumber: Int) -> String {
+//      
 //    switch dayNumber {
+//        
 //    case 1:
 //      return "S"
+//        
 //    case 2:
 //      return "M"
+//        
 //    case 3:
 //      return "T"
+//        
 //    case 4:
 //      return "W"
+//        
 //    case 5:
 //      return "T"
+//        
 //    case 6:
 //      return "F"
+//        
 //    case 7:
 //      return "S"
+//        
 //    default:
 //      return ""
 //    }

@@ -9,53 +9,53 @@ import UIKit
 
 class DetailNoteTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var categoryGreyView: UIView! {
+        
+        didSet {
+            
+            categoryGreyView.backgroundColor = .L4
+            
+            categoryGreyView.cornerRadius = 10
+        }
+    }
+    
+    @IBOutlet weak var categoryTitleLabel: UILabel! {
+        
+        didSet {
+            
+            categoryTitleLabel.text = "CODING"
+
+            categoryTitleLabel.textColor = .white
+        }
+    }
+    
+    @IBOutlet weak var noteGreyView: UIView! {
+        
+        didSet {
+            
+            noteGreyView.backgroundColor = .B6
+            
+            noteGreyView.cornerRadius = 10
+        }
+    }
+    
+    @IBOutlet weak var noteTitleLabel: UILabel! {
+        
+        didSet {
+            
+            noteTitleLabel.text = "NOTE"
+            
+            noteTitleLabel.textColor = .white
+        }
+    }
+    
     @IBOutlet weak var noteLabel: UILabel! {
         
         didSet {
             
             noteLabel.textColor = UIColor.B5
             
-            noteLabel.text = "Note"
-        }
-    }
-    @IBOutlet weak var noteTextField: UITextField! {
-        
-        didSet {
-            
-            noteTextField.cornerRadius = 10
-            
-            noteTextField.textColor = UIColor.B5
-            
-            noteTextField.placeholder = "Tap to Edit"
+            noteLabel.text = "Coding is hard..."
         }
     }
 }
-
-
-//@IBOutlet weak var categoryButton: UIButton! {
-//
-//    didSet {
-//
-//        categoryButton.backgroundColor = UIColor.B3
-//
-//        categoryButton.cornerRadius = 10
-//
-//        categoryButton.setTitle("Coding", for: .normal)
-//
-//        categoryButton.setTitleColor(UIColor.B4, for: .normal)
-//    }
-//}
-
-//@IBOutlet weak var dateButton: UIButton! {
-//
-//    didSet {
-//
-//        dateButton.backgroundColor = UIColor.B3
-//
-//        dateButton.cornerRadius = 10
-//
-//        dateButton.setTitle("2021.10.21", for: .normal)
-//
-//        dateButton.setTitleColor(UIColor.B5, for: .normal)
-//    }
-//}

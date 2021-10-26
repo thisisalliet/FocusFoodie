@@ -35,7 +35,7 @@ class DetailViewController: BaseViewController, UITableViewDataSource, UITableVi
         )
         
         detailTableView.registerCellWithNib(identifier:
-            String(describing: DetailSelectionCell.self),
+            String(describing: DetailInfoTableViewCell.self),
                                             bundle: nil
         )
         
@@ -65,9 +65,9 @@ class DetailViewController: BaseViewController, UITableViewDataSource, UITableVi
             
         case 1:
             guard let selectCell = detailTableView.dequeueReusableCell(
-                withIdentifier: String(describing: DetailSelectionCell.self),
+                withIdentifier: String(describing: DetailInfoTableViewCell.self),
                 for: indexPath
-            ) as? DetailSelectionCell else {fatalError("Couldn't generate selectCell")}
+            ) as? DetailInfoTableViewCell else {fatalError("Couldn't generate selectCell")}
             
             return selectCell
             
@@ -83,5 +83,15 @@ class DetailViewController: BaseViewController, UITableViewDataSource, UITableVi
         default:
             return DetailImageTableViewCell()
         }
+    }
+    
+    // MARK: - UITableViewDelegate -
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 500
     }
 }

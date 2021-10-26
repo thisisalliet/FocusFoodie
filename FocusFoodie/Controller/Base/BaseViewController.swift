@@ -38,9 +38,11 @@ class BaseViewController: UIViewController {
 
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
 
-        navigationController?.navigationBar.backIndicatorImage = UIImage.asset(.icon_arrow_left)
+        navigationController?.navigationItem.leftBarButtonItem?.image = UIImage.asset(.icon_arrow_left)
+        
+        navigationController?.navigationItem.leftBarButtonItem?.image?.withTintColor(.L4 ?? .white)
 
-        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage.asset(.icon_arrow_left)
+//        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage.asset(.icon_arrow_left)
         
         self.view.backgroundColor = .B1
     }

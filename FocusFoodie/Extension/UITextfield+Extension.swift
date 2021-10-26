@@ -10,7 +10,7 @@ import UIKit
 
 extension UITextField {
     
-    @objc var substituteFontName : String {
+    @objc var substituteFontName: String {
         
         get { return self.font!.fontName }
         

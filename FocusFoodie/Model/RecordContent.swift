@@ -21,7 +21,7 @@ enum RecordContent: String {
 
         case .image: return String(describing: DetailImageTableViewCell.self)
 
-        case .select: return String(describing: DetailSelectionCell.self)
+        case .select: return String(describing: DetailInfoTableViewCell.self)
 
         case .description: return String(describing: DetailNoteTableViewCell.self)
 

@@ -27,12 +27,12 @@ private enum Tab {
             
         case .community: controller = UIStoryboard.community.instantiateInitialViewController()!
         }
-
+                
         controller.tabBarItem = tabBarItem()
         
         controller.tabBarItem.standardAppearance?.selectionIndicatorTintColor = .L4
         
-        controller.tabBarItem.imageInsets = UIEdgeInsets(top: 40.0, left: 40.0, bottom: 40.0, right: 40.0)
+        controller.tabBarItem.imageInsets = UIEdgeInsets(top: 30.0, left: 0.0, bottom: -30.0, right: 0.0)
 
         return controller
     }
@@ -44,22 +44,22 @@ private enum Tab {
         case .record:
             return UITabBarItem(
                 title: nil,
-                image: UIImage.asset(.icon_category),
-                selectedImage: UIImage.asset(.icon_category)
+                image: UIImage.init(systemName: "1.circle"),
+                selectedImage: UIImage.init(systemName: "1.circle")
             )
             
         case .timer:
             return UITabBarItem(
                 title: nil,
-                image: UIImage.asset(.icon_timer),
-                selectedImage: UIImage.asset(.icon_timer)
+                image: UIImage.init(systemName: "2.circle"),
+                selectedImage: UIImage.init(systemName: "2.circle")
             )
 
         case .community:
             return UITabBarItem(
                 title: nil,
-                image: UIImage.asset(.icon_community),
-                selectedImage: UIImage.asset(.icon_community)
+                image: UIImage.init(systemName: "3.circle"),
+                selectedImage: UIImage.init(systemName: "3.circle")
             )
         }
     }

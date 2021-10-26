@@ -25,7 +25,7 @@
                                     <action selector="didTouchCalendarBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="F0n-aI-xKp"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons_36px_Profile_Normal" translatesAutoresizingMaskIntoConstraints="NO" id="F3b-CT-745">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_profile" translatesAutoresizingMaskIntoConstraints="NO" id="F3b-CT-745">
                                 <rect key="frame" x="308" y="88" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="rff-C8-zSj"/>
@@ -112,17 +112,17 @@
                     <connections>
                         <outlet property="baseView" destination="UK4-Pw-qPm" id="1lZ-3t-2k7"/>
                         <outlet property="calendarButton" destination="LzH-QS-sAV" id="DvQ-8x-U0Q"/>
-                        <outlet property="calendarPickerView" destination="n6r-7y-nrK" id="zrC-Xt-beG"/>
+                        <outlet property="calendarPickerView" destination="xHc-Le-4aN" id="tiC-tM-Hbi"/>
                         <outlet property="profileImage" destination="F3b-CT-745" id="tUb-HL-fte"/>
                         <outlet property="recordTableView" destination="hnL-0y-DRZ" id="Jy0-xf-UK6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <containerView opaque="NO" contentMode="scaleToFill" id="n6r-7y-nrK">
-                    <rect key="frame" x="0.0" y="0.0" width="413" height="498"/>
+                <containerView opaque="NO" contentMode="scaleToFill" id="xHc-Le-4aN">
+                    <rect key="frame" x="0.0" y="0.0" width="348" height="416"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <connections>
-                        <segue destination="Scj-bF-tAO" kind="embed" id="pNG-0t-9kh"/>
+                        <segue destination="yby-ON-YZM" kind="embed" id="cRf-bm-dNv"/>
                     </connections>
                 </containerView>
             </objects>
@@ -139,16 +139,16 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TT3-Bj-D8b">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="409" id="gos-Lm-LnD" customClass="DetailImageTableViewCell" customModule="FocusFoodie" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="409"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="gos-Lm-LnD" customClass="DetailImageTableViewCell" customModule="FocusFoodie" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gos-Lm-LnD" id="Kh5-OO-pJt">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="409"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="kzM-7n-NdW" customClass="DetailSelectionCell" customModule="FocusFoodie" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="453.5" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="kzM-7n-NdW" customClass="DetailInfoTableViewCell" customModule="FocusFoodie" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="88" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kzM-7n-NdW" id="CcY-mx-zEd">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -156,7 +156,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="X8H-NH-8wC" customClass="DetailNoteTableViewCell" customModule="FocusFoodie" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="497" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="131.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="X8H-NH-8wC" id="WTf-8c-9Zw">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -202,23 +202,36 @@
             <point key="canvasLocation" x="137.68115942028987" y="128.57142857142856"/>
         </scene>
         <!--Calendar Picker View Controller-->
-        <scene sceneID="SAh-fH-brT">
+        <scene sceneID="grf-7V-Zaz">
             <objects>
-                <viewController id="Scj-bF-tAO" customClass="CalendarPickerViewController" customModule="FocusFoodie" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="LTs-vm-GNa">
-                        <rect key="frame" x="0.0" y="0.0" width="413" height="498"/>
+                <viewController id="yby-ON-YZM" customClass="CalendarPickerViewController" customModule="FocusFoodie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1wv-Rc-MJR">
+                        <rect key="frame" x="0.0" y="0.0" width="348" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="Aqb-6p-dUu"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="v9c-Sm-gE7">
+                                <rect key="frame" x="0.0" y="0.0" width="348" height="416"/>
+                            </datePicker>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="v9c-Sm-gE7" firstAttribute="leading" secondItem="1wv-Rc-MJR" secondAttribute="leading" id="1rs-d1-mAo"/>
+                            <constraint firstItem="v9c-Sm-gE7" firstAttribute="top" secondItem="1wv-Rc-MJR" secondAttribute="top" id="D1C-Pt-9d5"/>
+                            <constraint firstAttribute="bottom" secondItem="v9c-Sm-gE7" secondAttribute="bottom" id="dBQ-3R-5ak"/>
+                            <constraint firstAttribute="trailing" secondItem="v9c-Sm-gE7" secondAttribute="trailing" id="viB-BX-aEi"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="calendarPicker" destination="v9c-Sm-gE7" id="fXg-iF-PfY"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uNN-5X-YjZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ueb-10-rkp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1818" y="-506"/>
+            <point key="canvasLocation" x="1769.5652173913045" y="-413.16964285714283"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Icons_36px_Profile_Normal" width="36" height="36"/>
+        <image name="icon_profile" width="128" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

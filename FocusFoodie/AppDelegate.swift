@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        printFonts()
+//        printFonts()
         
         setupGlobalAppearance()
         
@@ -43,23 +43,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: customFont ?? .systemFont(ofSize: 16)], for: .normal)
         
-        UITextField.appearance().substituteFontName = FontName.regular.rawValue
-        
         UILabel.appearance().substituteFontName = FontName.regular.rawValue
         
         UILabel.appearance().substituteFontNameBold = FontName.regular.rawValue
+        
+        UIButton.appearance().substituteFontName = FontName.regular.rawValue
+        
+        UITextField.appearance().substituteFontName = FontName.regular.rawValue
     }
     
-    func printFonts(){
-        for family: String in UIFont.familyNames
-        {
-            print("\(family)")
-            for names: String in UIFont.fontNames(forFamilyName: family)
-            {
-                print("== \(names)")
-            }
-        }
-    }
+//    func printFonts() {
+//        for family: String in UIFont.familyNames
+//        {
+//            print("\(family)")
+//            for names: String in UIFont.fontNames(forFamilyName: family)
+//            {
+//                print("== \(names)")
+//            }
+//        }
+//    }
 
 
 }
