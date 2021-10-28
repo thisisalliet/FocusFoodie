@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		060D04DD9AEE9708F108A30D /* Pods_FocusFoodie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B10A2329D8AD6B769D677516 /* Pods_FocusFoodie.framework */; };
+		093169A62727CEB300360885 /* TimerEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093169A52727CEB300360885 /* TimerEditViewController.swift */; };
+		093169AD2727CEC900360885 /* IngredientCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093169A72727CEC900360885 /* IngredientCollectionViewCell.swift */; };
+		093169AE2727CEC900360885 /* IngredientSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093169A82727CEC900360885 /* IngredientSelectionCell.swift */; };
+		093169AF2727CEC900360885 /* IngredientImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093169A92727CEC900360885 /* IngredientImageCell.swift */; };
+		093169B02727CEC900360885 /* IngredientCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093169AA2727CEC900360885 /* IngredientCollectionViewCell.xib */; };
+		093169B12727CEC900360885 /* IngredientImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093169AB2727CEC900360885 /* IngredientImageCell.xib */; };
+		093169B22727CEC900360885 /* IngredientSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093169AC2727CEC900360885 /* IngredientSelectionCell.xib */; };
+		093169B42729413100360885 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093169B32729413100360885 /* Ingredient.swift */; };
 		09524F76271FF4A00061C36B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524F75271FF4A00061C36B /* AppDelegate.swift */; };
 		09524F78271FF4A00061C36B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524F77271FF4A00061C36B /* SceneDelegate.swift */; };
 		09524F7A271FF4A00061C36B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524F79271FF4A00061C36B /* ViewController.swift */; };
@@ -64,6 +72,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		093169A52727CEB300360885 /* TimerEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerEditViewController.swift; sourceTree = "<group>"; };
+		093169A72727CEC900360885 /* IngredientCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientCollectionViewCell.swift; sourceTree = "<group>"; };
+		093169A82727CEC900360885 /* IngredientSelectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientSelectionCell.swift; sourceTree = "<group>"; };
+		093169A92727CEC900360885 /* IngredientImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientImageCell.swift; sourceTree = "<group>"; };
+		093169AA2727CEC900360885 /* IngredientCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IngredientCollectionViewCell.xib; sourceTree = "<group>"; };
+		093169AB2727CEC900360885 /* IngredientImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IngredientImageCell.xib; sourceTree = "<group>"; };
+		093169AC2727CEC900360885 /* IngredientSelectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IngredientSelectionCell.xib; sourceTree = "<group>"; };
+		093169B32729413100360885 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		09524F72271FF4A00061C36B /* FocusFoodie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FocusFoodie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09524F75271FF4A00061C36B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09524F77271FF4A00061C36B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				09524FA3271FFE2D0061C36B /* TimerViewController.swift */,
+				093169A52727CEB300360885 /* TimerEditViewController.swift */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -247,6 +264,7 @@
 		09524F8E271FF95A0061C36B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				093169B32729413100360885 /* Ingredient.swift */,
 				09C1C7D827229B9900D2C9B2 /* RecordContent.swift */,
 				09C1C7DA27229D3D00D2C9B2 /* RecordManager.swift */,
 				09524FE3272163B20061C36B /* Day.swift */,
@@ -299,6 +317,12 @@
 			isa = PBXGroup;
 			children = (
 				09524F9D271FFD910061C36B /* Timer.storyboard */,
+				093169A92727CEC900360885 /* IngredientImageCell.swift */,
+				093169AB2727CEC900360885 /* IngredientImageCell.xib */,
+				093169A82727CEC900360885 /* IngredientSelectionCell.swift */,
+				093169AC2727CEC900360885 /* IngredientSelectionCell.xib */,
+				093169A72727CEC900360885 /* IngredientCollectionViewCell.swift */,
+				093169AA2727CEC900360885 /* IngredientCollectionViewCell.xib */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -393,7 +417,7 @@
 				09524F6F271FF4A00061C36B /* Frameworks */,
 				09524F70271FF4A00061C36B /* Resources */,
 				09524F89271FF63C0061C36B /* SwiftLint */,
-				955B7E717273C67995E6C3B5 /* [CP] Embed Pods Frameworks */,
+				7BD8BCF4D6987932B43ED02C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -446,6 +470,7 @@
 				09C1C84A2725742A00D2C9B2 /* RobotoMono-Medium.ttf in Resources */,
 				09C1C84B2725742A00D2C9B2 /* RobotoMono-Regular.ttf in Resources */,
 				09C1C84D2725742A00D2C9B2 /* RobotoMono-Bold.ttf in Resources */,
+				093169B12727CEC900360885 /* IngredientImageCell.xib in Resources */,
 				09524FA2271FFDA90061C36B /* Community.storyboard in Resources */,
 				09524F82271FF4A10061C36B /* LaunchScreen.storyboard in Resources */,
 				09524FF42721B2B80061C36B /* RecordTableViewCell.xib in Resources */,
@@ -454,7 +479,9 @@
 				09524F9E271FFD910061C36B /* Timer.storyboard in Resources */,
 				09F04729272678D8009CA63B /* DetailImageTableViewCell.xib in Resources */,
 				09524F7D271FF4A00061C36B /* Main.storyboard in Resources */,
+				093169B02727CEC900360885 /* IngredientCollectionViewCell.xib in Resources */,
 				09C1C7D22722903800D2C9B2 /* DetailNoteTableViewCell.xib in Resources */,
+				093169B22727CEC900360885 /* IngredientSelectionCell.xib in Resources */,
 				09C1C849272571E800D2C9B2 /* Roboto_Mono in Resources */,
 				09524FA0271FFD9C0061C36B /* Record.storyboard in Resources */,
 				09524FEB272168E80061C36B /* DetailInfoTableViewCell.xib in Resources */,
@@ -483,7 +510,7 @@
 			shellPath = /bin/sh;
 			shellScript = "if test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nexport PATH\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
-		955B7E717273C67995E6C3B5 /* [CP] Embed Pods Frameworks */ = {
+		7BD8BCF4D6987932B43ED02C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -544,6 +571,7 @@
 				09524F96271FFCC00061C36B /* UIView+Extension.swift in Sources */,
 				09C1C7CE2722833000D2C9B2 /* UIColor+Extension.swift in Sources */,
 				09C1C82D27240BFB00D2C9B2 /* CalendarPickerHeaderView.swift in Sources */,
+				093169AD2727CEC900360885 /* IngredientCollectionViewCell.swift in Sources */,
 				09524FD62720213B0061C36B /* RecordTableViewCell.swift in Sources */,
 				09524FA6271FFE620061C36B /* RecordViewController.swift in Sources */,
 				09C1C7DB27229D3D00D2C9B2 /* RecordManager.swift in Sources */,
@@ -553,13 +581,17 @@
 				09F0472727264DC1009CA63B /* UIButton+Extension.swift in Sources */,
 				09524FDB272025E10061C36B /* ProfileView.swift in Sources */,
 				09524F76271FF4A00061C36B /* AppDelegate.swift in Sources */,
+				093169AE2727CEC900360885 /* IngredientSelectionCell.swift in Sources */,
 				09524F90271FFA000061C36B /* UIStoryboard+Extension.swift in Sources */,
 				09C1C8242724024100D2C9B2 /* MonthMetaData.swift in Sources */,
 				09524FB1272003480061C36B /* UIImage+Extension.swift in Sources */,
 				09524FA8271FFEA70061C36B /* CommunityViewController.swift in Sources */,
 				09C1C7DD2722AACB00D2C9B2 /* UIFont+Extension.swift in Sources */,
 				09C1C7D12722903800D2C9B2 /* DetailNoteTableViewCell.swift in Sources */,
+				093169AF2727CEC900360885 /* IngredientImageCell.swift in Sources */,
 				09524FE6272164560061C36B /* CalendarPickerViewController.swift in Sources */,
+				093169B42729413100360885 /* Ingredient.swift in Sources */,
+				093169A62727CEB300360885 /* TimerEditViewController.swift in Sources */,
 				09524F78271FF4A00061C36B /* SceneDelegate.swift in Sources */,
 				09524F94271FFCB00061C36B /* UIScreen+Extension.swift in Sources */,
 				09524FE4272163B20061C36B /* Day.swift in Sources */,

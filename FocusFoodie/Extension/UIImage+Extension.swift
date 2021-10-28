@@ -10,7 +10,7 @@ import UIKit
 enum ImageAsset: String {
     
     // swiftlint:disable identifier_name
-    //Tabbar
+    // Tabbar
     case icon_community
     case icon_timer
     case icon_category
@@ -28,12 +28,15 @@ enum ImageAsset: String {
     // Timer
     case icon_knife
     case icon_oil
+    case icon_baguette
+    case icon_lettuce
+    case icon_cheese
+    case icon_bacon
 
     // Profile
     case icon_profile
     // swiftlint:enable identifier_name
 }
-
 
 extension UIImage {
 
