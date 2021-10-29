@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="YN0-v2-Hu7">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
+                        <rect key="frame" x="16" y="16" width="288" height="94"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9bV-TB-KCN">
                             <size key="itemSize" width="128" height="128"/>
@@ -29,10 +29,10 @@
                     </collectionView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="YN0-v2-Hu7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="G5J-eb-Utr"/>
+                    <constraint firstItem="YN0-v2-Hu7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="G5J-eb-Utr"/>
                     <constraint firstAttribute="bottom" secondItem="YN0-v2-Hu7" secondAttribute="bottom" id="Y1W-W9-snu"/>
-                    <constraint firstAttribute="trailing" secondItem="YN0-v2-Hu7" secondAttribute="trailing" id="bjD-1C-UOA"/>
-                    <constraint firstItem="YN0-v2-Hu7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="rmc-mn-Zbp"/>
+                    <constraint firstAttribute="trailing" secondItem="YN0-v2-Hu7" secondAttribute="trailing" constant="16" id="bjD-1C-UOA"/>
+                    <constraint firstItem="YN0-v2-Hu7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="rmc-mn-Zbp"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

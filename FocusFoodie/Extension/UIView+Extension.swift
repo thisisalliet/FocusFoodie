@@ -88,14 +88,17 @@ extension UIView {
         objectView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -inset.bottom).isActive = true
     }
     
-//    func loadNib() -> UIView {
-//
-//        let bundle = Bundle(for: type(of: self))
-//
-//        let nibName = type(of: self).description().components(separatedBy: ".").last!
-//
-//        let nib = UINib(nibName: nibName, bundle: bundle)
-//
-//        return nib.instantiate(withOwner: self, options: nil).first as! UIView
-//    }
+    func addSubview(_ subview: UIView, constrainedTo anchorsView: UIView) {
+        
+      addSubview(subview)
+        
+      subview.translatesAutoresizingMaskIntoConstraints = false
+        
+      NSLayoutConstraint.activate([
+        subview.centerXAnchor.constraint(equalTo: anchorsView.centerXAnchor),
+        subview.centerYAnchor.constraint(equalTo: anchorsView.centerYAnchor),
+        subview.widthAnchor.constraint(equalTo: anchorsView.widthAnchor),
+        subview.heightAnchor.constraint(equalTo: anchorsView.heightAnchor)
+      ])
+    }
 }

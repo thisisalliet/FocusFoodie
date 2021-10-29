@@ -7,17 +7,9 @@
 
 import UIKit
 
-class IngredientSelectionCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-    private var ingredients: [String] = [] {
-        
-        didSet {
-            
-            ingredientCollectionView?.reloadData()
-        }
-    }
-    
-    var ingredientTableView = IngredientSelectionCell?.self
+class IngredientSelectionCell: UITableViewCell,
+                                UICollectionViewDataSource,
+                                UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var ingredientCollectionView: UICollectionView! {
         
@@ -38,6 +30,19 @@ class IngredientSelectionCell: UITableViewCell, UICollectionViewDataSource, UICo
         
     }
     
+    private func showIngredientInGallery(ingredient: Ingredient) {
+
+        let productDetailVC = UIStoryboard.product.instantiateViewController(withIdentifier:
+            String(describing: ProductDetailViewController.self)
+        )
+
+        guard let detailVC = productDetailVC as? ProductDetailViewController else { return }
+
+        detailVC.product = product
+
+        show(detailVC, sender: nil)
+    }
+    
     // MARK: - UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -49,19 +54,26 @@ class IngredientSelectionCell: UITableViewCell, UICollectionViewDataSource, UICo
     func collectionView(
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+            
+            
         
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: String(describing: IngredientCollectionViewCell.self), for: indexPath)
-        
-//            cell.layer.borderWidth = 1.5
-        
-//        cell.layer.borderColor = UIColor.B5?.cgColor
             
         cell.backgroundColor = .B1
         
         cell.cornerRadius = 10
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        ingredientCollectionView.deselectItem(at: indexPath, animated: true)
+        
+        guard let ingredient = datas[indexPath.section][indexPath.row] as? Ingredient else { return }
+        
+        
     }
     
     // MARK: - UICollectionViewDelegateFlowLayout
@@ -72,7 +84,7 @@ class IngredientSelectionCell: UITableViewCell, UICollectionViewDataSource, UICo
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
         
-        return CGSize(width: UIScreen.width / 5.0, height: 100)
+        return CGSize(width: UIScreen.width / 4.0, height: 190)
     }
     
     func collectionView(
@@ -81,15 +93,6 @@ class IngredientSelectionCell: UITableViewCell, UICollectionViewDataSource, UICo
         insetForSectionAt section: Int
     ) -> UIEdgeInsets {
 
-        return UIEdgeInsets(top: 16.0, left: 16.0, bottom: 8.0, right: 16.0)
-    }
-    
-    func collectionView(
-        _ collectionView: UICollectionView,
-        layout collectionViewLayout: UICollectionViewLayout,
-        minimumLineSpacingForSectionAt section: Int
-    ) -> CGFloat {
-
-        return 24.0
+        return UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
     }
 }

@@ -11,11 +11,12 @@
 		093169A62727CEB300360885 /* TimerEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093169A52727CEB300360885 /* TimerEditViewController.swift */; };
 		093169AD2727CEC900360885 /* IngredientCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093169A72727CEC900360885 /* IngredientCollectionViewCell.swift */; };
 		093169AE2727CEC900360885 /* IngredientSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093169A82727CEC900360885 /* IngredientSelectionCell.swift */; };
-		093169AF2727CEC900360885 /* IngredientImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093169A92727CEC900360885 /* IngredientImageCell.swift */; };
+		093169AF2727CEC900360885 /* IngredientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093169A92727CEC900360885 /* IngredientView.swift */; };
 		093169B02727CEC900360885 /* IngredientCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093169AA2727CEC900360885 /* IngredientCollectionViewCell.xib */; };
-		093169B12727CEC900360885 /* IngredientImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093169AB2727CEC900360885 /* IngredientImageCell.xib */; };
+		093169B12727CEC900360885 /* IngredientView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093169AB2727CEC900360885 /* IngredientView.xib */; };
 		093169B22727CEC900360885 /* IngredientSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093169AC2727CEC900360885 /* IngredientSelectionCell.xib */; };
 		093169B42729413100360885 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093169B32729413100360885 /* Ingredient.swift */; };
+		093169B6272B952F00360885 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 093169B5272B952F00360885 /* GoogleService-Info.plist */; };
 		09524F76271FF4A00061C36B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524F75271FF4A00061C36B /* AppDelegate.swift */; };
 		09524F78271FF4A00061C36B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524F77271FF4A00061C36B /* SceneDelegate.swift */; };
 		09524F7A271FF4A00061C36B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524F79271FF4A00061C36B /* ViewController.swift */; };
@@ -75,11 +76,12 @@
 		093169A52727CEB300360885 /* TimerEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerEditViewController.swift; sourceTree = "<group>"; };
 		093169A72727CEC900360885 /* IngredientCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientCollectionViewCell.swift; sourceTree = "<group>"; };
 		093169A82727CEC900360885 /* IngredientSelectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientSelectionCell.swift; sourceTree = "<group>"; };
-		093169A92727CEC900360885 /* IngredientImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientImageCell.swift; sourceTree = "<group>"; };
+		093169A92727CEC900360885 /* IngredientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientView.swift; sourceTree = "<group>"; };
 		093169AA2727CEC900360885 /* IngredientCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IngredientCollectionViewCell.xib; sourceTree = "<group>"; };
-		093169AB2727CEC900360885 /* IngredientImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IngredientImageCell.xib; sourceTree = "<group>"; };
+		093169AB2727CEC900360885 /* IngredientView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IngredientView.xib; sourceTree = "<group>"; };
 		093169AC2727CEC900360885 /* IngredientSelectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IngredientSelectionCell.xib; sourceTree = "<group>"; };
 		093169B32729413100360885 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		093169B5272B952F00360885 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		09524F72271FF4A00061C36B /* FocusFoodie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FocusFoodie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09524F75271FF4A00061C36B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09524F77271FF4A00061C36B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				09524F75271FF4A00061C36B /* AppDelegate.swift */,
 				09524F77271FF4A00061C36B /* SceneDelegate.swift */,
 				09524F83271FF4A10061C36B /* Info.plist */,
+				093169B5272B952F00360885 /* GoogleService-Info.plist */,
 			);
 			path = FocusFoodie;
 			sourceTree = "<group>";
@@ -317,8 +320,8 @@
 			isa = PBXGroup;
 			children = (
 				09524F9D271FFD910061C36B /* Timer.storyboard */,
-				093169A92727CEC900360885 /* IngredientImageCell.swift */,
-				093169AB2727CEC900360885 /* IngredientImageCell.xib */,
+				093169A92727CEC900360885 /* IngredientView.swift */,
+				093169AB2727CEC900360885 /* IngredientView.xib */,
 				093169A82727CEC900360885 /* IngredientSelectionCell.swift */,
 				093169AC2727CEC900360885 /* IngredientSelectionCell.xib */,
 				093169A72727CEC900360885 /* IngredientCollectionViewCell.swift */,
@@ -470,7 +473,7 @@
 				09C1C84A2725742A00D2C9B2 /* RobotoMono-Medium.ttf in Resources */,
 				09C1C84B2725742A00D2C9B2 /* RobotoMono-Regular.ttf in Resources */,
 				09C1C84D2725742A00D2C9B2 /* RobotoMono-Bold.ttf in Resources */,
-				093169B12727CEC900360885 /* IngredientImageCell.xib in Resources */,
+				093169B12727CEC900360885 /* IngredientView.xib in Resources */,
 				09524FA2271FFDA90061C36B /* Community.storyboard in Resources */,
 				09524F82271FF4A10061C36B /* LaunchScreen.storyboard in Resources */,
 				09524FF42721B2B80061C36B /* RecordTableViewCell.xib in Resources */,
@@ -486,6 +489,7 @@
 				09524FA0271FFD9C0061C36B /* Record.storyboard in Resources */,
 				09524FEB272168E80061C36B /* DetailInfoTableViewCell.xib in Resources */,
 				09C1C831272447D600D2C9B2 /* CollectionViewCell.xib in Resources */,
+				093169B6272B952F00360885 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,7 +592,7 @@
 				09524FA8271FFEA70061C36B /* CommunityViewController.swift in Sources */,
 				09C1C7DD2722AACB00D2C9B2 /* UIFont+Extension.swift in Sources */,
 				09C1C7D12722903800D2C9B2 /* DetailNoteTableViewCell.swift in Sources */,
-				093169AF2727CEC900360885 /* IngredientImageCell.swift in Sources */,
+				093169AF2727CEC900360885 /* IngredientView.swift in Sources */,
 				09524FE6272164560061C36B /* CalendarPickerViewController.swift in Sources */,
 				093169B42729413100360885 /* Ingredient.swift in Sources */,
 				093169A62727CEB300360885 /* TimerEditViewController.swift in Sources */,

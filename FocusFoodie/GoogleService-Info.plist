@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>749340475785-lhnsm0ncm2so2ubv9b641en3mbcn8hc3.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.749340475785-lhnsm0ncm2so2ubv9b641en3mbcn8hc3</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDqd92NU0BGuC3-vG8FMivn6jx3iTMIH_g</string>
+	<key>GCM_SENDER_ID</key>
+	<string>749340475785</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.allie.FocusFoodie</string>
+	<key>PROJECT_ID</key>
+	<string>focus-foodie</string>
+	<key>STORAGE_BUCKET</key>
+	<string>focus-foodie.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:749340475785:ios:c639170bdce23ec64aa158</string>
+</dict>
+</plist>

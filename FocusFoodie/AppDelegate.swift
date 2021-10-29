@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        printFonts()
         
         setupGlobalAppearance()
+        
+        FirebaseApp.configure()
         
         return true
     }

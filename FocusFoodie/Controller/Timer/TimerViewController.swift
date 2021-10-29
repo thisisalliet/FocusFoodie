@@ -10,7 +10,7 @@ import Firebase
 import FirebaseFirestoreSwift
 
 class TimerViewController: BaseViewController {
-    
+        
     var counter = 0
     
     var startStatus = true

@@ -7,11 +7,15 @@
 
 import UIKit
 
-class IngredientImageCell: UITableViewCell {
-
+class IngredientView: UIView {
+    
+    @IBOutlet weak var contentView: UIView!
+    
     @IBOutlet weak var oilImage: UIImageView! {
         
         didSet {
+            
+            oilImage.contentMode = .scaleAspectFit
             
             oilImage.image = .asset(.icon_oil)
         }
@@ -20,6 +24,8 @@ class IngredientImageCell: UITableViewCell {
     @IBOutlet weak var knifeImage: UIImageView! {
         
         didSet {
+            
+            knifeImage.contentMode = .scaleAspectFit
             
             knifeImage.image = .asset(.icon_knife)
         }
@@ -46,8 +52,6 @@ class IngredientImageCell: UITableViewCell {
         didSet {
             
             firstIngredientImage.contentMode = .scaleAspectFit
-
-            firstIngredientImage.image = .asset(.icon_bread)
         }
     }
     
@@ -56,8 +60,6 @@ class IngredientImageCell: UITableViewCell {
         didSet {
             
             secondIngredientImage.contentMode = .scaleAspectFit
-            
-            secondIngredientImage.image = .asset(.icon_bread)
         }
     }
     
@@ -66,8 +68,6 @@ class IngredientImageCell: UITableViewCell {
         didSet {
             
             thirdIngredientImage.contentMode = .scaleAspectFit
-            
-            thirdIngredientImage.image = .asset(.icon_bread)
         }
     }
     
@@ -76,8 +76,30 @@ class IngredientImageCell: UITableViewCell {
         didSet {
             
             fourthIngredientImage.contentMode = .scaleAspectFit
-            
-            fourthIngredientImage.image = .asset(.icon_bread)
         }
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+
+        initView()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+
+        initView()
+    }
+    
+    private func initView() {
+        
+        backgroundColor = .B1
+        
+        Bundle.main.loadNibNamed(
+            String(describing: IngredientView.self),
+            owner: self,
+            options: nil)
+        
+        stickSubView(contentView)
     }
 }

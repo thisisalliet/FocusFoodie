@@ -11,8 +11,7 @@ class ProfileView: UIView {
 
     @IBOutlet weak var contentView: UIView!
     
-    @IBOutlet weak var profileImage: UIImageView!
-    {
+    @IBOutlet weak var profileImage: UIImageView! {
         
         didSet {
             

@@ -9,7 +9,17 @@ import UIKit
 import Firebase
 import FirebaseFirestoreSwift
 
-class TimerEditViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class TimerEditViewController: UIViewController,
+                                UITableViewDataSource,
+                                UITableViewDelegate {
+    
+    @IBOutlet weak var galleryView: IngredientView! {
+        
+        didSet {
+            
+            galleryView.frame.size.height = CGFloat(Int(UIScreen.height * 1 / 3))
+        }
+    }
     
     @IBOutlet weak var ingredientTableView: UITableView! {
         
@@ -25,16 +35,11 @@ class TimerEditViewController: UIViewController, UITableViewDataSource, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupTableView()
     }
     
     private func setupTableView() {
-
-        ingredientTableView.registerCellWithNib(identifier:
-            String(describing: IngredientImageCell.self),
-                                         bundle: nil
-        )
 
         ingredientTableView.registerCellWithNib(identifier:
             String(describing: IngredientSelectionCell.self),
@@ -46,7 +51,7 @@ class TimerEditViewController: UIViewController, UITableViewDataSource, UITableV
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 5
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -54,14 +59,6 @@ class TimerEditViewController: UIViewController, UITableViewDataSource, UITableV
         switch indexPath.row {
             
         case 0:
-            guard let imageCell = ingredientTableView.dequeueReusableCell(withIdentifier:
-                String(describing: IngredientImageCell.self),
-                for: indexPath) as? IngredientImageCell
-            else { fatalError("IngredientImageCell error") }
-            
-            return imageCell
-            
-        case 1:
             guard let breadCell = ingredientTableView.dequeueReusableCell(withIdentifier:
                 String(describing: IngredientSelectionCell.self),
                 for: indexPath) as? IngredientSelectionCell
@@ -69,7 +66,7 @@ class TimerEditViewController: UIViewController, UITableViewDataSource, UITableV
             
             return breadCell
             
-        case 2:
+        case 1:
             guard let sideCell = ingredientTableView.dequeueReusableCell(withIdentifier:
                 String(describing: IngredientSelectionCell.self),
                 for: indexPath) as? IngredientSelectionCell
@@ -77,7 +74,7 @@ class TimerEditViewController: UIViewController, UITableViewDataSource, UITableV
             
             return sideCell
             
-        case 3:
+        case 2:
             guard let veggieCell = ingredientTableView.dequeueReusableCell(withIdentifier:
                 String(describing: IngredientSelectionCell.self),
                 for: indexPath) as? IngredientSelectionCell
@@ -85,7 +82,7 @@ class TimerEditViewController: UIViewController, UITableViewDataSource, UITableV
             
             return veggieCell
             
-        case 4:
+        case 3:
             guard let meatCell = ingredientTableView.dequeueReusableCell(withIdentifier:
                 String(describing: IngredientSelectionCell.self),
                 for: indexPath) as? IngredientSelectionCell
@@ -94,7 +91,7 @@ class TimerEditViewController: UIViewController, UITableViewDataSource, UITableV
             return meatCell
         
         default:
-            return IngredientImageCell()
+            return IngredientSelectionCell()
         }
     }
     
@@ -102,26 +99,7 @@ class TimerEditViewController: UIViewController, UITableViewDataSource, UITableV
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        switch indexPath.row {
-            
-        case 0:
-            return 300
-            
-        case 1, 2, 3, 4:
-            return 130
-            
-//        case 2:
-//            return 130
-//
-//        case 3:
-//            return 130
-//
-//        case 4:
-//            return 130
-            
-        default:
-            return 130
-        }
+        return 200
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
