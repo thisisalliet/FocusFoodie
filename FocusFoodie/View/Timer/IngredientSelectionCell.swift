@@ -30,18 +30,18 @@ class IngredientSelectionCell: UITableViewCell,
         
     }
     
-    private func showIngredientInGallery(ingredient: Ingredient) {
-
-        let productDetailVC = UIStoryboard.product.instantiateViewController(withIdentifier:
-            String(describing: ProductDetailViewController.self)
-        )
-
-        guard let detailVC = productDetailVC as? ProductDetailViewController else { return }
-
-        detailVC.product = product
-
-        show(detailVC, sender: nil)
-    }
+//    private func showIngredientInGallery(ingredient: Ingredient) {
+//
+//        let productDetailVC = UIStoryboard.product.instantiateViewController(withIdentifier:
+//            String(describing: ProductDetailViewController.self)
+//        )
+//
+//        guard let detailVC = productDetailVC as? ProductDetailViewController else { return }
+//
+//        detailVC.product = product
+//
+//        show(detailVC, sender: nil)
+//    }
     
     // MARK: - UICollectionViewDataSource
     
@@ -71,7 +71,7 @@ class IngredientSelectionCell: UITableViewCell,
         
         ingredientCollectionView.deselectItem(at: indexPath, animated: true)
         
-        guard let ingredient = datas[indexPath.section][indexPath.row] as? Ingredient else { return }
+//        guard let ingredient = datas[indexPath.section][indexPath.row] as? Ingredient else { return }
         
         
     }

@@ -100,30 +100,47 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VcB-HR-vW1" customClass="IngredientView" customModule="FocusFoodie" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="60" width="414" height="250"/>
+                                <rect key="frame" x="0.0" y="63" width="414" height="250"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="DKL-Yi-BU0"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yyu-p1-OyE">
-                                <rect key="frame" x="0.0" y="310" width="414" height="498"/>
+                                <rect key="frame" x="0.0" y="313" width="414" height="495"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4T-EG-2Bl">
+                                <rect key="frame" x="16" y="16" width="67" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qqj-6x-LUu">
+                                <rect key="frame" x="331" y="16" width="67" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="anM-eQ-V2r"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="R4T-EG-2Bl" firstAttribute="top" secondItem="anM-eQ-V2r" secondAttribute="top" constant="16" id="1lg-uk-Gtr"/>
                             <constraint firstItem="yyu-p1-OyE" firstAttribute="top" secondItem="VcB-HR-vW1" secondAttribute="bottom" id="5S5-Dj-XtI"/>
                             <constraint firstItem="anM-eQ-V2r" firstAttribute="trailing" secondItem="yyu-p1-OyE" secondAttribute="trailing" id="C2b-Ny-Ehw"/>
-                            <constraint firstItem="VcB-HR-vW1" firstAttribute="top" secondItem="anM-eQ-V2r" secondAttribute="top" constant="60" id="ChX-b5-A8c"/>
+                            <constraint firstItem="Qqj-6x-LUu" firstAttribute="top" secondItem="anM-eQ-V2r" secondAttribute="top" constant="16" id="OKp-oa-oah"/>
                             <constraint firstItem="yyu-p1-OyE" firstAttribute="leading" secondItem="anM-eQ-V2r" secondAttribute="leading" id="Sir-XQ-NVf"/>
+                            <constraint firstItem="VcB-HR-vW1" firstAttribute="top" secondItem="Qqj-6x-LUu" secondAttribute="bottom" constant="16" id="ahO-su-tjL"/>
+                            <constraint firstItem="anM-eQ-V2r" firstAttribute="trailing" secondItem="Qqj-6x-LUu" secondAttribute="trailing" constant="16" id="fUp-Jy-3Pg"/>
+                            <constraint firstItem="R4T-EG-2Bl" firstAttribute="leading" secondItem="anM-eQ-V2r" secondAttribute="leading" constant="16" id="nwx-5Y-dw4"/>
                             <constraint firstItem="VcB-HR-vW1" firstAttribute="leading" secondItem="anM-eQ-V2r" secondAttribute="leading" id="p2k-f8-Hpv"/>
                             <constraint firstItem="anM-eQ-V2r" firstAttribute="bottom" secondItem="yyu-p1-OyE" secondAttribute="bottom" id="rTV-uz-ith"/>
+                            <constraint firstItem="VcB-HR-vW1" firstAttribute="top" secondItem="R4T-EG-2Bl" secondAttribute="bottom" constant="16" id="vDz-dp-QdA"/>
                             <constraint firstItem="VcB-HR-vW1" firstAttribute="trailing" secondItem="anM-eQ-V2r" secondAttribute="trailing" id="yee-AT-qiw"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="dismissButton" destination="R4T-EG-2Bl" id="ehL-Cd-GHt"/>
+                        <outlet property="doneButton" destination="Qqj-6x-LUu" id="wbh-ZQ-S2a"/>
                         <outlet property="galleryView" destination="VcB-HR-vW1" id="ZmF-f3-7lk"/>
                         <outlet property="ingredientTableView" destination="yyu-p1-OyE" id="V2b-Fr-Ylh"/>
                     </connections>

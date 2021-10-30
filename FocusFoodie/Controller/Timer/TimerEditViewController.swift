@@ -13,6 +13,18 @@ class TimerEditViewController: UIViewController,
                                 UITableViewDataSource,
                                 UITableViewDelegate {
     
+    @IBOutlet weak var dismissButton: UIButton! {
+        
+        didSet {
+            
+            dismissButton.setTitle("", for: .normal)
+            
+//            dismissButton.backgroundImage(for: .normal) = .asset(.)
+        }
+    }
+    
+    @IBOutlet weak var doneButton: UIButton!
+    
     @IBOutlet weak var galleryView: IngredientView! {
         
         didSet {

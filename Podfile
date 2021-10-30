@@ -9,5 +9,6 @@ target 'FocusFoodie' do
   pod 'IQKeyboardManagerSwift'
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
+  pod 'lottie-ios'
 
 end

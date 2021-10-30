@@ -17,6 +17,9 @@
 		093169B22727CEC900360885 /* IngredientSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093169AC2727CEC900360885 /* IngredientSelectionCell.xib */; };
 		093169B42729413100360885 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093169B32729413100360885 /* Ingredient.swift */; };
 		093169B6272B952F00360885 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 093169B5272B952F00360885 /* GoogleService-Info.plist */; };
+		0942892E272D7E7D0083CF6B /* burger-machine.json in Resources */ = {isa = PBXBuildFile; fileRef = 0942892D272D7E7D0083CF6B /* burger-machine.json */; };
+		09428933272D975C0083CF6B /* ComingSoonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09428932272D975C0083CF6B /* ComingSoonView.swift */; };
+		09428935272DC64E0083CF6B /* ComingSoonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09428934272DC64E0083CF6B /* ComingSoonView.xib */; };
 		09524F76271FF4A00061C36B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524F75271FF4A00061C36B /* AppDelegate.swift */; };
 		09524F78271FF4A00061C36B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524F77271FF4A00061C36B /* SceneDelegate.swift */; };
 		09524F7A271FF4A00061C36B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524F79271FF4A00061C36B /* ViewController.swift */; };
@@ -82,6 +85,9 @@
 		093169AC2727CEC900360885 /* IngredientSelectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IngredientSelectionCell.xib; sourceTree = "<group>"; };
 		093169B32729413100360885 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		093169B5272B952F00360885 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0942892D272D7E7D0083CF6B /* burger-machine.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "burger-machine.json"; sourceTree = "<group>"; };
+		09428932272D975C0083CF6B /* ComingSoonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonView.swift; sourceTree = "<group>"; };
+		09428934272DC64E0083CF6B /* ComingSoonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComingSoonView.xib; sourceTree = "<group>"; };
 		09524F72271FF4A00061C36B /* FocusFoodie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FocusFoodie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09524F75271FF4A00061C36B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09524F77271FF4A00061C36B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -177,6 +183,14 @@
 			path = Timer;
 			sourceTree = "<group>";
 		};
+		09428936272DCA0D0083CF6B /* Community */ = {
+			isa = PBXGroup;
+			children = (
+				09524FA7271FFEA70061C36B /* CommunityViewController.swift */,
+			);
+			path = Community;
+			sourceTree = "<group>";
+		};
 		09524F69271FF4A00061C36B = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +247,7 @@
 		09524F8B271FF9090061C36B /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				0942892D272D7E7D0083CF6B /* burger-machine.json */,
 				09524F7E271FF4A10061C36B /* Assets.xcassets */,
 				09C1C848272571E800D2C9B2 /* Roboto_Mono */,
 			);
@@ -255,10 +270,10 @@
 		09524F8D271FF9490061C36B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				09524F79271FF4A00061C36B /* ViewController.swift */,
 				093169A42727CD6000360885 /* Timer */,
 				09524FE7272164630061C36B /* Record */,
-				09524F79271FF4A00061C36B /* ViewController.swift */,
-				09524FA7271FFEA70061C36B /* CommunityViewController.swift */,
+				09428936272DCA0D0083CF6B /* Community */,
 				09524FA9271FFEF00061C36B /* Base */,
 			);
 			path = Controller;
@@ -312,6 +327,8 @@
 		09524FEE272169350061C36B /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				09428932272D975C0083CF6B /* ComingSoonView.swift */,
+				09428934272DC64E0083CF6B /* ComingSoonView.xib */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -485,10 +502,12 @@
 				093169B02727CEC900360885 /* IngredientCollectionViewCell.xib in Resources */,
 				09C1C7D22722903800D2C9B2 /* DetailNoteTableViewCell.xib in Resources */,
 				093169B22727CEC900360885 /* IngredientSelectionCell.xib in Resources */,
+				0942892E272D7E7D0083CF6B /* burger-machine.json in Resources */,
 				09C1C849272571E800D2C9B2 /* Roboto_Mono in Resources */,
 				09524FA0271FFD9C0061C36B /* Record.storyboard in Resources */,
 				09524FEB272168E80061C36B /* DetailInfoTableViewCell.xib in Resources */,
 				09C1C831272447D600D2C9B2 /* CollectionViewCell.xib in Resources */,
+				09428935272DC64E0083CF6B /* ComingSoonView.xib in Resources */,
 				093169B6272B952F00360885 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -570,6 +589,7 @@
 				09524F9C271FFD390061C36B /* UICollectionView+Extension.swift in Sources */,
 				09524FAE271FFEF00061C36B /* TabBarViewController.swift in Sources */,
 				09C1C8502725D78700D2C9B2 /* UITextfield+Extension.swift in Sources */,
+				09428933272D975C0083CF6B /* ComingSoonView.swift in Sources */,
 				09524F7A271FF4A00061C36B /* ViewController.swift in Sources */,
 				09C1C830272447D600D2C9B2 /* CollectionViewCell.swift in Sources */,
 				09524F96271FFCC00061C36B /* UIView+Extension.swift in Sources */,

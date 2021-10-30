@@ -20,9 +20,7 @@ protocol IngredientItem {
 enum BreadItem: IngredientItem {
     
     case toast
-    
-    case burgerBun
-    
+        
     case baguette
     
     case croissant
@@ -32,8 +30,6 @@ enum BreadItem: IngredientItem {
         switch self {
             
         case .toast: return UIImage.asset(.icon_baguette)
-
-        case .burgerBun: return UIImage.asset(.icon_baguette)
 
         case .baguette: return UIImage.asset(.icon_baguette)
 
@@ -47,8 +43,6 @@ enum BreadItem: IngredientItem {
             
         case .toast: return "Toast"
 
-        case .burgerBun: return "Burger Bun"
-
         case .baguette: return "Baguette"
 
         case .croissant: return "croissant"
@@ -60,8 +54,6 @@ enum BreadItem: IngredientItem {
         switch self {
             
         case .toast: return 1
-
-        case .burgerBun: return 3
 
         case .baguette: return 5
 
