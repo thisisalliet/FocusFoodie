@@ -6,8 +6,20 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestoreSwift
 
 class DetailInfoTableViewCell: UITableViewCell {
+    
+    var recordOverview: Record?
+    
+    var createdTime: String {
+        
+        get {
+            
+            return Date.dateFormatter.string(from: Date.init(milliseconds: recordOverview!.createdTime))
+        }
+    }
     
     @IBOutlet weak var dateGreyView: UIView! {
         
@@ -15,7 +27,7 @@ class DetailInfoTableViewCell: UITableViewCell {
             
             dateGreyView.backgroundColor = .B6
             
-            dateGreyView.cornerRadius = 10
+            dateGreyView.cornerRadius = 5
         }
     }
     

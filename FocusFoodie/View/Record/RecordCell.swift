@@ -7,8 +7,8 @@
 
 import UIKit
 
-class RecordTableViewCell: UITableViewCell {
-    
+class RecordCell: UITableViewCell {
+        
     @IBOutlet weak var timerImage: UIImageView! {
         
         didSet {

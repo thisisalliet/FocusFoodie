@@ -6,8 +6,22 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestoreSwift
 
-class DetailViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate {
+class DetailViewController: BaseViewController,
+                             UITableViewDataSource,
+                             UITableViewDelegate {
+    
+    var db: Firestore!
+    
+    var recordOverview = [Record]() {
+        
+        didSet {
+            
+            detailTableView.reloadData()
+        }
+    }
     
     @IBOutlet weak var detailTableView: UITableView! {
         
@@ -23,6 +37,8 @@ class DetailViewController: BaseViewController, UITableViewDataSource, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        db = Firestore.firestore()
         
         setUpTableView()
     }
@@ -68,7 +84,7 @@ class DetailViewController: BaseViewController, UITableViewDataSource, UITableVi
                 withIdentifier: String(describing: DetailInfoTableViewCell.self),
                 for: indexPath
             ) as? DetailInfoTableViewCell else {fatalError("Couldn't generate selectCell")}
-            
+                        
             return selectCell
             
         case 2:
