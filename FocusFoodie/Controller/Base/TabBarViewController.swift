@@ -30,9 +30,9 @@ private enum Tab {
                 
         controller.tabBarItem = tabBarItem()
         
-        controller.tabBarItem.standardAppearance?.selectionIndicatorTintColor = .L4
-        
-        controller.tabBarItem.imageInsets = UIEdgeInsets(top: 30.0, left: 0.0, bottom: -30.0, right: 0.0)
+        controller.tabBarController?.tabBar.tintColor = .L4
+                        
+        controller.tabBarItem.imageInsets = UIEdgeInsets(top: 45.0, left: 0.0, bottom: 45.0, right: 0.0)
 
         return controller
     }
@@ -44,22 +44,22 @@ private enum Tab {
         case .record:
             return UITabBarItem(
                 title: nil,
-                image: UIImage.init(systemName: "1.circle"),
-                selectedImage: UIImage.init(systemName: "1.circle")
+                image: UIImage.asset(.icon_record),
+                selectedImage: UIImage.asset(.icon_record)
             )
             
         case .timer:
             return UITabBarItem(
                 title: nil,
-                image: UIImage.init(systemName: "2.circle"),
-                selectedImage: UIImage.init(systemName: "2.circle")
+                image: UIImage.asset(.icon_home),
+                selectedImage: UIImage.asset(.icon_home)
             )
 
         case .community:
             return UITabBarItem(
                 title: nil,
-                image: UIImage.init(systemName: "3.circle"),
-                selectedImage: UIImage.init(systemName: "3.circle")
+                image: UIImage.asset(.icon_community),
+                selectedImage: UIImage.asset(.icon_community)
             )
         }
     }
@@ -73,5 +73,7 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
         super.viewDidLoad()
 
         viewControllers = tabs.map({ $0.controller() })
+        
+        tabBar.tintColor = .H1
     }
 }

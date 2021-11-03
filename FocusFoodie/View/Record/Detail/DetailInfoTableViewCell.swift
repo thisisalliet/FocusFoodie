@@ -11,15 +11,7 @@ import FirebaseFirestoreSwift
 
 class DetailInfoTableViewCell: UITableViewCell {
     
-    var recordOverview: Record?
-    
-    var createdTime: String {
-        
-        get {
-            
-            return Date.dateFormatter.string(from: Date.init(milliseconds: recordOverview!.createdTime))
-        }
-    }
+    var record: Record?
     
     @IBOutlet weak var dateGreyView: UIView! {
         
@@ -46,9 +38,7 @@ class DetailInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel! {
         
         didSet {
-            
-            dateLabel.text = "2021 / 10 / 20"
-            
+                        
             dateLabel.textColor = .B5
         }
     }
@@ -89,7 +79,7 @@ class DetailInfoTableViewCell: UITableViewCell {
         
         didSet {
             
-            focusTimeLabel.text = "180"
+            focusTimeLabel.text = String(describing: record?.focusTime)
             
             focusTimeLabel.textColor = .B5
         }

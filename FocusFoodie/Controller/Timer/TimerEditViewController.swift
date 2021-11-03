@@ -13,25 +13,41 @@ class TimerEditViewController: UIViewController,
                                 UITableViewDataSource,
                                 UITableViewDelegate {
     
+    var ingredientCategory: [IngredientCategory: [IngredientObject]] = [
+        .bread: BreadItem.allCases,
+        .meat: MeatItem.allCases,
+        .vegetable: VegetableItem.allCases,
+        .side: SideItem.allCases
+    ]
+    
     @IBOutlet weak var dismissButton: UIButton! {
         
         didSet {
             
             dismissButton.setTitle("", for: .normal)
             
-//            dismissButton.backgroundImage(for: .normal) = .asset(.)
+            dismissButton.setBackgroundImage(.asset(.icon_cross_normal), for: .normal)
         }
     }
     
-    @IBOutlet weak var doneButton: UIButton!
-    
-    @IBOutlet weak var galleryView: IngredientView! {
+    @IBOutlet weak var doneButton: UIButton! {
         
         didSet {
             
-            galleryView.frame.size.height = CGFloat(Int(UIScreen.height * 1 / 3))
+            doneButton.setTitle("", for: .normal)
+            
+            doneButton.setBackgroundImage(.asset(.icon_check_normal), for: .normal)
         }
     }
+    
+    @IBOutlet weak var galleryView: IngredientGalleryView!
+//    {
+//
+//        didSet {
+//
+//            galleryView.frame.size.height = CGFloat(Int(UIScreen.height * 1 / 3))
+//        }
+//    }
     
     @IBOutlet weak var ingredientTableView: UITableView! {
         
@@ -48,63 +64,94 @@ class TimerEditViewController: UIViewController,
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        galleryView.frame.size.height = CGFloat(Int(UIScreen.height * 1 / 3))
+        
         setupTableView()
     }
     
     private func setupTableView() {
+        
+        ingredientTableView.register(IngredientSelectionCell.self, forCellReuseIdentifier: String(describing: IngredientSelectionCell.self))
 
-        ingredientTableView.registerCellWithNib(identifier:
-            String(describing: IngredientSelectionCell.self),
-                                         bundle: nil
-        )
+//        ingredientTableView.registerCellWithNib(identifier:
+//            String(describing: IngredientSelectionCell.self),
+//                                         bundle: nil
+//        )
     }
     
     // MARK: - UITableViewDataSource -
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 4
+        return ingredientCategory.keys.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        switch indexPath.row {
-            
-        case 0:
-            guard let breadCell = ingredientTableView.dequeueReusableCell(withIdentifier:
-                String(describing: IngredientSelectionCell.self),
-                for: indexPath) as? IngredientSelectionCell
-            else { fatalError("BreadCell error") }
-            
-            return breadCell
-            
-        case 1:
-            guard let sideCell = ingredientTableView.dequeueReusableCell(withIdentifier:
-                String(describing: IngredientSelectionCell.self),
-                for: indexPath) as? IngredientSelectionCell
-            else { fatalError("SideCell error") }
-            
-            return sideCell
-            
-        case 2:
-            guard let veggieCell = ingredientTableView.dequeueReusableCell(withIdentifier:
-                String(describing: IngredientSelectionCell.self),
-                for: indexPath) as? IngredientSelectionCell
-            else { fatalError("VeggieCell error") }
-            
-            return veggieCell
-            
-        case 3:
-            guard let meatCell = ingredientTableView.dequeueReusableCell(withIdentifier:
-                String(describing: IngredientSelectionCell.self),
-                for: indexPath) as? IngredientSelectionCell
-            else { fatalError("MeatCell error") }
-            
-            return meatCell
+        guard let type = IngredientCategory(rawValue: indexPath.row),
+              let cell = ingredientTableView.dequeueReusableCell(withIdentifier:
+            String(describing: IngredientSelectionCell.self),
+            for: indexPath) as? IngredientSelectionCell
+        else { fatalError("SideCell error") }
         
-        default:
-            return IngredientSelectionCell()
-        }
+        cell.ingredientObjects = ingredientCategory[type]!
+        
+        return cell
+        
+//        switch type {
+//
+//        case .bread:
+//            guard let breadCell = ingredientTableView.dequeueReusableCell(withIdentifier:
+//                String(describing: IngredientSelectionCell.self),
+//                for: indexPath) as? IngredientSelectionCell
+//            else { fatalError("BreadCell error") }
+//
+//            breadCell.ingredientObjects = ingredientCategory[.bread]!
+//
+//            return breadCell
+//
+//        case .vegetable:
+//            guard let vegetableCell = ingredientTableView.dequeueReusableCell(withIdentifier:
+//                String(describing: IngredientSelectionCell.self),
+//                for: indexPath) as? IngredientSelectionCell
+//            else { fatalError("VegetableCell error") }
+//
+//            vegetableCell.ingredientObjects = ingredientCategory[.vegetable]!
+//
+//            return vegetableCell
+//
+//        case .meat:
+//            guard let meatCell = ingredientTableView.dequeueReusableCell(withIdentifier:
+//                String(describing: IngredientSelectionCell.self),
+//                for: indexPath) as? IngredientSelectionCell
+//            else { fatalError("MeatCell error") }
+//
+//            meatCell.ingredientObjects = ingredientCategory[.meat]!
+//
+//            return meatCell
+//
+//        case .side:
+//            guard let sideCell = ingredientTableView.dequeueReusableCell(withIdentifier:
+//                String(describing: IngredientSelectionCell.self),
+//                for: indexPath) as? IngredientSelectionCell
+//            else { fatalError("SideCell error") }
+//
+//            sideCell.ingredientObjects = ingredientCategory[.side]!
+//
+//            return sideCell
+//
+//        default:
+//            return IngredientSelectionCell()
+//        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard ingredientTableView.dequeueReusableCell(withIdentifier:
+            String(describing: IngredientSelectionCell.self),
+            for: indexPath) is IngredientSelectionCell
+        else { fatalError("SideCell error") }
+        
     }
     
     // MARK: - UITableViewDelegate -

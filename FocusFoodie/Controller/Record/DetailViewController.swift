@@ -15,7 +15,7 @@ class DetailViewController: BaseViewController,
     
     var db: Firestore!
     
-    var recordOverview = [Record]() {
+    var record = [Record]() {
         
         didSet {
             
@@ -64,7 +64,9 @@ class DetailViewController: BaseViewController,
     // MARK: - UITableViewDataSource -
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return 3
+//        return record.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -80,12 +82,18 @@ class DetailViewController: BaseViewController,
             return imageCell
             
         case 1:
-            guard let selectCell = detailTableView.dequeueReusableCell(
+            guard let infoCell = detailTableView.dequeueReusableCell(
                 withIdentifier: String(describing: DetailInfoTableViewCell.self),
                 for: indexPath
-            ) as? DetailInfoTableViewCell else {fatalError("Couldn't generate selectCell")}
-                        
-            return selectCell
+            ) as? DetailInfoTableViewCell else {fatalError("Couldn't generate infoCell")}
+            
+//            infoCell.dateLabel.text = Timestamp.timeFormat(time: record[indexPath.row].createdTime)
+//
+//            infoCell.timeLabel.text = Timestamp.timeFormat(time: record[indexPath.row].createdTime)
+            
+//            infoCell.focusTimeLabel.text = String(describing: record[indexPath.row].focusTime)
+                                    
+            return infoCell
             
         case 2:
             
@@ -93,6 +101,10 @@ class DetailViewController: BaseViewController,
                 withIdentifier: String(describing: DetailNoteTableViewCell.self),
                 for: indexPath
             ) as? DetailNoteTableViewCell else {fatalError("Couldn't generate noteCell")}
+            
+//            noteCell.categoryTitleLabel.text = record[indexPath.row].recordCategory
+            
+//            noteCell.noteLabel.text = record[indexPath.row].recordNote
             
             return noteCell
             

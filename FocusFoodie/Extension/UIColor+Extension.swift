@@ -44,6 +44,8 @@ private enum Color: String {
     case T1
     
     case T2
+    
+    case H1
 }
 
 extension UIColor {
@@ -81,6 +83,9 @@ extension UIColor {
     static let T1 = color(.T1)
     
     static let T2 = color(.T2)
+    
+    static let H1 = color(.H1)
+
     // swiftlint:enable identifier_name
     
     private static func color(_ color: Color) -> UIColor? {

@@ -6,16 +6,21 @@
 //
 
 import UIKit
+import UserNotifications
 import Firebase
 import FirebaseFirestoreSwift
 
 class TimerViewController: BaseViewController {
-        
-    var counter = 0
+    
+    var seconds = 0
     
     var startStatus = true
     
     var pauseStatus = false
+    
+    var timer = Timer()
+    
+    let formatter = DateFormatter()
     
     @IBOutlet weak var cookingImageView: UIImageView! {
         
@@ -45,7 +50,7 @@ class TimerViewController: BaseViewController {
             doneButton.setTitle("Done", for: .normal)
             
             doneButton.setTitleColor(.white, for: .normal)
-            
+                        
             doneButton.backgroundColor = .B6
             
             doneButton.layer.cornerRadius = doneButton.frame.width / 2
@@ -66,58 +71,121 @@ class TimerViewController: BaseViewController {
         }
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setUpDoneButton()
+    }
+    
+    // MARK: - Button Actions -
+    
+    @IBAction func didTapControlButton(_ sender: UIButton) {
+        
+//        formatter.dateFormat = "HH"
+//
+//        let hours = formatter.string(from: countdownTimer.date)
+//
+//
+//        formatter.dateFormat = "mm"
+//
+//        let minutes = formatter.string(from: countdownTimer.date)
+//
+//        seconds = Int(hours)! * 60 * 60 + Int(minutes)! * 60
+        
+//        if startStatus {
+//
+//            timer = Timer.scheduledTimer(timeInterval: 1.0,
+//                                         target:self,
+//                                         selector: #selector(countDownHelper),
+//                                         userInfo: nil,
+//                                         repeats: true)
+//
+//            setupNotification(time: seconds)
+//
+//            startStatus = false
+//            controlButton.setTitle("Pause", for: .normal)
+//
+//            pauseStatus = true
+//            doneButton.isEnabled = true
+//
+//
+//        } else {
+//
+//            timer.invalidate()
+//            removeNotification()
+//
+//            startStatus = true
+//            startBtn.setTitleColor(.white, for: .normal)
+//            startBtn.setTitle("Start", for: .normal)
+//
+//
+//            countdownTimer.isHidden = false
+//            timerLabel.isHidden = true
+//
+//            pauseStatus = false
+//            pauseBtn.isEnabled = false
+//            pauseBtn.setTitleColor(.lightGray, for: .normal)
+//
+//        }
+    }
+    
     @IBAction func didTapDoneBtn(_ sender: UIButton) {
         
     }
     
-    @IBAction func didTapControlButton(_ sender: UIButton) {
+    func setUpDoneButton() {
         
-        counter += 1
+        doneButton.isEnabled = false
+        doneButton.backgroundColor = .B5
+        doneButton.setTitleColor(.white, for: .normal)
+    }
+    
+    @objc func countDownHelper() {
         
-        switch counter {
+        seconds -= 1
+        
+        let countDownHour = seconds / 3600
+        
+        let countDownMinute = (seconds / 60) % 60
+        
+        let countDownSecond = seconds % 60
+        
+        let displayHour = countDownHour > 9 ? "\(countDownHour)" : "0\(countDownHour)"
+        
+        let displayMinute = countDownMinute > 9 ? "\(countDownMinute)" : "0\(countDownMinute)"
+        
+        let displaySecond = countDownSecond > 9 ? "\(countDownSecond)" : "0\(countDownSecond)"
+        
+        countDownLabel.text = "\(displayHour):\(displayMinute):\(displaySecond)"
+        
+        if seconds <= 0 {
             
-        case 1:
-            controlButton.setTitle("Start", for: .normal)
+            timer.invalidate()
             
-        case 2:
-            controlButton.setTitle("Pause", for: .normal)
-            
-        case 3:
-            controlButton.setTitle("Resume", for: .normal)
-            
-        default:
-            print("Unable to change button title text.")
+            return
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    func setupNotification(time:Int) {
+        
+        let alarmContent = UNMutableNotificationContent()
+        
+        alarmContent.title = ""
+        
+        alarmContent.body = ""
+        
+        alarmContent.sound = UNNotificationSound.default
+        
+        let alarmTrigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(time), repeats: false)
+        
+        let alarmRequest = UNNotificationRequest(identifier: "alarmTrigger", content: alarmContent, trigger: alarmTrigger)
+        
+        UNUserNotificationCenter.current().add(alarmRequest, withCompletionHandler: nil)
+        
+    }
+    
+    func removeNotification() {
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["alarmTrigger"])
     }
 }
-
-//        if startStatus {
-//
-//            startStatus = false
-//                    controlButton.setTitleColor(.white, for: .normal)
-//            controlButton.setTitle("Cancel", for: .normal)
-//
-//                    countdownTimer.isHidden = true
-//                    timerLabel.isHidden = false
-//
-//                    pauseStatus = true
-//                    pauseBtn.setTitleColor(.white, for: .normal)
-//                    pauseBtn.setTitle("Pause", for: .normal)
-//                    pauseBtn.isEnabled = true
-//        }else{
-//
-//                    startStatus = true
-//                    startBtn.setTitleColor(.white, for: .normal)
-//                    startBtn.setTitle("Start", for: .normal)
-//
-//                    countdownTimer.isHidden = false
-//                    timerLabel.isHidden = true
-//
-//                    pauseStatus = false
-//                    pauseBtn.isEnabled = false
-//                    pauseBtn.setTitleColor(.lightGray, for: .normal)
-//        }

@@ -7,92 +7,85 @@
 
 import UIKit
 
-class IngredientSelectionCell: UITableViewCell,
-                                UICollectionViewDataSource,
-                                UICollectionViewDelegateFlowLayout {
+enum IngredientStatus {
     
-    @IBOutlet weak var ingredientCollectionView: UICollectionView! {
-        
+    case avaliable
+
+    case selected
+
+    case disable
+}
+
+class IngredientSelectionCell: BasicSelectionCell {
+                
+    var touchHandler: ((IndexPath) -> Void)?
+    
+    var ingredientObjects: [IngredientObject] = [] {
+
         didSet {
-            
-            ingredientCollectionView.registerCellWithNib(
-                identifier: String(describing: IngredientCollectionViewCell.self),
-                bundle: nil)
-                                    
-            ingredientCollectionView?.dataSource = self
-            
-            ingredientCollectionView?.delegate = self
+            ingredientCollectionView.reloadData()
         }
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
-    
-//    private func showIngredientInGallery(ingredient: Ingredient) {
-//
-//        let productDetailVC = UIStoryboard.product.instantiateViewController(withIdentifier:
-//            String(describing: ProductDetailViewController.self)
-//        )
-//
-//        guard let detailVC = productDetailVC as? ProductDetailViewController else { return }
-//
-//        detailVC.product = product
-//
-//        show(detailVC, sender: nil)
-//    }
-    
-    // MARK: - UICollectionViewDataSource
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return 10
-//        return ingredients.count
-    }
-    
-    func collectionView(
-        _ collectionView: UICollectionView,
-        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            
-            
-        
-        let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: String(describing: IngredientCollectionViewCell.self), for: indexPath)
-            
-        cell.backgroundColor = .B1
-        
-        cell.cornerRadius = 10
-        
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        ingredientCollectionView.deselectItem(at: indexPath, animated: true)
-        
-//        guard let ingredient = datas[indexPath.section][indexPath.row] as? Ingredient else { return }
-        
-        
-    }
-    
-    // MARK: - UICollectionViewDelegateFlowLayout
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-    func collectionView(
-        _ collectionView: UICollectionView,
-        layout collectionViewLayout: UICollectionViewLayout,
-        sizeForItemAt indexPath: IndexPath
-    ) -> CGSize {
+        setupiIngredientView()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+
+        setupiIngredientView()
+    }
+
+    private func setupiIngredientView() {
         
-        return CGSize(width: UIScreen.width / 4.0, height: 190)
+        ingredientCollectionView.backgroundColor = .B1
     }
     
-    func collectionView(
-        _ collectionView: UICollectionView,
-        layout collectionViewLayout: UICollectionViewLayout,
-        insetForSectionAt section: Int
-    ) -> UIEdgeInsets {
+    override func numberOfItem(_ cell: BasicSelectionCell) -> Int {
+        
+        return ingredientObjects.count
+    }
+    
+    override func viewIn(_ cell: BasicSelectionCell, selectionCell: SelectionCell, indexPath: IndexPath) {
+        
+        guard (selectionCell.objectView as? IngredientItemView) != nil else {
 
-        return UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
+            let ingredientView = IngredientItemView()
+
+            ingredientView.layoutCell(image: ingredientObjects[indexPath.row].image!,
+                                      title: ingredientObjects[indexPath.row].title!,
+                                      minute: ingredientObjects[indexPath.row].minute!,
+                                      isSelected: false)
+
+            selectionCell.objectView = ingredientView
+
+            return
+        }
+    }
+    
+    override func didSelected(_ cell: BasicSelectionCell, at indexPath: IndexPath) {
+        
+//        for (index, object) in ingredientObjects.enumerated() where object.status == .selected {
+//
+//            ingredientObjects[index].status = .avaliable
+//        }
+//
+//        ingredientObjects[indexPath.row].status = .selected
+//
+//        ingredientCollectionView.reloadData()
+        
+//        for index in 0 ..< ingredientObjects.count {
+//
+//            ingredientObjects[index].isSelected = false
+//        }
+//
+//        ingredientObjects[indexPath.row].isSelected = !ingredientObjects[indexPath.row].isSelected
+//
+//        touchHandler?(indexPath)
+//
+//        ingredientCollectionView.reloadData()
     }
 }

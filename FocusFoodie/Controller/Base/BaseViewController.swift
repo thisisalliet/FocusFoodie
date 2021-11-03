@@ -28,6 +28,8 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        overrideUserInterfaceStyle = .light
+        
         navigationController?.navigationBar.isTranslucent = true
 
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)

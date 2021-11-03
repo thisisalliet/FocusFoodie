@@ -8,44 +8,68 @@
 import Foundation
 import UIKit
 
-protocol IngredientItem {
+protocol IngredientObject {
 
+    var type: IngredientCategory { get }
+    
     var image: UIImage? { get }
-    
-    var name: String? { get }
-    
+
+    var title: String? { get }
+
     var minute: Int? { get }
 }
 
-enum BreadItem: IngredientItem {
+enum IngredientCategory: Int {
+    
+    case bread
+    
+    case vegetable
+    
+    case meat
+    
+    case side
+}
+
+enum BreadItem: IngredientObject, CaseIterable {
     
     case toast
+    
+    case burgerBun
         
     case baguette
     
     case croissant
+        
+    var type: IngredientCategory {
+        
+        .bread
+    }
     
     var image: UIImage? {
         
         switch self {
             
-        case .toast: return UIImage.asset(.icon_baguette)
+        case .toast: return UIImage.asset(.icon_toast)
+            
+        case .burgerBun: return UIImage.asset(.icon_burger_bun)
 
         case .baguette: return UIImage.asset(.icon_baguette)
 
-        case .croissant: return UIImage.asset(.icon_baguette)
+        case .croissant: return UIImage.asset(.icon_croissant)
         }
     }
     
-    var name: String? {
+    var title: String? {
         
         switch self {
             
         case .toast: return "Toast"
-
+            
+        case .burgerBun: return "Burger Bun"
+            
         case .baguette: return "Baguette"
 
-        case .croissant: return "croissant"
+        case .croissant: return "Croissant"
         }
     }
     
@@ -54,6 +78,8 @@ enum BreadItem: IngredientItem {
         switch self {
             
         case .toast: return 1
+            
+        case .burgerBun: return 3
 
         case .baguette: return 5
 
@@ -62,7 +88,7 @@ enum BreadItem: IngredientItem {
     }
 }
 
-enum VegetableItem: IngredientItem {
+enum VegetableItem: IngredientObject, CaseIterable {
     
     case avocado
     
@@ -76,25 +102,30 @@ enum VegetableItem: IngredientItem {
     
     case onion
     
+    var type: IngredientCategory {
+        
+        .vegetable
+    }
+    
     var image: UIImage? {
         
         switch self {
             
-        case .avocado: return UIImage.asset(.icon_lettuce)
+        case .avocado: return UIImage.asset(.icon_avocado)
 
-        case .bellPepper: return UIImage.asset(.icon_lettuce)
+        case .bellPepper: return UIImage.asset(.icon_bell_pepper)
 
-        case .cucumber: return UIImage.asset(.icon_lettuce)
+        case .cucumber: return UIImage.asset(.icon_cucumber)
 
         case .lettuce: return UIImage.asset(.icon_lettuce)
 
-        case .tomato: return UIImage.asset(.icon_lettuce)
+        case .tomato: return UIImage.asset(.icon_tomato)
 
         case .onion: return UIImage.asset(.icon_lettuce)
         }
     }
     
-    var name: String? {
+    var title: String? {
         
         switch self {
             
@@ -131,7 +162,7 @@ enum VegetableItem: IngredientItem {
     }
 }
 
-enum MeatItem: IngredientItem {
+enum MeatItem: IngredientObject, CaseIterable {
     
     case bacon
     
@@ -145,11 +176,16 @@ enum MeatItem: IngredientItem {
     
     case turkey
     
+    var type: IngredientCategory {
+        
+        .meat
+    }
+    
     var image: UIImage? {
         
         switch self {
             
-        case .bacon: return UIImage.asset(.icon_baguette)
+        case .bacon: return UIImage.asset(.icon_bacon)
             
         case .chicken: return UIImage.asset(.icon_baguette)
             
@@ -163,7 +199,7 @@ enum MeatItem: IngredientItem {
         }
     }
     
-    var name: String? {
+    var title: String? {
         
         switch self {
             
@@ -200,7 +236,7 @@ enum MeatItem: IngredientItem {
     }
 }
 
-enum SideItem: IngredientItem {
+enum SideItem: IngredientObject, CaseIterable {
     
     case egg
     
@@ -213,6 +249,11 @@ enum SideItem: IngredientItem {
     case mustard
     
     case cheese
+    
+    var type: IngredientCategory {
+     
+        .side
+    }
     
     var image: UIImage? {
         
@@ -232,7 +273,7 @@ enum SideItem: IngredientItem {
         }
     }
     
-    var name: String? {
+    var title: String? {
         
         switch self {
             

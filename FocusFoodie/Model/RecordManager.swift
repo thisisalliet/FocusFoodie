@@ -13,17 +13,16 @@ import FirebaseFirestoreSwift
 
 enum CollectionName: String {
     
-    case User = "User"
+    case user = "User"
     
-    case Record = "Record"
+    case record = "Record"
     
-    case Request = "Request"
+    case request = "Request"
     
-    case Recipe = "Recipe"
+    case recipe = "Recipe"
     
-    case Timer = "Timer"
+    case timer = "Timer"
 }
-
 
 // MARK: - Record -
 
@@ -39,7 +38,7 @@ public struct Record: Codable {
     
     let focusTime: Int64
     
-    let createdTime: Int64
+    let createdTime: Timestamp
     
     let favourite: Bool
     

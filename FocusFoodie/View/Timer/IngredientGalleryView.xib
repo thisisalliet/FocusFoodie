@@ -9,17 +9,17 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IngredientView" customModule="FocusFoodie" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IngredientGalleryView" customModule="FocusFoodie" customModuleProvider="target">
             <connections>
-                <outlet property="contentView" destination="6Ce-MT-x7H" id="68a-rl-KO8"/>
-                <outlet property="firstIngredientImage" destination="unb-D0-ToU" id="mVc-Yn-Dq9"/>
-                <outlet property="fourthIngredientImage" destination="EeR-rd-PDM" id="oMu-L1-edn"/>
-                <outlet property="knifeImage" destination="vCH-6J-KYr" id="P0M-Nz-g4E"/>
-                <outlet property="oilImage" destination="Zz5-Ey-7nI" id="vu0-Bv-HIj"/>
-                <outlet property="secondIngredientImage" destination="abw-sk-M20" id="1Sv-mN-Mom"/>
-                <outlet property="tableViewOne" destination="0hf-7S-GQC" id="49I-1v-rgt"/>
-                <outlet property="tableViewTwo" destination="FZZ-pp-8nX" id="ae7-GO-igV"/>
-                <outlet property="thirdIngredientImage" destination="KLM-5Z-rQx" id="pa7-F9-L1t"/>
+                <outlet property="contentView" destination="6Ce-MT-x7H" id="3EO-2Q-bhb"/>
+                <outlet property="darkBackground" destination="0hf-7S-GQC" id="gdy-6W-11w"/>
+                <outlet property="firstIngredientImage" destination="unb-D0-ToU" id="klw-EB-DYg"/>
+                <outlet property="fourthIngredientImage" destination="EeR-rd-PDM" id="LKs-p0-0eF"/>
+                <outlet property="knifeImage" destination="vCH-6J-KYr" id="dhS-nw-uE5"/>
+                <outlet property="lightbackground" destination="FZZ-pp-8nX" id="X8Q-Fz-yjD"/>
+                <outlet property="oilImage" destination="Zz5-Ey-7nI" id="NhY-yF-bVI"/>
+                <outlet property="secondIngredientImage" destination="abw-sk-M20" id="R7O-DS-Cm9"/>
+                <outlet property="thirdIngredientImage" destination="KLM-5Z-rQx" id="yxq-So-R0x"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -114,10 +114,10 @@
         <image name="icon_knife" width="128" height="128"/>
         <image name="icon_oil" width="128" height="128"/>
         <namedColor name="T1">
-            <color red="0.54117647058823526" green="0.36862745098039218" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.54100000858306885" green="0.36899998784065247" blue="0.22400000691413879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="T2">
-            <color red="0.77254901960784317" green="0.5725490196078431" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77300000190734863" green="0.57300001382827759" blue="0.33300000429153442" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
