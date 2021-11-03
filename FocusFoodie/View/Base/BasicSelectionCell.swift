@@ -25,11 +25,11 @@ class BasicSelectionCell: UITableViewCell,
 
         let layoutObject = UICollectionViewFlowLayout()
 
-        layoutObject.itemSize = CGSize(width: UIScreen.width / 4.0, height: 190)
+        layoutObject.itemSize = CGSize(width: UIScreen.width / 4.0, height: 180)
 
         layoutObject.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 
-        layoutObject.minimumLineSpacing = 16.0
+        layoutObject.minimumLineSpacing = 8.0
 
         layoutObject.minimumInteritemSpacing = 0
 
@@ -37,7 +37,7 @@ class BasicSelectionCell: UITableViewCell,
 
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layoutObject)
 
-        collectionView.backgroundColor = .B1
+//        collectionView.backgroundColor = .B1
 
         collectionView.dataSource = self
 
@@ -91,7 +91,8 @@ class BasicSelectionCell: UITableViewCell,
 
         ingredientCollectionView.heightAnchor.constraint(equalToConstant: 190.0).isActive = true
         
-        ingredientCollectionView.register(SelectionCell.self, forCellWithReuseIdentifier: String(describing: SelectionCell.self))
+        ingredientCollectionView.register(SelectionCell.self,
+                                          forCellWithReuseIdentifier: String(describing: SelectionCell.self))
     }
 
     func reloadData() {

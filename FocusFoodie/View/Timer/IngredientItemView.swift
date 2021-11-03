@@ -9,7 +9,13 @@ import UIKit
 
 class IngredientItemView: UIView {
     
-    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var contentView: UIView! {
+        
+        didSet {
+                        
+            contentView.cornerRadius = 10
+        }
+    }
     
     @IBOutlet weak var ingredientImage: UIImageView! {
         
@@ -35,7 +41,7 @@ class IngredientItemView: UIView {
             
             minLabel.textColor = .B5
             
-            minLabel.font = UIFont.light(size: 14.0)
+            minLabel.font = UIFont.semiBold(size: 14.0)
         }
     }
     

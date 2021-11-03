@@ -65,7 +65,7 @@ enum BreadItem: IngredientObject, CaseIterable {
             
         case .toast: return "Toast"
             
-        case .burgerBun: return "Burger Bun"
+        case .burgerBun: return "Burger\nBun"
             
         case .baguette: return "Baguette"
 
@@ -131,7 +131,7 @@ enum VegetableItem: IngredientObject, CaseIterable {
             
         case .avocado: return "Advocado"
 
-        case .bellPepper: return "Bell Pepper"
+        case .bellPepper: return "Bell\nPepper"
 
         case .cucumber: return "Cucumer"
 
@@ -279,7 +279,7 @@ enum SideItem: IngredientObject, CaseIterable {
             
         case .egg: return "Egg"
             
-        case .peanutButter: return "Peanut Butter"
+        case .peanutButter: return "Peanut\nButter"
             
         case .honey: return "Honey"
             
@@ -309,4 +309,3 @@ enum SideItem: IngredientObject, CaseIterable {
         }
     }
 }
-

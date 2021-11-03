@@ -68,12 +68,12 @@ class IngredientSelectionCell: BasicSelectionCell {
     
     override func didSelected(_ cell: BasicSelectionCell, at indexPath: IndexPath) {
         
-        guard touchHandler?(ingredientObjects[indexPath.row].minute ?? 0) == true else { return }
-        
-        for (index, object) in ingredientObjects.enumerated() where object.status == .selected {
-
-            ingredientObjects[index].status = .avaliable
-        }
+//        guard touchHandler?(ingredientObjects[indexPath.row].minute ?? 0) == true else { return }
+//        
+//        for (index, object) in ingredientObjects.enumerated() where object.status == .selected {
+//
+//            ingredientObjects[index].status = .avaliable
+//        }
 //
 //        ingredientObjects[indexPath.row].status = .selected
 //

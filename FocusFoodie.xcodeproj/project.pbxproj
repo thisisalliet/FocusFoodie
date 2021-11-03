@@ -11,6 +11,7 @@
 		090E07E127303A1800136025 /* BasicSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090E07E027303A1800136025 /* BasicSelectionCell.swift */; };
 		090E07E32730E9F700136025 /* IngredientItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090E07E22730E9F600136025 /* IngredientItemView.swift */; };
 		090E07E52730EC5800136025 /* IngredientGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090E07E42730EC5800136025 /* IngredientGalleryView.swift */; };
+		090E07EB273296F700136025 /* loading_pizza.json in Resources */ = {isa = PBXBuildFile; fileRef = 090E07EA273296F700136025 /* loading_pizza.json */; };
 		093169A62727CEB300360885 /* TimerEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093169A52727CEB300360885 /* TimerEditViewController.swift */; };
 		093169AE2727CEC900360885 /* IngredientSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093169A82727CEC900360885 /* IngredientSelectionCell.swift */; };
 		093169B02727CEC900360885 /* IngredientItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093169AA2727CEC900360885 /* IngredientItemView.xib */; };
@@ -78,6 +79,7 @@
 		090E07E027303A1800136025 /* BasicSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicSelectionCell.swift; sourceTree = "<group>"; };
 		090E07E22730E9F600136025 /* IngredientItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientItemView.swift; sourceTree = "<group>"; };
 		090E07E42730EC5800136025 /* IngredientGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientGalleryView.swift; sourceTree = "<group>"; };
+		090E07EA273296F700136025 /* loading_pizza.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_pizza.json; sourceTree = "<group>"; };
 		093169A52727CEB300360885 /* TimerEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerEditViewController.swift; sourceTree = "<group>"; };
 		093169A82727CEC900360885 /* IngredientSelectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientSelectionCell.swift; sourceTree = "<group>"; };
 		093169AA2727CEC900360885 /* IngredientItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IngredientItemView.xib; path = ../Base/IngredientItemView.xib; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				0942892D272D7E7D0083CF6B /* burger-machine.json */,
+				090E07EA273296F700136025 /* loading_pizza.json */,
 				09524F7E271FF4A10061C36B /* Assets.xcassets */,
 				09C1C848272571E800D2C9B2 /* Roboto_Mono */,
 			);
@@ -496,6 +499,7 @@
 				09524FD327201DA90061C36B /* ProfileView.xib in Resources */,
 				09524F7F271FF4A10061C36B /* Assets.xcassets in Resources */,
 				09524F9E271FFD910061C36B /* Timer.storyboard in Resources */,
+				090E07EB273296F700136025 /* loading_pizza.json in Resources */,
 				09F04729272678D8009CA63B /* DetailImageTableViewCell.xib in Resources */,
 				09524F7D271FF4A00061C36B /* Main.storyboard in Resources */,
 				093169B02727CEC900360885 /* IngredientItemView.xib in Resources */,

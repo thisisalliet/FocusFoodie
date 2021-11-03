@@ -9,6 +9,13 @@ import UIKit
 import Firebase
 import FirebaseFirestoreSwift
 
+protocol TimerEditControllerDelegate: AnyObject {
+
+    func dismissEditor(_ controller: TimerEditViewController)
+
+    func timeChange(_ controller: TimerEditViewController)
+}
+
 class TimerEditViewController: UIViewController,
                                 UITableViewDataSource,
                                 UITableViewDelegate {
@@ -20,34 +27,13 @@ class TimerEditViewController: UIViewController,
         .side: SideItem.allCases
     ]
     
-    @IBOutlet weak var dismissButton: UIButton! {
-        
-        didSet {
-            
-            dismissButton.setTitle("", for: .normal)
-            
-            dismissButton.setBackgroundImage(.asset(.icon_cross_normal), for: .normal)
-        }
-    }
+    weak var delegate: TimerEditControllerDelegate?
     
-    @IBOutlet weak var doneButton: UIButton! {
-        
-        didSet {
-            
-            doneButton.setTitle("", for: .normal)
-            
-            doneButton.setBackgroundImage(.asset(.icon_check_normal), for: .normal)
-        }
-    }
+    @IBOutlet weak var crossButton: UIButton!
+    
+    @IBOutlet weak var checkButton: UIButton!
     
     @IBOutlet weak var galleryView: IngredientGalleryView!
-//    {
-//
-//        didSet {
-//
-//            galleryView.frame.size.height = CGFloat(Int(UIScreen.height * 1 / 3))
-//        }
-//    }
     
     @IBOutlet weak var ingredientTableView: UITableView! {
         
@@ -61,22 +47,23 @@ class TimerEditViewController: UIViewController,
         }
     }
     
+    @IBAction func onDismiss(_ sender: UIButton) {
+        
+        presentingViewController?.dismiss(animated: true, completion: nil)
+        
+        delegate?.dismissEditor(self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        galleryView.frame.size.height = CGFloat(Int(UIScreen.height * 1 / 3))
-        
+                
         setupTableView()
     }
     
     private func setupTableView() {
         
-        ingredientTableView.register(IngredientSelectionCell.self, forCellReuseIdentifier: String(describing: IngredientSelectionCell.self))
-
-//        ingredientTableView.registerCellWithNib(identifier:
-//            String(describing: IngredientSelectionCell.self),
-//                                         bundle: nil
-//        )
+        ingredientTableView.register(IngredientSelectionCell.self,
+                                     forCellReuseIdentifier: String(describing: IngredientSelectionCell.self))
     }
     
     // MARK: - UITableViewDataSource -

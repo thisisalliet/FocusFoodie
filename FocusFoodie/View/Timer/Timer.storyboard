@@ -85,7 +85,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="hTb-eJ-vtr">
                     <connections>
-                        <segue destination="zOF-3W-jRS" kind="presentation" modalPresentationStyle="fullScreen" id="GIf-G2-nEa"/>
+                        <segue destination="zOF-3W-jRS" kind="presentation" modalPresentationStyle="automatic" id="GIf-G2-nEa"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -96,26 +96,41 @@
             <objects>
                 <viewController id="zOF-3W-jRS" customClass="TimerEditViewController" customModule="FocusFoodie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NAE-bZ-OTO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VcB-HR-vW1" customClass="IngredientGalleryView" customModule="FocusFoodie" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="107" width="414" height="269"/>
+                                <rect key="frame" x="0.0" y="62" width="414" height="252.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yyu-p1-OyE">
-                                <rect key="frame" x="0.0" y="376" width="414" height="486"/>
+                                <rect key="frame" x="0.0" y="314.5" width="414" height="493.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4T-EG-2Bl">
-                                <rect key="frame" x="16" y="60" width="67" height="31"/>
+                                <rect key="frame" x="16" y="16" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="NKr-0U-mks"/>
+                                    <constraint firstAttribute="height" constant="30" id="q3u-HT-sW1"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="icon_cross_normal" imageContentMode="scaleAspectFit"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onDismiss:" destination="zOF-3W-jRS" eventType="touchUpInside" id="dIi-Fj-UzI"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qqj-6x-LUu">
-                                <rect key="frame" x="331" y="60" width="67" height="31"/>
+                                <rect key="frame" x="368" y="16" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="pfi-RC-u9z"/>
+                                    <constraint firstAttribute="height" constant="30" id="uQ3-dX-aoG"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="icon_check_normal" imageContentMode="scaleAspectFit"/>
+                                </buttonConfiguration>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="anM-eQ-V2r"/>
@@ -137,8 +152,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="dismissButton" destination="R4T-EG-2Bl" id="ehL-Cd-GHt"/>
-                        <outlet property="doneButton" destination="Qqj-6x-LUu" id="wbh-ZQ-S2a"/>
+                        <outlet property="checkButton" destination="Qqj-6x-LUu" id="wbh-ZQ-S2a"/>
+                        <outlet property="crossButton" destination="R4T-EG-2Bl" id="ehL-Cd-GHt"/>
                         <outlet property="galleryView" destination="VcB-HR-vW1" id="1ZF-yj-uIK"/>
                         <outlet property="ingredientTableView" destination="yyu-p1-OyE" id="V2b-Fr-Ylh"/>
                     </connections>
@@ -167,6 +182,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon_check_normal" width="128" height="128"/>
+        <image name="icon_cross_normal" width="128" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

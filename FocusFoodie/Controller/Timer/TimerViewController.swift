@@ -189,3 +189,38 @@ class TimerViewController: BaseViewController {
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["alarmTrigger"])
     }
 }
+
+
+extension TimerViewController: TimerEditControllerDelegate {
+    
+    func dismissEditor(_ controller: TimerEditViewController) {
+        
+//        let origin =
+//            .frame
+//
+//        let nextFrame = CGRect(x: origin.minX, y: origin.maxY, width: origin.width, height: origin.height)
+//
+//        UIView.animate(
+//            withDuration: 0.3,
+//            animations: { [weak self] in
+//
+//                self?.productPickerView.frame = nextFrame
+//
+//                self?.blurView.removeFromSuperview()
+//
+//                self?.isEnableAddToCarBtn(true)
+//
+//            }, completion: { [weak self] _ in
+//
+//                self?.productPickerView.removeFromSuperview()
+//            }
+//        )
+    }
+    
+    func timeChange(_ controller: TimerEditViewController) {
+        
+    }
+    
+    
+    
+}

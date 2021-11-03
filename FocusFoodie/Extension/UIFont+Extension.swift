@@ -16,7 +16,7 @@ enum FontName: String {
     
     case medium = "RobotoMono-Medium"
     
-    case semiBold = "RobotoMono-SeniBold"
+    case semiBold = "RobotoMono-SemiBold"
     
     case bold = "RobotoMono-Bold"
 }
