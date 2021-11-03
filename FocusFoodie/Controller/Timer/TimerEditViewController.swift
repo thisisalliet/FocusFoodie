@@ -97,52 +97,6 @@ class TimerEditViewController: UIViewController,
         cell.ingredientObjects = ingredientCategory[type]!
         
         return cell
-        
-//        switch type {
-//
-//        case .bread:
-//            guard let breadCell = ingredientTableView.dequeueReusableCell(withIdentifier:
-//                String(describing: IngredientSelectionCell.self),
-//                for: indexPath) as? IngredientSelectionCell
-//            else { fatalError("BreadCell error") }
-//
-//            breadCell.ingredientObjects = ingredientCategory[.bread]!
-//
-//            return breadCell
-//
-//        case .vegetable:
-//            guard let vegetableCell = ingredientTableView.dequeueReusableCell(withIdentifier:
-//                String(describing: IngredientSelectionCell.self),
-//                for: indexPath) as? IngredientSelectionCell
-//            else { fatalError("VegetableCell error") }
-//
-//            vegetableCell.ingredientObjects = ingredientCategory[.vegetable]!
-//
-//            return vegetableCell
-//
-//        case .meat:
-//            guard let meatCell = ingredientTableView.dequeueReusableCell(withIdentifier:
-//                String(describing: IngredientSelectionCell.self),
-//                for: indexPath) as? IngredientSelectionCell
-//            else { fatalError("MeatCell error") }
-//
-//            meatCell.ingredientObjects = ingredientCategory[.meat]!
-//
-//            return meatCell
-//
-//        case .side:
-//            guard let sideCell = ingredientTableView.dequeueReusableCell(withIdentifier:
-//                String(describing: IngredientSelectionCell.self),
-//                for: indexPath) as? IngredientSelectionCell
-//            else { fatalError("SideCell error") }
-//
-//            sideCell.ingredientObjects = ingredientCategory[.side]!
-//
-//            return sideCell
-//
-//        default:
-//            return IngredientSelectionCell()
-//        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

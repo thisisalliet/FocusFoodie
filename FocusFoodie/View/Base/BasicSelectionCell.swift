@@ -92,10 +92,6 @@ class BasicSelectionCell: UITableViewCell,
         ingredientCollectionView.heightAnchor.constraint(equalToConstant: 190.0).isActive = true
         
         ingredientCollectionView.register(SelectionCell.self, forCellWithReuseIdentifier: String(describing: SelectionCell.self))
-
-//        ingredientCollectionView.register(
-//            IngredientSelectionCell.self,
-//            forCellWithReuseIdentifier: String(describing: IngredientSelectionCell.self))
     }
 
     func reloadData() {

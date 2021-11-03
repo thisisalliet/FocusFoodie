@@ -17,8 +17,6 @@ enum IngredientStatus {
 }
 
 class IngredientSelectionCell: BasicSelectionCell {
-                
-    var touchHandler: ((IndexPath) -> Void)?
     
     var ingredientObjects: [IngredientObject] = [] {
 
@@ -26,6 +24,8 @@ class IngredientSelectionCell: BasicSelectionCell {
             ingredientCollectionView.reloadData()
         }
     }
+    
+    var touchHandler: ((Int) -> Bool)?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -68,10 +68,12 @@ class IngredientSelectionCell: BasicSelectionCell {
     
     override func didSelected(_ cell: BasicSelectionCell, at indexPath: IndexPath) {
         
-//        for (index, object) in ingredientObjects.enumerated() where object.status == .selected {
-//
-//            ingredientObjects[index].status = .avaliable
-//        }
+        guard touchHandler?(ingredientObjects[indexPath.row].minute ?? 0) == true else { return }
+        
+        for (index, object) in ingredientObjects.enumerated() where object.status == .selected {
+
+            ingredientObjects[index].status = .avaliable
+        }
 //
 //        ingredientObjects[indexPath.row].status = .selected
 //
