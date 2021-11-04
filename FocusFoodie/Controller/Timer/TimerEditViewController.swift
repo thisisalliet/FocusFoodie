@@ -67,6 +67,8 @@ class TimerEditViewController: UIViewController,
         super.viewDidLoad()
         
         setupTableView()
+        
+        isModalInPresentation = true
     }
     
     private func setupTableView() {
