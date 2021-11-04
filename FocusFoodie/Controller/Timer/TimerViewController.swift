@@ -50,7 +50,7 @@ class TimerViewController: BaseViewController {
             doneButton.setTitle("Done", for: .normal)
             
             doneButton.setTitleColor(.white, for: .normal)
-                        
+            
             doneButton.backgroundColor = .B6
             
             doneButton.layer.cornerRadius = doneButton.frame.width / 2
@@ -81,52 +81,52 @@ class TimerViewController: BaseViewController {
     
     @IBAction func didTapControlButton(_ sender: UIButton) {
         
-//        formatter.dateFormat = "HH"
-//
-//        let hours = formatter.string(from: countdownTimer.date)
-//
-//
-//        formatter.dateFormat = "mm"
-//
-//        let minutes = formatter.string(from: countdownTimer.date)
-//
-//        seconds = Int(hours)! * 60 * 60 + Int(minutes)! * 60
+        //        formatter.dateFormat = "HH"
+        //
+        //        let hours = formatter.string(from: countdownTimer.date)
+        //
+        //
+        //        formatter.dateFormat = "mm"
+        //
+        //        let minutes = formatter.string(from: countdownTimer.date)
+        //
+        //        seconds = Int(hours)! * 60 * 60 + Int(minutes)! * 60
         
-//        if startStatus {
-//
-//            timer = Timer.scheduledTimer(timeInterval: 1.0,
-//                                         target:self,
-//                                         selector: #selector(countDownHelper),
-//                                         userInfo: nil,
-//                                         repeats: true)
-//
-//            setupNotification(time: seconds)
-//
-//            startStatus = false
-//            controlButton.setTitle("Pause", for: .normal)
-//
-//            pauseStatus = true
-//            doneButton.isEnabled = true
-//
-//
-//        } else {
-//
-//            timer.invalidate()
-//            removeNotification()
-//
-//            startStatus = true
-//            startBtn.setTitleColor(.white, for: .normal)
-//            startBtn.setTitle("Start", for: .normal)
-//
-//
-//            countdownTimer.isHidden = false
-//            timerLabel.isHidden = true
-//
-//            pauseStatus = false
-//            pauseBtn.isEnabled = false
-//            pauseBtn.setTitleColor(.lightGray, for: .normal)
-//
-//        }
+        //        if startStatus {
+        //
+        //            timer = Timer.scheduledTimer(timeInterval: 1.0,
+        //                                         target:self,
+        //                                         selector: #selector(countDownHelper),
+        //                                         userInfo: nil,
+        //                                         repeats: true)
+        //
+        //            setupNotification(time: seconds)
+        //
+        //            startStatus = false
+        //            controlButton.setTitle("Pause", for: .normal)
+        //
+        //            pauseStatus = true
+        //            doneButton.isEnabled = true
+        //
+        //
+        //        } else {
+        //
+        //            timer.invalidate()
+        //            removeNotification()
+        //
+        //            startStatus = true
+        //            startBtn.setTitleColor(.white, for: .normal)
+        //            startBtn.setTitle("Start", for: .normal)
+        //
+        //
+        //            countdownTimer.isHidden = false
+        //            timerLabel.isHidden = true
+        //
+        //            pauseStatus = false
+        //            pauseBtn.isEnabled = false
+        //            pauseBtn.setTitleColor(.lightGray, for: .normal)
+        //
+        //        }
     }
     
     @IBAction func didTapDoneBtn(_ sender: UIButton) {
@@ -140,7 +140,7 @@ class TimerViewController: BaseViewController {
         doneButton.setTitleColor(.white, for: .normal)
     }
     
-    @objc func countDownHelper() {
+    func updateCountDownLabel(_ totalTime: Int) {
         
         seconds -= 1
         
@@ -166,8 +166,7 @@ class TimerViewController: BaseViewController {
         }
     }
     
-    
-    func setupNotification(time:Int) {
+    func setupNotification(time: Int) {
         
         let alarmContent = UNMutableNotificationContent()
         
@@ -179,7 +178,10 @@ class TimerViewController: BaseViewController {
         
         let alarmTrigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(time), repeats: false)
         
-        let alarmRequest = UNNotificationRequest(identifier: "alarmTrigger", content: alarmContent, trigger: alarmTrigger)
+        let alarmRequest = UNNotificationRequest(
+            identifier: "alarmTrigger",
+            content: alarmContent,
+            trigger: alarmTrigger)
         
         UNUserNotificationCenter.current().add(alarmRequest, withCompletionHandler: nil)
         
@@ -190,37 +192,16 @@ class TimerViewController: BaseViewController {
     }
 }
 
-
 extension TimerViewController: TimerEditControllerDelegate {
     
     func dismissEditor(_ controller: TimerEditViewController) {
         
-//        let origin =
-//            .frame
-//
-//        let nextFrame = CGRect(x: origin.minX, y: origin.maxY, width: origin.width, height: origin.height)
-//
-//        UIView.animate(
-//            withDuration: 0.3,
-//            animations: { [weak self] in
-//
-//                self?.productPickerView.frame = nextFrame
-//
-//                self?.blurView.removeFromSuperview()
-//
-//                self?.isEnableAddToCarBtn(true)
-//
-//            }, completion: { [weak self] _ in
-//
-//                self?.productPickerView.removeFromSuperview()
-//            }
-//        )
     }
     
     func timeChange(_ controller: TimerEditViewController) {
         
+        //        guard controller.selectedIngredient != nil
+        //
+        //        updateCountDownLabel(<#T##Int#>)
     }
-    
-    
-    
 }

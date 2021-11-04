@@ -313,6 +313,8 @@
 				09524FD227201DA90061C36B /* ProfileView.xib */,
 				09524FD42720213B0061C36B /* RecordCell.swift */,
 				09524FF62721B2B80061C36B /* RecordCell.xib */,
+				09428932272D975C0083CF6B /* ComingSoonView.swift */,
+				09428934272DC64E0083CF6B /* ComingSoonView.xib */,
 				09C1C7D32722929100D2C9B2 /* Detail */,
 			);
 			path = Record;
@@ -331,8 +333,6 @@
 		09524FEE272169350061C36B /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				09428932272D975C0083CF6B /* ComingSoonView.swift */,
-				09428934272DC64E0083CF6B /* ComingSoonView.xib */,
 				090E07E027303A1800136025 /* BasicSelectionCell.swift */,
 			);
 			path = Base;

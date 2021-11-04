@@ -12,7 +12,7 @@ class IngredientItemView: UIView {
     @IBOutlet weak var contentView: UIView! {
         
         didSet {
-                        
+                                    
             contentView.cornerRadius = 10
         }
     }
@@ -76,13 +76,16 @@ class IngredientItemView: UIView {
         minLabel.text = "\(minute) min"
         
         if isSelected {
-
-            contentView.backgroundColor = .B1
             
-        } else {
+            contentView.cornerRadius = 10
 
             contentView.backgroundColor = .B2
+            
+        } else {
+            
+            contentView.cornerRadius = 10
+
+            contentView.backgroundColor = .B1
         }
     }
 }
-

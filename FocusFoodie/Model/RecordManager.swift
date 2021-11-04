@@ -55,3 +55,29 @@ public struct Record: Codable {
         case recipeId = "recipe_id"
     }
 }
+
+// MARK: - Recipe -
+
+public struct Recipe: Codable {
+    
+    let bread: String
+    
+    let vegetable: String
+    
+    let meat: String
+    
+    let side: String
+    
+    let focusTime: Int64
+    
+    let recipeId: String
+    
+    enum CodingKeys: String, CodingKey {
+        case bread
+        case vegetable
+        case meat
+        case side
+        case focusTime = "focus_time"
+        case recipeId = "recipe_id"
+    }
+}

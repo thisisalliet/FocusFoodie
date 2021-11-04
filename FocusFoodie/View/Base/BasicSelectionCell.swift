@@ -37,7 +37,7 @@ class BasicSelectionCell: UITableViewCell,
 
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layoutObject)
 
-//        collectionView.backgroundColor = .B1
+        collectionView.backgroundColor = .white
 
         collectionView.dataSource = self
 
