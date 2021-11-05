@@ -29,13 +29,63 @@ class TimerEditViewController: UIViewController,
         .side: SideItem.allCases
     ]
     
-    var selectedBread: BreadItem?
+    private let selectedCategory: [IngredientCategory] = [.bread, .meat, .vegetable, .side]
+
+    var selectedBread: BreadItem? {
+        
+        didSet {
+            
+            guard let index = selectedCategory.firstIndex(of: .bread) else { return }
+            
+            let indexPath = IndexPath(row: index, section: 0)
+            
+            guard let cell = ingredientTableView.cellForRow(at: indexPath) else { return }
+            
+            delegate?.timeChange(self)
+        }
+    }
     
-    var selectedVegatable: VegetableItem?
+    var selectedVegatable: VegetableItem? {
+
+        didSet {
+
+            guard let index = selectedCategory.firstIndex(of: .vegetable) else { return }
+
+            let indexPath = IndexPath(row: index, section: 0)
+
+            guard let cell = ingredientTableView.cellForRow(at: indexPath) else { return }
+
+            delegate?.timeChange(self)
+        }
+    }
+        
+    var selectedMeat: MeatItem? {
+        
+        didSet {
+
+            guard let index = selectedCategory.firstIndex(of: .meat) else { return }
+
+            let indexPath = IndexPath(row: index, section: 0)
+
+            guard let cell = ingredientTableView.cellForRow(at: indexPath) else { return }
+
+            delegate?.timeChange(self)
+        }
+    }
     
-    var selectedMeat: MeatItem?
-    
-    var selectedSide: SideItem?
+    var selectedSide: SideItem? {
+        
+        didSet {
+
+            guard let index = selectedCategory.firstIndex(of: .side) else { return }
+
+            let indexPath = IndexPath(row: index, section: 0)
+
+            guard let cell = ingredientTableView.cellForRow(at: indexPath) else { return }
+
+            delegate?.timeChange(self)
+        }
+    }
     
     var totalTime = 50
     
@@ -77,6 +127,7 @@ class TimerEditViewController: UIViewController,
                                      forCellReuseIdentifier: String(describing: IngredientSelectionCell.self))
     }
     
+    // MARK: - Action -
     @IBAction func onDismiss(_ sender: UIButton) {
         
         presentingViewController?.dismiss(animated: true, completion: nil)
@@ -104,18 +155,50 @@ class TimerEditViewController: UIViewController,
         }
     }
     
-    private func updateIngredientSelectionCell(_ cell: UITableViewCell) {
+    // MARK: - Cell Arrangement
+    private func manipulaterCell(_ view: IngredientGalleryView, type: IngredientCategory) {
+
+        switch type {
+
+        case .bread:
+
+            updateBreadImage(view)
+
+        case .vegetable:
+
+            updateVegetableImage(view)
+
+        case .meat:
+
+            updateVegetableImage(view)
+            
+        case .side:
+            
+            updateSideImage(view)
+        }
+    }
+    
+    private func updateBreadImage(_ view: IngredientGalleryView) {
         
-        //        guard let ingredientCell = cell as? IngredientSelectionCell
-        //        else {
-        //
-        //            return
-        //        }
-        //
-        //        ingredientCell.touchHandler = { [weak self] indexPath in
-        //
-        //            self?.selectedIngredient = self?.ingredientCategory?.values.
-        //        }
+//         let breadImage = view as? IngredientGalleryView
+//        let ingredientObject = IngredientObject.self
+//
+//        breadImage.touchHandler = { [weak self] indexPath in
+//
+//            self?.selectedBread = self?.ingredientCategory?.index(forKey: .bread).[indexPath.row]
+//        }
+    }
+    
+    private func updateVegetableImage(_ view: IngredientGalleryView) {
+        
+    }
+    
+    private func updateMeatImage(_ view: IngredientGalleryView) {
+        
+    }
+    
+    private func updateSideImage(_ view: IngredientGalleryView) {
+        
     }
     
     // MARK: - UITableViewDataSource -

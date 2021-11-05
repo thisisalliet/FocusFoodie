@@ -10,6 +10,11 @@ import UserNotifications
 import Firebase
 import FirebaseFirestoreSwift
 
+protocol ProductPickerControllerDelegate: AnyObject {
+
+    func timeChange(_ controller: TimerEditViewController)
+}
+
 class TimerViewController: BaseViewController {
     
     var seconds = 0

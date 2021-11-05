@@ -104,7 +104,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yyu-p1-OyE">
-                                <rect key="frame" x="0.0" y="314.5" width="414" height="493.5"/>
+                                <rect key="frame" x="0.0" y="330.5" width="414" height="477.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4T-EG-2Bl">
@@ -141,7 +141,7 @@
                         <constraints>
                             <constraint firstItem="VcB-HR-vW1" firstAttribute="height" secondItem="NAE-bZ-OTO" secondAttribute="height" multiplier="0.3" id="1Qq-ry-7vW"/>
                             <constraint firstItem="R4T-EG-2Bl" firstAttribute="top" secondItem="anM-eQ-V2r" secondAttribute="top" constant="16" id="1lg-uk-Gtr"/>
-                            <constraint firstItem="yyu-p1-OyE" firstAttribute="top" secondItem="VcB-HR-vW1" secondAttribute="bottom" id="5S5-Dj-XtI"/>
+                            <constraint firstItem="yyu-p1-OyE" firstAttribute="top" secondItem="VcB-HR-vW1" secondAttribute="bottom" constant="16" id="5S5-Dj-XtI"/>
                             <constraint firstItem="anM-eQ-V2r" firstAttribute="trailing" secondItem="yyu-p1-OyE" secondAttribute="trailing" id="C2b-Ny-Ehw"/>
                             <constraint firstItem="Qqj-6x-LUu" firstAttribute="top" secondItem="anM-eQ-V2r" secondAttribute="top" constant="16" id="OKp-oa-oah"/>
                             <constraint firstItem="yyu-p1-OyE" firstAttribute="leading" secondItem="anM-eQ-V2r" secondAttribute="leading" id="Sir-XQ-NVf"/>

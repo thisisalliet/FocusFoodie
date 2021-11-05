@@ -96,19 +96,19 @@ class IngredientSelectionCell: BasicSelectionCell {
             
         case .bread:
             
-            delegate?.galleryView.firstIngredientImage.image = ingredientObjects[indexPath.row].image!
+            delegate?.galleryView.breadImage.image = ingredientObjects[indexPath.row].image!
             
         case .vegetable:
             
-            delegate?.galleryView.secondIngredientImage.image = ingredientObjects[indexPath.row].image!
+            delegate?.galleryView.vegetableImage.image = ingredientObjects[indexPath.row].image!
             
         case .meat:
             
-            delegate?.galleryView.thirdIngredientImage.image = ingredientObjects[indexPath.row].image!
+            delegate?.galleryView.meatImage.image = ingredientObjects[indexPath.row].image!
 
         case .side:
             
-            delegate?.galleryView.fourthIngredientImage.image = ingredientObjects[indexPath.row].image!
+            delegate?.galleryView.sideImage.image = ingredientObjects[indexPath.row].image!
             
         default:
             break

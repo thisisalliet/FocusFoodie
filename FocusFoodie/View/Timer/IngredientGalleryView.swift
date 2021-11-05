@@ -9,7 +9,23 @@ import UIKit
 
 class IngredientGalleryView: UIView {
 
-    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var contentView: UIView! {
+        
+        didSet {
+            
+            let layer = CAGradientLayer()
+            
+            layer.frame = contentView.bounds
+            
+            layer.colors = [UIColor.white.cgColor, UIColor.B1 ?? UIColor.white.cgColor]
+            
+            layer.startPoint = CGPoint(x: 0, y: 0)
+            
+            layer.endPoint = CGPoint(x: 0, y: 10)
+            
+            contentView.layer.insertSublayer(layer, at: 0)
+        }
+    }
     
     @IBOutlet weak var oilImage: UIImageView!
     
@@ -19,13 +35,13 @@ class IngredientGalleryView: UIView {
     
     @IBOutlet weak var lightbackground: UIView!
     
-    @IBOutlet weak var firstIngredientImage: UIImageView!
+    @IBOutlet weak var breadImage: UIImageView!
     
-    @IBOutlet weak var secondIngredientImage: UIImageView!
+    @IBOutlet weak var vegetableImage: UIImageView!
     
-    @IBOutlet weak var thirdIngredientImage: UIImageView!
+    @IBOutlet weak var meatImage: UIImageView!
     
-    @IBOutlet weak var fourthIngredientImage: UIImageView!
+    @IBOutlet weak var sideImage: UIImageView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
