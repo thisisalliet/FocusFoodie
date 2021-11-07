@@ -14,6 +14,8 @@ private enum Tab {
     case timer
     
     case community
+    
+    case profile
 
     func controller() -> UIViewController {
 
@@ -26,6 +28,8 @@ private enum Tab {
         case .timer: controller = UIStoryboard.timer.instantiateInitialViewController()!
             
         case .community: controller = UIStoryboard.community.instantiateInitialViewController()!
+            
+        case .profile: controller = UIStoryboard.profile.instantiateInitialViewController()!
         }
                 
         controller.tabBarItem = tabBarItem()
@@ -61,13 +65,20 @@ private enum Tab {
                 image: UIImage.asset(.icon_community),
                 selectedImage: UIImage.asset(.icon_community)
             )
+            
+        case .profile:
+            return UITabBarItem(
+                title: nil,
+                image: UIImage.asset(.icon_community),
+                selectedImage: UIImage.asset(.icon_community)
+            )
         }
     }
 }
 
 class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
 
-    private let tabs: [Tab] = [.record, .timer, .community]
+    private let tabs: [Tab] = [.record, .timer, .community, .profile]
 
     override func viewDidLoad() {
         super.viewDidLoad()
