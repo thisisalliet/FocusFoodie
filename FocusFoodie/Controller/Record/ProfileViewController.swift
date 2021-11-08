@@ -9,27 +9,31 @@ import UIKit
 import FirebaseAuth
 
 class ProfileViewController: BaseViewController {
-    
-    var tabbarHeight: CGFloat? = 0.0
-    
+        
     lazy var logoutButton: UIButton = {
         
         let button = UIButton()
+        
         let myAttribute: [NSAttributedString.Key: Any] = [
             NSAttributedString.Key.font: UIFont.regular(size: 14),
         ]
-        let myAttributeString = NSAttributedString(string: "登出", attributes: myAttribute)
+        let myAttributeString = NSAttributedString(string: "Log out", attributes: myAttribute)
         
         button.backgroundColor = UIColor.B1
+        
         button.tintColor = UIColor.white
+        
         button.layer.cornerRadius = 10
+        
         button.setTitle("登出", for: .normal)
+        
         button.titleLabel?.attributedText = myAttributeString
+        
         button.layoutIfNeeded()
+        
         button.addTarget(self, action: #selector(logOutAction(_:)), for: .touchUpInside)
         return button
     }()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +42,7 @@ class ProfileViewController: BaseViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        tabbarHeight = self.tabBarController?.tabBar.frame.height
+        
         setupLogoutButton()
     }
     
@@ -69,7 +73,7 @@ class ProfileViewController: BaseViewController {
             }
         }
         
-        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         
         controller.addAction(okAction)
         
@@ -90,7 +94,7 @@ class ProfileViewController: BaseViewController {
             
             logoutButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             logoutButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
-            logoutButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -(tabbarHeight ?? 49.0) - 10),
+            logoutButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
             logoutButton.heightAnchor.constraint(equalToConstant: 40)
         ])
     }

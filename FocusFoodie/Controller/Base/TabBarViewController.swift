@@ -34,9 +34,17 @@ private enum Tab {
                 
         controller.tabBarItem = tabBarItem()
         
-        controller.tabBarController?.tabBar.tintColor = .L4
+        controller.tabBarController?.tabBar.tintColor = .white
                         
         controller.tabBarItem.imageInsets = UIEdgeInsets(top: 45.0, left: 0.0, bottom: 45.0, right: 0.0)
+        
+        controller.tabBarController?.tabBar.cornerRadius = 10
+        
+        controller.tabBarController?.tabBar.frame.size.height = 80
+        
+        controller.tabBarController?.tabBar.isTranslucent = false
+        
+        controller.tabBarController?.tabBar.barTintColor = .white
 
         return controller
     }
@@ -55,8 +63,8 @@ private enum Tab {
         case .timer:
             return UITabBarItem(
                 title: nil,
-                image: UIImage.asset(.icon_home),
-                selectedImage: UIImage.asset(.icon_home)
+                image: UIImage.asset(.icon_plus),
+                selectedImage: UIImage.asset(.icon_plus)
             )
 
         case .community:
@@ -85,6 +93,6 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
 
         viewControllers = tabs.map({ $0.controller() })
         
-        tabBar.tintColor = .H1
+        tabBar.tintColor = .white
     }
 }

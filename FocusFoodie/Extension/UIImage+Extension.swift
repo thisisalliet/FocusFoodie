@@ -14,6 +14,7 @@ enum ImageAsset: String {
     case icon_community
     case icon_home
     case icon_record
+    case icon_plus
     
     // Button
     case icon_arrow_left

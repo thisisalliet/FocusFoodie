@@ -30,7 +30,16 @@ class RecordViewController: BaseViewController,
         }
     }
     
-    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var profileButton: UIButton! {
+        
+        didSet {
+            
+            
+            profileButton.backgroundColor = .A1
+            
+            profileButton.alpha = 10
+        }
+    }
     
     @IBOutlet weak var calendarPickerView: UIView! {
         
