@@ -9,6 +9,7 @@ import UIKit
 import Foundation
 import FirebaseAuth
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class UserManager {
     
@@ -57,7 +58,6 @@ class UserManager {
         }
     }()
     
-    // create
     func createUserInfo() {
         let user = User(displayName: userDisplayName,
                         userId: userId,
@@ -76,11 +76,10 @@ class UserManager {
             
         } catch {
             
-            print("Fail to create user")
+            print("Fail to create user.")
         }
     }
     
-    // read
     func fetchUserInfo(uesrId: String, completion: @escaping (Result<User, Error>) -> Void) {
         
         let userRef = db.collection(CollectionName.user.rawValue)

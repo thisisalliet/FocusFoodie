@@ -36,15 +36,15 @@ class CommunityViewController: BaseViewController,
         }
     }
     
-    var pendingList = [BlockList]() {
+    var invitations = [Invitation]() {
         
         didSet {
             
-            communityTableView.reloadData()
+            searchUid()
         }
     }
     
-    var invitations = [Invitation]() {
+    var blockList = [BlockList]() {
         
         didSet {
             
@@ -56,15 +56,33 @@ class CommunityViewController: BaseViewController,
     
     @IBOutlet weak var profileButton: UIButton!
     
-    @IBOutlet weak var friendNumber: UILabel!
+    @IBOutlet weak var friendNumber: UILabel! {
+        
+        didSet {
+            
+            friendNumber.text = "\(friendList.count)"
+        }
+    }
     
     @IBOutlet weak var friendLabel: UILabel!
     
-    @IBOutlet weak var pendingNumber: UILabel!
+    @IBOutlet weak var pendingNumber: UILabel! {
+        
+        didSet {
+            
+            pendingNumber.text = "\(invitations.count)"
+        }
+    }
     
     @IBOutlet weak var pendingLabel: UILabel!
     
-    @IBOutlet weak var blockNumber: UILabel!
+    @IBOutlet weak var blockNumber: UILabel! {
+        
+        didSet {
+            
+            blockNumber.text = "\(blockList.count)"
+        }
+    }
     
     @IBOutlet weak var blockLabel: UILabel!
     
@@ -77,6 +95,10 @@ class CommunityViewController: BaseViewController,
         
         setUpTableView()
         
+        communityTableView.dataSource = self
+        
+        communityTableView.delegate = self
+        
         fetchInvitations()
         
         fetchFriendList()
@@ -84,10 +106,6 @@ class CommunityViewController: BaseViewController,
         monitorInvitation()
         
         monitorFriendList()
-        
-        searchUid()
-        
-        communityTableView.delegate = self
     }
     
     // MARK: - Awake Nib -
@@ -128,11 +146,12 @@ class CommunityViewController: BaseViewController,
             
             guard let snapshot = snapshot else { return }
             
-            let allInvitations = snapshot.documents.compactMap { snapshot in
-                try? snapshot.data(as: Invitation.self)
+            let allInvitations = snapshot.documents.compactMap { document in
+                try? document.data(as: Invitation.self)
             }
             
-            let myInvite = allInvitations.filter({ $0.receiverId == myId})
+            let myInvite = allInvitations.filter({
+                $0.receiverId == myId})
             
             self.invitations.removeAll()
             
@@ -183,14 +202,8 @@ class CommunityViewController: BaseViewController,
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        var rows = 1
-        
-        //        rows += invitations.count
-        
-        rows += friendList.count
-        
-        return rows
+                
+        return friendList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

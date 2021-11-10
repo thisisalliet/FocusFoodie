@@ -33,7 +33,7 @@ class RecordCell: UITableViewCell {
             
             greyView.cornerRadius = 5
             
-            greyView.backgroundColor = .B2
+            greyView.backgroundColor = .G1
         }
     }
     
@@ -45,7 +45,7 @@ class RecordCell: UITableViewCell {
             
             categoryLabel.contentMode = .center
             
-            categoryLabel.textColor = .B5
+            categoryLabel.textColor = .G3
         }
     }
     
@@ -55,7 +55,7 @@ class RecordCell: UITableViewCell {
             
             minLabel.text = "180"
             
-            minLabel.textColor = .B5
+            minLabel.textColor = .G3
             
         }
     }
@@ -66,7 +66,7 @@ class RecordCell: UITableViewCell {
             
             unitLabel.text = "min"
             
-            unitLabel.textColor = .B5
+            unitLabel.textColor = .G3
         }
     }
 }

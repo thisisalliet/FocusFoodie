@@ -51,11 +51,11 @@ class RecordViewController: BaseViewController,
         
         didSet {
             
-            calendarButton.backgroundColor = .B2
+            calendarButton.backgroundColor = .G1
             
-            calendarButton.setTitleColor(.B5, for: .normal)
+            calendarButton.setTitleColor(.G3, for: .normal)
             
-            calendarButton.setTitleColor(.B5, for: .selected)
+            calendarButton.setTitleColor(.G3, for: .selected)
             
             calendarButton.setTitle("Today ▾ ", for: .normal)
             

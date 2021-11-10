@@ -42,7 +42,7 @@ class TimerViewController: BaseViewController {
             
             countDownLabel.text = "3:00:00"
             
-            countDownLabel.textColor = .B5
+            countDownLabel.textColor = .G3
             
             countDownLabel.font = .regular(size: 40.0)
         }
@@ -56,7 +56,7 @@ class TimerViewController: BaseViewController {
             
             doneButton.setTitleColor(.white, for: .normal)
             
-            doneButton.backgroundColor = .B6
+            doneButton.backgroundColor = .G2
             
             doneButton.layer.cornerRadius = doneButton.frame.width / 2
         }
@@ -70,7 +70,7 @@ class TimerViewController: BaseViewController {
             
             controlButton.setTitleColor(.white, for: .normal)
             
-            controlButton.backgroundColor = .B6
+            controlButton.backgroundColor = .G1
             
             controlButton.layer.cornerRadius = controlButton.frame.width / 2
         }
@@ -141,7 +141,7 @@ class TimerViewController: BaseViewController {
     func setUpDoneButton() {
         
         doneButton.isEnabled = false
-        doneButton.backgroundColor = .B5
+        doneButton.backgroundColor = .G1
         doneButton.setTitleColor(.white, for: .normal)
     }
     

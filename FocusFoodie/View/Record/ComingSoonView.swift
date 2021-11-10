@@ -32,7 +32,7 @@ class ComingSoonView: UIView {
             
             comingSoonLabel.text = "Coming Soon..."
             
-            comingSoonLabel.textColor = .B6
+            comingSoonLabel.textColor = .G3
                         
             comingSoonLabel.font = .regular(size: 20)
         }

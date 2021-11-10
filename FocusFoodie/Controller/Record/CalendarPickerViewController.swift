@@ -138,9 +138,9 @@ class CalendarPickerViewController: UIViewController {
         
         calendarPicker.cornerRadius = 10
         
-        calendarPicker.backgroundColor = .B6
+        calendarPicker.backgroundColor = .white
         
-        calendarPicker.tintColor = .B7
+        calendarPicker.tintColor = .G2
                 
     }
 //

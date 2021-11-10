@@ -6,10 +6,15 @@
 //
 
 import UIKit
+import FirebaseStorage
 import FirebaseAuth
 
 class ProfileViewController: BaseViewController {
         
+    var imageUrl = String()
+    
+    let storage = Storage.storage().reference()
+    
     lazy var logoutButton: UIButton = {
         
         let button = UIButton()
@@ -19,13 +24,13 @@ class ProfileViewController: BaseViewController {
         ]
         let myAttributeString = NSAttributedString(string: "Log out", attributes: myAttribute)
         
-        button.backgroundColor = UIColor.B1
+        button.backgroundColor = UIColor.G1
         
         button.tintColor = UIColor.white
         
         button.layer.cornerRadius = 10
         
-        button.setTitle("登出", for: .normal)
+        button.setTitle("Sign out", for: .normal)
         
         button.titleLabel?.attributedText = myAttributeString
         
@@ -34,6 +39,18 @@ class ProfileViewController: BaseViewController {
         button.addTarget(self, action: #selector(logOutAction(_:)), for: .touchUpInside)
         return button
     }()
+    
+    @IBOutlet weak var profileBackground: UIImageView!
+    
+    @IBOutlet weak var profileImage: UIImageView!
+    
+    @IBOutlet weak var profileButton: UIButton!
+    
+    @IBOutlet weak var backButtonBackground: UIView!
+    
+    @IBOutlet weak var backButton: UIButton!
+    
+    @IBOutlet weak var profileTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,11 +63,16 @@ class ProfileViewController: BaseViewController {
         setupLogoutButton()
     }
     
+    @IBAction func profileButtonTapped(_ sender: UIButton) {
+        
+        showImagePickerControllerActionSheet()
+    }
+    
     @objc func logOutAction(_ sender: UIButton) {
         
-        let controller = UIAlertController(title: nil, message: "確定要登出嗎?", preferredStyle: .alert)
+        let controller = UIAlertController(title: nil, message: "Are you sure you want to logout?", preferredStyle: .alert)
         
-        let okAction = UIAlertAction(title: "確定", style: .default) { _ in
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
             
             do {
                 
@@ -81,9 +103,7 @@ class ProfileViewController: BaseViewController {
         
         present(controller, animated: true, completion: nil)
     }
-    
-    // MARK: UI design
-    
+        
     private func setupLogoutButton() {
         
         view.addSubview(logoutButton)
@@ -97,5 +117,85 @@ class ProfileViewController: BaseViewController {
             logoutButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
             logoutButton.heightAnchor.constraint(equalToConstant: 40)
         ])
+    }
+}
+
+extension ProfileViewController: UIImagePickerControllerDelegate,
+                                    UINavigationControllerDelegate {
+    
+    func showImagePickerControllerActionSheet() {
+        
+        let actionSheet = UIAlertController(title: "Attach Photo", message: "where would you like to attach a photo from", preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { [weak self] _ in
+            
+            let picker = UIImagePickerController()
+            
+            picker.sourceType = .camera
+            
+            picker.delegate = self
+            
+            picker.allowsEditing = true
+            
+            self?.present(picker, animated: true)
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { [weak self] _ in
+            
+            let picker = UIImagePickerController()
+            
+            picker.sourceType = .photoLibrary
+            
+            picker.delegate = self
+            
+            picker.allowsEditing = true
+            
+            self?.present(picker, animated: true)
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        present(actionSheet, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        
+        picker.dismiss(animated: true, completion: nil)
+        
+        guard let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else { return }
+        
+        profileImage.image = editedImage
+        
+        guard let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
+        
+        profileImage.image = originalImage
+        
+        guard let imageData = editedImage.jpegData(compressionQuality: 0.25) else {
+            return
+        }
+        
+        let uniqueString = NSUUID().uuidString
+        
+        storage.child("image/\(uniqueString)").putData(imageData, metadata: nil) { _, error in
+            guard error == nil else {
+                
+                print("Failed to upload")
+                
+                return
+            }
+            
+            self.storage.child("image/\(uniqueString)").downloadURL(completion: { url, error in
+                guard let url = url, error == nil else { return }
+                
+                let urlString = url.absoluteString
+                
+                print("Download URL: \(urlString)")
+                
+                self.imageUrl = urlString
+                
+                UserDefaults.standard.set(urlString, forKey: "url")
+            })
+        }
     }
 }

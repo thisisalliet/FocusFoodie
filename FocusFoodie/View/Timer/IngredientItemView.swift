@@ -29,7 +29,7 @@ class IngredientItemView: UIView {
         
         didSet {
             
-            titleLabel.textColor = .B5
+            titleLabel.textColor = .G3
             
             titleLabel.font = UIFont.regular(size: 14.0)
         }
@@ -39,7 +39,7 @@ class IngredientItemView: UIView {
         
         didSet {
             
-            minLabel.textColor = .B5
+            minLabel.textColor = .G3
             
             minLabel.font = UIFont.regular(size: 20.0)
         }
@@ -79,13 +79,13 @@ class IngredientItemView: UIView {
             
             contentView.cornerRadius = 10
 
-            contentView.backgroundColor = .B2
+            contentView.backgroundColor = .G1
             
         } else {
             
             contentView.cornerRadius = 10
 
-            contentView.backgroundColor = .B1
+            contentView.backgroundColor = .G1
         }
     }
 }

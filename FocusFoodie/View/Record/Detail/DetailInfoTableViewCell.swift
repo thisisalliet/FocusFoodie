@@ -17,7 +17,7 @@ class DetailInfoTableViewCell: UITableViewCell {
         
         didSet {
             
-            dateGreyView.backgroundColor = .B6
+            dateGreyView.backgroundColor = .G1
             
             dateGreyView.cornerRadius = 5
         }
@@ -39,7 +39,7 @@ class DetailInfoTableViewCell: UITableViewCell {
         
         didSet {
                         
-            dateLabel.textColor = .B5
+            dateLabel.textColor = .G3
         }
     }
     
@@ -47,7 +47,7 @@ class DetailInfoTableViewCell: UITableViewCell {
         
         didSet {
             
-            timeGreyView.backgroundColor = .B6
+            timeGreyView.backgroundColor = .G2
             
             timeGreyView.cornerRadius = 10
         }
@@ -71,7 +71,7 @@ class DetailInfoTableViewCell: UITableViewCell {
             
             timeLabel.text = "17:00 - 18:00"
             
-            timeLabel.textColor = .B5
+            timeLabel.textColor = .G3
         }
     }
     
@@ -81,7 +81,7 @@ class DetailInfoTableViewCell: UITableViewCell {
             
             focusTimeLabel.text = String(describing: record?.focusTime)
             
-            focusTimeLabel.textColor = .B5
+            focusTimeLabel.textColor = .G3
         }
     }
     
@@ -91,7 +91,7 @@ class DetailInfoTableViewCell: UITableViewCell {
             
             unitLabel.text = "min"
             
-            unitLabel.textColor = .B5
+            unitLabel.textColor = .G3
         }
     }
 }

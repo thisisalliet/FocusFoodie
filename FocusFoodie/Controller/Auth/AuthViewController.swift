@@ -17,7 +17,7 @@ class AuthViewController: BaseViewController {
     
     var handle: AuthStateDidChangeListenerHandle?
     
-    let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate
+    weak var sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +70,15 @@ class AuthViewController: BaseViewController {
     @objc func appleSignTapped() {
         
         performSignIn()
+        
+        guard UIStoryboard
+                .auth
+                .instantiateViewController(
+                    withIdentifier: String(describing: SetUpViewController.self)
+                ) is SetUpViewController else {
+                    
+                    return
+                }
     }
     
     func performSignIn() {
@@ -83,19 +92,10 @@ class AuthViewController: BaseViewController {
         authorizationController.presentationContextProvider = self
         
         authorizationController.performRequests()
-        
-        guard UIStoryboard
-                .auth
-                .instantiateViewController(
-                    withIdentifier: String(describing: SetUpViewController.self)
-                ) is SetUpViewController else {
-                    
-                    return
-                }
     }
     
-        func createAppleIdRequest() -> ASAuthorizationAppleIDRequest {
-            
+    func createAppleIdRequest() -> ASAuthorizationAppleIDRequest {
+        
             let appleIdProvider = ASAuthorizationAppleIDProvider()
             
         let request = appleIdProvider.createRequest()

@@ -54,6 +54,8 @@
 		09524FF42721B2B80061C36B /* RecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09524FF62721B2B80061C36B /* RecordCell.xib */; };
 		0974F113273AB6D70016FEC1 /* CommunityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0974F111273AB6D70016FEC1 /* CommunityCollectionViewCell.swift */; };
 		0974F114273AB6D70016FEC1 /* CommunityCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0974F112273AB6D70016FEC1 /* CommunityCollectionViewCell.xib */; };
+		0974F117273B71340016FEC1 /* ProfileInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0974F115273B71340016FEC1 /* ProfileInfoCell.swift */; };
+		0974F118273B71340016FEC1 /* ProfileInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0974F116273B71340016FEC1 /* ProfileInfoCell.xib */; };
 		09C1C7CE2722833000D2C9B2 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C7CD2722833000D2C9B2 /* UIColor+Extension.swift */; };
 		09C1C7D12722903800D2C9B2 /* DetailNoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C7CF2722903800D2C9B2 /* DetailNoteTableViewCell.swift */; };
 		09C1C7D22722903800D2C9B2 /* DetailNoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09C1C7D02722903800D2C9B2 /* DetailNoteTableViewCell.xib */; };
@@ -74,7 +76,6 @@
 		09DB475827351DE8003703C1 /* CollectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB475727351DE8003703C1 /* CollectionManager.swift */; };
 		09DB475C273522AB003703C1 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DB475B273522AA003703C1 /* Auth.storyboard */; };
 		09DB475F27357043003703C1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB475E27357043003703C1 /* ProfileViewController.swift */; };
-		09DB4761273575C6003703C1 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DB4760273575C6003703C1 /* Profile.storyboard */; };
 		09DB476727396E4D003703C1 /* Dongle-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09DB476327396E4C003703C1 /* Dongle-Regular.ttf */; };
 		09DB476827396E4D003703C1 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 09DB476427396E4C003703C1 /* OFL.txt */; };
 		09DB476927396E4D003703C1 /* Dongle-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09DB476527396E4C003703C1 /* Dongle-Light.ttf */; };
@@ -137,6 +138,8 @@
 		09524FF52721B2B80061C36B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RecordCell.xib; sourceTree = "<group>"; };
 		0974F111273AB6D70016FEC1 /* CommunityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCollectionViewCell.swift; sourceTree = "<group>"; };
 		0974F112273AB6D70016FEC1 /* CommunityCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityCollectionViewCell.xib; sourceTree = "<group>"; };
+		0974F115273B71340016FEC1 /* ProfileInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoCell.swift; sourceTree = "<group>"; };
+		0974F116273B71340016FEC1 /* ProfileInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileInfoCell.xib; sourceTree = "<group>"; };
 		09C1C7CD2722833000D2C9B2 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		09C1C7CF2722903800D2C9B2 /* DetailNoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNoteTableViewCell.swift; sourceTree = "<group>"; };
 		09C1C7D02722903800D2C9B2 /* DetailNoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailNoteTableViewCell.xib; sourceTree = "<group>"; };
@@ -175,7 +178,6 @@
 		09DB475727351DE8003703C1 /* CollectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionManager.swift; sourceTree = "<group>"; };
 		09DB475B273522AA003703C1 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Auth.storyboard; path = FocusFoodie/View/Auth/Auth.storyboard; sourceTree = SOURCE_ROOT; };
 		09DB475E27357043003703C1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = FocusFoodie/Controller/Auth/ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
-		09DB4760273575C6003703C1 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		09DB476327396E4C003703C1 /* Dongle-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dongle-Regular.ttf"; sourceTree = "<group>"; };
 		09DB476427396E4C003703C1 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		09DB476527396E4C003703C1 /* Dongle-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dongle-Light.ttf"; sourceTree = "<group>"; };
@@ -292,7 +294,6 @@
 				09524FEE272169350061C36B /* Base */,
 				0983ACE12727A33100DC40E1 /* Timer */,
 				09524FDE272050FF0061C36B /* Record */,
-				09DB4760273575C6003703C1 /* Profile.storyboard */,
 				09DB476F27398809003703C1 /* Community */,
 				09524F7B271FF4A00061C36B /* Main.storyboard */,
 				09524F80271FF4A10061C36B /* LaunchScreen.storyboard */,
@@ -485,6 +486,8 @@
 			isa = PBXGroup;
 			children = (
 				09524FA1271FFDA90061C36B /* Community.storyboard */,
+				0974F115273B71340016FEC1 /* ProfileInfoCell.swift */,
+				0974F116273B71340016FEC1 /* ProfileInfoCell.xib */,
 				09DB476B2739874E003703C1 /* CommunityTableViewCell.swift */,
 				09DB476C2739874E003703C1 /* CommunityTableViewCell.xib */,
 				0974F111273AB6D70016FEC1 /* CommunityCollectionViewCell.swift */,
@@ -578,6 +581,7 @@
 				09524F82271FF4A10061C36B /* LaunchScreen.storyboard in Resources */,
 				09DB476A27396E4D003703C1 /* Dongle-Bold.ttf in Resources */,
 				09524FF42721B2B80061C36B /* RecordCell.xib in Resources */,
+				0974F118273B71340016FEC1 /* ProfileInfoCell.xib in Resources */,
 				09524FD327201DA90061C36B /* ProfileView.xib in Resources */,
 				09524F7F271FF4A10061C36B /* Assets.xcassets in Resources */,
 				09524F9E271FFD910061C36B /* Timer.storyboard in Resources */,
@@ -588,7 +592,6 @@
 				09C1C7D22722903800D2C9B2 /* DetailNoteTableViewCell.xib in Resources */,
 				0974F114273AB6D70016FEC1 /* CommunityCollectionViewCell.xib in Resources */,
 				0942892E272D7E7D0083CF6B /* burger-machine.json in Resources */,
-				09DB4761273575C6003703C1 /* Profile.storyboard in Resources */,
 				09524FA0271FFD9C0061C36B /* Record.storyboard in Resources */,
 				09DB476E2739874E003703C1 /* CommunityTableViewCell.xib in Resources */,
 				09DB475C273522AB003703C1 /* Auth.storyboard in Resources */,
@@ -719,6 +722,7 @@
 				09524FE4272163B20061C36B /* Day.swift in Sources */,
 				09C1C7D927229B9900D2C9B2 /* RecordContent.swift in Sources */,
 				09524F98271FFCE70061C36B /* UITableView+Extension.swift in Sources */,
+				0974F117273B71340016FEC1 /* ProfileInfoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -885,6 +889,8 @@
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FocusFoodie/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Focus Foodie wants to access your camera";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Focus Foodie wants to access your photo library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -918,6 +924,8 @@
 				DEVELOPMENT_TEAM = 74L73858Z7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FocusFoodie/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Focus Foodie wants to access your camera";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Focus Foodie wants to access your photo library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

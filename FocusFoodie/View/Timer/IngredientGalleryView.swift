@@ -17,7 +17,7 @@ class IngredientGalleryView: UIView {
             
             layer.frame = contentView.bounds
             
-            layer.colors = [UIColor.white.cgColor, UIColor.B1 ?? UIColor.white.cgColor]
+            layer.colors = [UIColor.white.cgColor, UIColor.G1 ?? UIColor.white.cgColor]
             
             layer.startPoint = CGPoint(x: 0, y: 0)
             

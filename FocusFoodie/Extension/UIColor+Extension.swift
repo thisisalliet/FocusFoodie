@@ -11,42 +11,11 @@ import UIKit
 private enum Color: String {
 
     // swiftlint:disable identifier_name
-    case B1
-
-    case B2
-
-    case B3
-
-    case B4
-
-    case B5
-
-    case B6
-
-    case B7
-
-    case L1
-
-    case L2
-
-    case L3
-
-    case L4
-
-    case L5
-
-    case L6
-    
-    case L7
-
-    case L8
     
     case T1
     
     case T2
-    
-    case H1
-    
+        
     case Y1
     
     case Y2
@@ -54,50 +23,22 @@ private enum Color: String {
     case G1
     
     case G2
+    
+    case G3
 }
 
 extension UIColor {
-
-    static let B1 = color(.B1)
-
-    static let B2 = color(.B2)
-    
-    static let B3 = color(.B3)
-
-    static let B4 = color(.B4)
-
-    static let B5 = color(.B5)
-
-    static let B6 = color(.B6)
-
-    static let B7 = color(.B7)
-
-    static let L1 = color(.L1)
-    
-    static let L2 = color(.L2)
-
-    static let L3 = color(.L3)
-    
-    static let L4 = color(.L4)
-    
-    static let L5 = color(.L5)
-
-    static let L6 = color(.L6)
-
-    static let L7 = color(.L7)
-
-    static let L8 = color(.L8)
     
     static let T1 = color(.T1)
     
     static let T2 = color(.T2)
-    
-    static let H1 = color(.H1)
-    
+        
     static let G1 = color(.G1)
 
     static let G2 = color(.G2)
-    
+
+    static let G3 = color(.G3)
+
     static let Y1 = color(.Y1)
     
     static let Y2 = color(.Y2)

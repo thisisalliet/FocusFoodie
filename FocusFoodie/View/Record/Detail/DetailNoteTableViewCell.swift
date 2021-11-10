@@ -13,7 +13,7 @@ class DetailNoteTableViewCell: UITableViewCell {
         
         didSet {
             
-            categoryGreyView.backgroundColor = .L4
+            categoryGreyView.backgroundColor = .G1
             
             categoryGreyView.cornerRadius = 10
         }
@@ -33,7 +33,7 @@ class DetailNoteTableViewCell: UITableViewCell {
         
         didSet {
             
-            noteGreyView.backgroundColor = .B6
+            noteGreyView.backgroundColor = .G1
             
             noteGreyView.cornerRadius = 10
         }
@@ -53,7 +53,7 @@ class DetailNoteTableViewCell: UITableViewCell {
         
         didSet {
             
-            noteLabel.textColor = UIColor.B5
+            noteLabel.textColor = UIColor.G1
             
             noteLabel.text = "Coding is hard..."
         }
