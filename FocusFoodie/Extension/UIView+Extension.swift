@@ -54,6 +54,7 @@ extension UIView {
         }
     }
     
+    // MARK: - Layout -
     func stickSubView(_ objectView: UIView) {
 
         objectView.removeFromSuperview()
@@ -100,5 +101,19 @@ extension UIView {
         subview.widthAnchor.constraint(equalTo: anchorsView.widthAnchor),
         subview.heightAnchor.constraint(equalTo: anchorsView.heightAnchor)
       ])
+    }
+    
+    // MARK: - Appearance -
+    func setShadow() {
+        
+        self.layer.masksToBounds = false
+        
+        self.layer.shadowColor = UIColor.black.cgColor
+        
+        self.layer.shadowOffset = CGSize.zero
+        
+        self.layer.shadowOpacity = 0.3
+        
+        self.layer.shadowRadius = 10
     }
 }

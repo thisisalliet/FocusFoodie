@@ -4,11 +4,9 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>RobotoMono-Thin.ttf</string>
-		<string>RobotoMono-Regular.ttf</string>
-		<string>RobotoMono-Medium.ttf</string>
-		<string>RobotoMono-SemiBold.ttf</string>
-		<string>RobotoMono-Bold.ttf</string>
+		<string>Dongle-Regular.ttf</string>
+		<string>Dongle-Light.ttf</string>
+		<string>Dongle-Bold.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

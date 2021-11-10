@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 class RecordViewController: BaseViewController,
@@ -34,9 +35,6 @@ class RecordViewController: BaseViewController,
         
         didSet {
             
-            
-            profileButton.backgroundColor = .A1
-            
             profileButton.alpha = 10
         }
     }
@@ -53,11 +51,11 @@ class RecordViewController: BaseViewController,
         
         didSet {
             
-            calendarButton.backgroundColor = .B2
+            calendarButton.backgroundColor = .G1
             
-            calendarButton.setTitleColor(.B5, for: .normal)
+            calendarButton.setTitleColor(.G3, for: .normal)
             
-            calendarButton.setTitleColor(.B5, for: .selected)
+            calendarButton.setTitleColor(.G3, for: .selected)
             
             calendarButton.setTitle("Today ▾ ", for: .normal)
             

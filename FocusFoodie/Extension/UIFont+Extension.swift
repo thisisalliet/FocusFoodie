@@ -10,15 +10,11 @@ import UIKit
 
 enum FontName: String {
     
-    case light = "RobotoMono-Light"
+    case light = "Dongle-Light"
     
-    case regular = "RobotoMono-Regular"
+    case regular = "Dongle-Regular"
     
-    case medium = "RobotoMono-Medium"
-    
-    case semiBold = "RobotoMono-SemiBold"
-    
-    case bold = "RobotoMono-Bold"
+    case bold = "Dongle-Bold"
 }
 
 extension UIFont {
@@ -31,16 +27,6 @@ extension UIFont {
     static func regular(size: CGFloat) -> UIFont? {
         
         return UIFont(name: FontName.regular.rawValue, size: size)
-    }
-    
-    static func medium(size: CGFloat) -> UIFont? {
-        
-        return UIFont(name: FontName.medium.rawValue, size: size)
-    }
-    
-    static func semiBold(size: CGFloat) -> UIFont? {
-        
-        return UIFont(name: FontName.semiBold.rawValue, size: size)
     }
     
     static func bold(size: CGFloat) -> UIFont? {

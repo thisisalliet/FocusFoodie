@@ -16,9 +16,7 @@ class CalendarDateCollectionViewCell: UICollectionViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         
         view.clipsToBounds = true
-        
-        view.backgroundColor = .B7
-        
+                
         return view
       }()
 
@@ -151,7 +149,7 @@ class CalendarDateCollectionViewCell: UICollectionViewCell {
           
         accessibilityHint = nil
 
-        numberLabel.textColor = isSmallScreenSize ? .B7 : .white
+        numberLabel.textColor = isSmallScreenSize ? .G1 : .white
           
         selectionBackgroundView.isHidden = isSmallScreenSize
       }

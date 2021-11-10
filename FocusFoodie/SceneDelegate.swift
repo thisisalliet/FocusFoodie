@@ -21,7 +21,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         if Auth.auth().currentUser == nil {
             
-            guard let authVC = UIStoryboard.auth.instantiateViewController(withIdentifier: String(describing: AuthViewController.identifier)) as? AuthViewController else { return }
+            guard let authVC = UIStoryboard.auth.instantiateViewController(withIdentifier:
+                                                                            String(describing: AuthViewController.identifier)) as? AuthViewController
+            else { return }
             
             window?.rootViewController = authVC
         }

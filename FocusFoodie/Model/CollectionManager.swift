@@ -15,7 +15,7 @@ enum CollectionName: String {
     
     case record = "Record"
     
-    case request = "Request"
+    case invitation = "Invitation"
     
     case recipe = "Recipe"
     
