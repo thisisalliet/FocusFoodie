@@ -48,7 +48,7 @@ class BaseViewController: UIViewController {
 
         navigationController?.navigationItem.leftBarButtonItem?.image?.withTintColor(.white)
         
-        setupGradientBackground()
+//        setupGradientBackground()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -137,8 +137,8 @@ extension UIViewController {
          gradientLayer.frame = view.bounds
         
          gradientLayer.colors = [
-            UIColor.A3?.cgColor,
-            UIColor.A2?.cgColor
+            UIColor.white.cgColor,
+            UIColor.G1?.cgColor
          ]
         
          view.layer.insertSublayer(gradientLayer, at : 0)

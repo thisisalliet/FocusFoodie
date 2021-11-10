@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 class RecordViewController: BaseViewController,
@@ -33,9 +34,6 @@ class RecordViewController: BaseViewController,
     @IBOutlet weak var profileButton: UIButton! {
         
         didSet {
-            
-            
-            profileButton.backgroundColor = .A1
             
             profileButton.alpha = 10
         }

@@ -41,7 +41,7 @@ class IngredientItemView: UIView {
             
             minLabel.textColor = .B5
             
-            minLabel.font = UIFont.semiBold(size: 14.0)
+            minLabel.font = UIFont.regular(size: 20.0)
         }
     }
     

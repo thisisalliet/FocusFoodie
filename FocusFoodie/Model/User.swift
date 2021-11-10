@@ -11,30 +11,54 @@ import FirebaseFirestoreSwift
 
 public struct User: Codable {
     
-    let userId: String
+    let displayName: String?
     
-    let userName: String
+    let userId: String // Firbase Auto-ID
     
-    let userEmail: String
+    let appleToken: String
+    
+    let userEmail: String?
     
     let providerId: String
     
-    let blackList: [String]?
+    let blockList: [BlockList]?
     
-    let friendList: [String]?
+    let friendList: [FriendList]?
     
     enum CodingKeys: String, CodingKey {
         
-        case userId = "user_Id"
+        case userId = "user_id"
         
-        case userName = "user_name"
+        case appleToken = "apple_token"
+        
+        case displayName = "display_name"
         
         case userEmail = "user_email"
         
         case providerId = "provider_id"
         
-        case blackList = "black_list"
+        case blockList = "block_list"
         
         case friendList = "friend_list"
+    }
+}
+
+struct BlockList: Codable {
+    
+    var blockId: String
+    
+    enum CodingKeys: String, CodingKey {
+        
+        case blockId = "block_id"
+    }
+}
+
+struct FriendList: Codable {
+    
+    var friendId: String
+    
+    enum CodingKeys: String, CodingKey {
+        
+        case friendId = "friend_id"
     }
 }

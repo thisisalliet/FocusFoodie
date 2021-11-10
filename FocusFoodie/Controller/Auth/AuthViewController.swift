@@ -83,12 +83,21 @@ class AuthViewController: BaseViewController {
         authorizationController.presentationContextProvider = self
         
         authorizationController.performRequests()
+        
+        guard UIStoryboard
+                .auth
+                .instantiateViewController(
+                    withIdentifier: String(describing: SetUpViewController.self)
+                ) is SetUpViewController else {
+                    
+                    return
+                }
     }
     
-    func createAppleIdRequest() -> ASAuthorizationAppleIDRequest {
-        
-        let appleIdProvider = ASAuthorizationAppleIDProvider()
-        
+        func createAppleIdRequest() -> ASAuthorizationAppleIDRequest {
+            
+            let appleIdProvider = ASAuthorizationAppleIDProvider()
+            
         let request = appleIdProvider.createRequest()
         
         request.requestedScopes = [.fullName, .email]

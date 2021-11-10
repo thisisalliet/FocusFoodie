@@ -27,6 +27,12 @@ enum ImageAsset: String {
     
     // Placeholder
     case icon_loading
+    case icon_image
+    
+    // Community
+    case icon_accept
+    case icon_decline
+    case icon_profile
     
     // Ingredient Gallery
     case icon_knife
@@ -62,8 +68,6 @@ enum ImageAsset: String {
     case mustard
     case icon_cheese
 
-    // Profile
-    case icon_profile
     // swiftlint:enable identifier_name
 }
 

@@ -52,6 +52,8 @@
 		09524FEA272168E80061C36B /* DetailInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524FE8272168E80061C36B /* DetailInfoTableViewCell.swift */; };
 		09524FEB272168E80061C36B /* DetailInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09524FE9272168E80061C36B /* DetailInfoTableViewCell.xib */; };
 		09524FF42721B2B80061C36B /* RecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09524FF62721B2B80061C36B /* RecordCell.xib */; };
+		0974F113273AB6D70016FEC1 /* CommunityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0974F111273AB6D70016FEC1 /* CommunityCollectionViewCell.swift */; };
+		0974F114273AB6D70016FEC1 /* CommunityCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0974F112273AB6D70016FEC1 /* CommunityCollectionViewCell.xib */; };
 		09C1C7CE2722833000D2C9B2 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C7CD2722833000D2C9B2 /* UIColor+Extension.swift */; };
 		09C1C7D12722903800D2C9B2 /* DetailNoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C7CF2722903800D2C9B2 /* DetailNoteTableViewCell.swift */; };
 		09C1C7D22722903800D2C9B2 /* DetailNoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09C1C7D02722903800D2C9B2 /* DetailNoteTableViewCell.xib */; };
@@ -64,11 +66,6 @@
 		09C1C829272409C600D2C9B2 /* CalendarDateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C828272409C600D2C9B2 /* CalendarDateCollectionViewCell.swift */; };
 		09C1C82B27240BC700D2C9B2 /* CalendarPickerFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C82A27240BC700D2C9B2 /* CalendarPickerFooterView.swift */; };
 		09C1C82D27240BFB00D2C9B2 /* CalendarPickerHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C82C27240BFB00D2C9B2 /* CalendarPickerHeaderView.swift */; };
-		09C1C849272571E800D2C9B2 /* Roboto_Mono in Resources */ = {isa = PBXBuildFile; fileRef = 09C1C848272571E800D2C9B2 /* Roboto_Mono */; };
-		09C1C84A2725742A00D2C9B2 /* RobotoMono-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09C1C8362725713200D2C9B2 /* RobotoMono-Medium.ttf */; };
-		09C1C84B2725742A00D2C9B2 /* RobotoMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09C1C8392725713200D2C9B2 /* RobotoMono-Regular.ttf */; };
-		09C1C84D2725742A00D2C9B2 /* RobotoMono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09C1C8412725713200D2C9B2 /* RobotoMono-Bold.ttf */; };
-		09C1C84E2725749A00D2C9B2 /* RobotoMono-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09C1C83F2725713200D2C9B2 /* RobotoMono-Light.ttf */; };
 		09C1C8502725D78700D2C9B2 /* UITextfield+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C84F2725D78700D2C9B2 /* UITextfield+Extension.swift */; };
 		09DB47502734DFC1003703C1 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB474F2734DFC1003703C1 /* AuthViewController.swift */; };
 		09DB475227350C2D003703C1 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB475127350C2D003703C1 /* UserManager.swift */; };
@@ -78,6 +75,14 @@
 		09DB475C273522AB003703C1 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DB475B273522AA003703C1 /* Auth.storyboard */; };
 		09DB475F27357043003703C1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB475E27357043003703C1 /* ProfileViewController.swift */; };
 		09DB4761273575C6003703C1 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DB4760273575C6003703C1 /* Profile.storyboard */; };
+		09DB476727396E4D003703C1 /* Dongle-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09DB476327396E4C003703C1 /* Dongle-Regular.ttf */; };
+		09DB476827396E4D003703C1 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 09DB476427396E4C003703C1 /* OFL.txt */; };
+		09DB476927396E4D003703C1 /* Dongle-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09DB476527396E4C003703C1 /* Dongle-Light.ttf */; };
+		09DB476A27396E4D003703C1 /* Dongle-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09DB476627396E4C003703C1 /* Dongle-Bold.ttf */; };
+		09DB476D2739874E003703C1 /* CommunityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB476B2739874E003703C1 /* CommunityTableViewCell.swift */; };
+		09DB476E2739874E003703C1 /* CommunityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09DB476C2739874E003703C1 /* CommunityTableViewCell.xib */; };
+		09DB4775273A200B003703C1 /* Invitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB4774273A200B003703C1 /* Invitation.swift */; };
+		09DB4777273A46F7003703C1 /* SetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB4776273A46F7003703C1 /* SetUpViewController.swift */; };
 		09F0472727264DC1009CA63B /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F0472627264DC1009CA63B /* UIButton+Extension.swift */; };
 		09F04729272678D8009CA63B /* DetailImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F04728272678D8009CA63B /* DetailImageTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -130,6 +135,8 @@
 		09524FE8272168E80061C36B /* DetailInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInfoTableViewCell.swift; sourceTree = "<group>"; };
 		09524FE9272168E80061C36B /* DetailInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailInfoTableViewCell.xib; sourceTree = "<group>"; };
 		09524FF52721B2B80061C36B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RecordCell.xib; sourceTree = "<group>"; };
+		0974F111273AB6D70016FEC1 /* CommunityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCollectionViewCell.swift; sourceTree = "<group>"; };
+		0974F112273AB6D70016FEC1 /* CommunityCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityCollectionViewCell.xib; sourceTree = "<group>"; };
 		09C1C7CD2722833000D2C9B2 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		09C1C7CF2722903800D2C9B2 /* DetailNoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNoteTableViewCell.swift; sourceTree = "<group>"; };
 		09C1C7D02722903800D2C9B2 /* DetailNoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailNoteTableViewCell.xib; sourceTree = "<group>"; };
@@ -160,7 +167,6 @@
 		09C1C8432725713200D2C9B2 /* RobotoMono-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Thin.ttf"; sourceTree = "<group>"; };
 		09C1C8442725713200D2C9B2 /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		09C1C8452725713200D2C9B2 /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
-		09C1C848272571E800D2C9B2 /* Roboto_Mono */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Roboto_Mono; sourceTree = "<group>"; };
 		09C1C84F2725D78700D2C9B2 /* UITextfield+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextfield+Extension.swift"; sourceTree = "<group>"; };
 		09DB474F2734DFC1003703C1 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		09DB475127350C2D003703C1 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
@@ -168,8 +174,16 @@
 		09DB475527351BC3003703C1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		09DB475727351DE8003703C1 /* CollectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionManager.swift; sourceTree = "<group>"; };
 		09DB475B273522AA003703C1 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Auth.storyboard; path = FocusFoodie/View/Auth/Auth.storyboard; sourceTree = SOURCE_ROOT; };
-		09DB475E27357043003703C1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = FocusFoodie/Controller/Record/ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
+		09DB475E27357043003703C1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = FocusFoodie/Controller/Auth/ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
 		09DB4760273575C6003703C1 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		09DB476327396E4C003703C1 /* Dongle-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dongle-Regular.ttf"; sourceTree = "<group>"; };
+		09DB476427396E4C003703C1 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		09DB476527396E4C003703C1 /* Dongle-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dongle-Light.ttf"; sourceTree = "<group>"; };
+		09DB476627396E4C003703C1 /* Dongle-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dongle-Bold.ttf"; sourceTree = "<group>"; };
+		09DB476B2739874E003703C1 /* CommunityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTableViewCell.swift; sourceTree = "<group>"; };
+		09DB476C2739874E003703C1 /* CommunityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityTableViewCell.xib; sourceTree = "<group>"; };
+		09DB4774273A200B003703C1 /* Invitation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invitation.swift; sourceTree = "<group>"; };
+		09DB4776273A46F7003703C1 /* SetUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpViewController.swift; sourceTree = "<group>"; };
 		09F0472627264DC1009CA63B /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		09F04728272678D8009CA63B /* DetailImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailImageTableViewCell.xib; sourceTree = "<group>"; };
 		290B1C7432FC0558604112FB /* Pods-FocusFoodie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FocusFoodie.debug.xcconfig"; path = "Target Support Files/Pods-FocusFoodie/Pods-FocusFoodie.debug.xcconfig"; sourceTree = "<group>"; };
@@ -266,7 +280,7 @@
 			children = (
 				0942892D272D7E7D0083CF6B /* burger-machine.json */,
 				09524F7E271FF4A10061C36B /* Assets.xcassets */,
-				09C1C848272571E800D2C9B2 /* Roboto_Mono */,
+				09DB476227396E4C003703C1 /* Dongle */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -279,7 +293,7 @@
 				0983ACE12727A33100DC40E1 /* Timer */,
 				09524FDE272050FF0061C36B /* Record */,
 				09DB4760273575C6003703C1 /* Profile.storyboard */,
-				09524FA1271FFDA90061C36B /* Community.storyboard */,
+				09DB476F27398809003703C1 /* Community */,
 				09524F7B271FF4A00061C36B /* Main.storyboard */,
 				09524F80271FF4A10061C36B /* LaunchScreen.storyboard */,
 			);
@@ -303,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				09DB475527351BC3003703C1 /* User.swift */,
+				09DB4774273A200B003703C1 /* Invitation.swift */,
 				09DB475327351B75003703C1 /* Recipe.swift */,
 				09C1C7DA27229D3D00D2C9B2 /* Record.swift */,
 				093169B32729413100360885 /* Ingredient.swift */,
@@ -328,7 +343,6 @@
 			isa = PBXGroup;
 			children = (
 				09524F9F271FFD9C0061C36B /* Record.storyboard */,
-				09DB475E27357043003703C1 /* ProfileViewController.swift */,
 				09524FDA272025E10061C36B /* ProfileView.swift */,
 				09524FD227201DA90061C36B /* ProfileView.xib */,
 				09524FD42720213B0061C36B /* RecordCell.swift */,
@@ -441,6 +455,8 @@
 		09DB475A2735203F003703C1 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				09DB4776273A46F7003703C1 /* SetUpViewController.swift */,
+				09DB475E27357043003703C1 /* ProfileViewController.swift */,
 				09DB474F2734DFC1003703C1 /* AuthViewController.swift */,
 			);
 			path = Auth;
@@ -452,6 +468,29 @@
 				09DB475B273522AA003703C1 /* Auth.storyboard */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		09DB476227396E4C003703C1 /* Dongle */ = {
+			isa = PBXGroup;
+			children = (
+				09DB476427396E4C003703C1 /* OFL.txt */,
+				09DB476327396E4C003703C1 /* Dongle-Regular.ttf */,
+				09DB476527396E4C003703C1 /* Dongle-Light.ttf */,
+				09DB476627396E4C003703C1 /* Dongle-Bold.ttf */,
+			);
+			path = Dongle;
+			sourceTree = "<group>";
+		};
+		09DB476F27398809003703C1 /* Community */ = {
+			isa = PBXGroup;
+			children = (
+				09524FA1271FFDA90061C36B /* Community.storyboard */,
+				09DB476B2739874E003703C1 /* CommunityTableViewCell.swift */,
+				09DB476C2739874E003703C1 /* CommunityTableViewCell.xib */,
+				0974F111273AB6D70016FEC1 /* CommunityCollectionViewCell.swift */,
+				0974F112273AB6D70016FEC1 /* CommunityCollectionViewCell.xib */,
+			);
+			path = Community;
 			sourceTree = "<group>";
 		};
 		1493E2A44FC9F6CAADF931E3 /* Pods */ = {
@@ -533,13 +572,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09C1C84E2725749A00D2C9B2 /* RobotoMono-Light.ttf in Resources */,
-				09C1C84A2725742A00D2C9B2 /* RobotoMono-Medium.ttf in Resources */,
-				09C1C84B2725742A00D2C9B2 /* RobotoMono-Regular.ttf in Resources */,
-				09C1C84D2725742A00D2C9B2 /* RobotoMono-Bold.ttf in Resources */,
 				093169B12727CEC900360885 /* IngredientGalleryView.xib in Resources */,
 				09524FA2271FFDA90061C36B /* Community.storyboard in Resources */,
+				09DB476727396E4D003703C1 /* Dongle-Regular.ttf in Resources */,
 				09524F82271FF4A10061C36B /* LaunchScreen.storyboard in Resources */,
+				09DB476A27396E4D003703C1 /* Dongle-Bold.ttf in Resources */,
 				09524FF42721B2B80061C36B /* RecordCell.xib in Resources */,
 				09524FD327201DA90061C36B /* ProfileView.xib in Resources */,
 				09524F7F271FF4A10061C36B /* Assets.xcassets in Resources */,
@@ -547,14 +584,17 @@
 				09F04729272678D8009CA63B /* DetailImageTableViewCell.xib in Resources */,
 				09524F7D271FF4A00061C36B /* Main.storyboard in Resources */,
 				093169B02727CEC900360885 /* IngredientItemView.xib in Resources */,
+				09DB476827396E4D003703C1 /* OFL.txt in Resources */,
 				09C1C7D22722903800D2C9B2 /* DetailNoteTableViewCell.xib in Resources */,
+				0974F114273AB6D70016FEC1 /* CommunityCollectionViewCell.xib in Resources */,
 				0942892E272D7E7D0083CF6B /* burger-machine.json in Resources */,
-				09C1C849272571E800D2C9B2 /* Roboto_Mono in Resources */,
 				09DB4761273575C6003703C1 /* Profile.storyboard in Resources */,
 				09524FA0271FFD9C0061C36B /* Record.storyboard in Resources */,
+				09DB476E2739874E003703C1 /* CommunityTableViewCell.xib in Resources */,
 				09DB475C273522AB003703C1 /* Auth.storyboard in Resources */,
 				09524FEB272168E80061C36B /* DetailInfoTableViewCell.xib in Resources */,
 				09428935272DC64E0083CF6B /* ComingSoonView.xib in Resources */,
+				09DB476927396E4D003703C1 /* Dongle-Light.ttf in Resources */,
 				093169B6272B952F00360885 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -626,7 +666,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0974F113273AB6D70016FEC1 /* CommunityCollectionViewCell.swift in Sources */,
 				09DB47502734DFC1003703C1 /* AuthViewController.swift in Sources */,
+				09DB4775273A200B003703C1 /* Invitation.swift in Sources */,
 				09524FAD271FFEF00061C36B /* BaseViewController.swift in Sources */,
 				09DB475627351BC3003703C1 /* User.swift in Sources */,
 				09524FDD2720494A0061C36B /* Bundle+Extension.swift in Sources */,
@@ -639,6 +681,7 @@
 				09524F9C271FFD390061C36B /* UICollectionView+Extension.swift in Sources */,
 				09524FAE271FFEF00061C36B /* TabBarViewController.swift in Sources */,
 				09C1C8502725D78700D2C9B2 /* UITextfield+Extension.swift in Sources */,
+				09DB4777273A46F7003703C1 /* SetUpViewController.swift in Sources */,
 				09428933272D975C0083CF6B /* ComingSoonView.swift in Sources */,
 				09DB475827351DE8003703C1 /* CollectionManager.swift in Sources */,
 				09428938272E84970083CF6B /* Timestamp+Extension.swift in Sources */,
@@ -668,6 +711,7 @@
 				09524FE6272164560061C36B /* CalendarPickerViewController.swift in Sources */,
 				093169B42729413100360885 /* Ingredient.swift in Sources */,
 				093169A62727CEB300360885 /* TimerEditViewController.swift in Sources */,
+				09DB476D2739874E003703C1 /* CommunityTableViewCell.swift in Sources */,
 				09524F78271FF4A00061C36B /* SceneDelegate.swift in Sources */,
 				090E07E32730E9F700136025 /* IngredientItemView.swift in Sources */,
 				090E07E52730EC5800136025 /* IngredientGalleryView.swift in Sources */,

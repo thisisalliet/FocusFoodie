@@ -59,12 +59,14 @@ class UserManager {
     
     // create
     func createUserInfo() {
-        let user = User(userId: userId,
-                        userName: userDisplayName,
+        let user = User(displayName: userDisplayName,
+                        userId: userId,
+                        appleToken: "",
                         userEmail: userEmail,
                         providerId: "Apple",
-                        blackList: nil,
-                        friendList: nil)
+                        blockList: nil,
+                        friendList: nil
+        )
         
         let userRef = db.collection(CollectionName.user.rawValue)
         
@@ -79,11 +81,16 @@ class UserManager {
     }
     
     // read
-    func fetchUserInfo(uesrID: String, completion: @escaping (Result<User, Error>) -> Void) {
+    func fetchUserInfo(uesrId: String, completion: @escaping (Result<User, Error>) -> Void) {
         
         let userRef = db.collection(CollectionName.user.rawValue)
         
-        userRef.document(userId).getDocument { document, error in
+        let uid = user
+        
+        userRef.whereField("user_id", isEqualTo: uid)
+        
+        userRef.document(userId)
+            .getDocument { document, error in
             
             if let error = error {
                 

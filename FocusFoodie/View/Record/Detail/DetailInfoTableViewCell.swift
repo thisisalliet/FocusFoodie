@@ -31,7 +31,7 @@ class DetailInfoTableViewCell: UITableViewCell {
             
             dateTitleLabel.textColor = .white
             
-            dateTitleLabel.font = UIFont.medium(size: 16)
+            dateTitleLabel.font = UIFont.regular(size: 20)
         }
     }
     
@@ -61,7 +61,7 @@ class DetailInfoTableViewCell: UITableViewCell {
             
             timeTitleLabel.textColor = .white
             
-            timeTitleLabel.font = UIFont.medium(size: 16)
+            timeTitleLabel.font = UIFont.regular(size: 20)
         }
     }
     

@@ -44,7 +44,7 @@ class TimerViewController: BaseViewController {
             
             countDownLabel.textColor = .B5
             
-            countDownLabel.font = .medium(size: 40)
+            countDownLabel.font = .regular(size: 40.0)
         }
     }
     

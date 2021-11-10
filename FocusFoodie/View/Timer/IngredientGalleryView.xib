@@ -41,6 +41,14 @@
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FZZ-pp-8nX">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EeR-rd-PDM">
+                                    <rect key="frame" x="252" y="-24" width="60" height="60"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="60" id="zKE-HR-XPY"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
                             <color key="backgroundColor" name="T2"/>
                         </view>
                     </subviews>
@@ -68,12 +76,6 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KLM-5Z-rQx">
                     <rect key="frame" x="170" y="117" width="60" height="60"/>
                 </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EeR-rd-PDM">
-                    <rect key="frame" x="245" y="127" width="60" height="60"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="60" id="zKE-HR-XPY"/>
-                    </constraints>
-                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="W5M-rG-LGr"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -86,14 +88,10 @@
                 <constraint firstItem="0hf-7S-GQC" firstAttribute="height" secondItem="6Ce-MT-x7H" secondAttribute="height" multiplier="1:3" id="Bh4-ZR-dBC"/>
                 <constraint firstItem="abw-sk-M20" firstAttribute="leading" secondItem="unb-D0-ToU" secondAttribute="trailing" constant="10" id="BrV-Es-v5U"/>
                 <constraint firstItem="0hf-7S-GQC" firstAttribute="top" secondItem="KLM-5Z-rQx" secondAttribute="bottom" constant="-35" id="ElK-oJ-5fK"/>
-                <constraint firstItem="EeR-rd-PDM" firstAttribute="width" secondItem="vCH-6J-KYr" secondAttribute="width" multiplier="0.75" id="N3k-tr-Wko"/>
                 <constraint firstItem="abw-sk-M20" firstAttribute="width" secondItem="vCH-6J-KYr" secondAttribute="width" multiplier="0.75" id="P1S-2K-3h4"/>
-                <constraint firstItem="EeR-rd-PDM" firstAttribute="leading" secondItem="KLM-5Z-rQx" secondAttribute="trailing" constant="15" id="PqC-kN-1HF"/>
                 <constraint firstItem="W5M-rG-LGr" firstAttribute="trailing" secondItem="0hf-7S-GQC" secondAttribute="trailing" id="Pqi-n6-3ce"/>
                 <constraint firstItem="unb-D0-ToU" firstAttribute="leading" secondItem="W5M-rG-LGr" secondAttribute="leading" constant="25" id="PxT-rz-vdB"/>
                 <constraint firstItem="0hf-7S-GQC" firstAttribute="top" secondItem="Zz5-Ey-7nI" secondAttribute="bottom" id="RUj-Xv-dj0"/>
-                <constraint firstItem="EeR-rd-PDM" firstAttribute="height" secondItem="vCH-6J-KYr" secondAttribute="height" multiplier="0.75" id="TxR-fk-9YK"/>
-                <constraint firstItem="0hf-7S-GQC" firstAttribute="top" secondItem="EeR-rd-PDM" secondAttribute="bottom" constant="-45" id="WKS-yV-7oj"/>
                 <constraint firstItem="unb-D0-ToU" firstAttribute="width" secondItem="vCH-6J-KYr" secondAttribute="width" multiplier="0.75" id="WKo-bL-FgA"/>
                 <constraint firstItem="unb-D0-ToU" firstAttribute="height" secondItem="vCH-6J-KYr" secondAttribute="height" multiplier="0.75" id="aoT-qZ-h5U"/>
                 <constraint firstItem="W5M-rG-LGr" firstAttribute="bottom" secondItem="0hf-7S-GQC" secondAttribute="bottom" id="apd-Ub-o4x"/>
