@@ -21,9 +21,7 @@ class CommunityViewController: BaseViewController,
     var user: [User] = [] {
         
         didSet {
-            
-            communityTableView.dataSource = self
-            
+                        
             communityTableView.reloadData()
         }
     }
@@ -40,7 +38,7 @@ class CommunityViewController: BaseViewController,
         
         didSet {
             
-            searchUid()
+            searchInviter()
         }
     }
     
@@ -99,13 +97,11 @@ class CommunityViewController: BaseViewController,
         
         communityTableView.delegate = self
         
-        fetchInvitations()
-        
-        fetchFriendList()
+        //        fetchFriendList()
         
         monitorInvitation()
         
-        monitorFriendList()
+        //        monitorFriendList()
     }
     
     // MARK: - Awake Nib -
@@ -123,8 +119,16 @@ class CommunityViewController: BaseViewController,
             
             if !snapshot.documentChanges.isEmpty {
                 
-                self.fetchInvitations()
-            }
+                let allInvitations = snapshot.documents.compactMap { document in
+                    try? document.data(as: Invitation.self)
+                }
+                
+                let myInvite = allInvitations.filter({
+                    $0.receiverId == self.myId})
+                
+                self.invitations.removeAll()
+                
+                self.invitations.append(contentsOf: myInvite)            }
         }
     }
     
@@ -137,25 +141,6 @@ class CommunityViewController: BaseViewController,
                 
                 self.fetchFriendList()
             }
-        }
-    }
-    
-    func fetchInvitations() {
-        
-        db.collection(CollectionName.invitation.rawValue).getDocuments { [self] snapshot, error in
-            
-            guard let snapshot = snapshot else { return }
-            
-            let allInvitations = snapshot.documents.compactMap { document in
-                try? document.data(as: Invitation.self)
-            }
-            
-            let myInvite = allInvitations.filter({
-                $0.receiverId == myId})
-            
-            self.invitations.removeAll()
-            
-            self.invitations.append(contentsOf: myInvite)
         }
     }
     
@@ -174,21 +159,23 @@ class CommunityViewController: BaseViewController,
         }
     }
     
-    func searchUid() {
+    func searchInviter() {
         
-        friendList.forEach { friend in
+        invitations.forEach { invitation in
             
-            UserManager.shared.fetchUserInfo(uesrId: friend.friendId) { result in
+            UserManager.shared.fetchUserInfo(senderId: invitation.senderId) { result in
                 
                 switch result {
                     
                 case .success(let user):
                     self.user.append(user)
+                    print("===========\(user)============")
                     
                 case .failure(let error):
                     print(error)
                     
-                default: break
+                default:
+                    break
                 }
             }
         }
@@ -202,7 +189,7 @@ class CommunityViewController: BaseViewController,
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-                
+        
         return friendList.count
     }
     

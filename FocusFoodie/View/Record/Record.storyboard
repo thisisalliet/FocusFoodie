@@ -25,17 +25,6 @@
                                     <action selector="didTouchCalendarBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="F0n-aI-xKp"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBO-Ak-zf2">
-                                <rect key="frame" x="328" y="88" width="70" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="8m2-Pl-equ"/>
-                                    <constraint firstAttribute="height" constant="70" id="apx-iJ-AfQ"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background" cornerRadius="10" image="icon_profile"/>
-                                </buttonConfiguration>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UK4-Pw-qPm">
                                 <rect key="frame" x="0.0" y="174" width="414" height="688"/>
                                 <subviews>
@@ -104,10 +93,8 @@
                         <constraints>
                             <constraint firstItem="UK4-Pw-qPm" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="54T-Ey-nhb"/>
                             <constraint firstItem="UK4-Pw-qPm" firstAttribute="top" secondItem="LzH-QS-sAV" secondAttribute="bottom" constant="16" id="6y0-9D-Egv"/>
-                            <constraint firstItem="EBO-Ak-zf2" firstAttribute="bottom" secondItem="LzH-QS-sAV" secondAttribute="bottom" id="GfY-aQ-VE2"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="UK4-Pw-qPm" secondAttribute="bottom" id="MOG-1U-1sc"/>
                             <constraint firstItem="LzH-QS-sAV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="MZx-7G-igu"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="EBO-Ak-zf2" secondAttribute="trailing" constant="16" id="NfR-JR-FH1"/>
                             <constraint firstItem="LzH-QS-sAV" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="39" id="ORi-i0-IXG"/>
                             <constraint firstItem="UK4-Pw-qPm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="l7j-N1-YpT"/>
                         </constraints>
@@ -117,7 +104,6 @@
                         <outlet property="baseView" destination="UK4-Pw-qPm" id="1lZ-3t-2k7"/>
                         <outlet property="calendarButton" destination="LzH-QS-sAV" id="DvQ-8x-U0Q"/>
                         <outlet property="calendarPickerView" destination="xHc-Le-4aN" id="tiC-tM-Hbi"/>
-                        <outlet property="profileButton" destination="EBO-Ak-zf2" id="1Nr-kV-RFr"/>
                         <outlet property="recordTableView" destination="hnL-0y-DRZ" id="Jy0-xf-UK6"/>
                     </connections>
                 </viewController>
@@ -187,10 +173,10 @@
             </objects>
             <point key="canvasLocation" x="1940.5797101449277" y="128.57142857142856"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Base Navigation Controller-->
         <scene sceneID="Tfa-Ni-lfy">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fzb-jM-VGV" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fzb-jM-VGV" customClass="BaseNavigationController" customModule="FocusFoodie" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8wa-1b-1DW">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -236,7 +222,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon_profile" width="128" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

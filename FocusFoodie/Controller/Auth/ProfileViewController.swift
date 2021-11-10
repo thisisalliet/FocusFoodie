@@ -9,7 +9,9 @@ import UIKit
 import FirebaseStorage
 import FirebaseAuth
 
-class ProfileViewController: BaseViewController {
+class ProfileViewController: BaseViewController,
+                             UITableViewDataSource,
+                             UITableViewDelegate {
         
     var imageUrl = String()
     
@@ -46,16 +48,15 @@ class ProfileViewController: BaseViewController {
     
     @IBOutlet weak var profileButton: UIButton!
     
-    @IBOutlet weak var backButtonBackground: UIView!
-    
-    @IBOutlet weak var backButton: UIButton!
-    
     @IBOutlet weak var profileTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupLogoutButton()
+        
+        navigationController?.setupBackButton(color: .G3!)
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -118,10 +119,20 @@ class ProfileViewController: BaseViewController {
             logoutButton.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
+    
+    // MARK: - UITableView Datasource -
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+    
 }
 
 extension ProfileViewController: UIImagePickerControllerDelegate,
-                                    UINavigationControllerDelegate {
+                                 UINavigationControllerDelegate {
     
     func showImagePickerControllerActionSheet() {
         
@@ -197,5 +208,17 @@ extension ProfileViewController: UIImagePickerControllerDelegate,
                 UserDefaults.standard.set(urlString, forKey: "url")
             })
         }
+    }
+}
+
+extension UINavigationController {
+
+    func setupBackButton(color: UIColor) {
+
+        let backbutton = UIBarButtonItem()
+        backbutton.title = ""
+        backbutton.tintColor = color
+
+        navigationBar.topItem?.backBarButtonItem = backbutton
     }
 }

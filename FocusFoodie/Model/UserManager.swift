@@ -80,20 +80,15 @@ class UserManager {
         }
     }
     
-    func fetchUserInfo(uesrId: String, completion: @escaping (Result<User, Error>) -> Void) {
+    func fetchUserInfo(senderId: String, completion: @escaping (Result<User, Error>) -> Void) {
         
-        let userRef = db.collection(CollectionName.user.rawValue)
-        
-        let uid = user
-        
-        userRef.whereField("user_id", isEqualTo: uid)
-        
-        userRef.document(userId)
+        db.collection(CollectionName.user.rawValue).document(senderId)
             .getDocument { document, error in
             
             if let error = error {
                 
                 completion(Result.failure(error))
+                
             }
             
             guard let document = document,

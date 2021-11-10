@@ -165,10 +165,10 @@
             </objects>
             <point key="canvasLocation" x="1840.5797101449277" y="128.57142857142856"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Base Navigation Controller-->
         <scene sceneID="abA-1o-549">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="M2k-HO-1NS" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="M2k-HO-1NS" customClass="BaseNavigationController" customModule="FocusFoodie" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gEX-8x-GUk">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
