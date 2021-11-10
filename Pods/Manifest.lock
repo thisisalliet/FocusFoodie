@@ -278,6 +278,7 @@ PODS:
   - gRPC-Core/Interface (1.28.2)
   - IQKeyboardManagerSwift (6.5.6)
   - leveldb-library (1.22.1)
+  - lottie-ios (3.2.3)
   - nanopb (1.30906.0):
     - nanopb/decode (= 1.30906.0)
     - nanopb/encode (= 1.30906.0)
@@ -289,6 +290,7 @@ DEPENDENCIES:
   - Firebase/Firestore
   - FirebaseFirestoreSwift
   - IQKeyboardManagerSwift
+  - lottie-ios
 
 SPEC REPOS:
   trunk:
@@ -305,6 +307,7 @@ SPEC REPOS:
     - gRPC-Core
     - IQKeyboardManagerSwift
     - leveldb-library
+    - lottie-ios
     - nanopb
     - PromisesObjC
 
@@ -322,9 +325,10 @@ SPEC CHECKSUMS:
   gRPC-Core: 4afa11bfbedf7cdecd04de535a9e046893404ed5
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
+  lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
 
-PODFILE CHECKSUM: 9dc6ced1ab03f7ddec6afd67ad46168bb44c1aaf
+PODFILE CHECKSUM: 94c86f73bb6b257bb6260eae42e8007476320573
 
 COCOAPODS: 1.11.2

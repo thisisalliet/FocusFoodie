@@ -10,30 +10,61 @@ import UIKit
 enum ImageAsset: String {
     
     // swiftlint:disable identifier_name
-    //Tabbar
+    // Tabbar
     case icon_community
-    case icon_timer
-    case icon_category
+    case icon_home
+    case icon_record
     
-    // Back button
+    // Button
     case icon_arrow_left
-
-    // Like button
+    case icon_check_normal
+    case icon_check_selected
+    case icon_cross_normal
+    case icon_cross_selected
     case icon_heart_normal
     case icon_heart_selected
     
     // Placeholder
     case icon_loading
     
-    // Timer
+    // Ingredient Gallery
     case icon_knife
     case icon_oil
+    
+    // Ingredient: Bread
+    case icon_toast
+    case icon_burger_bun
+    case icon_baguette
+    case icon_croissant
+    
+    // Ingredient: Vegetable
+    case icon_avocado
+    case icon_bell_pepper
+    case icon_cucumber
+    case icon_lettuce
+    case icon_tomato
+    case onion
+    
+    // Ingredient: Meat
+    case icon_bacon
+    case chicken
+    case falafel
+    case shrimp
+    case tuna
+    case turkey
+    
+    // Ingredient: Side
+    case egg
+    case peanutButter
+    case honey
+    case mayonnaise
+    case mustard
+    case icon_cheese
 
     // Profile
     case icon_profile
     // swiftlint:enable identifier_name
 }
-
 
 extension UIImage {
 

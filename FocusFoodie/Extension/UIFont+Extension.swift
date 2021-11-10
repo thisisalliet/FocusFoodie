@@ -8,16 +8,6 @@
 import Foundation
 import UIKit
 
-//struct Constants {
-//    
-//    struct App {
-//        
-//        static let regularFont = NSLocalizedString("AppRegularFont", comment: "")
-//        
-//        static let boldFont = NSLocalizedString("AppBoldFont", comment: "")
-//    }
-//}
-
 enum FontName: String {
     
     case light = "RobotoMono-Light"
@@ -26,7 +16,7 @@ enum FontName: String {
     
     case medium = "RobotoMono-Medium"
     
-    case semiBold = "RobotoMono-SeniBold"
+    case semiBold = "RobotoMono-SemiBold"
     
     case bold = "RobotoMono-Bold"
 }

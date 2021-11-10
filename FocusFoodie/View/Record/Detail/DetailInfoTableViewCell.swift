@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestoreSwift
 
 class DetailInfoTableViewCell: UITableViewCell {
+    
+    var record: Record?
     
     @IBOutlet weak var dateGreyView: UIView! {
         
@@ -15,7 +19,7 @@ class DetailInfoTableViewCell: UITableViewCell {
             
             dateGreyView.backgroundColor = .B6
             
-            dateGreyView.cornerRadius = 10
+            dateGreyView.cornerRadius = 5
         }
     }
     
@@ -34,9 +38,7 @@ class DetailInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel! {
         
         didSet {
-            
-            dateLabel.text = "2021 / 10 / 20"
-            
+                        
             dateLabel.textColor = .B5
         }
     }
@@ -77,7 +79,7 @@ class DetailInfoTableViewCell: UITableViewCell {
         
         didSet {
             
-            focusTimeLabel.text = "180"
+            focusTimeLabel.text = String(describing: record?.focusTime)
             
             focusTimeLabel.textColor = .B5
         }

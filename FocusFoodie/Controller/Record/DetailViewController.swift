@@ -6,8 +6,22 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestoreSwift
 
-class DetailViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate {
+class DetailViewController: BaseViewController,
+                             UITableViewDataSource,
+                             UITableViewDelegate {
+    
+    var db: Firestore!
+    
+    var record = [Record]() {
+        
+        didSet {
+            
+            detailTableView.reloadData()
+        }
+    }
     
     @IBOutlet weak var detailTableView: UITableView! {
         
@@ -23,6 +37,8 @@ class DetailViewController: BaseViewController, UITableViewDataSource, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        db = Firestore.firestore()
         
         setUpTableView()
     }
@@ -48,7 +64,9 @@ class DetailViewController: BaseViewController, UITableViewDataSource, UITableVi
     // MARK: - UITableViewDataSource -
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return 3
+//        return record.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -64,12 +82,18 @@ class DetailViewController: BaseViewController, UITableViewDataSource, UITableVi
             return imageCell
             
         case 1:
-            guard let selectCell = detailTableView.dequeueReusableCell(
+            guard let infoCell = detailTableView.dequeueReusableCell(
                 withIdentifier: String(describing: DetailInfoTableViewCell.self),
                 for: indexPath
-            ) as? DetailInfoTableViewCell else {fatalError("Couldn't generate selectCell")}
+            ) as? DetailInfoTableViewCell else {fatalError("Couldn't generate infoCell")}
             
-            return selectCell
+//            infoCell.dateLabel.text = Timestamp.timeFormat(time: record[indexPath.row].createdTime)
+//
+//            infoCell.timeLabel.text = Timestamp.timeFormat(time: record[indexPath.row].createdTime)
+            
+//            infoCell.focusTimeLabel.text = String(describing: record[indexPath.row].focusTime)
+                                    
+            return infoCell
             
         case 2:
             
@@ -77,6 +101,10 @@ class DetailViewController: BaseViewController, UITableViewDataSource, UITableVi
                 withIdentifier: String(describing: DetailNoteTableViewCell.self),
                 for: indexPath
             ) as? DetailNoteTableViewCell else {fatalError("Couldn't generate noteCell")}
+            
+//            noteCell.categoryTitleLabel.text = record[indexPath.row].recordCategory
+            
+//            noteCell.noteLabel.text = record[indexPath.row].recordNote
             
             return noteCell
             

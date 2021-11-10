@@ -6,13 +6,19 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestoreSwift
 
-class RecordViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate {
+class RecordViewController: BaseViewController,
+                             UITableViewDataSource,
+                             UITableViewDelegate {
     
     private struct Segue {
 
         static let picker = "SeguePicker"
     }
+    
+    var db: Firestore!
     
     @IBOutlet weak var recordTableView: UITableView! {
         
@@ -64,7 +70,7 @@ class RecordViewController: BaseViewController, UITableViewDataSource, UITableVi
     private func setUpTableView() {
         
         recordTableView.registerCellWithNib(identifier:
-            String(describing: RecordTableViewCell.self),
+            String(describing: RecordCell.self),
                                             bundle: nil
         )
     }
@@ -105,7 +111,6 @@ class RecordViewController: BaseViewController, UITableViewDataSource, UITableVi
                     width: UIScreen.width,
                     height: maxY
                 )
-
             }
         )
     }
@@ -120,11 +125,11 @@ class RecordViewController: BaseViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = recordTableView.dequeueReusableCell(
-            withIdentifier: String(describing: RecordTableViewCell.self),
+            withIdentifier: String(describing: RecordCell.self),
             for: indexPath
         )
         
-        guard let cell = cell as? RecordTableViewCell else { return cell }
+        guard let cell = cell as? RecordCell else { return cell }
         
         return cell
     }

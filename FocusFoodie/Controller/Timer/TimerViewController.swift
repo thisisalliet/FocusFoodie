@@ -6,12 +6,26 @@
 //
 
 import UIKit
+import UserNotifications
 import Firebase
 import FirebaseFirestoreSwift
 
+protocol ProductPickerControllerDelegate: AnyObject {
+
+    func timeChange(_ controller: TimerEditViewController)
+}
+
 class TimerViewController: BaseViewController {
     
-    var timerEditViewController = TimerEditViewController
+    var seconds = 0
+    
+    var startStatus = true
+    
+    var pauseStatus = false
+    
+    var timer = Timer()
+    
+    let formatter = DateFormatter()
     
     @IBOutlet weak var cookingImageView: UIImageView! {
         
@@ -29,7 +43,7 @@ class TimerViewController: BaseViewController {
             countDownLabel.text = "3:00:00"
             
             countDownLabel.textColor = .B5
-                        
+            
             countDownLabel.font = .medium(size: 40)
         }
     }
@@ -43,6 +57,8 @@ class TimerViewController: BaseViewController {
             doneButton.setTitleColor(.white, for: .normal)
             
             doneButton.backgroundColor = .B6
+            
+            doneButton.layer.cornerRadius = doneButton.frame.width / 2
         }
     }
     
@@ -55,36 +71,142 @@ class TimerViewController: BaseViewController {
             controlButton.setTitleColor(.white, for: .normal)
             
             controlButton.backgroundColor = .B6
+            
+            controlButton.layer.cornerRadius = controlButton.frame.width / 2
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cookingImageView.isUserInteractionEnabled = true
-        
-        cookingImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.didTapCookingimage)))
+        setUpDoneButton()
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Button Actions -
+    
+    @IBAction func didTapControlButton(_ sender: UIButton) {
+        
+        //        formatter.dateFormat = "HH"
+        //
+        //        let hours = formatter.string(from: countdownTimer.date)
+        //
+        //
+        //        formatter.dateFormat = "mm"
+        //
+        //        let minutes = formatter.string(from: countdownTimer.date)
+        //
+        //        seconds = Int(hours)! * 60 * 60 + Int(minutes)! * 60
+        
+        //        if startStatus {
+        //
+        //            timer = Timer.scheduledTimer(timeInterval: 1.0,
+        //                                         target:self,
+        //                                         selector: #selector(countDownHelper),
+        //                                         userInfo: nil,
+        //                                         repeats: true)
+        //
+        //            setupNotification(time: seconds)
+        //
+        //            startStatus = false
+        //            controlButton.setTitle("Pause", for: .normal)
+        //
+        //            pauseStatus = true
+        //            doneButton.isEnabled = true
+        //
+        //
+        //        } else {
+        //
+        //            timer.invalidate()
+        //            removeNotification()
+        //
+        //            startStatus = true
+        //            startBtn.setTitleColor(.white, for: .normal)
+        //            startBtn.setTitle("Start", for: .normal)
+        //
+        //
+        //            countdownTimer.isHidden = false
+        //            timerLabel.isHidden = true
+        //
+        //            pauseStatus = false
+        //            pauseBtn.isEnabled = false
+        //            pauseBtn.setTitleColor(.lightGray, for: .normal)
+        //
+        //        }
     }
-    */
+    
     @IBAction func didTapDoneBtn(_ sender: UIButton) {
         
     }
     
-    @IBAction func didTapControlBtn(_ sender: UIButton) {
+    func setUpDoneButton() {
+        
+        doneButton.isEnabled = false
+        doneButton.backgroundColor = .B5
+        doneButton.setTitleColor(.white, for: .normal)
+    }
+    
+    func updateCountDownLabel(_ totalTime: Int) {
+        
+        seconds -= 1
+        
+        let countDownHour = seconds / 3600
+        
+        let countDownMinute = (seconds / 60) % 60
+        
+        let countDownSecond = seconds % 60
+        
+        let displayHour = countDownHour > 9 ? "\(countDownHour)" : "0\(countDownHour)"
+        
+        let displayMinute = countDownMinute > 9 ? "\(countDownMinute)" : "0\(countDownMinute)"
+        
+        let displaySecond = countDownSecond > 9 ? "\(countDownSecond)" : "0\(countDownSecond)"
+        
+        countDownLabel.text = "\(displayHour):\(displayMinute):\(displaySecond)"
+        
+        if seconds <= 0 {
+            
+            timer.invalidate()
+            
+            return
+        }
+    }
+    
+    func setupNotification(time: Int) {
+        
+        let alarmContent = UNMutableNotificationContent()
+        
+        alarmContent.title = ""
+        
+        alarmContent.body = ""
+        
+        alarmContent.sound = UNNotificationSound.default
+        
+        let alarmTrigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(time), repeats: false)
+        
+        let alarmRequest = UNNotificationRequest(
+            identifier: "alarmTrigger",
+            content: alarmContent,
+            trigger: alarmTrigger)
+        
+        UNUserNotificationCenter.current().add(alarmRequest, withCompletionHandler: nil)
         
     }
     
-    @objc func didTapCookingimage() {
+    func removeNotification() {
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["alarmTrigger"])
+    }
+}
+
+extension TimerViewController: TimerEditControllerDelegate {
+    
+    func dismissEditor(_ controller: TimerEditViewController) {
         
-        self.present(TimerEditViewController())
+    }
+    
+    func timeChange(_ controller: TimerEditViewController) {
+        
+        //        guard controller.selectedIngredient != nil
+        //
+        //        updateCountDownLabel(<#T##Int#>)
     }
 }

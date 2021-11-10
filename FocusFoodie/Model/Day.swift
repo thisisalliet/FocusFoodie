@@ -17,4 +17,3 @@ struct Day {
 
     let isWithinDisplayedMonth: Bool
 }
-
