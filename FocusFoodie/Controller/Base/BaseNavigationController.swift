@@ -31,3 +31,17 @@ class BaseNavigationController: UINavigationController {
         navigationItem.leftBarButtonItem?.image?.withTintColor(.white)
     }
 }
+
+extension UINavigationController {
+    
+    func setupBackButton(color: UIColor) {
+        
+        let backbutton = UIBarButtonItem()
+        
+        backbutton.title = ""
+        
+        backbutton.tintColor = color
+        
+        navigationBar.topItem?.backBarButtonItem = backbutton
+    }
+}

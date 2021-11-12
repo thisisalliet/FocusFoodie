@@ -33,6 +33,11 @@ enum ImageAsset: String {
     case icon_accept
     case icon_decline
     case icon_profile
+    case icon_fingerprint
+    case icon_delete
+    
+    // Record
+    case icon_coding
     
     // Ingredient Gallery
     case icon_knife

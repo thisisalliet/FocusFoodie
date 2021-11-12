@@ -27,7 +27,7 @@ struct SelectedItem {
     var status: SelectedStatus
 }
 
-class IngredientSelectionCell: BasicSelectionCell {
+class IngredientSelectionCell: TimerBasicCell {
     
     weak var delegate: TimerEditViewController?
     
@@ -68,12 +68,12 @@ class IngredientSelectionCell: BasicSelectionCell {
     }
     
     
-    override func numberOfItem(_ cell: BasicSelectionCell) -> Int {
+    override func numberOfItem(_ cell: TimerBasicCell) -> Int {
         
         return ingredientObjects.count
     }
     
-    override func viewIn(_ cell: BasicSelectionCell, selectionCell: SelectionCell, indexPath: IndexPath) {
+    override func viewIn(_ cell: TimerBasicCell, selectionCell: SelectionCell, indexPath: IndexPath) {
         
         guard (selectionCell.objectView as? IngredientItemView) != nil else {
             
@@ -90,7 +90,7 @@ class IngredientSelectionCell: BasicSelectionCell {
         }
     }
     
-    override func didSelected(_ cell: BasicSelectionCell, at indexPath: IndexPath) {
+    override func didSelected(_ cell: TimerBasicCell, at indexPath: IndexPath) {
 
         switch self.ingredientObjects.first?.type {
             

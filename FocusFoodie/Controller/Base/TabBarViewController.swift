@@ -63,7 +63,8 @@ private enum Tab {
     }
 }
 
-class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
+class TabBarViewController: UITabBarController,
+                            UITabBarControllerDelegate {
     
     private let tabs: [Tab] = [.record, .timer, .community]
     
@@ -74,9 +75,11 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
         
         delegate = self
         
-//        tabBar.isTranslucent = false
+        tabBar.isTranslucent = false
         
         tabBar.frame.size.height = 80
+        
+        tabBar.cornerRadius = 10
         
         tabBar.tintColor = .G3
         

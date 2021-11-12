@@ -9,64 +9,11 @@ import UIKit
 
 class RecordCell: UITableViewCell {
         
-    @IBOutlet weak var timerImage: UIImageView! {
-        
-        didSet {
-            
-            timerImage.image = UIImage.asset(.icon_loading)
-            
-            timerImage.contentMode = .scaleAspectFit
-        }
-    }
+    @IBOutlet weak var timerImage: UIImageView!
     
-    @IBOutlet weak var descriptionLabel: UILabel! {
-        
-        didSet {
-            
-            descriptionLabel.text = "Personal Project"
-        }
-    }
+    @IBOutlet weak var minLabel: UILabel!
     
-    @IBOutlet weak var greyView: UIView! {
-        
-        didSet {
-            
-            greyView.cornerRadius = 5
-            
-            greyView.backgroundColor = .G1
-        }
-    }
+    @IBOutlet weak var taskLabel: UILabel!
     
-    @IBOutlet weak var categoryLabel: UILabel! {
-        
-        didSet {
-            
-            categoryLabel.text = "Coding"
-            
-            categoryLabel.contentMode = .center
-            
-            categoryLabel.textColor = .G3
-        }
-    }
-    
-    @IBOutlet weak var minLabel: UILabel! {
-        
-        didSet {
-            
-            minLabel.text = "180"
-            
-            minLabel.textColor = .G3
-            
-        }
-    }
-    
-    @IBOutlet weak var unitLabel: UILabel! {
-        
-        didSet {
-            
-            unitLabel.text = "min"
-            
-            unitLabel.textColor = .G3
-        }
-    }
+    @IBOutlet weak var categoryImage: UIImageView!
 }

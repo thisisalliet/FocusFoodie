@@ -9,14 +9,14 @@ import UIKit
 
 protocol SelectionCellDataSource: AnyObject {
 
-    func numberOfItem(_ cell: BasicSelectionCell) -> Int
+    func numberOfItem(_ cell: TimerBasicCell) -> Int
 
-    func viewIn(_ cell: BasicSelectionCell, selectionCell: SelectionCell, indexPath: IndexPath)
+    func viewIn(_ cell: TimerBasicCell, selectionCell: SelectionCell, indexPath: IndexPath)
 
-    func didSelected(_ cell: BasicSelectionCell, at indexPath: IndexPath)
+    func didSelected(_ cell: TimerBasicCell, at indexPath: IndexPath)
 }
 
-class BasicSelectionCell: UITableViewCell,
+class TimerBasicCell: UITableViewCell,
                           UICollectionViewDataSource,
                           UICollectionViewDelegate,
                           SelectionCellDataSource {
@@ -102,16 +102,16 @@ class BasicSelectionCell: UITableViewCell,
 
     // MARK: - SelectionCellDataSource -
 
-    func numberOfItem(_ cell: BasicSelectionCell) -> Int {
+    func numberOfItem(_ cell: TimerBasicCell) -> Int {
 
         return 0
     }
 
-    func viewIn(_ cell: BasicSelectionCell, selectionCell: SelectionCell, indexPath: IndexPath) {
+    func viewIn(_ cell: TimerBasicCell, selectionCell: SelectionCell, indexPath: IndexPath) {
 
     }
 
-    func didSelected(_ cell: BasicSelectionCell, at indexPath: IndexPath) {
+    func didSelected(_ cell: TimerBasicCell, at indexPath: IndexPath) {
 
     }
 

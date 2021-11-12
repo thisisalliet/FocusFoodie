@@ -6,16 +6,30 @@
 //
 
 import UIKit
-import FirebaseStorage
 import FirebaseAuth
+import FirebaseStorage
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class ProfileViewController: BaseViewController,
                              UITableViewDataSource,
                              UITableViewDelegate {
-        
-    var imageUrl = String()
     
-    let storage = Storage.storage().reference()
+    @IBOutlet weak var profileBackground: UIImageView!
+    
+    @IBOutlet weak var profileImage: UIImageView!
+    
+    @IBOutlet weak var profileButton: UIButton!
+    
+    @IBOutlet weak var profileTableView: UITableView! {
+        
+        didSet {
+            
+            profileTableView.dataSource = self
+
+            profileTableView.delegate = self
+        }
+    }
     
     lazy var logoutButton: UIButton = {
         
@@ -42,13 +56,11 @@ class ProfileViewController: BaseViewController,
         return button
     }()
     
-    @IBOutlet weak var profileBackground: UIImageView!
+    var imageUrl = String()
     
-    @IBOutlet weak var profileImage: UIImageView!
+    let storage = Storage.storage().reference()
     
-    @IBOutlet weak var profileButton: UIButton!
-    
-    @IBOutlet weak var profileTableView: UITableView!
+    private let datas: [ProfileCellType] = [.profileInfo, .appSecurity, .appAlert, .appAppearance, .profileSignOut, .profileDeletion, .appVersion]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +68,6 @@ class ProfileViewController: BaseViewController,
         setupLogoutButton()
         
         navigationController?.setupBackButton(color: .G3!)
-        
     }
     
     override func viewDidLayoutSubviews() {
@@ -81,7 +92,7 @@ class ProfileViewController: BaseViewController,
                 
                 guard let authVC = UIStoryboard.auth.instantiateViewController(
                     withIdentifier: String(describing: AuthViewController.identifier))
-                 as? AuthViewController else { return }
+                        as? AuthViewController else { return }
                 
                 authVC.modalPresentationStyle = .fullScreen
                 
@@ -104,7 +115,7 @@ class ProfileViewController: BaseViewController,
         
         present(controller, animated: true, completion: nil)
     }
-        
+    
     private func setupLogoutButton() {
         
         view.addSubview(logoutButton)
@@ -120,15 +131,47 @@ class ProfileViewController: BaseViewController,
         ])
     }
     
+    private func setUpTableView() {
+        
+        profileTableView.registerCellWithNib(identifier: String(describing: ProfileInfoCell.self),
+                                             bundle: nil)
+        
+        profileTableView.registerCellWithNib(identifier: String(describing: ProfileSelectionCell.self),
+                                             bundle: nil)
+        
+        profileTableView.register(
+            ProfileButtonCell.self,
+            forCellReuseIdentifier: ProfileCellType.profileSignOut.identifier()
+        )
+        
+        profileTableView.register(
+            ProfileButtonCell.self,
+            forCellReuseIdentifier: ProfileCellType.profileDeletion.identifier()
+        )
+
+        profileTableView.register(
+            ProfileLabelCell.self,
+            forCellReuseIdentifier: ProfileCellType.appVersion.identifier()
+        )
+    }
+    
     // MARK: - UITableView Datasource -
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        
+        return datas.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileInfoCell.identifier, for: indexPath) as? ProfileInfoCell else {  fatalError() }
+        
+//        guard let profile = profile else { return UITableViewCell() }
+//
+//        return datas[indexPath.row].cellForIndexPath(indexPath, tableView: tableView, data: profile)
+        
+        return cell
     }
-    
 }
 
 extension ProfileViewController: UIImagePickerControllerDelegate,
@@ -211,14 +254,4 @@ extension ProfileViewController: UIImagePickerControllerDelegate,
     }
 }
 
-extension UINavigationController {
 
-    func setupBackButton(color: UIColor) {
-
-        let backbutton = UIBarButtonItem()
-        backbutton.title = ""
-        backbutton.tintColor = color
-
-        navigationBar.topItem?.backBarButtonItem = backbutton
-    }
-}
