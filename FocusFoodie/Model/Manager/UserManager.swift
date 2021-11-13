@@ -13,6 +13,8 @@ import FirebaseFirestoreSwift
 
 class UserManager {
     
+    lazy var db = Firestore.firestore()
+    
     static let shared = UserManager()
     
     private init() {}
@@ -55,17 +57,15 @@ class UserManager {
         }
     }()
     
-    lazy var db = Firestore.firestore()
-    
     func createUserInfo() {
+        
         let user = User(displayName: userDisplayName,
                         userId: userId,
                         appleToken: "",
                         userEmail: userEmail,
                         providerId: "Apple",
                         blockList: nil,
-                        friendList: nil
-        )
+                        friendList: nil)
         
         let userRef = db.collection(CollectionName.user.rawValue)
         
@@ -173,5 +173,11 @@ class UserManager {
                 }
             }
         }
+    }
+    
+    func ignoreInvitation() {
+        
+        db.collection(CollectionName.invitation.rawValue)
+            .whereField("receiver_id", isEqualTo: <#T##Any#>)
     }
 }
