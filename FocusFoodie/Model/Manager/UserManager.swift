@@ -142,6 +142,10 @@ class UserManager {
         
         let invitorRef = db.collection(CollectionName.user.rawValue).document(invitorId)
         
+        let invitationRef = db.collection(CollectionName.invitation.rawValue)
+            .whereField("receiver_id", isEqualTo: userId)
+            .whereField("sender_id", isEqualTo: invitorId)
+        
         friendRef.getDocument { document, error in
             
             if let document = document, document.exists {
@@ -149,7 +153,7 @@ class UserManager {
                 document.reference.updateData([
                     "friend_list" : FieldValue.arrayUnion([invitorId])
                 ])
-                                
+                
             } else {
                 
                 if let error = error {
@@ -159,25 +163,35 @@ class UserManager {
         }
         
         invitorRef.getDocument { document, error in
-
+            
             if let document = document, document.exists {
-
+                
                 document.reference.updateData([
                     "friend_list" : FieldValue.arrayUnion([userId])
                 ])
-
+                
             } else {
-
+                
                 if let error = error {
                     print(error)
                 }
             }
         }
-    }
-    
-    func ignoreInvitation() {
         
-        db.collection(CollectionName.invitation.rawValue)
-            .whereField("receiver_id", isEqualTo: <#T##Any#>)
+        invitationRef.getDocuments { snapshot, error in
+            
+            if let snapshot = snapshot {
+                
+                snapshot.documents.forEach { snapshot in
+                    snapshot.reference.delete()
+                }
+                
+            } else {
+                
+                if let error = error {
+                    print(error)
+                }
+            }
+        }
     }
 }

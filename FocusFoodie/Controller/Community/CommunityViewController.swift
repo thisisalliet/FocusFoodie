@@ -10,9 +10,25 @@ import Firebase
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-class CommunityViewController: BaseViewController,
-                               UITableViewDataSource,
-                               UITableViewDelegate {
+class CommunityViewController: BaseViewController {
+    
+    private enum CommunityType: Int {
+
+        case friend = 0
+
+        case invitation = 1
+
+        case block = 2
+    }
+
+    private struct Segue {
+
+        static let friend = "SegueFriend"
+
+        static let invitation = "SegueInvitation"
+
+        static let block = "SegueBlock"
+    }
     
     @IBOutlet weak var yourCommunityLabel: UILabel!
     
@@ -30,244 +46,85 @@ class CommunityViewController: BaseViewController,
     
     @IBOutlet weak var blockLabel: UILabel!
     
-    @IBOutlet weak var communityTableView: UITableView!
+    @IBOutlet weak var friendContainerView: UIView!
     
-    @IBOutlet weak var friendButton: UIButton!
+    @IBOutlet weak var invitationContainerView: UIView!
     
-    @IBOutlet weak var invitationButton: UIButton!
+    @IBOutlet weak var blockContainerView: UIView!
     
-    @IBOutlet weak var blockButton: UIButton!
+    @IBOutlet var communityButtons: [UIButton]!
+    
+    @IBOutlet weak var indicatorView: UIView! {
+        
+        didSet {
+            
+            indicatorView.cornerRadius = indicatorView.frame.height / 2
+        }
+    }
+    
+    @IBOutlet weak var indicatorCenterXConstraint: NSLayoutConstraint!
     
     let myId = UserManager.shared.userId
+    
+    var containerViews: [UIView] {
+
+        return [friendContainerView, invitationContainerView, blockContainerView]
+    }
     
     var senderId: String?
     
     var db: Firestore!
     
-    var sender: [User] = [] {
-        
-        didSet {
-            
-            communityTableView.dataSource = self
-            
-            communityTableView.reloadData()
-        }
-    }
-    
-    var friendList = [FriendList]() {
-        
-        didSet {
-            
-            communityTableView.reloadData()
-        }
-    }
-    
-    var invitations = [Invitation]() {
-        
-        didSet {
-            
-            communityTableView.reloadData()
-        }
-    }
-    
-    var blockList = [BlockList]() {
-        
-        didSet {
-            
-            communityTableView.reloadData()
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        db = Firestore.firestore()
-        
-        setUpTableView()
-        
-        communityTableView.delegate = self
-                
-        monitorInvitation()
     }
     
-    @IBAction func friendButtonTapped(_ sender: UIButton) {
-        
-        friendNumber.textColor = .Y2
-        
-        friendLabel.textColor = .Y2
-    }
-    
-    @IBAction func invitationButton(_ sender: UIButton) {
-        
-        invitationNumber.textColor = .Y2
-        
-        invitationLabel.textColor = .Y2
-    }
-    
-    @IBAction func blockButton(_ sender: UIButton) {
-        
-        blockNumber.textColor = .Y2
-        
-        blockLabel.textColor = .Y2
-    }
-    
-    private func setUpTableView() {
-        
-        communityTableView.registerCellWithNib(identifier: String(describing: CommunityTableViewCell.self),
-                                               bundle: nil
-        )
-    }
-    
-    func monitorInvitation() {
-        
-        UserManager.shared.monitorInvitation(uid: myId) { [self] result in
-            
-            switch result {
-                
-            case .success(let myInvite):
-                
-                self.invitations.removeAll()
-                
-                self.invitations.append(contentsOf: myInvite)
-                
-                searchInviter(invitation: myInvite)
-                
-                invitationNumber.text = "\(myInvite.count)"
-                
-                print(myInvite)
-                
-            case .failure(let error):
-                
-                print(error)
-            }
+    // MARK: - Action
+    @IBAction func onChangeProducts(_ sender: UIButton) {
+
+        for btn in communityButtons {
+
+            btn.isSelected = false
         }
+
+        sender.isSelected = true
+
+        changeButtonColor(reference: sender)
+
+        guard let type = CommunityType(rawValue: sender.tag) else { return }
+
+        updateContainer(type: type)
     }
     
-    func searchInviter(invitation: [Invitation]) {
-        
-        let group = DispatchGroup()
-        
-        var sender = [User]()
-        
-        DispatchQueue.main.async {
-            
-            invitation.forEach { invitation in
-                
-                group.enter()
-                
-                UserManager.shared.fetchUserInfo(uid: invitation.senderId) { [self] result in
-                    
-                    switch result {
-                        
-                    case .success(let user):
-                        
-                        sender.append(user)
-                        
-                        group.leave()
-                        
-                    case .failure(let error):
-                        print(error)
-                        
-                        group.leave()
-                    }
-                }
-            }
-            
-            group.notify(queue: DispatchQueue.main) { [self] in
-                
-                self.sender = sender
-            }
+    private func changeButtonColor(reference: UIView) {
+
+        indicatorCenterXConstraint.isActive = false
+
+        indicatorCenterXConstraint = indicatorView.centerXAnchor.constraint(equalTo: reference.centerXAnchor)
+
+        indicatorCenterXConstraint.isActive = true
+
+        UIView.animate(withDuration: 0.3, animations: { [weak self] in
+
+            self?.view.layoutIfNeeded()
+        })
+    }
+    
+    private func updateContainer(type: CommunityType) {
+
+        containerViews.forEach({ $0.isHidden = true })
+
+        switch type {
+
+        case .friend:
+            friendContainerView.isHidden = false
+
+        case .invitation:
+            invitationContainerView.isHidden = false
+
+        case .block:
+            blockContainerView.isHidden = false
         }
-    }
-    
-    //    func fetchFriendList() {
-    //
-    //        db.collection(CollectionName.user.rawValue).document(myId).getDocument { document, error in
-    //
-    //            guard let document = document,
-    //                  document.exists,
-    //                  let user = try? document.data(as: User.self)
-    //            else { return }
-    //
-    //            self.friendList.removeAll()
-    //
-    //            self.friendList = user.friendList ?? []
-    //        }
-    //    }
-    
-    @objc func acceptButtonTapped() {
-        
-        guard let senderId = senderId else {
-            return
-        }
-        
-        UserManager.shared.addFriend(
-            userId: myId,
-            invitorId: senderId)
-    }
-    
-    // MARK: Tableview Datasource -
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return invitations.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        guard let invitationCell = communityTableView.dequeueReusableCell(
-            withIdentifier: String(describing: CommunityTableViewCell.self),
-            for: indexPath) as? CommunityTableViewCell
-        else { fatalError() }
-        
-        invitationCell.nameLabel.text = sender[indexPath.row].displayName
-        
-        invitationCell.emailLabel.text = sender[indexPath.row].userEmail
-        
-        invitationCell.acceptButton.addTarget(self, action: #selector(acceptButtonTapped), for: .touchUpInside)
-                
-        return invitationCell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        senderId = sender[indexPath.row].userId
-    }
-    
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        
-        let declineAction = UIContextualAction(style: .destructive, title: "") {
-            (action, sourceView, complete) in
-            
-            self.sender.remove(at: indexPath.row)
-            
-            self.communityTableView.deleteRows(at: [indexPath], with: .top)
-            
-            complete(true)
-        }
-        
-        declineAction.backgroundColor = .G1
-        
-        declineAction.image = UIGraphicsImageRenderer(
-            size: CGSize(width: 40.0, height: 40.0)).image(
-            actions: { _ in UIImage.asset(.icon_delete)?.draw(
-                in: CGRect(x: 0, y: 0, width: 40, height: 40))
-            })
-        
-        let trailingSwipConfiguration = UISwipeActionsConfiguration(actions: [declineAction])
-        
-        return trailingSwipConfiguration
-    }
-    
-    // MARK: Tableview Delegate -
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        return 120
-    }
-    
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        UITableView.automaticDimension
     }
 }

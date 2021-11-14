@@ -32,10 +32,10 @@ class CommunityTableViewCell: UITableViewCell {
 
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    func layoutCell(name: String, email: String) {
 
-        // Configure the view for the selected state
+        nameLabel.text = name
+
+        emailLabel.text = email
     }
-    
 }
