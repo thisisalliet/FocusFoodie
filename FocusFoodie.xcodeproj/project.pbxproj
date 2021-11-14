@@ -91,6 +91,7 @@
 		09DB4775273A200B003703C1 /* Invitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB4774273A200B003703C1 /* Invitation.swift */; };
 		09DB4777273A46F7003703C1 /* SetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB4776273A46F7003703C1 /* SetUpViewController.swift */; };
 		09E42D2D2740FABC0014C4B9 /* CompondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E42D2C2740FABC0014C4B9 /* CompondViewController.swift */; };
+		09E42D2F27414C780014C4B9 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E42D2E27414C780014C4B9 /* Timer.swift */; };
 		09F0472727264DC1009CA63B /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F0472627264DC1009CA63B /* UIButton+Extension.swift */; };
 		09F04729272678D8009CA63B /* DetailImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F04728272678D8009CA63B /* DetailImageTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -200,6 +201,7 @@
 		09DB4774273A200B003703C1 /* Invitation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invitation.swift; sourceTree = "<group>"; };
 		09DB4776273A46F7003703C1 /* SetUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpViewController.swift; sourceTree = "<group>"; };
 		09E42D2C2740FABC0014C4B9 /* CompondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompondViewController.swift; sourceTree = "<group>"; };
+		09E42D2E27414C780014C4B9 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		09F0472627264DC1009CA63B /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		09F04728272678D8009CA63B /* DetailImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailImageTableViewCell.xib; sourceTree = "<group>"; };
 		290B1C7432FC0558604112FB /* Pods-FocusFoodie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FocusFoodie.debug.xcconfig"; path = "Target Support Files/Pods-FocusFoodie/Pods-FocusFoodie.debug.xcconfig"; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				09524FA3271FFE2D0061C36B /* TimerViewController.swift */,
+				09E42D2E27414C780014C4B9 /* Timer.swift */,
 				093169A52727CEB300360885 /* TimerEditViewController.swift */,
 			);
 			path = Timer;
@@ -723,6 +726,7 @@
 				09C1C8502725D78700D2C9B2 /* UITextfield+Extension.swift in Sources */,
 				0901E686273D20AF005375B4 /* ProfileBasicCell.swift in Sources */,
 				09DB4777273A46F7003703C1 /* SetUpViewController.swift in Sources */,
+				09E42D2F27414C780014C4B9 /* Timer.swift in Sources */,
 				09428933272D975C0083CF6B /* ComingSoonView.swift in Sources */,
 				09DB475827351DE8003703C1 /* CollectionManager.swift in Sources */,
 				09428938272E84970083CF6B /* Timestamp+Extension.swift in Sources */,

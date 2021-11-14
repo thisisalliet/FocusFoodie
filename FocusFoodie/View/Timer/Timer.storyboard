@@ -3,10 +3,16 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Dongle-Bold.ttf">
+            <string>Dongle-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Timer View Controller-->
         <scene sceneID="s0d-6b-0kx">
@@ -16,68 +22,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lbs-ZU-qMK">
-                                <rect key="frame" x="82" y="168" width="250" height="250"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Lbs-ZU-qMK" secondAttribute="height" multiplier="1:1" id="0Yg-xS-KRd"/>
-                                    <constraint firstAttribute="height" constant="250" id="SLH-ce-a7Z"/>
-                                </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="hTb-eJ-vtr" appends="YES" id="CgL-We-jEd"/>
-                                </connections>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k80-gn-E0Z">
-                                <rect key="frame" x="184" y="448" width="46" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="153.5" y="188" width="107.5" height="94.5"/>
+                                <fontDescription key="fontDescription" name="Dongle-Bold" family="Dongle" pointSize="65"/>
+                                <color key="textColor" name="Y3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eMr-V0-sbF">
-                                <rect key="frame" x="274" y="498.5" width="100" height="100"/>
+                                <rect key="frame" x="274" y="312.5" width="100" height="100"/>
+                                <color key="backgroundColor" name="Y2"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="eMr-V0-sbF" secondAttribute="height" multiplier="1:1" id="auh-K3-wNJ"/>
                                     <constraint firstAttribute="height" constant="100" id="f0m-wt-WUU"/>
                                     <constraint firstAttribute="width" constant="100" id="rdG-rt-0FK"/>
                                 </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Start"/>
+                                <buttonConfiguration key="configuration" style="plain" title="START">
+                                    <fontDescription key="titleFontDescription" name="Dongle-Bold" family="Dongle" pointSize="35"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="didTapControlButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="FWr-oC-UBd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fY1-Sj-YWz">
-                                <rect key="frame" x="40" y="498.5" width="100" height="100"/>
+                                <rect key="frame" x="40" y="312.5" width="100" height="100"/>
+                                <color key="backgroundColor" name="Y2"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fY1-Sj-YWz" secondAttribute="height" multiplier="1:1" id="Jbz-EN-mUg"/>
                                     <constraint firstAttribute="height" constant="100" id="YGP-p5-d2V"/>
                                     <constraint firstAttribute="width" constant="100" id="iWB-nl-L5t"/>
                                 </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Done"/>
+                                <buttonConfiguration key="configuration" style="plain" title="DONE" subtitle="">
+                                    <fontDescription key="titleFontDescription" name="Dongle-Bold" family="Dongle" pointSize="35"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="didTapDoneBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="1kT-Re-YeH"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Y1"/>
+                        <color key="tintColor" name="Y3"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Lbs-ZU-qMK" secondAttribute="trailing" constant="82" id="4IJ-ul-wJa"/>
-                            <constraint firstItem="Lbs-ZU-qMK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="82" id="6d9-xv-Yt4"/>
                             <constraint firstItem="fY1-Sj-YWz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="DmL-gn-YO3"/>
-                            <constraint firstItem="k80-gn-E0Z" firstAttribute="top" secondItem="Lbs-ZU-qMK" secondAttribute="bottom" constant="30" id="LDT-IW-ufh"/>
+                            <constraint firstItem="k80-gn-E0Z" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="100" id="HGw-1L-PpZ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="eMr-V0-sbF" secondAttribute="trailing" constant="40" id="XzD-Nj-IU2"/>
                             <constraint firstItem="fY1-Sj-YWz" firstAttribute="top" secondItem="k80-gn-E0Z" secondAttribute="bottom" constant="30" id="Zux-PX-dk7"/>
                             <constraint firstItem="eMr-V0-sbF" firstAttribute="top" secondItem="k80-gn-E0Z" secondAttribute="bottom" constant="30" id="nPE-wT-84U"/>
-                            <constraint firstItem="Lbs-ZU-qMK" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="80" id="pVp-Go-DuD"/>
                             <constraint firstItem="k80-gn-E0Z" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="u45-Hh-HYM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Cp5-HE-UL1"/>
                     <connections>
                         <outlet property="controlButton" destination="eMr-V0-sbF" id="mok-nc-5YG"/>
-                        <outlet property="cookingImageView" destination="Lbs-ZU-qMK" id="ADF-5b-7tq"/>
                         <outlet property="countDownLabel" destination="k80-gn-E0Z" id="Rf7-yW-ulz"/>
                         <outlet property="doneButton" destination="fY1-Sj-YWz" id="ZhO-p5-za9"/>
                     </connections>
@@ -137,7 +137,8 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="anM-eQ-V2r"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="G1"/>
+                        <color key="tintColor" name="G3"/>
                         <constraints>
                             <constraint firstItem="VcB-HR-vW1" firstAttribute="height" secondItem="NAE-bZ-OTO" secondAttribute="height" multiplier="0.3" id="1Qq-ry-7vW"/>
                             <constraint firstItem="R4T-EG-2Bl" firstAttribute="top" secondItem="anM-eQ-V2r" secondAttribute="top" constant="16" id="1lg-uk-Gtr"/>
@@ -187,6 +188,21 @@
     <resources>
         <image name="icon_check_normal" width="128" height="128"/>
         <image name="icon_cross_normal" width="128" height="128"/>
+        <namedColor name="G1">
+            <color red="0.89803921568627454" green="0.97647058823529409" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="G3">
+            <color red="0.1803921568627451" green="0.7686274509803922" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Y1">
+            <color red="1" green="0.87450980392156863" blue="0.70588235294117652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Y2">
+            <color red="1" green="0.74901960784313726" blue="0.41176470588235292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Y3">
+            <color red="1" green="0.62400001287460327" blue="0.10999999940395355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
