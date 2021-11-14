@@ -16,7 +16,7 @@ enum ProfileCellType: String {
     
     case appAlert = "COUNTDOWN ALERT"
     
-    case appAppearance = "DARK MODE"
+    case appAppearance = "DARK MODE COMING SOON"
     
     case profileSignOut = "SIGN OUT"
     
@@ -25,69 +25,76 @@ enum ProfileCellType: String {
     case appVersion = "1.0.0"
     
     func identifier() -> String {
-
+        
         switch self {
-
+            
         case .profileInfo:
             
             return String(describing: ProfileInfoCell.self)
-
+            
         case .appSecurity, .appAlert, .appAppearance:
             
             return String(describing: ProfileSelectionCell.self)
-
+            
         case .profileSignOut, .profileDeletion:
             
             return String(describing: ProfileButtonCell.self)
-
+            
         case .appVersion:
             
             return String(describing: ProfileLabelCell.self)
         }
     }
     
-//    func cellForIndexPath(_ indexPath: IndexPath, tableView: UITableView, data: Profile) -> UITableViewCell {
-//
-//        let cell = tableView.dequeueReusableCell(withIdentifier: identifier(), for: indexPath)
-//
-//        guard let basicCell = cell as? ProfileBasicCell else { return cell }
-//
-//        switch self {
-//
-//        case .description:
-//
-//            basicCell.layoutCell(product: data)
-
-//        case .color:
-//
-//            basicCell.layoutCellWithColors(category: rawValue, colors: data.colors.map({ $0.code }))
-//
-//        case .size:
-//
-//            basicCell.layoutCell(category: rawValue, content: data.size)
-//
-//        case .stock:
-//
-//            basicCell.layoutCell(category: rawValue, content: String(data.stock))
-//
-//        case .texture:
-//
-//            basicCell.layoutCell(category: rawValue, content: data.texture)
-//
-//        case .washing:
-//
-//            basicCell.layoutCell(category: rawValue, content: data.wash)
-//
-//        case .placeOfProduction:
-//
-//            basicCell.layoutCell(category: rawValue, content: data.place)
-//
-//        case .remarks:
-//
-//            basicCell.layoutCell(category: rawValue, content: data.note)
-//        }
-//
-//        return basicCell
-//    }
-//}
+    func cellForIndexPath(_ indexPath: IndexPath, tableView: UITableView) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier(), for: indexPath)
+        
+        guard let basicCell = cell as? ProfileBasicCell else { return cell }
+        
+        switch self {
+            
+        case .profileInfo:
+            
+            basicCell.layoutCellWithInfo(
+                name: UserManager.shared.userDisplayName,
+                email: UserManager.shared.userEmail)
+            
+        case .appSecurity:
+            
+            basicCell.layoutCellWithSwitch(
+                status: false,
+                category: rawValue,
+                image: nil)
+            
+        case .appAlert:
+            
+            basicCell.layoutCellWithSwitch(
+                status: true,
+                category: rawValue,
+                image: nil)
+            
+        case .appAppearance:
+            
+            basicCell.layoutCellWithLabel(
+                content: rawValue)
+            
+        case .profileSignOut:
+            
+            basicCell.layoutCellWithButton(
+                buttonTitle: rawValue)
+            
+        case .profileDeletion:
+            
+            basicCell.layoutCellWithButton(
+                buttonTitle: rawValue)
+            
+        case .appVersion:
+            
+            basicCell.layoutCellWithLabel(
+                content: rawValue)
+        }
+        
+        return basicCell
+    }
 }

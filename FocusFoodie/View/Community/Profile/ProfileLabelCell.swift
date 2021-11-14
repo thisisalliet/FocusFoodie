@@ -8,7 +8,7 @@
 import UIKit
 
 class ProfileLabelCell: ProfileBasicCell {
-
+    
     let label: UILabel = {
         
         let label = UILabel()
@@ -18,6 +18,8 @@ class ProfileLabelCell: ProfileBasicCell {
         label.textColor = .G3
         
         label.contentMode = .center
+        
+        label.font = UIFont.regular(size: 25)
         
         label.translatesAutoresizingMaskIntoConstraints = false
         
@@ -49,7 +51,8 @@ class ProfileLabelCell: ProfileBasicCell {
         ])
     }
     
-//    override func layoutCell(category: String, status: String, image: UIImage) {
-//        <#code#>
-//    }
+    override func layoutCellWithLabel(content: String) {
+        
+        label.text = content
+    }
 }

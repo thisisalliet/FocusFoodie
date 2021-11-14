@@ -35,11 +35,6 @@ class ProfileViewController: BaseViewController,
         
         let button = UIButton()
         
-        let myAttribute: [NSAttributedString.Key: Any] = [
-            NSAttributedString.Key.font: UIFont.regular(size: 14),
-        ]
-        let myAttributeString = NSAttributedString(string: "Log out", attributes: myAttribute)
-        
         button.backgroundColor = UIColor.G1
         
         button.tintColor = UIColor.white
@@ -47,12 +42,9 @@ class ProfileViewController: BaseViewController,
         button.layer.cornerRadius = 10
         
         button.setTitle("Sign out", for: .normal)
-        
-        button.titleLabel?.attributedText = myAttributeString
-        
-        button.layoutIfNeeded()
-        
+                        
         button.addTarget(self, action: #selector(logOutAction(_:)), for: .touchUpInside)
+        
         return button
     }()
     
@@ -133,11 +125,13 @@ class ProfileViewController: BaseViewController,
     
     private func setUpTableView() {
         
-        profileTableView.registerCellWithNib(identifier: String(describing: ProfileInfoCell.self),
-                                             bundle: nil)
+        profileTableView.registerCellWithNib(
+            identifier: String(describing: ProfileInfoCell.self),
+            bundle: nil)
         
-        profileTableView.registerCellWithNib(identifier: String(describing: ProfileSelectionCell.self),
-                                             bundle: nil)
+        profileTableView.registerCellWithNib(
+            identifier: String(describing: ProfileSelectionCell.self),
+            bundle: nil)
         
         profileTableView.register(
             ProfileButtonCell.self,
@@ -164,22 +158,24 @@ class ProfileViewController: BaseViewController,
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileInfoCell.identifier, for: indexPath) as? ProfileInfoCell else {  fatalError() }
-        
-//        guard let profile = profile else { return UITableViewCell() }
-//
-//        return datas[indexPath.row].cellForIndexPath(indexPath, tableView: tableView, data: profile)
+        let cell = profileTableView.dequeueReusableCell(
+            withIdentifier: datas[indexPath.row].identifier(), for: indexPath)
         
         return cell
     }
 }
+
+// MARK: - Photo Library & Camera -
 
 extension ProfileViewController: UIImagePickerControllerDelegate,
                                  UINavigationControllerDelegate {
     
     func showImagePickerControllerActionSheet() {
         
-        let actionSheet = UIAlertController(title: "Attach Photo", message: "where would you like to attach a photo from", preferredStyle: .actionSheet)
+        let actionSheet = UIAlertController(
+            title: "Attach Photo",
+            message: "where would you like to attach a photo from",
+            preferredStyle: .actionSheet)
         
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { [weak self] _ in
             

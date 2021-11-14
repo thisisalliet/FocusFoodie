@@ -6,24 +6,11 @@
 //
 
 import UIKit
+import WebKit
 
 class ProfileSelectionCell: ProfileBasicCell {
 
-    @IBOutlet weak var statusLabel: UILabel! {
-        
-        didSet {
-            
-            if profileSwitch.isOn {
-                
-                statusLabel.text = "Enabled"
-                
-            } else {
-                
-                statusLabel.text = "Disabled"
-            }
-        }
-    }
-    
+    @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var profileSwitch: UISwitch!
@@ -34,9 +21,20 @@ class ProfileSelectionCell: ProfileBasicCell {
         super.awakeFromNib()
         // Initialization code
     }
-
-//    override func layoutCell(category: String, status: String, image: UIImage) {
-//        <#code#>
-//    }
     
+    override func layoutCellWithSwitch(status: Bool, category: String, image: UIImage?) {
+        
+        if status == true {
+            
+            statusLabel.text = "Enabled"
+            
+        } else {
+            
+            statusLabel.text = "Disabled"
+        }
+        
+        titleLabel.text = category
+        
+        backgroundImage.image = image
+    }
 }

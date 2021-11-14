@@ -18,8 +18,10 @@ class ProfileInfoCell: ProfileBasicCell {
         // Initialization code
     }
     
-//    override func layoutCellWithInfo(name: String, email: String) {
-//        
-//        UserManager.shared.fetchSenderInfo(senderId: <#T##String#>, completion: <#T##(Result<User, Error>) -> Void#>)
-//    }
+    override func layoutCellWithInfo(name: String, email: String) {
+        
+        nameTextfield.text = name
+        
+        emailTextfield.text = email
+    }
 }
