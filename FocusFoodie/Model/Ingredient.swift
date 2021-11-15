@@ -121,7 +121,7 @@ enum VegetableItem: IngredientObject, CaseIterable {
 
         case .tomato: return UIImage.asset(.icon_tomato)
 
-        case .onion: return UIImage.asset(.icon_lettuce)
+        case .onion: return UIImage.asset(.icon_onion)
         }
     }
     
@@ -187,15 +187,15 @@ enum MeatItem: IngredientObject, CaseIterable {
             
         case .bacon: return UIImage.asset(.icon_bacon)
             
-        case .chicken: return UIImage.asset(.icon_baguette)
+        case .chicken: return UIImage.asset(.icon_chicken)
             
-        case .falafel: return UIImage.asset(.icon_baguette)
+        case .falafel: return UIImage.asset(.icon_falafel)
             
-        case .shrimp: return UIImage.asset(.icon_baguette)
+        case .shrimp: return UIImage.asset(.icon_shrimp)
             
-        case .tuna: return UIImage.asset(.icon_baguette)
+        case .tuna: return UIImage.asset(.icon_tuna)
             
-        case .turkey: return UIImage.asset(.icon_baguette)
+        case .turkey: return UIImage.asset(.icon_turkey)
         }
     }
     
@@ -259,15 +259,15 @@ enum SideItem: IngredientObject, CaseIterable {
         
         switch self {
             
-        case .egg: return UIImage.asset(.icon_cheese)
+        case .egg: return UIImage.asset(.icon_egg)
             
-        case .peanutButter: return UIImage.asset(.icon_cheese)
+        case .peanutButter: return UIImage.asset(.icon_peanutButter)
             
-        case .honey: return UIImage.asset(.icon_cheese)
+        case .honey: return UIImage.asset(.icon_honey)
             
-        case .mayonnaise: return UIImage.asset(.icon_cheese)
+        case .mayonnaise: return UIImage.asset(.icon_mayonnaise)
             
-        case .mustard: return UIImage.asset(.icon_cheese)
+        case .mustard: return UIImage.asset(.icon_mustard)
             
         case .cheese: return UIImage.asset(.icon_cheese)
         }

@@ -42,14 +42,19 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FZZ-pp-8nX">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EeR-rd-PDM">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EeR-rd-PDM">
                                     <rect key="frame" x="252" y="-24" width="60" height="60"/>
                                     <constraints>
+                                        <constraint firstAttribute="height" constant="60" id="bej-i1-h20"/>
                                         <constraint firstAttribute="width" constant="60" id="zKE-HR-XPY"/>
                                     </constraints>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" name="T2"/>
+                            <constraints>
+                                <constraint firstItem="EeR-rd-PDM" firstAttribute="top" secondItem="FZZ-pp-8nX" secondAttribute="top" constant="-24" id="8FH-Nn-ejd"/>
+                                <constraint firstAttribute="trailing" secondItem="EeR-rd-PDM" secondAttribute="trailing" constant="8" id="PIA-p1-Hc3"/>
+                            </constraints>
                         </view>
                     </subviews>
                     <color key="backgroundColor" name="T1"/>

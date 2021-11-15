@@ -27,7 +27,7 @@ class TimerBasicCell: UITableViewCell,
 
         layoutObject.itemSize = CGSize(width: UIScreen.width / 4.0, height: 180)
 
-        layoutObject.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layoutObject.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
 
         layoutObject.minimumLineSpacing = 8.0
 
@@ -37,7 +37,7 @@ class TimerBasicCell: UITableViewCell,
 
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layoutObject)
 
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .Y1
 
         collectionView.dataSource = self
 

@@ -3,10 +3,15 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Dongle-Regular.ttf">
+            <string>Dongle-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IngredientItemView" customModule="FocusFoodie" customModuleProvider="target">
             <connections>
@@ -28,39 +33,45 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSI-WS-ko7">
-                    <rect key="frame" x="4" y="103" width="91" height="25"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                    <rect key="frame" x="4" y="99" width="91" height="31.5"/>
+                    <fontDescription key="fontDescription" name="Dongle-Regular" family="Dongle" pointSize="30"/>
+                    <color key="textColor" name="Y3"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="minute" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDc-ch-Zqj">
-                    <rect key="frame" x="4" y="132" width="91" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="minute" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDc-ch-Zqj">
+                    <rect key="frame" x="4" y="120.5" width="91" height="43.5"/>
+                    <fontDescription key="fontDescription" name="Dongle-Regular" family="Dongle" pointSize="30"/>
+                    <color key="textColor" name="Y3"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="OEa-ps-DeF"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="tintColor" name="Y3"/>
             <constraints>
                 <constraint firstItem="OEa-ps-DeF" firstAttribute="trailing" secondItem="NSI-WS-ko7" secondAttribute="trailing" constant="4" id="8ZR-FE-bVc"/>
-                <constraint firstItem="JDc-ch-Zqj" firstAttribute="top" secondItem="NSI-WS-ko7" secondAttribute="bottom" constant="4" id="LJU-AP-0B7"/>
-                <constraint firstItem="OEa-ps-DeF" firstAttribute="bottom" secondItem="JDc-ch-Zqj" secondAttribute="bottom" constant="16" id="MTf-bZ-kb5"/>
+                <constraint firstItem="JDc-ch-Zqj" firstAttribute="bottom" secondItem="OEa-ps-DeF" secondAttribute="bottom" constant="-5" id="AF4-nz-Kac"/>
+                <constraint firstItem="JDc-ch-Zqj" firstAttribute="top" secondItem="NSI-WS-ko7" secondAttribute="bottom" constant="-10" id="LJU-AP-0B7"/>
                 <constraint firstItem="JDc-ch-Zqj" firstAttribute="leading" secondItem="OEa-ps-DeF" secondAttribute="leading" constant="4" id="ZT2-7k-cA1"/>
                 <constraint firstItem="OEa-ps-DeF" firstAttribute="trailing" secondItem="JDc-ch-Zqj" secondAttribute="trailing" constant="4" id="gFk-tf-DHY"/>
                 <constraint firstItem="t1K-hs-HBa" firstAttribute="leading" secondItem="OEa-ps-DeF" secondAttribute="leading" constant="8" id="gs2-lY-hAM"/>
-                <constraint firstItem="NSI-WS-ko7" firstAttribute="top" secondItem="t1K-hs-HBa" secondAttribute="bottom" constant="4" id="idA-5F-CXi"/>
+                <constraint firstItem="NSI-WS-ko7" firstAttribute="top" secondItem="t1K-hs-HBa" secondAttribute="bottom" id="idA-5F-CXi"/>
                 <constraint firstItem="t1K-hs-HBa" firstAttribute="top" secondItem="PxB-EQ-mHv" secondAttribute="top" constant="16" id="l0l-YG-F3l"/>
                 <constraint firstItem="NSI-WS-ko7" firstAttribute="leading" secondItem="OEa-ps-DeF" secondAttribute="leading" constant="4" id="ojD-Zg-lWX"/>
                 <constraint firstItem="OEa-ps-DeF" firstAttribute="trailing" secondItem="t1K-hs-HBa" secondAttribute="trailing" constant="8" id="v03-Gc-Nck"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="10"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
             <point key="canvasLocation" x="168.84057971014494" y="324.44196428571428"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="Y3">
+            <color red="1" green="0.62400001287460327" blue="0.10999999940395355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

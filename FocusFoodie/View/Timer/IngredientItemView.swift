@@ -9,41 +9,13 @@ import UIKit
 
 class IngredientItemView: UIView {
     
-    @IBOutlet weak var contentView: UIView! {
-        
-        didSet {
-                                    
-            contentView.cornerRadius = 10
-        }
-    }
+    @IBOutlet weak var contentView: UIView!
     
-    @IBOutlet weak var ingredientImage: UIImageView! {
-        
-        didSet {
-            
-            ingredientImage.contentMode = .scaleAspectFit
-        }
-    }
+    @IBOutlet weak var ingredientImage: UIImageView!
     
-    @IBOutlet weak var titleLabel: UILabel! {
-        
-        didSet {
-            
-            titleLabel.textColor = .G3
-            
-            titleLabel.font = UIFont.regular(size: 14.0)
-        }
-    }
+    @IBOutlet weak var titleLabel: UILabel!
     
-    @IBOutlet weak var minLabel: UILabel! {
-        
-        didSet {
-            
-            minLabel.textColor = .G3
-            
-            minLabel.font = UIFont.regular(size: 20.0)
-        }
-    }
+    @IBOutlet weak var minLabel: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -77,15 +49,11 @@ class IngredientItemView: UIView {
         
         if isSelected {
             
-            contentView.cornerRadius = 10
-
-            contentView.backgroundColor = .G1
+            contentView.backgroundColor = .Y1
             
         } else {
             
-            contentView.cornerRadius = 10
-
-            contentView.backgroundColor = .G1
+            contentView.backgroundColor = .white
         }
     }
 }

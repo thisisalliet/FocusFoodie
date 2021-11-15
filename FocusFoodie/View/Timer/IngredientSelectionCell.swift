@@ -64,7 +64,7 @@ class IngredientSelectionCell: TimerBasicCell {
     
     private func setupiIngredientView() {
                         
-        ingredientCollectionView.backgroundColor = .white
+        ingredientCollectionView.backgroundColor = .Y1
     }
     
     
@@ -113,31 +113,5 @@ class IngredientSelectionCell: TimerBasicCell {
         default:
             break
         }
-        
-        //        guard touchHandler?(ingredientObjects[indexPath.row].minute ?? 0) == true else { return }
-        //
-        //        for (index, object) in ingredientObjects.enumerated() where object.status == .selected {
-        //
-        //            ingredientObjects[index].status = .avaliable
-        //        }
-        //
-        //        ingredientObjects[indexPath.row].status = .selected
-        //
- 
-        //
-        //        ingredientObjects[indexPath.row].isSelected = !ingredientObjects[indexPath.row].isSelected
-        //
-//        touchHandler?(indexPath)
-        
-//        ingredientCollectionView.reloadData()
-        
-        
-        
-        
-//        delegate?.galleryView.knifeImage
-        
-        
-        
-        
     }
 }

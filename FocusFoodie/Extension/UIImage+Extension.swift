@@ -24,6 +24,8 @@ enum ImageAsset: String {
     case icon_cross_selected
     case icon_heart_normal
     case icon_heart_selected
+    case icon_notification
+    case icon_notification_filled
     
     // Placeholder
     case icon_loading
@@ -38,6 +40,9 @@ enum ImageAsset: String {
     
     // Record
     case icon_coding
+    
+    // Category
+    case icon_nap
     
     // Ingredient Gallery
     case icon_knife
@@ -55,22 +60,22 @@ enum ImageAsset: String {
     case icon_cucumber
     case icon_lettuce
     case icon_tomato
-    case onion
+    case icon_onion
     
     // Ingredient: Meat
     case icon_bacon
-    case chicken
-    case falafel
-    case shrimp
-    case tuna
-    case turkey
+    case icon_chicken
+    case icon_falafel
+    case icon_shrimp
+    case icon_tuna
+    case icon_turkey
     
     // Ingredient: Side
-    case egg
-    case peanutButter
-    case honey
-    case mayonnaise
-    case mustard
+    case icon_egg
+    case icon_peanutButter
+    case icon_honey
+    case icon_mayonnaise
+    case icon_mustard
     case icon_cheese
 
     // swiftlint:enable identifier_name

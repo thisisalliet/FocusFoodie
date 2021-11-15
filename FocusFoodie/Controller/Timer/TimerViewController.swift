@@ -17,15 +17,15 @@ protocol ProductPickerControllerDelegate: AnyObject {
 
 class TimerViewController: BaseViewController {
     
+    @IBOutlet weak var timerTitle: UILabel!
+    
     @IBOutlet weak var countDownLabel: UILabel!
+    
+    @IBOutlet weak var categoryImage: UIImageView!
     
     @IBOutlet weak var doneButton: UIButton! {
         
         didSet {
-            
-            doneButton.setTitleColor(.white, for: .normal)
-            
-            doneButton.tintColor = .white
             
             doneButton.layer.cornerRadius = doneButton.frame.width / 2
         }
@@ -35,13 +35,13 @@ class TimerViewController: BaseViewController {
         
         didSet {
             
-            controlButton.setTitleColor(.white, for: .normal)
-            
-            controlButton.tintColor = .white
-            
             controlButton.layer.cornerRadius = controlButton.frame.width / 2
         }
     }
+    
+    @IBOutlet weak var toEditorButton: UIButton!
+    
+    @IBOutlet weak var notificationButton: UIButton!
     
     var seconds = 0
     
@@ -50,6 +50,8 @@ class TimerViewController: BaseViewController {
     var pauseStatus = false
     
     let formatter = DateFormatter()
+    
+    var timeRemaining: Int = 30
     
     var timer = Timer()
     
@@ -63,77 +65,75 @@ class TimerViewController: BaseViewController {
     
     @IBAction func didTapControlButton(_ sender: UIButton) {
         
-        //        Timer.scheduledTimer(timeInterval: 0.1,
-        //                             target: self,
-        //                             selector: #selector(TimerViewController.updateElapsedTimeLabel(_:)),
-        //                             userInfo: nil,
-        //                             repeats: true)
+        timer = Timer.scheduledTimer(
+            timeInterval: 0.1,
+            target: self,
+            selector: #selector(step),
+            userInfo: nil,
+            repeats: true)
+        
         //        stopWatch.start()
         
-//        timer = Timer.scheduledTimer(
-//            timeInterval: 1,
-//            target: self,
-//            selector: #selector(step),
-//            userInfo: nil,
-//            repeats: true)
-//
-//        formatter.dateFormat = "HH"
-//
-//        let hours = formatter.string(from: countDownLabel.text)
-//
-//
-//        formatter.dateFormat = "mm"
-//
-//        let minutes = formatter.string(from: countdownTimer.date)
-//
-//        seconds = Int(hours)! * 60 * 60 + Int(minutes)! * 60
-//
-//        if startStatus {
-//
-//            timer = Timer.scheduledTimer(timeInterval: 1.0,
-//                                         target:self,
-//                                         selector: #selector(countDownHelper),
-//                                         userInfo: nil,
-//                                         repeats: true)
-//
-//            setupNotification(time: seconds)
-//
-//            startStatus = false
-//            controlButton.setTitle("Pause", for: .normal)
-//
-//            pauseStatus = true
-//            doneButton.isEnabled = true
-//
-//
-//        } else {
-//
-//            timer.invalidate()
-//            removeNotification()
-//
-//            startStatus = true
-//            startBtn.setTitleColor(.white, for: .normal)
-//            startBtn.setTitle("Start", for: .normal)
-//
-//
-//            countdownTimer.isHidden = false
-//            timerLabel.isHidden = true
-//
-//            pauseStatus = false
-//            pauseBtn.isEnabled = false
-//            pauseBtn.setTitleColor(.lightGray, for: .normal)
-//
-//        }
+        //        timer = Timer.scheduledTimer(
+        //            timeInterval: 1,
+        //            target: self,
+        //            selector: #selector(step),
+        //            userInfo: nil,
+        //            repeats: true)
+        //
+        //        formatter.dateFormat = "HH"
+        //
+        //        let hours = formatter.string(from: countDownLabel.text)
+        //
+        //
+        //        formatter.dateFormat = "mm"
+        //
+        //        let minutes = formatter.string(from: countdownTimer.date)
+        //
+        //        seconds = Int(hours)! * 60 * 60 + Int(minutes)! * 60
+        //
+        //        if startStatus {
+        //
+        //            timer = Timer.scheduledTimer(timeInterval: 1.0,
+        //                                         target:self,
+        //                                         selector: #selector(countDownHelper),
+        //                                         userInfo: nil,
+        //                                         repeats: true)
+        //
+        //            setupNotification(time: seconds)
+        //
+        //            startStatus = false
+        //            controlButton.setTitle("Pause", for: .normal)
+        //
+        //            pauseStatus = true
+        //            doneButton.isEnabled = true
+        //
+        //
+        //        } else {
+        //
+        //            timer.invalidate()
+        //            removeNotification()
+        //
+        //            startStatus = true
+        //            startBtn.setTitleColor(.white, for: .normal)
+        //            startBtn.setTitle("Start", for: .normal)
+        //
+        //
+        //            countdownTimer.isHidden = false
+        //            timerLabel.isHidden = true
+        //
+        //            pauseStatus = false
+        //            pauseBtn.isEnabled = false
+        //            pauseBtn.setTitleColor(.lightGray, for: .normal)
+        //
+        //        }
     }
     
     @IBAction func didTapDoneBtn(_ sender: UIButton) {
         
-//        stopWatch.stop()
+        timer.invalidate()
         
-        //        timer.invalidate()
-        //
-        //        timeRemaining = 10
-        //
-        //        countDownLabel.text = "\(timeRemaining)"
+        countDownLabel.text = "\(timeRemaining)"
     }
     
     func setUpDoneButton() {
@@ -143,14 +143,28 @@ class TimerViewController: BaseViewController {
         doneButton.alpha = 0.75
     }
     
-//    @objc func updateElapsedTimeLabel(_ timer: Timer) {
-//        if stopWatch.isRunning {
-//            countDownLabel.text = stopWatch.elapsedTimeAsString
-//        } else {
-//            timer.invalidate()
-//        }
-//    }
-//
+    @objc func step() {
+        
+        if timeRemaining > 0 {
+            
+            timeRemaining -= 1
+            
+        } else {
+            
+            timer.invalidate()
+        }
+        
+        countDownLabel.text = "\(timeRemaining)"
+    }
+    
+    //    @objc func updateElapsedTimeLabel(_ timer: Timer) {
+    //        if stopWatch.isRunning {
+    //            countDownLabel.text = stopWatch.elapsedTimeAsString
+    //        } else {
+    //            timer.invalidate()
+    //        }
+    //    }
+    //
     //    func updateCountDownLabel(_ totalTime: Int) {
     //
     //        seconds -= 1
