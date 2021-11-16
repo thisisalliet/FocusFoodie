@@ -10,12 +10,12 @@ import Firebase
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-protocol TimerEditControllerDelegate: AnyObject {
-    
-    func dismissEditor(_ controller: TimerEditViewController)
-    
-    func timeChange(_ controller: TimerEditViewController)
-}
+//protocol TimerEditControllerDelegate: AnyObject {
+//
+//    func dismissEditor(_ controller: TimerEditViewController)
+//
+//    func timeChange(_ controller: TimerEditViewController)
+//}
 
 class TimerEditViewController: UIViewController,
                                UITableViewDataSource,
@@ -40,7 +40,7 @@ class TimerEditViewController: UIViewController,
         }
     }
         
-    weak var delegate: TimerEditControllerDelegate?
+//    weak var delegate: TimerEditControllerDelegate?
     
     var db: Firestore!
     
@@ -48,7 +48,13 @@ class TimerEditViewController: UIViewController,
         .bread: BreadItem.allCases,
         .meat: MeatItem.allCases,
         .vegetable: VegetableItem.allCases,
-        .side: SideItem.allCases]
+        .side: SideItem.allCases] {
+            
+            didSet {
+                
+                galleryView.layoutIfNeeded()
+            }
+        }
 
     var selectedBread: IngredientObject?
     
@@ -60,6 +66,14 @@ class TimerEditViewController: UIViewController,
     
     var totalTime = 0
     
+    var breadMin = 0
+    
+    var vegetableMin = 0
+    
+    var meatMin = 0
+    
+    var sideMin = 0
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -70,35 +84,49 @@ class TimerEditViewController: UIViewController,
     
     private func setupTableView() {
         
-        ingredientTableView.register(IngredientSelectionCell.self,
-                                     forCellReuseIdentifier: String(describing: IngredientSelectionCell.self))
+        ingredientTableView.register(
+            IngredientSelectionCell.self,
+            forCellReuseIdentifier: String(describing: IngredientSelectionCell.self))
     }
     
     // MARK: - Cell Pass Value -
     
     func getIngredientInfo(_ object: IngredientObject) {
         
+        var timerMin = (breadMin + vegetableMin + meatMin + sideMin)
+                        
         switch object.type {
-
+            
         case .bread:
 
             galleryView.breadImage.image = object.image!
+            breadMin = object.minute ?? 0
+            totalTime = breadMin + vegetableMin + meatMin + sideMin
+            galleryView.minuteLabel.text = String(totalTime)
             selectedBread = object
 
         case .vegetable:
 
             galleryView.vegetableImage.image = object.image!
+            vegetableMin = object.minute ?? 0
+            totalTime = breadMin + vegetableMin + meatMin + sideMin
+            galleryView.minuteLabel.text = String(totalTime)
             selectedVegatable = object
 
         case .meat:
 
             galleryView.meatImage.image = object.image!
+            meatMin = object.minute ?? 0
+            totalTime = breadMin + vegetableMin + meatMin + sideMin
+            galleryView.minuteLabel.text = String(totalTime)
             selectedMeat = object
-
             
         case .side:
 
             galleryView.sideImage.image = object.image!
+            sideMin = object.minute ?? 0
+            totalTime = breadMin + vegetableMin + meatMin + sideMin
+            galleryView.minuteLabel.text = String(totalTime)
             selectedSide = object
 
         default:
@@ -111,7 +139,7 @@ class TimerEditViewController: UIViewController,
         
         presentingViewController?.dismiss(animated: true, completion: nil)
         
-        delegate?.dismissEditor(self)
+//        delegate?.dismissEditor(self)
     }
     
     @IBAction func onDone(_ sender: UIButton) {

@@ -30,6 +30,7 @@ enum ImageAsset: String {
     // Placeholder
     case icon_loading
     case icon_image
+    case icon_timer
     
     // Community
     case icon_accept
@@ -53,6 +54,7 @@ enum ImageAsset: String {
     case icon_burger_bun
     case icon_baguette
     case icon_croissant
+    case icon_flatbread
     
     // Ingredient: Vegetable
     case icon_avocado

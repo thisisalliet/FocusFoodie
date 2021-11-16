@@ -25,7 +25,7 @@ class TimerBasicCell: UITableViewCell,
 
         let layoutObject = UICollectionViewFlowLayout()
 
-        layoutObject.itemSize = CGSize(width: UIScreen.width / 4.0, height: 180)
+        layoutObject.itemSize = CGSize(width: UIScreen.width / 3.5, height: 180)
 
         layoutObject.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
 
@@ -34,10 +34,12 @@ class TimerBasicCell: UITableViewCell,
         layoutObject.minimumInteritemSpacing = 0
 
         layoutObject.scrollDirection = .horizontal
-
+        
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layoutObject)
 
-        collectionView.backgroundColor = .Y1
+        collectionView.backgroundColor = .clear
+        
+        collectionView.showsHorizontalScrollIndicator = false
 
         collectionView.dataSource = self
 
@@ -91,8 +93,9 @@ class TimerBasicCell: UITableViewCell,
 
         ingredientCollectionView.heightAnchor.constraint(equalToConstant: 190.0).isActive = true
         
-        ingredientCollectionView.register(SelectionCell.self,
-                                          forCellWithReuseIdentifier: String(describing: SelectionCell.self))
+        ingredientCollectionView.register(
+            SelectionCell.self,
+            forCellWithReuseIdentifier: String(describing: SelectionCell.self))
     }
 
     func reloadData() {
@@ -144,8 +147,6 @@ class TimerBasicCell: UITableViewCell,
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         dataSource?.didSelected(self, at: indexPath)
-        
-        
     }
 }
 
@@ -154,6 +155,7 @@ class SelectionCell: UICollectionViewCell {
     var objectView: UIView! {
 
         didSet {
+            
             stickSubView(objectView)
         }
     }

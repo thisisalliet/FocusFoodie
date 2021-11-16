@@ -172,12 +172,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VcB-HR-vW1" customClass="IngredientGalleryView" customModule="FocusFoodie" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="62" width="414" height="252.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="15" y="62" width="384" height="252.5"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yyu-p1-OyE">
-                                <rect key="frame" x="0.0" y="330.5" width="414" height="477.5"/>
-                                <color key="backgroundColor" name="Y1"/>
+                                <rect key="frame" x="0.0" y="319.5" width="414" height="488.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="tintColor" name="Y3"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4T-EG-2Bl">
@@ -211,17 +210,17 @@
                         <constraints>
                             <constraint firstItem="VcB-HR-vW1" firstAttribute="height" secondItem="NAE-bZ-OTO" secondAttribute="height" multiplier="0.3" id="1Qq-ry-7vW"/>
                             <constraint firstItem="R4T-EG-2Bl" firstAttribute="top" secondItem="anM-eQ-V2r" secondAttribute="top" constant="16" id="1lg-uk-Gtr"/>
-                            <constraint firstItem="yyu-p1-OyE" firstAttribute="top" secondItem="VcB-HR-vW1" secondAttribute="bottom" constant="16" id="5S5-Dj-XtI"/>
+                            <constraint firstItem="yyu-p1-OyE" firstAttribute="top" secondItem="VcB-HR-vW1" secondAttribute="bottom" constant="5" id="5S5-Dj-XtI"/>
                             <constraint firstItem="anM-eQ-V2r" firstAttribute="trailing" secondItem="yyu-p1-OyE" secondAttribute="trailing" id="C2b-Ny-Ehw"/>
+                            <constraint firstItem="VcB-HR-vW1" firstAttribute="leading" secondItem="anM-eQ-V2r" secondAttribute="leading" constant="15" id="Njm-qE-pth"/>
                             <constraint firstItem="Qqj-6x-LUu" firstAttribute="top" secondItem="anM-eQ-V2r" secondAttribute="top" constant="16" id="OKp-oa-oah"/>
                             <constraint firstItem="yyu-p1-OyE" firstAttribute="leading" secondItem="anM-eQ-V2r" secondAttribute="leading" id="Sir-XQ-NVf"/>
                             <constraint firstItem="VcB-HR-vW1" firstAttribute="top" secondItem="Qqj-6x-LUu" secondAttribute="bottom" constant="16" id="ahO-su-tjL"/>
                             <constraint firstItem="anM-eQ-V2r" firstAttribute="trailing" secondItem="Qqj-6x-LUu" secondAttribute="trailing" constant="16" id="fUp-Jy-3Pg"/>
                             <constraint firstItem="R4T-EG-2Bl" firstAttribute="leading" secondItem="anM-eQ-V2r" secondAttribute="leading" constant="16" id="nwx-5Y-dw4"/>
-                            <constraint firstItem="VcB-HR-vW1" firstAttribute="leading" secondItem="anM-eQ-V2r" secondAttribute="leading" id="p2k-f8-Hpv"/>
                             <constraint firstItem="anM-eQ-V2r" firstAttribute="bottom" secondItem="yyu-p1-OyE" secondAttribute="bottom" id="rTV-uz-ith"/>
+                            <constraint firstItem="anM-eQ-V2r" firstAttribute="trailing" secondItem="VcB-HR-vW1" secondAttribute="trailing" constant="15" id="uHU-f7-R9k"/>
                             <constraint firstItem="VcB-HR-vW1" firstAttribute="top" secondItem="R4T-EG-2Bl" secondAttribute="bottom" constant="16" id="vDz-dp-QdA"/>
-                            <constraint firstItem="VcB-HR-vW1" firstAttribute="trailing" secondItem="anM-eQ-V2r" secondAttribute="trailing" id="yee-AT-qiw"/>
                         </constraints>
                     </view>
                     <connections>

@@ -15,8 +15,6 @@ class RecipeManager {
     
     lazy var db = Firestore.firestore()
     
-    weak var delegate: TimerEditControllerDelegate?
-
     static let shared = RecipeManager()
     
     let userId: String = {

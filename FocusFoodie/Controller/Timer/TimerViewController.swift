@@ -10,11 +10,6 @@ import UserNotifications
 import Firebase
 import FirebaseFirestoreSwift
 
-protocol ProductPickerControllerDelegate: AnyObject {
-    
-    func timeChange(_ controller: TimerEditViewController)
-}
-
 class TimerViewController: BaseViewController {
     
     @IBOutlet weak var timerTitle: UILabel!
@@ -53,13 +48,13 @@ class TimerViewController: BaseViewController {
         
         formatter.dateFormat = "HH"
         
-        let hours = countDownLabel.text
+        guard let hours = countDownLabel.text else { return }
         
         formatter.dateFormat = "mm"
         
-        let minutes = countDownLabel.text
+        guard let minutes = countDownLabel.text else { return }
         
-        seconds = Int(hours ?? "0")! * 60 * 60 + Int(minutes ?? "0")! * 60
+        seconds = Int(hours) ?? 0 * 60 * 60 + Int(minutes) ?? 0 * 60
         
         if startStatus {
             
@@ -164,8 +159,6 @@ class TimerViewController: BaseViewController {
     }
 }
 
-
-
 // MARK: - Notification -
 
 extension TimerViewController {
@@ -196,16 +189,16 @@ extension TimerViewController {
     }
 }
 
-extension TimerViewController: TimerEditControllerDelegate {
+//extension TimerViewController: TimerEditControllerDelegate {
     
-    func dismissEditor(_ controller: TimerEditViewController) {
+//    func dismissEditor(_ controller: TimerEditViewController) {
         
-    }
+//    }
     
-    func timeChange(_ controller: TimerEditViewController) {
+//    func timeChange(_ controller: TimerEditViewController) {
         
         //        guard controller.selectedIngredient != nil
         //
         //        updateCountDownLabel(<#T##Int#>)
-    }
-}
+//    }
+//}

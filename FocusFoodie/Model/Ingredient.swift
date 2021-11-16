@@ -39,6 +39,8 @@ enum BreadItem: IngredientObject, CaseIterable {
     case baguette
     
     case croissant
+    
+    case flatBread
         
     var type: IngredientCategory {
         
@@ -56,6 +58,8 @@ enum BreadItem: IngredientObject, CaseIterable {
         case .baguette: return UIImage.asset(.icon_baguette)
 
         case .croissant: return UIImage.asset(.icon_croissant)
+            
+        case .flatBread: return UIImage.asset(.icon_flatbread)
         }
     }
     
@@ -70,6 +74,8 @@ enum BreadItem: IngredientObject, CaseIterable {
         case .baguette: return "Baguette"
 
         case .croissant: return "Croissant"
+            
+        case .flatBread: return "Flatbread"
         }
     }
     
@@ -84,6 +90,8 @@ enum BreadItem: IngredientObject, CaseIterable {
         case .baguette: return 5
 
         case .croissant: return 10
+            
+        case .flatBread: return 15
         }
     }
 }

@@ -13,27 +13,13 @@ class IngredientGalleryView: UIView {
         
         didSet {
             
-            let layer = CAGradientLayer()
+            contentView.cornerRadius = 10
             
-            layer.frame = contentView.bounds
+            contentView.borderWidth = 5
             
-            layer.colors = [UIColor.white.cgColor, UIColor.G1 ?? UIColor.white.cgColor]
-            
-            layer.startPoint = CGPoint(x: 0, y: 0)
-            
-            layer.endPoint = CGPoint(x: 0, y: 10)
-            
-            contentView.layer.insertSublayer(layer, at: 0)
+            contentView.borderColor = .Y2
         }
     }
-    
-    @IBOutlet weak var oilImage: UIImageView!
-    
-    @IBOutlet weak var knifeImage: UIImageView!
-    
-    @IBOutlet weak var darkBackground: UIView!
-    
-    @IBOutlet weak var lightbackground: UIView!
     
     @IBOutlet weak var breadImage: UIImageView!
     
@@ -43,6 +29,15 @@ class IngredientGalleryView: UIView {
     
     @IBOutlet weak var sideImage: UIImageView!
     
+    @IBOutlet weak var timerImage: UIImageView! {
+        
+        didSet {
+            
+            timerImage.transform.rotated(by: 10.0)
+        }
+    }
+    
+    @IBOutlet weak var minuteLabel: UILabel!    
     override init(frame: CGRect) {
         super.init(frame: frame)
         

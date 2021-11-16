@@ -44,7 +44,7 @@ class IngredientSelectionCell: TimerBasicCell {
         
         didSet {
             
-            ingredientCollectionView.reloadData()
+//            ingredientCollectionView.reloadData()
         }
     }
     
@@ -52,7 +52,7 @@ class IngredientSelectionCell: TimerBasicCell {
         
         didSet {
             
-            ingredientCollectionView.reloadData()
+//            ingredientCollectionView.reloadData()
         }
     }
     
@@ -70,7 +70,7 @@ class IngredientSelectionCell: TimerBasicCell {
     
     private func setupiIngredientView() {
                         
-        ingredientCollectionView.backgroundColor = .Y1
+        ingredientCollectionView.backgroundColor = .clear
     }
     
     
