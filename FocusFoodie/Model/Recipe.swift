@@ -19,7 +19,7 @@ public struct Recipe: Codable {
     
     let side: String
     
-    let focusTime: Int64
+    let focusTime: Int
     
     let recipeId: String
     

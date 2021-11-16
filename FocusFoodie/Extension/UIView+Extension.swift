@@ -7,11 +7,11 @@
 
 import UIKit
 
-@IBDesignable
+
 extension UIView {
 
     // Border Color
-    @IBInspectable var borderColor: UIColor? {
+    var borderColor: UIColor? {
 
         get {
 
@@ -29,7 +29,7 @@ extension UIView {
     }
 
     // Border width
-    @IBInspectable var borderWidth: CGFloat {
+    var borderWidth: CGFloat {
 
         get {
 
@@ -42,7 +42,7 @@ extension UIView {
     }
 
     // Corner radius
-    @IBInspectable var cornerRadius: CGFloat {
+    var cornerRadius: CGFloat {
         
         get {
 

@@ -27,9 +27,14 @@ struct SelectedItem {
     var status: SelectedStatus
 }
 
+protocol IngredientSelectionCellDelegate: AnyObject {
+    
+    func getIngredientInfo(_ object: IngredientObject)
+}
+
 class IngredientSelectionCell: TimerBasicCell {
     
-    weak var delegate: TimerEditViewController?
+    weak var delegate: IngredientSelectionCellDelegate?
     
     var selectedIngredientObject: IngredientObject?
     
@@ -38,6 +43,7 @@ class IngredientSelectionCell: TimerBasicCell {
     var ingredientObjects: [IngredientObject] = [] {
         
         didSet {
+            
             ingredientCollectionView.reloadData()
         }
     }
@@ -79,10 +85,11 @@ class IngredientSelectionCell: TimerBasicCell {
             
             let ingredientView = IngredientItemView()
             
-            ingredientView.layoutCell(image: ingredientObjects[indexPath.row].image!,
-                                      title: ingredientObjects[indexPath.row].title!,
-                                      minute: ingredientObjects[indexPath.row].minute!,
-                                      isSelected: false)
+            ingredientView.layoutCell(
+                image: ingredientObjects[indexPath.row].image!,
+                title: ingredientObjects[indexPath.row].title!,
+                minute: ingredientObjects[indexPath.row].minute!,
+                isSelected: false)
             
             selectionCell.objectView = ingredientView
             
@@ -92,26 +99,6 @@ class IngredientSelectionCell: TimerBasicCell {
     
     override func didSelected(_ cell: TimerBasicCell, at indexPath: IndexPath) {
 
-        switch self.ingredientObjects.first?.type {
-            
-        case .bread:
-            
-            delegate?.galleryView.breadImage.image = ingredientObjects[indexPath.row].image!
-            
-        case .vegetable:
-            
-            delegate?.galleryView.vegetableImage.image = ingredientObjects[indexPath.row].image!
-            
-        case .meat:
-            
-            delegate?.galleryView.meatImage.image = ingredientObjects[indexPath.row].image!
-
-        case .side:
-            
-            delegate?.galleryView.sideImage.image = ingredientObjects[indexPath.row].image!
-            
-        default:
-            break
-        }
+        delegate?.getIngredientInfo(ingredientObjects[indexPath.row])
     }
 }

@@ -92,6 +92,7 @@
 		09E42D2D2740FABC0014C4B9 /* CompondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E42D2C2740FABC0014C4B9 /* CompondViewController.swift */; };
 		09E42D2F27414C780014C4B9 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E42D2E27414C780014C4B9 /* Timer.swift */; };
 		09E42D31274196150014C4B9 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E42D30274196150014C4B9 /* PrivacyViewController.swift */; };
+		09E42D3327425E600014C4B9 /* RecipeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E42D3227425E600014C4B9 /* RecipeManager.swift */; };
 		09F0472727264DC1009CA63B /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F0472627264DC1009CA63B /* UIButton+Extension.swift */; };
 		09F04729272678D8009CA63B /* DetailImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F04728272678D8009CA63B /* DetailImageTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -202,6 +203,7 @@
 		09E42D2C2740FABC0014C4B9 /* CompondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompondViewController.swift; sourceTree = "<group>"; };
 		09E42D2E27414C780014C4B9 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		09E42D30274196150014C4B9 /* PrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
+		09E42D3227425E600014C4B9 /* RecipeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeManager.swift; sourceTree = "<group>"; };
 		09F0472627264DC1009CA63B /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		09F04728272678D8009CA63B /* DetailImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailImageTableViewCell.xib; sourceTree = "<group>"; };
 		290B1C7432FC0558604112FB /* Pods-FocusFoodie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FocusFoodie.debug.xcconfig"; path = "Target Support Files/Pods-FocusFoodie/Pods-FocusFoodie.debug.xcconfig"; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				09DB475127350C2D003703C1 /* UserManager.swift */,
+				09E42D3227425E600014C4B9 /* RecipeManager.swift */,
 				0901E68C273D5584005375B4 /* FirebaseManager.swift */,
 				09DB475727351DE8003703C1 /* CollectionManager.swift */,
 				09DB475927351E2F003703C1 /* Calendar */,
@@ -748,6 +751,7 @@
 				09F0472727264DC1009CA63B /* UIButton+Extension.swift in Sources */,
 				09524F76271FF4A00061C36B /* AppDelegate.swift in Sources */,
 				093169AE2727CEC900360885 /* IngredientSelectionCell.swift in Sources */,
+				09E42D3327425E600014C4B9 /* RecipeManager.swift in Sources */,
 				09524F90271FFA000061C36B /* UIStoryboard+Extension.swift in Sources */,
 				09DB475F27357043003703C1 /* ProfileViewController.swift in Sources */,
 				09C1C8242724024100D2C9B2 /* MonthMetaData.swift in Sources */,
@@ -857,7 +861,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -913,7 +917,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -932,7 +936,7 @@
 				CODE_SIGN_ENTITLEMENTS = FocusFoodie/FocusFoodie.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 74L73858Z7;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -968,7 +972,7 @@
 				CODE_SIGN_ENTITLEMENTS = FocusFoodie/FocusFoodie.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 74L73858Z7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FocusFoodie/Info.plist;

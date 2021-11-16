@@ -144,6 +144,8 @@ class TimerBasicCell: UITableViewCell,
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         dataSource?.didSelected(self, at: indexPath)
+        
+        
     }
 }
 

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M2k-HO-1NS">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -78,7 +79,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Al-YH-vdG">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Al-YH-vdG">
                                 <rect key="frame" x="354" y="113" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="2Nm-fw-oQf"/>
@@ -86,19 +87,11 @@
                                     <constraint firstAttribute="height" constant="30" id="BiF-b4-iD8"/>
                                 </constraints>
                                 <color key="tintColor" name="Y2"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background" image="icon_notification"/>
-                                </buttonConfiguration>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="icon_notification"/>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.25" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_nap" translatesAutoresizingMaskIntoConstraints="NO" id="beV-LJ-fQK">
-                                <rect key="frame" x="78" y="173" width="258" height="258"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="beV-LJ-fQK" secondAttribute="height" multiplier="1:1" id="0yd-lK-E2d"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4c-9t-Nuv">
-                                <rect key="frame" x="188.5" y="173" width="37" height="43.5"/>
+                                <rect key="frame" x="189" y="173" width="36.5" height="43.5"/>
                                 <fontDescription key="fontDescription" name="Dongle-Regular" family="Dongle" pointSize="30"/>
                                 <color key="textColor" name="Y3"/>
                                 <nil key="highlightedColor"/>
@@ -111,12 +104,19 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wnV-pY-aVD">
                                 <rect key="frame" x="20" y="173" width="374" height="158"/>
-                                <state key="normal" title="Button"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
                                     <segue destination="zOF-3W-jRS" kind="presentation" id="3JN-Oa-WUQ"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.25" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_nap" translatesAutoresizingMaskIntoConstraints="NO" id="beV-LJ-fQK">
+                                <rect key="frame" x="87" y="111" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="PQp-WX-Vmd"/>
+                                    <constraint firstAttribute="height" constant="240" id="X2l-F2-5Lt"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="Y1"/>
@@ -124,13 +124,11 @@
                         <constraints>
                             <constraint firstItem="k80-gn-E0Z" firstAttribute="top" secondItem="U4c-9t-Nuv" secondAttribute="bottom" constant="-10" id="6U3-ed-UKK"/>
                             <constraint firstItem="RCK-rF-zmg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="6XW-dz-sKE"/>
-                            <constraint firstItem="beV-LJ-fQK" firstAttribute="top" secondItem="U4c-9t-Nuv" secondAttribute="top" id="AJI-eO-5Sz"/>
                             <constraint firstItem="RCK-rF-zmg" firstAttribute="top" secondItem="fY1-Sj-YWz" secondAttribute="bottom" constant="100" id="Dg0-mW-Reu"/>
                             <constraint firstItem="fY1-Sj-YWz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="DmL-gn-YO3"/>
                             <constraint firstItem="RCK-rF-zmg" firstAttribute="top" secondItem="eMr-V0-sbF" secondAttribute="bottom" constant="100" id="FrS-SY-GeU"/>
                             <constraint firstItem="RCK-rF-zmg" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="K5c-3G-AGq"/>
                             <constraint firstItem="wnV-pY-aVD" firstAttribute="bottom" secondItem="fY1-Sj-YWz" secondAttribute="top" id="PYb-Cd-php"/>
-                            <constraint firstItem="beV-LJ-fQK" firstAttribute="bottom" secondItem="fY1-Sj-YWz" secondAttribute="bottom" id="QzD-6T-MoC"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="wnV-pY-aVD" secondAttribute="trailing" constant="20" id="Slt-ib-M5A"/>
                             <constraint firstItem="ej2-dR-06i" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="15" id="TZQ-p5-xbC"/>
                             <constraint firstItem="wnV-pY-aVD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="VXV-lu-nrC"/>
@@ -140,12 +138,12 @@
                             <constraint firstItem="U4c-9t-Nuv" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="a3l-Q5-XRu"/>
                             <constraint firstItem="3Al-YH-vdG" firstAttribute="centerY" secondItem="ej2-dR-06i" secondAttribute="centerY" id="cc1-57-cWv"/>
                             <constraint firstItem="3Al-YH-vdG" firstAttribute="centerX" secondItem="ej2-dR-06i" secondAttribute="centerX" id="jxm-QJ-Byu"/>
-                            <constraint firstItem="beV-LJ-fQK" firstAttribute="bottom" secondItem="eMr-V0-sbF" secondAttribute="bottom" id="kiL-8Z-2KF"/>
+                            <constraint firstItem="beV-LJ-fQK" firstAttribute="centerX" secondItem="U4c-9t-Nuv" secondAttribute="centerX" id="l9M-MB-4K9"/>
                             <constraint firstItem="RCK-rF-zmg" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="mGD-om-zTc"/>
                             <constraint firstItem="eMr-V0-sbF" firstAttribute="top" secondItem="k80-gn-E0Z" secondAttribute="bottom" constant="30" id="nPE-wT-84U"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ej2-dR-06i" secondAttribute="trailing" constant="20" id="ncX-2Y-Vbg"/>
                             <constraint firstItem="wnV-pY-aVD" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="ndl-i0-0RB"/>
-                            <constraint firstItem="beV-LJ-fQK" firstAttribute="centerX" secondItem="wnV-pY-aVD" secondAttribute="centerX" id="oSL-3P-4hq"/>
+                            <constraint firstItem="fY1-Sj-YWz" firstAttribute="top" secondItem="beV-LJ-fQK" secondAttribute="bottom" constant="-20" id="pCh-FW-ekJ"/>
                             <constraint firstItem="wnV-pY-aVD" firstAttribute="top" secondItem="U4c-9t-Nuv" secondAttribute="top" id="qaL-cI-qh3"/>
                             <constraint firstItem="k80-gn-E0Z" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="u45-Hh-HYM"/>
                         </constraints>
@@ -182,37 +180,33 @@
                                 <color key="backgroundColor" name="Y1"/>
                                 <color key="tintColor" name="Y3"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4T-EG-2Bl">
+                            <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4T-EG-2Bl">
                                 <rect key="frame" x="16" y="16" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="NKr-0U-mks"/>
                                     <constraint firstAttribute="height" constant="30" id="q3u-HT-sW1"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background" image="icon_cross_normal" imageContentMode="scaleAspectFit"/>
-                                </buttonConfiguration>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" backgroundImage="icon_cross_normal"/>
                                 <connections>
                                     <action selector="onDismiss:" destination="zOF-3W-jRS" eventType="touchUpInside" id="dIi-Fj-UzI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qqj-6x-LUu">
+                            <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qqj-6x-LUu">
                                 <rect key="frame" x="368" y="16" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="pfi-RC-u9z"/>
                                     <constraint firstAttribute="height" constant="30" id="uQ3-dX-aoG"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background" image="icon_check_normal" imageContentMode="scaleAspectFit"/>
-                                </buttonConfiguration>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" backgroundImage="icon_check_normal"/>
                                 <connections>
                                     <action selector="onDone:" destination="zOF-3W-jRS" eventType="touchUpInside" id="KeM-xc-yxf"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="anM-eQ-V2r"/>
-                        <color key="backgroundColor" name="Y1"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" name="Y3"/>
                         <constraints>
                             <constraint firstItem="VcB-HR-vW1" firstAttribute="height" secondItem="NAE-bZ-OTO" secondAttribute="height" multiplier="0.3" id="1Qq-ry-7vW"/>
@@ -272,7 +266,7 @@
             <color red="1" green="0.74901960784313726" blue="0.41176470588235292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Y3">
-            <color red="1" green="0.62400001287460327" blue="0.10999999940395355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.62352941176470589" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
