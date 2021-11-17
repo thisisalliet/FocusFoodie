@@ -31,23 +31,51 @@ class RecipeManager {
     
     func createRecipe(recipe: Recipe) {
         
-        let recipeRef = db.collection(CollectionName.recipe.rawValue)
+        let recipeRef = db.collection(CollectionName.recipe.rawValue).document()
         
-        let recipeId  = recipeRef.document().documentID
-        
+        let userRef = db.collection(CollectionName.user.rawValue).document(userId)
+                
         let recipe = Recipe(bread: recipe.bread,
                             vegetable: recipe.vegetable,
                             meat: recipe.meat,
                             side: recipe.side,
                             focusTime: recipe.focusTime,
-                            recipeId: recipeId)
+                            recipeId: recipeRef.documentID)
         do {
             
-            try recipeRef.document().setData(from: recipe)
+            try recipeRef.setData(from: recipe)
             
         } catch {
             
             print("Fail to create recipe.")
         }
+        
+        
+    }
+    
+    func fetchTime(completion: @escaping (Result<[User], Error>) -> Void) {
+        
+//        let timerRef = db.collection(CollectionName.recipe.rawValue)
+//            .whereField("bread", isEqualTo: recipe.bread as Any)
+//            .whereField("vegetable", isEqualTo: recipe.vegetable as Any)
+//            .whereField("meat", isEqualTo: recipe.meat as Any)
+//            .whereField("side", isEqualTo: recipe.side as Any)
+//
+//        timerRef.getDocuments { snapshot, error in
+//
+//            if let error = error {
+//
+//                completion(Result.failure(error))
+//            }
+//
+//            guard let snapshot = snapshot else { return }
+//
+//            let currentRecipe = snapshot.documents.compactMap { snapshot in
+//
+//                try? snapshot.data(as: Recipe.self)
+//            }
+//
+//            completion(Result.success(currentRecipe))
+//        }
     }
 }

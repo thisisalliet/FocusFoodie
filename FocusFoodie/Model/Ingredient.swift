@@ -14,9 +14,9 @@ protocol IngredientObject {
     
     var image: UIImage? { get }
 
-    var title: String? { get }
+    var title: String { get }
 
-    var minute: Int? { get }
+    var minute: Int { get }
 }
 
 enum IngredientCategory: Int {
@@ -63,13 +63,13 @@ enum BreadItem: IngredientObject, CaseIterable {
         }
     }
     
-    var title: String? {
+    var title: String {
         
         switch self {
             
         case .toast: return "Toast"
             
-        case .burgerBun: return "Burger\nBun"
+        case .burgerBun: return "Bun"
             
         case .baguette: return "Baguette"
 
@@ -79,7 +79,7 @@ enum BreadItem: IngredientObject, CaseIterable {
         }
     }
     
-    var minute: Int? {
+    var minute: Int {
         
         switch self {
             
@@ -133,15 +133,15 @@ enum VegetableItem: IngredientObject, CaseIterable {
         }
     }
     
-    var title: String? {
+    var title: String {
         
         switch self {
             
         case .avocado: return "Advocado"
 
-        case .bellPepper: return "Bell\nPepper"
+        case .bellPepper: return "Pepper"
 
-        case .cucumber: return "Cucumer"
+        case .cucumber: return "Cucumber"
 
         case .lettuce: return "Lettuce"
 
@@ -151,7 +151,7 @@ enum VegetableItem: IngredientObject, CaseIterable {
         }
     }
     
-    var minute: Int? {
+    var minute: Int {
         
         switch self {
             
@@ -207,7 +207,7 @@ enum MeatItem: IngredientObject, CaseIterable {
         }
     }
     
-    var title: String? {
+    var title: String {
         
         switch self {
             
@@ -225,7 +225,7 @@ enum MeatItem: IngredientObject, CaseIterable {
         }
     }
     
-    var minute: Int? {
+    var minute: Int {
         
         switch self {
             
@@ -281,7 +281,7 @@ enum SideItem: IngredientObject, CaseIterable {
         }
     }
     
-    var title: String? {
+    var title: String {
         
         switch self {
             
@@ -299,7 +299,7 @@ enum SideItem: IngredientObject, CaseIterable {
         }
     }
     
-    var minute: Int? {
+    var minute: Int {
         
         switch self {
             

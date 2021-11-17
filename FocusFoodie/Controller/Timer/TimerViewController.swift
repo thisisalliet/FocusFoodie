@@ -10,6 +10,15 @@ import UserNotifications
 import Firebase
 import FirebaseFirestoreSwift
 
+enum ButtonStatus {
+    
+    case notStarted
+    
+    case start
+    
+    case pause
+}
+
 class TimerViewController: BaseViewController {
     
     @IBOutlet weak var timerTitle: UILabel!
@@ -20,21 +29,52 @@ class TimerViewController: BaseViewController {
     
     @IBOutlet weak var doneButton: UIButton!
     
-    @IBOutlet weak var controlButton: UIButton!
+    @IBOutlet weak var controlButton: UIButton! {
+        
+        didSet {
+            
+            self.buttonStatus = .notStarted
+        }
+    }
     
-    @IBOutlet weak var toEditorButton: UIButton!
+    @IBOutlet weak var toTimerEditButton: UIButton!
+    
+    @IBOutlet weak var toContentEditButton: UIButton!
     
     @IBOutlet weak var notificationButton: UIButton!
     
+    var timer = Timer()
+    
+    var recipe: [Recipe]?
+    
     var seconds = 0
     
-    var startStatus = true
+    var originalSeconds = 0
     
-    var pauseStatus = false
+    var hiddenNote: String?
+    
+    var buttonStatus: ButtonStatus = ButtonStatus.notStarted {
+        
+        didSet {
+            
+            switch buttonStatus {
+                
+            case .notStarted:
+                
+                controlButton.setTitle("START", for: .normal)
+                
+            case .start:
+                
+                controlButton.setTitle("PAUSE", for: .normal)
+                
+            case .pause:
+                
+                controlButton.setTitle("RESUME", for: .normal)
+            }
+        }
+    }
     
     let formatter = DateFormatter()
-        
-    var timer = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,81 +82,93 @@ class TimerViewController: BaseViewController {
         configure()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "toTimeEditor" {
+            
+            guard let timeEditVC = segue.destination as? TimerEditViewController else { return }
+            
+            timeEditVC.timeHandler = { [weak self] time in
+                
+                guard let strongSelf = self else { return }
+                
+                strongSelf.seconds = time * 60
+                
+                strongSelf.originalSeconds = time * 60
+                
+                let tuple = strongSelf.secondsToHoursMinutesSeconds(seconds: strongSelf.seconds)
+                
+                strongSelf.countDownLabel.text = String(format: "%02i:%02i:%02i", tuple.0, tuple.1, tuple.2)
+                
+                timeEditVC.buttonHandler = { [weak self] status in
+                    
+                    guard let strongSelf = self else { return }
+
+                    strongSelf.buttonStatus = status
+                }
+            }
+        }
+        
+        if segue.identifier == "toContentEdit" {
+            
+            guard let contentEditVC = segue.destination as? ContentEditViewController else { return }
+            
+            contentEditVC.contentHandler = { [weak self] title, note in
+                
+                guard let strongSelf = self else { return }
+                
+                strongSelf.timerTitle.text = title
+                
+                strongSelf.hiddenNote = note
+            }
+        }
+    }
+    
     // MARK: - Button Actions -
     
     @IBAction func didTapControlButton(_ sender: UIButton) {
         
-        formatter.dateFormat = "HH"
-        
-        guard let hours = countDownLabel.text else { return }
-        
-        formatter.dateFormat = "mm"
-        
-        guard let minutes = countDownLabel.text else { return }
-        
-        seconds = Int(hours) ?? 0 * 60 * 60 + Int(minutes) ?? 0 * 60
-        
-        if startStatus {
+        switch buttonStatus {
             
-            timer = Timer.scheduledTimer(timeInterval: 1.0,
-                                         target:self,
-                                         selector: #selector(countDownHelper),
-                                         userInfo: nil,
-                                         repeats: true)
+        case .notStarted:
             
-            setupNotification(time: seconds)
+            timer = Timer.scheduledTimer(
+                timeInterval: 1.0,
+                target:self,
+                selector: #selector(countDownHelper),
+                userInfo: nil,
+                repeats: true)
             
-            startStatus = false
+            self.buttonStatus = .start
             
-            controlButton.setTitle("PAUSE", for: .normal)
+            self.doneButton.isEnabled = true
             
-            pauseStatus = true
-            
-            doneButton.isEnabled = true
-            
-        } else {
+        case .start:
             
             timer.invalidate()
+
+            self.buttonStatus = .pause
             
-            removeNotification()
+        case .pause:
             
-            startStatus = true
-                        
-            controlButton.setTitle("START", for: .normal)
-                        
-            pauseStatus = false
+            timer = Timer.scheduledTimer(
+                timeInterval: 1.0,
+                target:self,
+                selector: #selector(countDownHelper),
+                userInfo: nil,
+                repeats: true)
             
-            doneButton.isEnabled = false
+            self.buttonStatus = .start
         }
     }
     
     @IBAction func didTapDoneBtn(_ sender: UIButton) {
         
-        if pauseStatus{
-            
-                    timer.invalidate()
-            
-                    removeNotification()
-            
-                    pauseStatus = false
-            
-                    doneButton.setTitle("Resume", for: .normal)
-            
-                } else {
-                    timer = Timer.scheduledTimer(
-                        timeInterval: 1.0,
-                        target:self,
-                        selector: #selector(countDownHelper),
-                        userInfo: nil,
-                        repeats: true)
-                    
-                    setupNotification(time: seconds)
-                    
-                    pauseStatus = true
-                    
-                    doneButton.setTitle("Pause", for: .normal)
-                    
-                }
+        // 應該歸零 發出聲響
+        
+        let tuple = secondsToHoursMinutesSeconds(seconds: originalSeconds)
+        
+        countDownLabel.text = String(format: "%02i:%02i:%02i", tuple.0, tuple.1, tuple.2)
     }
     
     func configure() {
@@ -131,7 +183,12 @@ class TimerViewController: BaseViewController {
         
         controlButton.layer.cornerRadius = controlButton.frame.width / 2
         
-        countDownLabel.text = "10"
+        countDownLabel.text = "00:00"
+    }
+    
+    func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int, Int) {
+        
+      return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
     }
     
     @objc func countDownHelper() {
@@ -153,7 +210,9 @@ class TimerViewController: BaseViewController {
         countDownLabel.text = "\(showHours):\(showMinutes):\(showSeconds)"
         
         if seconds <= 0 {
+            
             timer.invalidate()
+            
             return
         }
     }
@@ -188,17 +247,3 @@ extension TimerViewController {
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["alarmTrigger"])
     }
 }
-
-//extension TimerViewController: TimerEditControllerDelegate {
-    
-//    func dismissEditor(_ controller: TimerEditViewController) {
-        
-//    }
-    
-//    func timeChange(_ controller: TimerEditViewController) {
-        
-        //        guard controller.selectedIngredient != nil
-        //
-        //        updateCountDownLabel(<#T##Int#>)
-//    }
-//}

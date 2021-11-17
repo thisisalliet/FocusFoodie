@@ -41,7 +41,7 @@
                     </constraints>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="abw-sk-M20">
-                    <rect key="frame" x="100" y="103" width="80" height="80"/>
+                    <rect key="frame" x="95" y="103" width="80" height="80"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="80" id="StF-0R-yke"/>
                         <constraint firstAttribute="width" secondItem="abw-sk-M20" secondAttribute="height" multiplier="1:1" id="V2e-mM-Psi"/>
@@ -49,14 +49,14 @@
                     </constraints>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KLM-5Z-rQx">
-                    <rect key="frame" x="190" y="118" width="80" height="80"/>
+                    <rect key="frame" x="180" y="118" width="80" height="80"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="80" id="KJc-Bd-m7e"/>
                         <constraint firstAttribute="width" secondItem="KLM-5Z-rQx" secondAttribute="height" multiplier="1:1" id="MCI-wq-X3R"/>
                         <constraint firstAttribute="height" constant="80" id="P0a-OA-goV"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="180" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="koL-HS-Ntl">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="koL-HS-Ntl">
                     <rect key="frame" x="41" y="54" width="29" height="30"/>
                     <color key="backgroundColor" name="Y1"/>
                     <constraints>
@@ -68,7 +68,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EeR-rd-PDM">
-                    <rect key="frame" x="280" y="113" width="80" height="80"/>
+                    <rect key="frame" x="265" y="113" width="80" height="80"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="80" id="bej-i1-h20"/>
                         <constraint firstAttribute="width" constant="80" id="zKE-HR-XPY"/>
@@ -79,16 +79,16 @@
             <color key="backgroundColor" name="Y1"/>
             <color key="tintColor" name="Y3"/>
             <constraints>
-                <constraint firstItem="abw-sk-M20" firstAttribute="leading" secondItem="unb-D0-ToU" secondAttribute="trailing" constant="10" id="1Q3-Uh-mhP"/>
+                <constraint firstItem="abw-sk-M20" firstAttribute="leading" secondItem="unb-D0-ToU" secondAttribute="trailing" constant="5" id="1Q3-Uh-mhP"/>
                 <constraint firstItem="GPh-jx-zhg" firstAttribute="top" secondItem="6Ce-MT-x7H" secondAttribute="top" id="Iwq-NX-GUb"/>
-                <constraint firstItem="KLM-5Z-rQx" firstAttribute="leading" secondItem="abw-sk-M20" secondAttribute="trailing" constant="10" id="JTJ-ww-uuc"/>
+                <constraint firstItem="KLM-5Z-rQx" firstAttribute="leading" secondItem="abw-sk-M20" secondAttribute="trailing" constant="5" id="JTJ-ww-uuc"/>
                 <constraint firstItem="GPh-jx-zhg" firstAttribute="leading" secondItem="6Ce-MT-x7H" secondAttribute="leading" constant="-20" id="Jos-Tb-gaN"/>
                 <constraint firstItem="koL-HS-Ntl" firstAttribute="top" secondItem="GPh-jx-zhg" secondAttribute="bottom" constant="-74" id="Lkd-Kb-EHS"/>
                 <constraint firstItem="koL-HS-Ntl" firstAttribute="leading" secondItem="GPh-jx-zhg" secondAttribute="trailing" constant="-67" id="OVg-z9-aw8"/>
                 <constraint firstItem="W5M-rG-LGr" firstAttribute="bottom" secondItem="EeR-rd-PDM" secondAttribute="bottom" constant="20" id="PsP-X7-aWS"/>
                 <constraint firstItem="W5M-rG-LGr" firstAttribute="bottom" secondItem="abw-sk-M20" secondAttribute="bottom" constant="30" id="Wej-Cq-AmD"/>
                 <constraint firstItem="unb-D0-ToU" firstAttribute="leading" secondItem="W5M-rG-LGr" secondAttribute="leading" constant="10" id="bm5-U8-o3o"/>
-                <constraint firstItem="EeR-rd-PDM" firstAttribute="leading" secondItem="KLM-5Z-rQx" secondAttribute="trailing" constant="10" id="crF-Cs-lab"/>
+                <constraint firstItem="EeR-rd-PDM" firstAttribute="leading" secondItem="KLM-5Z-rQx" secondAttribute="trailing" constant="5" id="crF-Cs-lab"/>
                 <constraint firstItem="W5M-rG-LGr" firstAttribute="bottom" secondItem="unb-D0-ToU" secondAttribute="bottom" constant="10" id="ndd-gC-kSE"/>
                 <constraint firstItem="W5M-rG-LGr" firstAttribute="bottom" secondItem="KLM-5Z-rQx" secondAttribute="bottom" constant="15" id="voq-1W-Owq"/>
             </constraints>

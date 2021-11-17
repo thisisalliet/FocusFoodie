@@ -11,13 +11,13 @@ import FirebaseFirestore
 
 public struct Recipe: Codable {
     
-    let bread: String
+    let bread: String?
     
-    let vegetable: String
+    let vegetable: String?
     
-    let meat: String
+    let meat: String?
     
-    let side: String
+    let side: String?
     
     let focusTime: Int
     

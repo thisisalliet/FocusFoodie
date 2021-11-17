@@ -27,48 +27,4 @@ enum RecordContent: String {
 
         }
     }
-
-//    func cellForIndexPath(_ indexPath: IndexPath, tableView: UITableView, data: Product) -> UITableViewCell {
-//
-//        let cell = tableView.dequeueReusableCell(withIdentifier: identifier(), for: indexPath)
-//
-//        guard let basicCell = cell as? ProductBasicCell else { return cell }
-//
-//        switch self {
-//
-//        case .description:
-//
-//            basicCell.layoutCell(product: data)
-//
-//        case .color:
-//
-//            basicCell.layoutCellWithColors(category: rawValue, colors: data.colors.map({ $0.code }))
-//
-//        case .size:
-//
-//            basicCell.layoutCell(category: rawValue, content: data.size)
-//
-//        case .stock:
-//
-//            basicCell.layoutCell(category: rawValue, content: String(data.stock))
-//
-//        case .texture:
-//
-//            basicCell.layoutCell(category: rawValue, content: data.texture)
-//
-//        case .washing:
-//
-//            basicCell.layoutCell(category: rawValue, content: data.wash)
-//
-//        case .placeOfProduction:
-//
-//            basicCell.layoutCell(category: rawValue, content: data.place)
-//
-//        case .remarks:
-//
-//            basicCell.layoutCell(category: rawValue, content: data.note)
-//        }
-//
-//        return basicCell
-//    }
 }

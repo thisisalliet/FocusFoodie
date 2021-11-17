@@ -66,6 +66,10 @@ class TimerEditViewController: UIViewController,
     
     var totalTime = 0
     
+    var timeHandler: ((_ time: Int) -> ())?
+    
+    var buttonHandler: ((_ status: ButtonStatus) -> ())?
+    
     var breadMin = 0
     
     var vegetableMin = 0
@@ -92,15 +96,13 @@ class TimerEditViewController: UIViewController,
     // MARK: - Cell Pass Value -
     
     func getIngredientInfo(_ object: IngredientObject) {
-        
-        var timerMin = (breadMin + vegetableMin + meatMin + sideMin)
-                        
+                                
         switch object.type {
             
         case .bread:
 
             galleryView.breadImage.image = object.image!
-            breadMin = object.minute ?? 0
+            breadMin = object.minute
             totalTime = breadMin + vegetableMin + meatMin + sideMin
             galleryView.minuteLabel.text = String(totalTime)
             selectedBread = object
@@ -108,7 +110,7 @@ class TimerEditViewController: UIViewController,
         case .vegetable:
 
             galleryView.vegetableImage.image = object.image!
-            vegetableMin = object.minute ?? 0
+            vegetableMin = object.minute
             totalTime = breadMin + vegetableMin + meatMin + sideMin
             galleryView.minuteLabel.text = String(totalTime)
             selectedVegatable = object
@@ -116,7 +118,7 @@ class TimerEditViewController: UIViewController,
         case .meat:
 
             galleryView.meatImage.image = object.image!
-            meatMin = object.minute ?? 0
+            meatMin = object.minute
             totalTime = breadMin + vegetableMin + meatMin + sideMin
             galleryView.minuteLabel.text = String(totalTime)
             selectedMeat = object
@@ -124,7 +126,7 @@ class TimerEditViewController: UIViewController,
         case .side:
 
             galleryView.sideImage.image = object.image!
-            sideMin = object.minute ?? 0
+            sideMin = object.minute
             totalTime = breadMin + vegetableMin + meatMin + sideMin
             galleryView.minuteLabel.text = String(totalTime)
             selectedSide = object
@@ -139,26 +141,27 @@ class TimerEditViewController: UIViewController,
         
         presentingViewController?.dismiss(animated: true, completion: nil)
         
+        buttonHandler?(.notStarted)
+        
 //        delegate?.dismissEditor(self)
     }
     
     @IBAction func onDone(_ sender: UIButton) {
         
-        totalTime += Int(selectedBread?.minute ?? 0)
-        totalTime += Int(selectedVegatable?.minute ?? 0)
-        totalTime += Int(selectedMeat?.minute ?? 0)
-        totalTime += Int(selectedSide?.minute ?? 0)
-        
         let recipe = Recipe(
-            bread: String(describing: selectedBread),
-            vegetable: String(describing: selectedVegatable),
-            meat: String(describing: selectedMeat),
-            side: String(describing: selectedSide),
+            bread: selectedBread?.title,
+            vegetable: selectedVegatable?.title,
+            meat: selectedMeat?.title,
+            side: selectedSide?.title,
             focusTime: totalTime,
             recipeId: "default")
         
         RecipeManager.shared.createRecipe(recipe: recipe)
-                
+        
+        timeHandler?(totalTime)
+        
+        buttonHandler?(.notStarted)
+        
         presentingViewController?.dismiss(animated: true, completion: nil)
     }
     

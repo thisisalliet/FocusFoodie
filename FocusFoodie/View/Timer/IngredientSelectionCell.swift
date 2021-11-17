@@ -87,8 +87,8 @@ class IngredientSelectionCell: TimerBasicCell {
             
             ingredientView.layoutCell(
                 image: ingredientObjects[indexPath.row].image!,
-                title: ingredientObjects[indexPath.row].title!,
-                minute: ingredientObjects[indexPath.row].minute!,
+                title: ingredientObjects[indexPath.row].title,
+                minute: ingredientObjects[indexPath.row].minute,
                 isSelected: false)
             
             selectionCell.objectView = ingredientView
