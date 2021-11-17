@@ -15,7 +15,7 @@ class RecordManager {
     
     lazy var db = Firestore.firestore()
 
-    static let shared = RecipeManager()
+    static let shared = RecordManager()
 
     let userId: String = {
         

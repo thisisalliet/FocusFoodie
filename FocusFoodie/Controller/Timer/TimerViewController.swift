@@ -53,6 +53,8 @@ class TimerViewController: BaseViewController {
     
     var hiddenNote: String?
     
+    var hiddenCategory: String?
+    
     var buttonStatus: ButtonStatus = ButtonStatus.notStarted {
         
         didSet {
@@ -73,7 +75,7 @@ class TimerViewController: BaseViewController {
             }
         }
     }
-    
+        
     let formatter = DateFormatter()
     
     override func viewDidLoad() {
@@ -103,7 +105,7 @@ class TimerViewController: BaseViewController {
                 timeEditVC.buttonHandler = { [weak self] status in
                     
                     guard let strongSelf = self else { return }
-
+                    
                     strongSelf.buttonStatus = status
                 }
             }
@@ -121,6 +123,15 @@ class TimerViewController: BaseViewController {
                 
                 strongSelf.hiddenNote = note
             }
+            
+            contentEditVC.categoryHandler = { [weak self] title, image in
+                
+                guard let strongSelf = self else { return }
+                
+                strongSelf.hiddenCategory = title
+                
+                strongSelf.categoryImage.image = image
+            }
         }
     }
     
@@ -128,17 +139,17 @@ class TimerViewController: BaseViewController {
     
     @IBAction func didTapControlButton(_ sender: UIButton) {
         
-//        let record = Record(
-//            ownerId: <#T##String#>,
-//            recordTitle: <#T##String?#>,
-//            recordCategory: <#T##String?#>,
-//            recordNote: <#T##String?#>,
-//            focusTime: <#T##Int#>,
-//            createdTime: <#T##Timestamp#>,
-//            favourite: <#T##Bool?#>,
-//            recipeId: <#T##String#>)
-//        
-//        RecordManager.shared.createRecord(record: record)
+        let record = Record(
+            ownerId: "",
+            recordTitle: timerTitle.text,
+            recordCategory: hiddenCategory,
+            recordNote: hiddenNote,
+            focusTime: originalSeconds,
+            createdTime: Timestamp(date: Date()),
+            favourite: nil,
+            recipeId: "")
+        
+        RecordManager.shared.createRecord(record: record)
         
         switch buttonStatus {
             
@@ -158,7 +169,7 @@ class TimerViewController: BaseViewController {
         case .start:
             
             timer.invalidate()
-
+            
             self.buttonStatus = .pause
             
         case .pause:
@@ -200,7 +211,7 @@ class TimerViewController: BaseViewController {
     
     func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int, Int) {
         
-      return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
+        return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
     }
     
     @objc func countDownHelper() {
@@ -222,6 +233,14 @@ class TimerViewController: BaseViewController {
         countDownLabel.text = "\(showHours):\(showMinutes):\(showSeconds)"
         
         if seconds <= 0 {
+            
+            guard let endVC = UIStoryboard
+                    .timer
+                    .instantiateViewController(
+                        withIdentifier: String(describing: EndingViewController.self)
+                    ) as? EndingViewController else { return }
+            
+            present(endVC, animated: true, completion: nil)
             
             timer.invalidate()
             

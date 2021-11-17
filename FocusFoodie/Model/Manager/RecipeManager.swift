@@ -44,6 +44,8 @@ class RecipeManager {
         
         let myRecipe = recipe.recipeId
         
+        
+        
         do {
             
             try recipeRef.setData(from: recipe)

@@ -79,6 +79,7 @@
 		09D83DF22744CEE6005F1BE5 /* CategorySelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D83DF02744CEE6005F1BE5 /* CategorySelectionCell.swift */; };
 		09D83DF32744CEE6005F1BE5 /* CategorySelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D83DF12744CEE6005F1BE5 /* CategorySelectionCell.xib */; };
 		09D83DF52744EB72005F1BE5 /* RecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D83DF42744EB72005F1BE5 /* RecordManager.swift */; };
+		09D83DF727451FE7005F1BE5 /* EndingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D83DF627451FE7005F1BE5 /* EndingViewController.swift */; };
 		09DB47502734DFC1003703C1 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB474F2734DFC1003703C1 /* AuthViewController.swift */; };
 		09DB475227350C2D003703C1 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB475127350C2D003703C1 /* UserManager.swift */; };
 		09DB475427351B75003703C1 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB475327351B75003703C1 /* Recipe.swift */; };
@@ -95,7 +96,6 @@
 		09DB4775273A200B003703C1 /* Invitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB4774273A200B003703C1 /* Invitation.swift */; };
 		09DB4777273A46F7003703C1 /* SetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB4776273A46F7003703C1 /* SetUpViewController.swift */; };
 		09E42D2D2740FABC0014C4B9 /* CompondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E42D2C2740FABC0014C4B9 /* CompondViewController.swift */; };
-		09E42D2F27414C780014C4B9 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E42D2E27414C780014C4B9 /* Timer.swift */; };
 		09E42D31274196150014C4B9 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E42D30274196150014C4B9 /* PrivacyViewController.swift */; };
 		09E42D3327425E600014C4B9 /* RecipeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E42D3227425E600014C4B9 /* RecipeManager.swift */; };
 		09F0472727264DC1009CA63B /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F0472627264DC1009CA63B /* UIButton+Extension.swift */; };
@@ -195,6 +195,7 @@
 		09D83DF02744CEE6005F1BE5 /* CategorySelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionCell.swift; sourceTree = "<group>"; };
 		09D83DF12744CEE6005F1BE5 /* CategorySelectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategorySelectionCell.xib; sourceTree = "<group>"; };
 		09D83DF42744EB72005F1BE5 /* RecordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordManager.swift; sourceTree = "<group>"; };
+		09D83DF627451FE7005F1BE5 /* EndingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndingViewController.swift; sourceTree = "<group>"; };
 		09DB474F2734DFC1003703C1 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		09DB475127350C2D003703C1 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		09DB475327351B75003703C1 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
@@ -211,7 +212,6 @@
 		09DB4774273A200B003703C1 /* Invitation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invitation.swift; sourceTree = "<group>"; };
 		09DB4776273A46F7003703C1 /* SetUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpViewController.swift; sourceTree = "<group>"; };
 		09E42D2C2740FABC0014C4B9 /* CompondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompondViewController.swift; sourceTree = "<group>"; };
-		09E42D2E27414C780014C4B9 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		09E42D30274196150014C4B9 /* PrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
 		09E42D3227425E600014C4B9 /* RecipeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeManager.swift; sourceTree = "<group>"; };
 		09F0472627264DC1009CA63B /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
@@ -249,7 +249,7 @@
 		093169A42727CD6000360885 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
-				09E42D2E27414C780014C4B9 /* Timer.swift */,
+				09D83DF627451FE7005F1BE5 /* EndingViewController.swift */,
 				09524FA3271FFE2D0061C36B /* TimerViewController.swift */,
 				093169A52727CEB300360885 /* TimerEditViewController.swift */,
 				09D83DEC2744B0A8005F1BE5 /* ContentEditViewController.swift */,
@@ -729,6 +729,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0974F113273AB6D70016FEC1 /* CommunityCollectionViewCell.swift in Sources */,
+				09D83DF727451FE7005F1BE5 /* EndingViewController.swift in Sources */,
 				09DB47502734DFC1003703C1 /* AuthViewController.swift in Sources */,
 				09D83DF52744EB72005F1BE5 /* RecordManager.swift in Sources */,
 				09DB4775273A200B003703C1 /* Invitation.swift in Sources */,
@@ -747,7 +748,6 @@
 				09C1C8502725D78700D2C9B2 /* UITextfield+Extension.swift in Sources */,
 				0901E686273D20AF005375B4 /* ProfileBasicCell.swift in Sources */,
 				09DB4777273A46F7003703C1 /* SetUpViewController.swift in Sources */,
-				09E42D2F27414C780014C4B9 /* Timer.swift in Sources */,
 				09428933272D975C0083CF6B /* ComingSoonView.swift in Sources */,
 				09DB475827351DE8003703C1 /* CollectionManager.swift in Sources */,
 				09428938272E84970083CF6B /* Timestamp+Extension.swift in Sources */,

@@ -9,7 +9,8 @@ import UIKit
 
 class ContentEditViewController: UIViewController,
                                   UICollectionViewDataSource,
-                                  UICollectionViewDelegate {
+                                  UICollectionViewDelegate,
+                                  UICollectionViewDelegateFlowLayout{
 
     @IBOutlet weak var categoryLabel: UILabel!
     
@@ -17,12 +18,9 @@ class ContentEditViewController: UIViewController,
         
         didSet {
             
-            
             categoryCollectionView.delegate = self
 
             categoryCollectionView.dataSource = self
-            
-            setUpCollectionView()
         }
     }
     
@@ -30,36 +28,48 @@ class ContentEditViewController: UIViewController,
     
     @IBOutlet weak var noteTextField: UITextField!
     
-    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton! {
+        
+        didSet {
+            
+            saveButton.layer.cornerRadius = 10
+        }
+    }
     
     let category = Category.allCases
     
-    var categoryHandler: ((_ category: UIImage) -> ())?
+    var categoryObject: [CategoryItem] = []
+    
+    var categoryHandler: ((_ title: String, _ image: UIImage) -> ())?
     
     var contentHandler: ((_ title: String, _ note: String) -> ())?
+    
+    var datas: [Category] = []
+    
+//    weak var delegate: ContentEditViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        setUpCollectionView()
+        setUpCollectionView()
     }
     
     // MARK: - Button Actions -
     
     @IBAction func onSave(_ sender: UIButton) {
         
-        contentHandler?(titleTextField.text ?? "Unset", noteTextField.text ?? "Unset")
+        contentHandler?(titleTextField.text ?? "", noteTextField.text ?? "")
         
         presentingViewController?.dismiss(animated: true, completion: nil)
     }
-    
+        
     func setUpCollectionView() {
-//
+
 //        let layoutObject = UICollectionViewFlowLayout()
 //
-//        layoutObject.itemSize = CGSize(width: UIScreen.width / 4.0, height: 100)
+//        layoutObject.itemSize = CGSize(width: UIScreen.width / 4.0, height: 60)
 //
-//        layoutObject.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+//        layoutObject.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 //
 //        layoutObject.minimumLineSpacing = 8.0
 //
@@ -67,16 +77,14 @@ class ContentEditViewController: UIViewController,
 //
 //        layoutObject.scrollDirection = .horizontal
 //
-        categoryCollectionView.registerCellWithNib(identifier: String(describing: CategorySelectionCell.self), bundle: nil)
         
-//
-////        categoryCollectionView.backgroundColor = .Y2
-//
-//        categoryCollectionView.showsHorizontalScrollIndicator = false
-//
-//        categoryCollectionView.dataSource = self
-//
-//        categoryCollectionView.delegate = self
+        categoryCollectionView.registerCellWithNib(
+            identifier: String(describing: CategorySelectionCell.self),
+            bundle: nil)
+
+//        categoryCollectionView.backgroundColor = .Y2
+
+        categoryCollectionView.showsHorizontalScrollIndicator = false
     }
     
     // MARK: - UICollectionView Datasource -
@@ -96,60 +104,57 @@ class ContentEditViewController: UIViewController,
         )
 
         guard let selectionCell = cell as? CategorySelectionCell else { return cell }
+            
+        let item = category[indexPath.row]
 
-            selectionCell.categoryTitle.text = category[indexPath.row].title
-
-            selectionCell.categoryImage.image = category[indexPath.row].image
-            let item = category[indexPath.row]
-
-//        selectionCell.layoutCell(image: item.image, title: item.title)
-
+        selectionCell.layoutCell(image: item.image, title: item.title)
+        
         return selectionCell
     }
     
     // MARK: - UICollectionView Delegate
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
-    }
-    
-}
-
-extension ContentEditViewController: UICollectionViewDelegateFlowLayout {
-
-    func collectionView(
-        _ collectionView: UICollectionView,
-        layout collectionViewLayout: UICollectionViewLayout,
-        sizeForItemAt indexPath: IndexPath
-    ) -> CGSize {
-
-            return CGSize(width: UIScreen.width / 5.0, height: 60.0)
-    }
-
-    func collectionView(
-        _ collectionView: UICollectionView,
-        layout collectionViewLayout: UICollectionViewLayout,
-        insetForSectionAt section: Int
-    ) -> UIEdgeInsets {
-
-        return UIEdgeInsets(top: 5.0, left: 5.0, bottom: 5.0, right: 5.0)
-    }
-
-    func collectionView(
-        _ collectionView: UICollectionView,
-        layout collectionViewLayout: UICollectionViewLayout,
-        minimumLineSpacingForSectionAt section: Int
-    ) -> CGFloat {
-
-        return 8.0
-    }
-
-    func collectionView(
-        _ collectionView: UICollectionView,
-        layout collectionViewLayout: UICollectionViewLayout,
-        minimumInteritemSpacingForSectionAt section: Int
-    ) -> CGFloat {
-
-        return 0
+        
+        categoryHandler?(category[indexPath.row].title, category[indexPath.row].image ?? UIImage())
     }
 }
+
+//extension ContentEditViewController: UICollectionViewDelegateFlowLayout {
+//
+//    func collectionView(
+//        _ collectionView: UICollectionView,
+//        layout collectionViewLayout: UICollectionViewLayout,
+//        sizeForItemAt indexPath: IndexPath
+//    ) -> CGSize {
+//
+//            return CGSize(width: UIScreen.width / 5.0, height: 60.0)
+//    }
+//
+//    func collectionView(
+//        _ collectionView: UICollectionView,
+//        layout collectionViewLayout: UICollectionViewLayout,
+//        insetForSectionAt section: Int
+//    ) -> UIEdgeInsets {
+//
+//        return UIEdgeInsets(top: 5.0, left: 5.0, bottom: 5.0, right: 5.0)
+//    }
+//
+//    func collectionView(
+//        _ collectionView: UICollectionView,
+//        layout collectionViewLayout: UICollectionViewLayout,
+//        minimumLineSpacingForSectionAt section: Int
+//    ) -> CGFloat {
+//
+//        return 8.0
+//    }
+//
+//    func collectionView(
+//        _ collectionView: UICollectionView,
+//        layout collectionViewLayout: UICollectionViewLayout,
+//        minimumInteritemSpacingForSectionAt section: Int
+//    ) -> CGFloat {
+//
+//        return 0
+//    }
+//}

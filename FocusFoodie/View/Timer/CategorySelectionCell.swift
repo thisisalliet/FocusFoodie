@@ -8,8 +8,6 @@
 import UIKit
 
 class CategorySelectionCell: UICollectionViewCell {
-
-    @IBOutlet weak var categoryBackground: UIView!
     
     @IBOutlet weak var categoryImage: UIImageView!
     
@@ -17,13 +15,13 @@ class CategorySelectionCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
     }
     
-//    func layoutCell(image: UIImage?, title: String) {
+    func layoutCell(image: UIImage?, title: String) {
 
-//        categoryImage.image = image
+        categoryImage.image = image
 
-//        categoryTitle.text = title
-//    }
+        categoryTitle.text = title
+    }
 }

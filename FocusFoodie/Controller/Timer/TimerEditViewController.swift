@@ -10,13 +10,6 @@ import Firebase
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-//protocol TimerEditControllerDelegate: AnyObject {
-//
-//    func dismissEditor(_ controller: TimerEditViewController)
-//
-//    func timeChange(_ controller: TimerEditViewController)
-//}
-
 class TimerEditViewController: UIViewController,
                                UITableViewDataSource,
                                UITableViewDelegate,
@@ -39,8 +32,6 @@ class TimerEditViewController: UIViewController,
             ingredientTableView.delegate = self
         }
     }
-        
-//    weak var delegate: TimerEditControllerDelegate?
     
     var db: Firestore!
     
@@ -68,7 +59,7 @@ class TimerEditViewController: UIViewController,
     
     var timeHandler: ((_ time: Int) -> ())?
     
-    var buttonHandler: ((_ status: ButtonStatus) -> ())?
+    var buttonHandler: ((_ status: ButtonStatus) -> Void)?
     
     var breadMin = 0
     

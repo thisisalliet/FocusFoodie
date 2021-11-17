@@ -37,9 +37,7 @@ class IngredientSelectionCell: TimerBasicCell {
     weak var delegate: IngredientSelectionCellDelegate?
     
     var selectedIngredientObject: IngredientObject?
-    
-    var touchHandler: ((IndexPath) -> Void)?
-    
+        
     var ingredientObjects: [IngredientObject] = []
     
     var selectedIngredient: [IngredientCategory: IngredientObject] = [:]
