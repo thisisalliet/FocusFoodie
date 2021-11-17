@@ -75,6 +75,10 @@
 		09C276C2273D09AF0037D65C /* ProfileButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C276C0273D09AF0037D65C /* ProfileButtonCell.swift */; };
 		09C276C5273D133A0037D65C /* ProfileLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C276C4273D133A0037D65C /* ProfileLabelCell.swift */; };
 		09D83DED2744B0A8005F1BE5 /* ContentEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D83DEC2744B0A8005F1BE5 /* ContentEditViewController.swift */; };
+		09D83DEF2744C9AE005F1BE5 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D83DEE2744C9AE005F1BE5 /* Category.swift */; };
+		09D83DF22744CEE6005F1BE5 /* CategorySelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D83DF02744CEE6005F1BE5 /* CategorySelectionCell.swift */; };
+		09D83DF32744CEE6005F1BE5 /* CategorySelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D83DF12744CEE6005F1BE5 /* CategorySelectionCell.xib */; };
+		09D83DF52744EB72005F1BE5 /* RecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D83DF42744EB72005F1BE5 /* RecordManager.swift */; };
 		09DB47502734DFC1003703C1 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB474F2734DFC1003703C1 /* AuthViewController.swift */; };
 		09DB475227350C2D003703C1 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB475127350C2D003703C1 /* UserManager.swift */; };
 		09DB475427351B75003703C1 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB475327351B75003703C1 /* Recipe.swift */; };
@@ -187,6 +191,10 @@
 		09C276C0273D09AF0037D65C /* ProfileButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButtonCell.swift; sourceTree = "<group>"; };
 		09C276C4273D133A0037D65C /* ProfileLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLabelCell.swift; sourceTree = "<group>"; };
 		09D83DEC2744B0A8005F1BE5 /* ContentEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentEditViewController.swift; path = FocusFoodie/Controller/Timer/ContentEditViewController.swift; sourceTree = SOURCE_ROOT; };
+		09D83DEE2744C9AE005F1BE5 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		09D83DF02744CEE6005F1BE5 /* CategorySelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionCell.swift; sourceTree = "<group>"; };
+		09D83DF12744CEE6005F1BE5 /* CategorySelectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategorySelectionCell.xib; sourceTree = "<group>"; };
+		09D83DF42744EB72005F1BE5 /* RecordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordManager.swift; sourceTree = "<group>"; };
 		09DB474F2734DFC1003703C1 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		09DB475127350C2D003703C1 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		09DB475327351B75003703C1 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
@@ -229,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				09DB475127350C2D003703C1 /* UserManager.swift */,
+				09D83DF42744EB72005F1BE5 /* RecordManager.swift */,
 				09E42D3227425E600014C4B9 /* RecipeManager.swift */,
 				0901E68C273D5584005375B4 /* FirebaseManager.swift */,
 				09DB475727351DE8003703C1 /* CollectionManager.swift */,
@@ -242,8 +251,8 @@
 			children = (
 				09E42D2E27414C780014C4B9 /* Timer.swift */,
 				09524FA3271FFE2D0061C36B /* TimerViewController.swift */,
-				09D83DEC2744B0A8005F1BE5 /* ContentEditViewController.swift */,
 				093169A52727CEB300360885 /* TimerEditViewController.swift */,
+				09D83DEC2744B0A8005F1BE5 /* ContentEditViewController.swift */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -353,9 +362,10 @@
 			isa = PBXGroup;
 			children = (
 				09DB475527351BC3003703C1 /* User.swift */,
-				09DB4774273A200B003703C1 /* Invitation.swift */,
 				09DB475327351B75003703C1 /* Recipe.swift */,
 				09C1C7DA27229D3D00D2C9B2 /* Record.swift */,
+				09DB4774273A200B003703C1 /* Invitation.swift */,
+				09D83DEE2744C9AE005F1BE5 /* Category.swift */,
 				093169B32729413100360885 /* Ingredient.swift */,
 				09C276BE273D00DB0037D65C /* ProfileContent.swift */,
 				09C1C7D827229B9900D2C9B2 /* RecordContent.swift */,
@@ -415,6 +425,8 @@
 				093169AA2727CEC900360885 /* IngredientItemView.xib */,
 				090E07E42730EC5800136025 /* IngredientGalleryView.swift */,
 				093169AB2727CEC900360885 /* IngredientGalleryView.xib */,
+				09D83DF02744CEE6005F1BE5 /* CategorySelectionCell.swift */,
+				09D83DF12744CEE6005F1BE5 /* CategorySelectionCell.xib */,
 				093169A82727CEC900360885 /* IngredientSelectionCell.swift */,
 			);
 			path = Timer;
@@ -645,6 +657,7 @@
 				09428935272DC64E0083CF6B /* ComingSoonView.xib in Resources */,
 				09DB476927396E4D003703C1 /* Dongle-Light.ttf in Resources */,
 				093169B6272B952F00360885 /* GoogleService-Info.plist in Resources */,
+				09D83DF32744CEE6005F1BE5 /* CategorySelectionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -717,8 +730,10 @@
 			files = (
 				0974F113273AB6D70016FEC1 /* CommunityCollectionViewCell.swift in Sources */,
 				09DB47502734DFC1003703C1 /* AuthViewController.swift in Sources */,
+				09D83DF52744EB72005F1BE5 /* RecordManager.swift in Sources */,
 				09DB4775273A200B003703C1 /* Invitation.swift in Sources */,
 				09524FAD271FFEF00061C36B /* BaseViewController.swift in Sources */,
+				09D83DF22744CEE6005F1BE5 /* CategorySelectionCell.swift in Sources */,
 				09DB475627351BC3003703C1 /* User.swift in Sources */,
 				09524FDD2720494A0061C36B /* Bundle+Extension.swift in Sources */,
 				09C1C8202722BBE600D2C9B2 /* UILabel+Extension.swift in Sources */,
@@ -776,6 +791,7 @@
 				09524F94271FFCB00061C36B /* UIScreen+Extension.swift in Sources */,
 				09524FE4272163B20061C36B /* Day.swift in Sources */,
 				09E42D31274196150014C4B9 /* PrivacyViewController.swift in Sources */,
+				09D83DEF2744C9AE005F1BE5 /* Category.swift in Sources */,
 				09C1C7D927229B9900D2C9B2 /* RecordContent.swift in Sources */,
 				09524F98271FFCE70061C36B /* UITableView+Extension.swift in Sources */,
 				0974F117273B71340016FEC1 /* ProfileInfoCell.swift in Sources */,

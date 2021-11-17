@@ -128,6 +128,18 @@ class TimerViewController: BaseViewController {
     
     @IBAction func didTapControlButton(_ sender: UIButton) {
         
+//        let record = Record(
+//            ownerId: <#T##String#>,
+//            recordTitle: <#T##String?#>,
+//            recordCategory: <#T##String?#>,
+//            recordNote: <#T##String?#>,
+//            focusTime: <#T##Int#>,
+//            createdTime: <#T##Timestamp#>,
+//            favourite: <#T##Bool?#>,
+//            recipeId: <#T##String#>)
+//        
+//        RecordManager.shared.createRecord(record: record)
+        
         switch buttonStatus {
             
         case .notStarted:

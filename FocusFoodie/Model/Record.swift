@@ -13,17 +13,17 @@ public struct Record: Codable {
     
     let ownerId: String
     
-    let recordTitle: String
+    let recordTitle: String?
     
-    let recordCategory: String
+    let recordCategory: String?
     
-    let recordNote: String
+    let recordNote: String?
     
-    let focusTime: Int64
+    let focusTime: Int
     
     let createdTime: Timestamp
     
-    let favourite: Bool
+    let favourite: Bool?
     
     let recipeId: String
     

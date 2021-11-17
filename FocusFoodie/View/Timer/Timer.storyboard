@@ -111,7 +111,7 @@
                                     <segue destination="zOF-3W-jRS" kind="presentation" identifier="toTimeEditor" id="3JN-Oa-WUQ"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.25" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_nap" translatesAutoresizingMaskIntoConstraints="NO" id="beV-LJ-fQK">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.25" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_sleep" translatesAutoresizingMaskIntoConstraints="NO" id="beV-LJ-fQK">
                                 <rect key="frame" x="87" y="122.5" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="PQp-WX-Vmd"/>
@@ -382,8 +382,8 @@
     <resources>
         <image name="icon_check_normal" width="128" height="128"/>
         <image name="icon_cross_normal" width="128" height="128"/>
-        <image name="icon_nap" width="128" height="128"/>
         <image name="icon_notification" width="128" height="128"/>
+        <image name="icon_sleep" width="128" height="128"/>
         <namedColor name="Y1">
             <color red="1" green="0.87450980392156863" blue="0.70588235294117652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

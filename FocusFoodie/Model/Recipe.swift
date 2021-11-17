@@ -24,11 +24,17 @@ public struct Recipe: Codable {
     let recipeId: String
     
     enum CodingKeys: String, CodingKey {
+        
         case bread
+        
         case vegetable
+        
         case meat
+        
         case side
+        
         case focusTime = "focus_time"
+        
         case recipeId = "recipe_id"
     }
 }

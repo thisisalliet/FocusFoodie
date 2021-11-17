@@ -43,7 +43,8 @@ enum ImageAsset: String {
     case icon_coding
     
     // Category
-    case icon_nap
+    case icon_sleep
+    case icon_fitness
     
     // Ingredient Gallery
     case icon_knife

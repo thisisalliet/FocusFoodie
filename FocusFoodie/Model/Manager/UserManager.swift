@@ -59,6 +59,8 @@ class UserManager {
     
     func createUserInfo() {
         
+        let userRef = db.collection(CollectionName.user.rawValue)
+        
         let user = User(displayName: userDisplayName,
                         userId: userId,
                         appleToken: "",
@@ -66,8 +68,6 @@ class UserManager {
                         providerId: "Apple",
                         blockList: nil,
                         friendList: nil)
-        
-        let userRef = db.collection(CollectionName.user.rawValue)
         
         do {
             

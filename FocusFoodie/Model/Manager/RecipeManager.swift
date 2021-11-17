@@ -41,6 +41,9 @@ class RecipeManager {
                             side: recipe.side,
                             focusTime: recipe.focusTime,
                             recipeId: recipeRef.documentID)
+        
+        let myRecipe = recipe.recipeId
+        
         do {
             
             try recipeRef.setData(from: recipe)
@@ -50,7 +53,21 @@ class RecipeManager {
             print("Fail to create recipe.")
         }
         
-        
+        userRef.getDocument { document, error in
+            
+            if let document = document, document.exists {
+                
+                document.reference.updateData([
+                    "recipe_list" : FieldValue.arrayUnion([myRecipe])
+                ])
+                
+            } else {
+                
+                if let error = error {
+                    print(error)
+                }
+            }
+        }
     }
     
     func fetchTime(completion: @escaping (Result<[User], Error>) -> Void) {

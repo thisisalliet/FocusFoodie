@@ -40,21 +40,9 @@ class IngredientSelectionCell: TimerBasicCell {
     
     var touchHandler: ((IndexPath) -> Void)?
     
-    var ingredientObjects: [IngredientObject] = [] {
-        
-        didSet {
-            
-//            ingredientCollectionView.reloadData()
-        }
-    }
+    var ingredientObjects: [IngredientObject] = []
     
-    var selectedIngredient: [IngredientCategory: IngredientObject] = [:] {
-        
-        didSet {
-            
-//            ingredientCollectionView.reloadData()
-        }
-    }
+    var selectedIngredient: [IngredientCategory: IngredientObject] = [:]
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
