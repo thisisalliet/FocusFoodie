@@ -35,11 +35,10 @@
                                     <constraint firstAttribute="height" constant="100" id="f0m-wt-WUU"/>
                                     <constraint firstAttribute="width" constant="100" id="rdG-rt-0FK"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="Dongle-Bold" family="Dongle" pointSize="35"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="START">
-                                    <fontDescription key="titleFontDescription" name="Dongle-Bold" family="Dongle" pointSize="35"/>
-                                </buttonConfiguration>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="START"/>
                                 <connections>
                                     <action selector="didTapControlButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="FWr-oC-UBd"/>
                                 </connections>
@@ -52,11 +51,10 @@
                                     <constraint firstAttribute="height" constant="100" id="YGP-p5-d2V"/>
                                     <constraint firstAttribute="width" constant="100" id="iWB-nl-L5t"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="Dongle-Bold" family="Dongle" pointSize="35"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="DONE" subtitle="">
-                                    <fontDescription key="titleFontDescription" name="Dongle-Bold" family="Dongle" pointSize="35"/>
-                                </buttonConfiguration>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="DONE"/>
                                 <connections>
                                     <action selector="didTapDoneBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="1kT-Re-YeH"/>
                                 </connections>
@@ -296,19 +294,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R5A-Fx-pEo">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R5A-Fx-pEo">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" name="Y3"/>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8rA-Hh-kbJ">
-                                <rect key="frame" x="50" y="179" width="314" height="538"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8rA-Hh-kbJ">
+                                <rect key="frame" x="62" y="224" width="290" height="448"/>
                                 <color key="backgroundColor" name="Y1"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2aY-l9-ldi">
-                                <rect key="frame" x="173" y="418" width="67" height="60"/>
-                                <color key="backgroundColor" name="Y1"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2aY-l9-ldi">
+                                <rect key="frame" x="312" y="204" width="60" height="60"/>
+                                <color key="backgroundColor" name="Y2"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="SZp-Xi-Dkd"/>
                                     <constraint firstAttribute="width" constant="60" id="o57-wd-ynM"/>
@@ -316,20 +313,29 @@
                                 <color key="tintColor" name="Y3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="onDismiss:" destination="HvU-1L-Dr3" eventType="touchUpInside" id="xVs-yz-CKm"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Brg-Ku-MDi"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="8rA-Hh-kbJ" firstAttribute="width" secondItem="FIp-Az-AX8" secondAttribute="width" multiplier="0.7" id="1ax-9p-v1Z"/>
+                            <constraint firstItem="R5A-Fx-pEo" firstAttribute="trailing" secondItem="FIp-Az-AX8" secondAttribute="trailing" id="39N-uG-1e4"/>
                             <constraint firstItem="8rA-Hh-kbJ" firstAttribute="centerX" secondItem="FIp-Az-AX8" secondAttribute="centerX" id="DuV-dQ-yV3"/>
-                            <constraint firstItem="8rA-Hh-kbJ" firstAttribute="height" secondItem="FIp-Az-AX8" secondAttribute="height" multiplier="0.6" id="Ksp-Zu-bBx"/>
-                            <constraint firstItem="8rA-Hh-kbJ" firstAttribute="leading" secondItem="2aY-l9-ldi" secondAttribute="trailing" constant="-10" id="Or1-PC-YOv"/>
+                            <constraint firstItem="2aY-l9-ldi" firstAttribute="trailing" secondItem="8rA-Hh-kbJ" secondAttribute="trailing" constant="20" id="K8c-h5-fwo"/>
+                            <constraint firstItem="8rA-Hh-kbJ" firstAttribute="height" secondItem="FIp-Az-AX8" secondAttribute="height" multiplier="0.5" id="Ksp-Zu-bBx"/>
                             <constraint firstItem="8rA-Hh-kbJ" firstAttribute="centerY" secondItem="FIp-Az-AX8" secondAttribute="centerY" id="WWz-Sp-LaR"/>
-                            <constraint firstItem="8rA-Hh-kbJ" firstAttribute="top" secondItem="2aY-l9-ldi" secondAttribute="bottom" constant="-299" id="rlO-sU-c6l"/>
+                            <constraint firstItem="R5A-Fx-pEo" firstAttribute="top" secondItem="FIp-Az-AX8" secondAttribute="topMargin" id="b46-Qf-8DU"/>
+                            <constraint firstItem="2aY-l9-ldi" firstAttribute="top" secondItem="8rA-Hh-kbJ" secondAttribute="top" constant="-20" id="jei-Fh-kUh"/>
+                            <constraint firstItem="R5A-Fx-pEo" firstAttribute="leading" secondItem="FIp-Az-AX8" secondAttribute="leading" id="mlC-Qs-oXY"/>
+                            <constraint firstAttribute="bottom" secondItem="R5A-Fx-pEo" secondAttribute="bottom" id="oGi-ib-rLH"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="blurView" destination="R5A-Fx-pEo" id="J74-Kq-ClC"/>
+                        <outlet property="dissmissButton" destination="2aY-l9-ldi" id="uzs-c1-uQi"/>
                         <outlet property="endingImage" destination="8rA-Hh-kbJ" id="q6k-TI-8D7"/>
                     </connections>
                 </viewController>

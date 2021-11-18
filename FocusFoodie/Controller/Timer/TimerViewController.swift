@@ -52,9 +52,7 @@ class TimerViewController: BaseViewController {
     var originalSeconds = 0
     
     var hiddenNote: String?
-    
-//    var hiddenRecipeId: String?
-    
+        
     var hiddenCategory: String?
     
     var buttonStatus: ButtonStatus = ButtonStatus.notStarted {
@@ -242,12 +240,14 @@ class TimerViewController: BaseViewController {
                         withIdentifier: String(describing: EndingViewController.self)
                     ) as? EndingViewController else { return }
             
+             setupNotification()
             endVC.modalPresentationStyle = .overFullScreen
             
             present(endVC, animated: true, completion: nil)
             
-            timer.invalidate()
             
+            timer.invalidate()
+                        
             return
         }
     }
@@ -257,22 +257,22 @@ class TimerViewController: BaseViewController {
 
 extension TimerViewController {
     
-    func setupNotification(time: Int) {
+    func setupNotification() {
         
         let alarmContent = UNMutableNotificationContent()
         
-        alarmContent.title = ""
+        alarmContent.title = "Congratulations!"
         
-        alarmContent.body = ""
+        alarmContent.body = "You've made a deleicious sandwich."
         
         alarmContent.sound = UNNotificationSound.default
         
-        let alarmTrigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(time), repeats: false)
+//        let alarmTrigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(1), repeats: false)
         
         let alarmRequest = UNNotificationRequest(
             identifier: "alarmTrigger",
             content: alarmContent,
-            trigger: alarmTrigger)
+            trigger: nil)
         
         UNUserNotificationCenter.current().add(alarmRequest, withCompletionHandler: nil)
     }

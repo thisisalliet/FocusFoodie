@@ -75,30 +75,4 @@ class RecipeManager {
             }
         }
     }
-    
-    func fetchTime(completion: @escaping (Result<[User], Error>) -> Void) {
-        
-//        let timerRef = db.collection(CollectionName.recipe.rawValue)
-//            .whereField("bread", isEqualTo: recipe.bread as Any)
-//            .whereField("vegetable", isEqualTo: recipe.vegetable as Any)
-//            .whereField("meat", isEqualTo: recipe.meat as Any)
-//            .whereField("side", isEqualTo: recipe.side as Any)
-//
-//        timerRef.getDocuments { snapshot, error in
-//
-//            if let error = error {
-//
-//                completion(Result.failure(error))
-//            }
-//
-//            guard let snapshot = snapshot else { return }
-//
-//            let currentRecipe = snapshot.documents.compactMap { snapshot in
-//
-//                try? snapshot.data(as: Recipe.self)
-//            }
-//
-//            completion(Result.success(currentRecipe))
-//        }
-    }
 }

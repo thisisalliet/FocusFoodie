@@ -22,7 +22,7 @@
 		0942892E272D7E7D0083CF6B /* burger-machine.json in Resources */ = {isa = PBXBuildFile; fileRef = 0942892D272D7E7D0083CF6B /* burger-machine.json */; };
 		09428933272D975C0083CF6B /* ComingSoonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09428932272D975C0083CF6B /* ComingSoonView.swift */; };
 		09428935272DC64E0083CF6B /* ComingSoonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09428934272DC64E0083CF6B /* ComingSoonView.xib */; };
-		09428938272E84970083CF6B /* Time+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09428937272E84970083CF6B /* Time+Extension.swift */; };
+		09428938272E84970083CF6B /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09428937272E84970083CF6B /* Date+Extension.swift */; };
 		09524F76271FF4A00061C36B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524F75271FF4A00061C36B /* AppDelegate.swift */; };
 		09524F78271FF4A00061C36B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524F77271FF4A00061C36B /* SceneDelegate.swift */; };
 		09524F7A271FF4A00061C36B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524F79271FF4A00061C36B /* ViewController.swift */; };
@@ -47,7 +47,6 @@
 		09524FD62720213B0061C36B /* RecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524FD42720213B0061C36B /* RecordCell.swift */; };
 		09524FDD2720494A0061C36B /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524FDC2720494A0061C36B /* Bundle+Extension.swift */; };
 		09524FE027214F990061C36B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524FDF27214F990061C36B /* DetailViewController.swift */; };
-		09524FE4272163B20061C36B /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524FE3272163B20061C36B /* Day.swift */; };
 		09524FE6272164560061C36B /* CalendarPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524FE5272164560061C36B /* CalendarPickerViewController.swift */; };
 		09524FEA272168E80061C36B /* DetailInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524FE8272168E80061C36B /* DetailInfoTableViewCell.swift */; };
 		09524FEB272168E80061C36B /* DetailInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09524FE9272168E80061C36B /* DetailInfoTableViewCell.xib */; };
@@ -64,7 +63,6 @@
 		09C1C7DB27229D3D00D2C9B2 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C7DA27229D3D00D2C9B2 /* Record.swift */; };
 		09C1C7DD2722AACB00D2C9B2 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C7DC2722AACB00D2C9B2 /* UIFont+Extension.swift */; };
 		09C1C8202722BBE600D2C9B2 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C81F2722BBE600D2C9B2 /* UILabel+Extension.swift */; };
-		09C1C8242724024100D2C9B2 /* MonthMetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C8232724024100D2C9B2 /* MonthMetaData.swift */; };
 		09C1C829272409C600D2C9B2 /* CalendarDateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C828272409C600D2C9B2 /* CalendarDateCollectionViewCell.swift */; };
 		09C1C82B27240BC700D2C9B2 /* CalendarPickerFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C82A27240BC700D2C9B2 /* CalendarPickerFooterView.swift */; };
 		09C1C82D27240BFB00D2C9B2 /* CalendarPickerHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C82C27240BFB00D2C9B2 /* CalendarPickerHeaderView.swift */; };
@@ -82,6 +80,7 @@
 		09D83DF727451FE7005F1BE5 /* EndingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D83DF627451FE7005F1BE5 /* EndingViewController.swift */; };
 		09D83DFB27458489005F1BE5 /* WeekView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D83DFA27458489005F1BE5 /* WeekView.xib */; };
 		09D83DFD27458863005F1BE5 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D83DFC27458863005F1BE5 /* WeekView.swift */; };
+		09D83DFF27462669005F1BE5 /* CommunityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D83DFE27462668005F1BE5 /* CommunityListViewController.swift */; };
 		09DB47502734DFC1003703C1 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB474F2734DFC1003703C1 /* AuthViewController.swift */; };
 		09DB475227350C2D003703C1 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB475127350C2D003703C1 /* UserManager.swift */; };
 		09DB475427351B75003703C1 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB475327351B75003703C1 /* Recipe.swift */; };
@@ -119,7 +118,7 @@
 		0942892D272D7E7D0083CF6B /* burger-machine.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "burger-machine.json"; sourceTree = "<group>"; };
 		09428932272D975C0083CF6B /* ComingSoonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonView.swift; sourceTree = "<group>"; };
 		09428934272DC64E0083CF6B /* ComingSoonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComingSoonView.xib; sourceTree = "<group>"; };
-		09428937272E84970083CF6B /* Time+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Time+Extension.swift"; sourceTree = "<group>"; };
+		09428937272E84970083CF6B /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		09428939272F17020083CF6B /* FocusFoodie.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FocusFoodie.entitlements; sourceTree = "<group>"; };
 		09524F72271FF4A00061C36B /* FocusFoodie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FocusFoodie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09524F75271FF4A00061C36B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -147,7 +146,6 @@
 		09524FD42720213B0061C36B /* RecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCell.swift; sourceTree = "<group>"; };
 		09524FDC2720494A0061C36B /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		09524FDF27214F990061C36B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		09524FE3272163B20061C36B /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		09524FE5272164560061C36B /* CalendarPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPickerViewController.swift; sourceTree = "<group>"; };
 		09524FE8272168E80061C36B /* DetailInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInfoTableViewCell.swift; sourceTree = "<group>"; };
 		09524FE9272168E80061C36B /* DetailInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailInfoTableViewCell.xib; sourceTree = "<group>"; };
@@ -164,7 +162,6 @@
 		09C1C7DA27229D3D00D2C9B2 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		09C1C7DC2722AACB00D2C9B2 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		09C1C81F2722BBE600D2C9B2 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
-		09C1C8232724024100D2C9B2 /* MonthMetaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthMetaData.swift; sourceTree = "<group>"; };
 		09C1C828272409C600D2C9B2 /* CalendarDateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDateCollectionViewCell.swift; sourceTree = "<group>"; };
 		09C1C82A27240BC700D2C9B2 /* CalendarPickerFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalendarPickerFooterView.swift; path = FocusFoodie/View/Record/Detail/Calendar/CalendarPickerFooterView.swift; sourceTree = SOURCE_ROOT; };
 		09C1C82C27240BFB00D2C9B2 /* CalendarPickerHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPickerHeaderView.swift; sourceTree = "<group>"; };
@@ -200,6 +197,7 @@
 		09D83DF627451FE7005F1BE5 /* EndingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndingViewController.swift; sourceTree = "<group>"; };
 		09D83DFA27458489005F1BE5 /* WeekView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeekView.xib; sourceTree = "<group>"; };
 		09D83DFC27458863005F1BE5 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
+		09D83DFE27462668005F1BE5 /* CommunityListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityListViewController.swift; sourceTree = "<group>"; };
 		09DB474F2734DFC1003703C1 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		09DB475127350C2D003703C1 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		09DB475327351B75003703C1 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
@@ -245,7 +243,6 @@
 				09E42D3227425E600014C4B9 /* RecipeManager.swift */,
 				0901E68C273D5584005375B4 /* FirebaseManager.swift */,
 				09DB475727351DE8003703C1 /* CollectionManager.swift */,
-				09DB475927351E2F003703C1 /* Calendar */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -253,8 +250,8 @@
 		093169A42727CD6000360885 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
-				09D83DF627451FE7005F1BE5 /* EndingViewController.swift */,
 				09524FA3271FFE2D0061C36B /* TimerViewController.swift */,
+				09D83DF627451FE7005F1BE5 /* EndingViewController.swift */,
 				093169A52727CEB300360885 /* TimerEditViewController.swift */,
 				09D83DEC2744B0A8005F1BE5 /* ContentEditViewController.swift */,
 			);
@@ -266,6 +263,7 @@
 			children = (
 				09DB475E27357043003703C1 /* ProfileViewController.swift */,
 				09524FA7271FFEA70061C36B /* CommunityViewController.swift */,
+				09D83DFE27462668005F1BE5 /* CommunityListViewController.swift */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -308,16 +306,16 @@
 		09524F8A271FF8F00061C36B /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				09428937272E84970083CF6B /* Date+Extension.swift */,
 				09524FDC2720494A0061C36B /* Bundle+Extension.swift */,
-				09428937272E84970083CF6B /* Time+Extension.swift */,
 				09C1C7DC2722AACB00D2C9B2 /* UIFont+Extension.swift */,
 				09524F95271FFCC00061C36B /* UIView+Extension.swift */,
 				09C1C7CD2722833000D2C9B2 /* UIColor+Extension.swift */,
 				09C1C81F2722BBE600D2C9B2 /* UILabel+Extension.swift */,
-				09F0472627264DC1009CA63B /* UIButton+Extension.swift */,
-				09C1C84F2725D78700D2C9B2 /* UITextfield+Extension.swift */,
 				09524FB0272003480061C36B /* UIImage+Extension.swift */,
+				09F0472627264DC1009CA63B /* UIButton+Extension.swift */,
 				09524F93271FFCB00061C36B /* UIScreen+Extension.swift */,
+				09C1C84F2725D78700D2C9B2 /* UITextfield+Extension.swift */,
 				09524F97271FFCE60061C36B /* UITableView+Extension.swift */,
 				09524F8F271FFA000061C36B /* UIStoryboard+Extension.swift */,
 				09524F9B271FFD390061C36B /* UICollectionView+Extension.swift */,
@@ -507,15 +505,6 @@
 				09C276BB273CF7840037D65C /* ProfileSelectionCell.xib */,
 			);
 			path = Profile;
-			sourceTree = "<group>";
-		};
-		09DB475927351E2F003703C1 /* Calendar */ = {
-			isa = PBXGroup;
-			children = (
-				09524FE3272163B20061C36B /* Day.swift */,
-				09C1C8232724024100D2C9B2 /* MonthMetaData.swift */,
-			);
-			path = Calendar;
 			sourceTree = "<group>";
 		};
 		09DB475A2735203F003703C1 /* Auth */ = {
@@ -757,7 +746,8 @@
 				09DB4777273A46F7003703C1 /* SetUpViewController.swift in Sources */,
 				09428933272D975C0083CF6B /* ComingSoonView.swift in Sources */,
 				09DB475827351DE8003703C1 /* CollectionManager.swift in Sources */,
-				09428938272E84970083CF6B /* Time+Extension.swift in Sources */,
+				09428938272E84970083CF6B /* Date+Extension.swift in Sources */,
+				09D83DFF27462669005F1BE5 /* CommunityListViewController.swift in Sources */,
 				09524F7A271FF4A00061C36B /* ViewController.swift in Sources */,
 				09524F96271FFCC00061C36B /* UIView+Extension.swift in Sources */,
 				0901E68D273D5584005375B4 /* FirebaseManager.swift in Sources */,
@@ -781,7 +771,6 @@
 				09E42D3327425E600014C4B9 /* RecipeManager.swift in Sources */,
 				09524F90271FFA000061C36B /* UIStoryboard+Extension.swift in Sources */,
 				09DB475F27357043003703C1 /* ProfileViewController.swift in Sources */,
-				09C1C8242724024100D2C9B2 /* MonthMetaData.swift in Sources */,
 				09524FB1272003480061C36B /* UIImage+Extension.swift in Sources */,
 				09524FA8271FFEA70061C36B /* CommunityViewController.swift in Sources */,
 				09DB475427351B75003703C1 /* Recipe.swift in Sources */,
@@ -797,7 +786,6 @@
 				090E07E32730E9F700136025 /* IngredientItemView.swift in Sources */,
 				090E07E52730EC5800136025 /* IngredientGalleryView.swift in Sources */,
 				09524F94271FFCB00061C36B /* UIScreen+Extension.swift in Sources */,
-				09524FE4272163B20061C36B /* Day.swift in Sources */,
 				09E42D31274196150014C4B9 /* PrivacyViewController.swift in Sources */,
 				09D83DEF2744C9AE005F1BE5 /* Category.swift in Sources */,
 				09C1C7D927229B9900D2C9B2 /* RecordContent.swift in Sources */,

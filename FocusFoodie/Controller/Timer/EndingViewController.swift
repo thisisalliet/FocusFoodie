@@ -14,7 +14,6 @@ class EndingViewController: BaseViewController {
         didSet {
             
             blurView.alpha = 0.5
-            
         }
     }
     
@@ -26,19 +25,11 @@ class EndingViewController: BaseViewController {
         }
     }
     
-    @IBOutlet weak var hungryButton: UIButton! {
+    @IBOutlet weak var dissmissButton: UIButton! {
         
         didSet {
             
-            hungryButton.cornerRadius = 10
-        }
-    }
-    
-    @IBOutlet weak var fullButton: UIButton! {
-        
-        didSet {
-            
-            fullButton.cornerRadius = 10
+            dissmissButton.cornerRadius = dissmissButton.frame.width / 2
         }
     }
     
@@ -48,22 +39,8 @@ class EndingViewController: BaseViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func onHungry(_ sender: UIButton) {
+    @IBAction func onDismiss(_ sender: UIButton) {
         
         presentingViewController?.dismiss(animated: true, completion: nil)
     }
-    
-    @IBAction func onFull(_ sender: UIButton) {
-        
-        guard let recordVC = UIStoryboard.record.instantiateViewController(
-            withIdentifier: String(describing: RecordViewController.identifier))
-                as? RecordViewController else { return }
-        
-        recordVC.modalPresentationStyle = .overFullScreen
-        
-        self.navigationController?.pushViewController(recordVC, animated: true)
-        
-//        self.present(recordVC, animated: true, completion: nil)
-    }
-    
 }
