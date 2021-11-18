@@ -42,7 +42,6 @@ class RecordManager {
             recordNote: record.recordNote,
             focusTime: record.focusTime,
             createdTime: record.createdTime,
-            favourite: false,
             recipeId: RecipeManager.shared.myRecipe ?? "default")
         
         do {
@@ -55,11 +54,10 @@ class RecordManager {
         }
     }
     
-    func fetchRecord(completion: @escaping (Result<[Record], Error>) -> Void) {
+    func fetchRecord(date: Date, completion: @escaping (Result<[Record], Error>) -> Void) {
         
         let myRecordRef = db.collection(CollectionName.record.rawValue)
-            .order(by: "created_time", descending: true)
-            .whereField("owner_Id", isEqualTo: userId)
+            .whereField("owner_id", isEqualTo: userId)
         
         myRecordRef.getDocuments { snapshot, error in
             
@@ -75,7 +73,35 @@ class RecordManager {
                 try? snapshot.data(as: Record.self)
             }
             
-            completion(Result.success(myRecord))
+            let recordDayy = myRecord.filter { record -> Bool in
+                
+                let recordDate = Date(timeIntervalSince1970: record.createdTime)
+                
+                let haseSame = recordDate.hasSame(.year, as: date)
+                    && recordDate.hasSame(.month, as: date)
+                    && recordDate.hasSame(.day, as: date)
+                
+                return haseSame
+            }
+            
+//            let recordDay = myRecord.compactMap { (record) -> Record? in
+//
+//                let recordDate = Date(timeIntervalSince1970: record.createdTime)
+//
+//                if recordDate.hasSame(.year, as: date)
+//                    && recordDate.hasSame(.month, as: date)
+//                    && recordDate.hasSame(.day, as: date) {
+//
+//                    return record
+//
+//                } else {
+//
+//                    return nil
+//
+//                }
+//            }
+            
+            completion(Result.success(recordDayy))
         }
     }
 }

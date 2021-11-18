@@ -56,6 +56,18 @@
                                     <color key="titleColor" name="G3"/>
                                 </state>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DGS-EJ-2Vo">
+                                <rect key="frame" x="83" y="408.5" width="248" height="325"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You don't have any record today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dr-Wo-wX7">
+                                <rect key="frame" x="89.5" y="753.5" width="235.5" height="36.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="G3"/>
+                                <fontDescription key="fontDescription" name="Dongle-Regular" family="Dongle" pointSize="25"/>
+                                <color key="textColor" name="G3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="G1"/>
@@ -65,19 +77,27 @@
                             <constraint firstItem="hnL-0y-DRZ" firstAttribute="top" secondItem="MZy-ta-U9v" secondAttribute="bottom" constant="30" id="B7M-gu-MvI"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="MZy-ta-U9v" secondAttribute="trailing" constant="30" id="Ehq-IV-luh"/>
                             <constraint firstItem="h80-cI-QnW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="IgH-r3-XvR"/>
+                            <constraint firstItem="5dr-Wo-wX7" firstAttribute="centerX" secondItem="DGS-EJ-2Vo" secondAttribute="centerX" id="No4-gO-IrW"/>
+                            <constraint firstItem="5dr-Wo-wX7" firstAttribute="top" secondItem="DGS-EJ-2Vo" secondAttribute="bottom" constant="20" id="WEP-Ea-hSz"/>
                             <constraint firstItem="hnL-0y-DRZ" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="WbC-dR-5oz"/>
                             <constraint firstItem="MZy-ta-U9v" firstAttribute="top" secondItem="h80-cI-QnW" secondAttribute="bottom" constant="30" id="dCb-UB-D04"/>
                             <constraint firstItem="hnL-0y-DRZ" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="ejZ-cX-I5j"/>
                             <constraint firstItem="YSV-2M-T8W" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="15" id="jw5-nc-2QM"/>
+                            <constraint firstItem="DGS-EJ-2Vo" firstAttribute="centerX" secondItem="hnL-0y-DRZ" secondAttribute="centerX" id="nJU-T5-D7u"/>
+                            <constraint firstItem="DGS-EJ-2Vo" firstAttribute="width" secondItem="hnL-0y-DRZ" secondAttribute="width" multiplier="0.6" id="nrg-xB-eQO"/>
+                            <constraint firstItem="DGS-EJ-2Vo" firstAttribute="height" secondItem="hnL-0y-DRZ" secondAttribute="height" multiplier="0.6" id="tA3-xa-YXH"/>
                             <constraint firstItem="MZy-ta-U9v" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="tAL-pv-OJo"/>
+                            <constraint firstItem="DGS-EJ-2Vo" firstAttribute="centerY" secondItem="hnL-0y-DRZ" secondAttribute="centerY" constant="-20" id="wBA-j5-gjQ"/>
                             <constraint firstItem="YSV-2M-T8W" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="zZs-n6-bat"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bFt-1m-PRt"/>
                     <connections>
                         <outlet property="dateButton" destination="h80-cI-QnW" id="4n8-dY-tDI"/>
+                        <outlet property="emptyLabel" destination="5dr-Wo-wX7" id="2Mu-Tq-YUm"/>
+                        <outlet property="recordLottieView" destination="DGS-EJ-2Vo" id="WoD-C0-9xx"/>
                         <outlet property="recordTableView" destination="hnL-0y-DRZ" id="Jy0-xf-UK6"/>
-                        <outlet property="weekLabel" destination="YSV-2M-T8W" id="nDg-PZ-sq3"/>
+                        <outlet property="weekDayLabel" destination="YSV-2M-T8W" id="nDg-PZ-sq3"/>
                         <outlet property="weekView" destination="MZy-ta-U9v" id="r0J-iT-7ad"/>
                     </connections>
                 </viewController>

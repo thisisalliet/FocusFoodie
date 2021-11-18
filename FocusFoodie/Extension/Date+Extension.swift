@@ -40,13 +40,6 @@ extension Date {
         return Date.dateFormatter.string(from: self).capitalized
     }
     
-    func currentDate() -> String {
-        
-        Date.dateFormatter.dateFormat = "dd"
-        
-        return Date.dateFormatter.string(from: self).uppercased()
-    }
-    
     func dayOfWeek() -> String {
         
         Date.dateFormatter.dateFormat = "EEEE"

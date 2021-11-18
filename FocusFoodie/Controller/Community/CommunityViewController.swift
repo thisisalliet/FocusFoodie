@@ -90,14 +90,14 @@ class CommunityViewController: BaseViewController {
 
         sender.isSelected = true
 
-        changeButtonColor(reference: sender)
+        changeContent(reference: sender)
 
         guard let type = CommunityType(rawValue: sender.tag) else { return }
 
         updateContainer(type: type)
     }
     
-    private func changeButtonColor(reference: UIView) {
+    private func changeContent(reference: UIView) {
 
         indicatorCenterXConstraint.isActive = false
 

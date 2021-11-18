@@ -20,27 +20,27 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WeekView" customModule="FocusFoodie" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="XUf-kI-852"/>
-                <outlet property="fridayButton" destination="BHk-vJ-tTy" id="9TM-Iv-Rdn"/>
                 <outlet property="fridayDateLabel" destination="zUX-Fa-E7N" id="mY0-Rg-dpU"/>
                 <outlet property="fridayLabel" destination="dAk-kQ-DHL" id="Mwh-2d-KUU"/>
-                <outlet property="mondayButton" destination="tvn-to-Ct0" id="ljd-sV-Tsc"/>
                 <outlet property="mondayDateLabel" destination="kCz-UT-dDL" id="yfd-jx-5GX"/>
                 <outlet property="mondayLabel" destination="tE6-eX-1rO" id="Aba-dw-UGN"/>
-                <outlet property="saturdayButton" destination="WP1-dh-XCS" id="NAA-hI-cRn"/>
                 <outlet property="saturdayDateLabel" destination="FhB-Ki-Fjz" id="OMa-zD-sGH"/>
                 <outlet property="saturdayLabel" destination="Vk1-Bl-dyf" id="Plu-B3-6kB"/>
-                <outlet property="sundayButton" destination="A0Q-EN-Q3c" id="25Q-1u-Ijg"/>
                 <outlet property="sundayDateLabel" destination="X79-Ac-Kwo" id="DWq-qy-1VL"/>
                 <outlet property="sundayLabel" destination="Y1r-Ar-i0i" id="ufS-w5-zYb"/>
-                <outlet property="thursdayButton" destination="NRM-yR-vNH" id="j3O-B0-uJN"/>
                 <outlet property="thursdayDateLabel" destination="aEa-1h-6H3" id="3r2-FD-ed9"/>
                 <outlet property="thursdayLabel" destination="zio-By-rzj" id="ljn-tZ-utW"/>
-                <outlet property="tuesdayButton" destination="567-7Q-7Up" id="WeR-KF-17P"/>
                 <outlet property="tuesdayDateLabel" destination="fuO-ew-M1x" id="mgJ-ET-qEX"/>
                 <outlet property="tuesdayLabel" destination="JaT-RO-fmi" id="Z0i-yP-Qgq"/>
-                <outlet property="wednesdayButton" destination="MvI-e7-BCq" id="APe-Lx-gUS"/>
                 <outlet property="wednesdayDateLabel" destination="ywW-DO-cBB" id="1oW-gu-TRW"/>
                 <outlet property="wednesdayLabel" destination="jOR-4E-XIO" id="6Yl-Ye-Tbr"/>
+                <outletCollection property="weekButtons" destination="tvn-to-Ct0" collectionClass="NSMutableArray" id="OWY-59-SJE"/>
+                <outletCollection property="weekButtons" destination="567-7Q-7Up" collectionClass="NSMutableArray" id="7xn-bK-FYs"/>
+                <outletCollection property="weekButtons" destination="MvI-e7-BCq" collectionClass="NSMutableArray" id="uQg-ut-KOV"/>
+                <outletCollection property="weekButtons" destination="NRM-yR-vNH" collectionClass="NSMutableArray" id="lp0-yk-Npa"/>
+                <outletCollection property="weekButtons" destination="WP1-dh-XCS" collectionClass="NSMutableArray" id="JUZ-OO-h4w"/>
+                <outletCollection property="weekButtons" destination="A0Q-EN-Q3c" collectionClass="NSMutableArray" id="UpP-7x-uID"/>
+                <outletCollection property="weekButtons" destination="BHk-vJ-tTy" collectionClass="NSMutableArray" id="ydV-yh-EKa"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -48,80 +48,6 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="mBs-Mj-nVQ">
-                    <rect key="frame" x="0.0" y="0.0" width="373.5" height="60"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvn-to-Ct0">
-                            <rect key="frame" x="0.0" y="0.0" width="40.5" height="60"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <color key="tintColor" name="G3"/>
-                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal">
-                                <color key="titleColor" name="G2"/>
-                            </state>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="567-7Q-7Up">
-                            <rect key="frame" x="55.5" y="0.0" width="40.5" height="60"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <color key="tintColor" name="G3"/>
-                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal">
-                                <color key="titleColor" name="G2"/>
-                            </state>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="MvI-e7-BCq">
-                            <rect key="frame" x="111" y="0.0" width="40.5" height="60"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <color key="tintColor" name="G3"/>
-                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal">
-                                <color key="titleColor" name="G2"/>
-                            </state>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="NRM-yR-vNH">
-                            <rect key="frame" x="166.5" y="0.0" width="40.5" height="60"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <color key="tintColor" name="G3"/>
-                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal">
-                                <color key="titleColor" name="G2"/>
-                            </state>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="BHk-vJ-tTy">
-                            <rect key="frame" x="222" y="0.0" width="40.5" height="60"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <color key="tintColor" name="G3"/>
-                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal">
-                                <color key="titleColor" name="G2"/>
-                            </state>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="WP1-dh-XCS">
-                            <rect key="frame" x="277.5" y="0.0" width="40.5" height="60"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <color key="tintColor" name="G3"/>
-                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal">
-                                <color key="titleColor" name="G2"/>
-                            </state>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="A0Q-EN-Q3c">
-                            <rect key="frame" x="333" y="0.0" width="40.5" height="60"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <color key="tintColor" name="G3"/>
-                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal">
-                                <color key="titleColor" name="G2"/>
-                            </state>
-                        </button>
-                    </subviews>
-                </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="c4d-aU-DZw">
                     <rect key="frame" x="0.0" y="0.0" width="373.5" height="60"/>
                     <subviews>
@@ -134,7 +60,7 @@
                                     <color key="textColor" name="G3"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kCz-UT-dDL">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kCz-UT-dDL">
                                     <rect key="frame" x="0.0" y="25" width="40.5" height="35"/>
                                     <fontDescription key="fontDescription" name="Dongle-Bold" family="Dongle" pointSize="30"/>
                                     <color key="textColor" name="G3"/>
@@ -244,6 +170,101 @@
                                 </label>
                             </subviews>
                         </stackView>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="mBs-Mj-nVQ">
+                    <rect key="frame" x="0.0" y="0.0" width="373.5" height="60"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvn-to-Ct0">
+                            <rect key="frame" x="0.0" y="0.0" width="40.5" height="60"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal">
+                                <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="onChangeDate:" destination="-1" eventType="touchUpInside" id="2T0-tX-Tb1"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="567-7Q-7Up">
+                            <rect key="frame" x="55.5" y="0.0" width="40.5" height="60"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal">
+                                <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="onChangeDate:" destination="-1" eventType="touchUpInside" id="tMX-BI-bfw"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="MvI-e7-BCq">
+                            <rect key="frame" x="111" y="0.0" width="40.5" height="60"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal">
+                                <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="onChangeDate:" destination="-1" eventType="touchUpInside" id="uSc-Lw-tCs"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="NRM-yR-vNH">
+                            <rect key="frame" x="166.5" y="0.0" width="40.5" height="60"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal">
+                                <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="onChangeDate:" destination="-1" eventType="touchUpInside" id="sYY-Vt-yUd"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="BHk-vJ-tTy">
+                            <rect key="frame" x="222" y="0.0" width="40.5" height="60"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal">
+                                <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="onChangeDate:" destination="-1" eventType="touchUpInside" id="rzj-lF-GIc"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="WP1-dh-XCS">
+                            <rect key="frame" x="277.5" y="0.0" width="40.5" height="60"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal">
+                                <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="onChangeDate:" destination="-1" eventType="touchUpInside" id="OkC-su-tcs"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="A0Q-EN-Q3c">
+                            <rect key="frame" x="333" y="0.0" width="40.5" height="60"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal">
+                                <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="onChangeDate:" destination="-1" eventType="touchUpInside" id="P8s-n7-p1X"/>
+                            </connections>
+                        </button>
                     </subviews>
                 </stackView>
             </subviews>

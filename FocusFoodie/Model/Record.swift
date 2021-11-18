@@ -21,10 +21,8 @@ public struct Record: Codable {
     
     let focusTime: Int
     
-    let createdTime: Timestamp
-    
-    let favourite: Bool?
-    
+    let createdTime: TimeInterval
+        
     let recipeId: String
     
     enum CodingKeys: String, CodingKey {
@@ -40,9 +38,7 @@ public struct Record: Codable {
         case focusTime = "focus_time"
         
         case createdTime = "created_time"
-        
-        case favourite
-        
+                
         case recipeId = "recipe_id"
     }
 }

@@ -145,8 +145,7 @@ class TimerViewController: BaseViewController {
             recordCategory: hiddenCategory,
             recordNote: hiddenNote,
             focusTime: originalSeconds,
-            createdTime: Timestamp(date: Date()),
-            favourite: nil,
+            createdTime: Date().timeIntervalSince1970,
             recipeId: "")
         
         RecordManager.shared.createRecord(record: record)
@@ -240,7 +239,8 @@ class TimerViewController: BaseViewController {
                         withIdentifier: String(describing: EndingViewController.self)
                     ) as? EndingViewController else { return }
             
-             setupNotification()
+            setupNotification()
+            
             endVC.modalPresentationStyle = .overFullScreen
             
             present(endVC, animated: true, completion: nil)
