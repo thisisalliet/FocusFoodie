@@ -14,6 +14,8 @@ import FirebaseFirestoreSwift
 class RecordManager {
     
     lazy var db = Firestore.firestore()
+    
+    var myRecipeId: String?
 
     static let shared = RecordManager()
 
@@ -31,6 +33,13 @@ class RecordManager {
     
     func createRecord(record: Record) {
         
+//        RecipeManager.shared.recipeIdHandler = { [ weak self ] id in
+//
+//            guard let strongSelf = self else { return }
+//
+//            strongSelf.myRecipeId = id
+//        }
+        
         let recordRef = db.collection(CollectionName.record.rawValue).document()
         
         let record = Record(
@@ -41,7 +50,7 @@ class RecordManager {
             focusTime: record.focusTime,
             createdTime: record.createdTime,
             favourite: false,
-            recipeId: record.recipeId)
+            recipeId: RecipeManager.shared.myRecipe ?? "default")
         
         do {
             

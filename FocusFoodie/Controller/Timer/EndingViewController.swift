@@ -9,7 +9,14 @@ import UIKit
 
 class EndingViewController: BaseViewController {
     
-    @IBOutlet weak var blurView: UIView!
+    @IBOutlet weak var blurView: UIView! {
+        
+        didSet {
+            
+            blurView.alpha = 0.5
+            
+        }
+    }
     
     @IBOutlet weak var endingImage: UIView! {
         
@@ -52,9 +59,11 @@ class EndingViewController: BaseViewController {
             withIdentifier: String(describing: RecordViewController.identifier))
                 as? RecordViewController else { return }
         
-        recordVC.modalPresentationStyle = .fullScreen
+        recordVC.modalPresentationStyle = .overFullScreen
         
-        self.present(recordVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(recordVC, animated: true)
+        
+//        self.present(recordVC, animated: true, completion: nil)
     }
     
 }

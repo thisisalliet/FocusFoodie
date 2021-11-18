@@ -296,75 +296,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view alpha="0.65000000000000002" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R5A-Fx-pEo">
+                            <view alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R5A-Fx-pEo">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" name="Y3"/>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="0I6-0N-vHU">
-                                <rect key="frame" x="50" y="169" width="314" height="558"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8rA-Hh-kbJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="314" height="440"/>
-                                        <color key="backgroundColor" name="Y1"/>
-                                    </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="vzc-xm-ttK">
-                                        <rect key="frame" x="0.0" y="470" width="314" height="88"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1h-aN-pUj">
-                                                <rect key="frame" x="0.0" y="0.0" width="149.5" height="88"/>
-                                                <color key="backgroundColor" name="Y3"/>
-                                                <fontDescription key="fontDescription" name="Dongle-Regular" family="Dongle" pointSize="30"/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="I'm still hungry">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="onHungry:" destination="HvU-1L-Dr3" eventType="touchUpInside" id="OrY-AI-Rxf"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qH3-sG-I7c">
-                                                <rect key="frame" x="164.5" y="0.0" width="149.5" height="88"/>
-                                                <color key="backgroundColor" name="Y3"/>
-                                                <fontDescription key="fontDescription" name="Dongle-Regular" family="Dongle" pointSize="30"/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="I'm full.">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="onFull:" destination="HvU-1L-Dr3" eventType="touchUpInside" id="SFZ-rB-AqF"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8rA-Hh-kbJ">
+                                <rect key="frame" x="50" y="179" width="314" height="538"/>
+                                <color key="backgroundColor" name="Y1"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2aY-l9-ldi">
+                                <rect key="frame" x="173" y="418" width="67" height="60"/>
+                                <color key="backgroundColor" name="Y1"/>
                                 <constraints>
-                                    <constraint firstItem="vzc-xm-ttK" firstAttribute="width" secondItem="8rA-Hh-kbJ" secondAttribute="width" id="7mo-rx-M9j"/>
-                                    <constraint firstItem="8rA-Hh-kbJ" firstAttribute="height" secondItem="0I6-0N-vHU" secondAttribute="height" multiplier="0.5" constant="161" id="qAf-sx-NT5"/>
-                                    <constraint firstItem="vzc-xm-ttK" firstAttribute="height" secondItem="8rA-Hh-kbJ" secondAttribute="height" multiplier="0.2" id="ss6-80-6tl"/>
+                                    <constraint firstAttribute="height" constant="60" id="SZp-Xi-Dkd"/>
+                                    <constraint firstAttribute="width" constant="60" id="o57-wd-ynM"/>
                                 </constraints>
-                            </stackView>
+                                <color key="tintColor" name="Y3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Brg-Ku-MDi"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="0I6-0N-vHU" firstAttribute="centerX" secondItem="FIp-Az-AX8" secondAttribute="centerX" id="ar4-HA-vwY"/>
-                            <constraint firstItem="0I6-0N-vHU" firstAttribute="centerY" secondItem="FIp-Az-AX8" secondAttribute="centerY" id="w8o-yf-jAe"/>
+                            <constraint firstItem="8rA-Hh-kbJ" firstAttribute="centerX" secondItem="FIp-Az-AX8" secondAttribute="centerX" id="DuV-dQ-yV3"/>
+                            <constraint firstItem="8rA-Hh-kbJ" firstAttribute="height" secondItem="FIp-Az-AX8" secondAttribute="height" multiplier="0.6" id="Ksp-Zu-bBx"/>
+                            <constraint firstItem="8rA-Hh-kbJ" firstAttribute="leading" secondItem="2aY-l9-ldi" secondAttribute="trailing" constant="-10" id="Or1-PC-YOv"/>
+                            <constraint firstItem="8rA-Hh-kbJ" firstAttribute="centerY" secondItem="FIp-Az-AX8" secondAttribute="centerY" id="WWz-Sp-LaR"/>
+                            <constraint firstItem="8rA-Hh-kbJ" firstAttribute="top" secondItem="2aY-l9-ldi" secondAttribute="bottom" constant="-299" id="rlO-sU-c6l"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="blurView" destination="R5A-Fx-pEo" id="J74-Kq-ClC"/>
                         <outlet property="endingImage" destination="8rA-Hh-kbJ" id="q6k-TI-8D7"/>
-                        <outlet property="fullButton" destination="qH3-sG-I7c" id="Igq-yD-PRw"/>
-                        <outlet property="hungryButton" destination="Y1h-aN-pUj" id="a8P-La-CFZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rFR-J0-X3R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1048" y="820"/>
+            <point key="canvasLocation" x="1047.8260869565217" y="819.64285714285711"/>
         </scene>
         <!--Timer Edit View Controller-->
         <scene sceneID="NKr-ym-EJF">

@@ -9,11 +9,22 @@ import UIKit
 
 class RecordCell: UITableViewCell {
         
-    @IBOutlet weak var timerImage: UIImageView!
+    @IBOutlet weak var timerImageForRecord: UIImageView!
     
-    @IBOutlet weak var minLabel: UILabel!
+    @IBOutlet weak var timeLabelForRecord: UILabel!
     
-    @IBOutlet weak var taskLabel: UILabel!
+    @IBOutlet weak var titleLabelForRecord: UILabel!
     
-    @IBOutlet weak var categoryImage: UIImageView!
+    @IBOutlet weak var categoryImageForRecord: UIImageView!
+    
+    func layoutCell(timerImage: UIImage?, time: Int, title: String, categoryImage: UIImage?) {
+        
+        timerImageForRecord?.image = timerImage
+        
+        timeLabelForRecord.text = "\(time) min"
+        
+        titleLabelForRecord.text = title
+        
+        categoryImageForRecord.image = categoryImage
+    }
 }

@@ -80,6 +80,8 @@
 		09D83DF32744CEE6005F1BE5 /* CategorySelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D83DF12744CEE6005F1BE5 /* CategorySelectionCell.xib */; };
 		09D83DF52744EB72005F1BE5 /* RecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D83DF42744EB72005F1BE5 /* RecordManager.swift */; };
 		09D83DF727451FE7005F1BE5 /* EndingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D83DF627451FE7005F1BE5 /* EndingViewController.swift */; };
+		09D83DFB27458489005F1BE5 /* WeekView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D83DFA27458489005F1BE5 /* WeekView.xib */; };
+		09D83DFD27458863005F1BE5 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D83DFC27458863005F1BE5 /* WeekView.swift */; };
 		09DB47502734DFC1003703C1 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB474F2734DFC1003703C1 /* AuthViewController.swift */; };
 		09DB475227350C2D003703C1 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB475127350C2D003703C1 /* UserManager.swift */; };
 		09DB475427351B75003703C1 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB475327351B75003703C1 /* Recipe.swift */; };
@@ -196,6 +198,8 @@
 		09D83DF12744CEE6005F1BE5 /* CategorySelectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategorySelectionCell.xib; sourceTree = "<group>"; };
 		09D83DF42744EB72005F1BE5 /* RecordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordManager.swift; sourceTree = "<group>"; };
 		09D83DF627451FE7005F1BE5 /* EndingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndingViewController.swift; sourceTree = "<group>"; };
+		09D83DFA27458489005F1BE5 /* WeekView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeekView.xib; sourceTree = "<group>"; };
+		09D83DFC27458863005F1BE5 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
 		09DB474F2734DFC1003703C1 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		09DB475127350C2D003703C1 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		09DB475327351B75003703C1 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
@@ -389,10 +393,10 @@
 			isa = PBXGroup;
 			children = (
 				09524F9F271FFD9C0061C36B /* Record.storyboard */,
+				09D83DFC27458863005F1BE5 /* WeekView.swift */,
+				09D83DFA27458489005F1BE5 /* WeekView.xib */,
 				09524FD42720213B0061C36B /* RecordCell.swift */,
 				09524FF62721B2B80061C36B /* RecordCell.xib */,
-				09428932272D975C0083CF6B /* ComingSoonView.swift */,
-				09428934272DC64E0083CF6B /* ComingSoonView.xib */,
 				09C1C7D32722929100D2C9B2 /* Detail */,
 			);
 			path = Record;
@@ -413,6 +417,8 @@
 			children = (
 				090E07E027303A1800136025 /* TimerBasicCell.swift */,
 				0901E685273D20AF005375B4 /* ProfileBasicCell.swift */,
+				09428932272D975C0083CF6B /* ComingSoonView.swift */,
+				09428934272DC64E0083CF6B /* ComingSoonView.xib */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -651,6 +657,7 @@
 				0942892E272D7E7D0083CF6B /* burger-machine.json in Resources */,
 				09524FA0271FFD9C0061C36B /* Record.storyboard in Resources */,
 				09C276BD273CF7850037D65C /* ProfileSelectionCell.xib in Resources */,
+				09D83DFB27458489005F1BE5 /* WeekView.xib in Resources */,
 				09DB476E2739874E003703C1 /* CommunityTableViewCell.xib in Resources */,
 				09DB475C273522AB003703C1 /* Auth.storyboard in Resources */,
 				09524FEB272168E80061C36B /* DetailInfoTableViewCell.xib in Resources */,
@@ -768,6 +775,7 @@
 				09C276BC273CF7840037D65C /* ProfileSelectionCell.swift in Sources */,
 				09524FE027214F990061C36B /* DetailViewController.swift in Sources */,
 				09F0472727264DC1009CA63B /* UIButton+Extension.swift in Sources */,
+				09D83DFD27458863005F1BE5 /* WeekView.swift in Sources */,
 				09524F76271FF4A00061C36B /* AppDelegate.swift in Sources */,
 				093169AE2727CEC900360885 /* IngredientSelectionCell.swift in Sources */,
 				09E42D3327425E600014C4B9 /* RecipeManager.swift in Sources */,

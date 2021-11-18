@@ -53,6 +53,8 @@ class TimerViewController: BaseViewController {
     
     var hiddenNote: String?
     
+//    var hiddenRecipeId: String?
+    
     var hiddenCategory: String?
     
     var buttonStatus: ButtonStatus = ButtonStatus.notStarted {
@@ -239,6 +241,8 @@ class TimerViewController: BaseViewController {
                     .instantiateViewController(
                         withIdentifier: String(describing: EndingViewController.self)
                     ) as? EndingViewController else { return }
+            
+            endVC.modalPresentationStyle = .overFullScreen
             
             present(endVC, animated: true, completion: nil)
             

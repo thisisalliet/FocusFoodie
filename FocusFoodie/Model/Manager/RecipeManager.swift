@@ -15,6 +15,8 @@ class RecipeManager {
     
     lazy var db = Firestore.firestore()
     
+    var recipeIdHandler: ((_ id: String) -> Void)?
+    
     static let shared = RecipeManager()
     
     let userId: String = {
@@ -29,6 +31,8 @@ class RecipeManager {
         }
     }()
     
+    var myRecipe: String?
+    
     func createRecipe(recipe: Recipe) {
         
         let recipeRef = db.collection(CollectionName.recipe.rawValue).document()
@@ -42,9 +46,9 @@ class RecipeManager {
                             focusTime: recipe.focusTime,
                             recipeId: recipeRef.documentID)
         
-        let myRecipe = recipe.recipeId
+        myRecipe = recipe.recipeId
         
-        
+//        recipeIdHandler?(myRecipe)
         
         do {
             
@@ -60,7 +64,7 @@ class RecipeManager {
             if let document = document, document.exists {
                 
                 document.reference.updateData([
-                    "recipe_list" : FieldValue.arrayUnion([myRecipe])
+                    "recipe_list" : FieldValue.arrayUnion([self.myRecipe as Any])
                 ])
                 
             } else {

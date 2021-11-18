@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -91,10 +92,10 @@
                 <constraint firstItem="fGN-C9-3xa" firstAttribute="leading" secondItem="njF-e1-oar" secondAttribute="leading" constant="20" id="mtq-B0-8rE"/>
             </constraints>
             <connections>
-                <outlet property="categoryImage" destination="ESw-Bf-6bm" id="XLY-2I-4ni"/>
-                <outlet property="minLabel" destination="CPI-eQ-3Sv" id="I08-Xr-uu7"/>
-                <outlet property="taskLabel" destination="2xY-x7-Zs0" id="d3A-aE-E9h"/>
-                <outlet property="timerImage" destination="iGV-Yy-8tP" id="mcp-AG-XiJ"/>
+                <outlet property="categoryImageForRecord" destination="ESw-Bf-6bm" id="XLY-2I-4ni"/>
+                <outlet property="timeLabelForRecord" destination="CPI-eQ-3Sv" id="I08-Xr-uu7"/>
+                <outlet property="timerImageForRecord" destination="iGV-Yy-8tP" id="mcp-AG-XiJ"/>
+                <outlet property="titleLabelForRecord" destination="2xY-x7-Zs0" id="d3A-aE-E9h"/>
             </connections>
             <point key="canvasLocation" x="126.81159420289856" y="150"/>
         </tableViewCell>

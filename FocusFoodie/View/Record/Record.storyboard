@@ -7,9 +7,13 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Dongle-Bold.ttf">
+            <string>Dongle-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Record View Controller-->
         <scene sceneID="s0d-6b-0kx">
@@ -19,93 +23,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LzH-QS-sAV">
-                                <rect key="frame" x="16" y="127" width="63" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Today"/>
-                                <connections>
-                                    <action selector="didTouchCalendarBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="F0n-aI-xKp"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UK4-Pw-qPm">
-                                <rect key="frame" x="0.0" y="174" width="414" height="688"/>
-                                <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hnL-0y-DRZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="688"/>
-                                        <color key="backgroundColor" name="G1"/>
-                                        <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="86" id="LwW-dW-1uB">
-                                                <rect key="frame" x="0.0" y="44.5" width="414" height="86"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LwW-dW-1uB" id="SvG-Qu-xv2">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="86"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NSk-4v-uJM">
-                                                            <rect key="frame" x="16" y="0.0" width="382" height="86"/>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                            <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="po0-kZ-tyZ">
-                                                                <size key="itemSize" width="128" height="87"/>
-                                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                            </collectionViewFlowLayout>
-                                                            <cells>
-                                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="eex-fd-5Vm" customClass="CollectionViewCell" customModule="FocusFoodie" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="87"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="atY-BN-GLX">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="128" height="87"/>
-                                                                        <autoresizingMask key="autoresizingMask"/>
-                                                                    </collectionViewCellContentView>
-                                                                    <size key="customSize" width="128" height="87"/>
-                                                                </collectionViewCell>
-                                                            </cells>
-                                                        </collectionView>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="NSk-4v-uJM" firstAttribute="leading" secondItem="SvG-Qu-xv2" secondAttribute="leading" constant="16" id="Ius-01-rVL"/>
-                                                        <constraint firstItem="NSk-4v-uJM" firstAttribute="top" secondItem="SvG-Qu-xv2" secondAttribute="top" id="TeO-Xx-XL6"/>
-                                                        <constraint firstAttribute="bottom" secondItem="NSk-4v-uJM" secondAttribute="bottom" id="Uda-5a-w4e"/>
-                                                        <constraint firstAttribute="trailing" secondItem="NSk-4v-uJM" secondAttribute="trailing" constant="16" id="YL6-Gi-seM"/>
-                                                    </constraints>
-                                                </tableViewCellContentView>
-                                            </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecordTableViewCell" id="uB1-Jc-ksg" customClass="RecordCell" customModule="FocusFoodie" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="130.5" width="414" height="44"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uB1-Jc-ksg" id="O2c-lp-eNQ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </tableViewCellContentView>
-                                            </tableViewCell>
-                                        </prototypes>
-                                    </tableView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSV-2M-T8W">
+                                <rect key="frame" x="30" y="80" width="53" height="72"/>
+                                <fontDescription key="fontDescription" name="Dongle-Bold" family="Dongle" pointSize="30"/>
+                                <color key="textColor" name="G3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOVEMBER 15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zIG-bg-cXm">
+                                <rect key="frame" x="30" y="132" width="102" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Dongle-Bold" family="Dongle" pointSize="25"/>
+                                <color key="textColor" name="G3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hnL-0y-DRZ">
+                                <rect key="frame" x="30" y="280" width="354" height="582"/>
+                                <color key="backgroundColor" name="G1"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="hnL-0y-DRZ" secondAttribute="trailing" id="2Y2-8T-rAD"/>
-                                    <constraint firstItem="hnL-0y-DRZ" firstAttribute="leading" secondItem="UK4-Pw-qPm" secondAttribute="leading" id="4nR-vt-aGE"/>
-                                    <constraint firstItem="hnL-0y-DRZ" firstAttribute="top" secondItem="UK4-Pw-qPm" secondAttribute="top" id="TVh-81-JR4"/>
-                                    <constraint firstAttribute="bottom" secondItem="hnL-0y-DRZ" secondAttribute="bottom" id="mkh-wC-Epq"/>
+                                    <constraint firstAttribute="height" constant="582" id="bQx-B5-ibK"/>
                                 </constraints>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MZy-ta-U9v" customClass="WeekView" customModule="FocusFoodie" customModuleProvider="target">
+                                <rect key="frame" x="30" y="189" width="354" height="61"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="G1"/>
                         <constraints>
-                            <constraint firstItem="UK4-Pw-qPm" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="54T-Ey-nhb"/>
-                            <constraint firstItem="UK4-Pw-qPm" firstAttribute="top" secondItem="LzH-QS-sAV" secondAttribute="bottom" constant="16" id="6y0-9D-Egv"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="UK4-Pw-qPm" secondAttribute="bottom" id="MOG-1U-1sc"/>
-                            <constraint firstItem="LzH-QS-sAV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="MZx-7G-igu"/>
-                            <constraint firstItem="LzH-QS-sAV" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="39" id="ORi-i0-IXG"/>
-                            <constraint firstItem="UK4-Pw-qPm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="l7j-N1-YpT"/>
+                            <constraint firstAttribute="trailing" secondItem="hnL-0y-DRZ" secondAttribute="trailing" constant="30" id="30b-TK-JUx"/>
+                            <constraint firstItem="hnL-0y-DRZ" firstAttribute="top" secondItem="MZy-ta-U9v" secondAttribute="bottom" constant="30" id="B7M-gu-MvI"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="MZy-ta-U9v" secondAttribute="trailing" constant="30" id="Ehq-IV-luh"/>
+                            <constraint firstItem="hnL-0y-DRZ" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="ejZ-cX-I5j"/>
+                            <constraint firstItem="YSV-2M-T8W" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="80" id="jw5-nc-2QM"/>
+                            <constraint firstItem="MZy-ta-U9v" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="tAL-pv-OJo"/>
+                            <constraint firstItem="zIG-bg-cXm" firstAttribute="top" secondItem="YSV-2M-T8W" secondAttribute="bottom" constant="-20" id="uSS-hf-Cuh"/>
+                            <constraint firstItem="MZy-ta-U9v" firstAttribute="top" secondItem="zIG-bg-cXm" secondAttribute="bottom" constant="20" id="vWr-HP-ib9"/>
+                            <constraint firstItem="zIG-bg-cXm" firstAttribute="leading" secondItem="hnL-0y-DRZ" secondAttribute="leading" id="z9w-yY-649"/>
+                            <constraint firstItem="YSV-2M-T8W" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="zZs-n6-bat"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bFt-1m-PRt"/>
                     <connections>
-                        <outlet property="baseView" destination="UK4-Pw-qPm" id="1lZ-3t-2k7"/>
-                        <outlet property="calendarButton" destination="LzH-QS-sAV" id="DvQ-8x-U0Q"/>
                         <outlet property="calendarPickerView" destination="xHc-Le-4aN" id="tiC-tM-Hbi"/>
                         <outlet property="recordTableView" destination="hnL-0y-DRZ" id="Jy0-xf-UK6"/>
                     </connections>
@@ -114,9 +73,6 @@
                 <containerView opaque="NO" contentMode="scaleToFill" id="xHc-Le-4aN">
                     <rect key="frame" x="0.0" y="0.0" width="348" height="416"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                    <connections>
-                        <segue destination="yby-ON-YZM" kind="embed" id="cRf-bm-dNv"/>
-                    </connections>
                 </containerView>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="128.57142857142856"/>
@@ -160,7 +116,8 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qVp-EU-3mW"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="G1"/>
+                        <color key="tintColor" name="G3"/>
                         <constraints>
                             <constraint firstItem="TT3-Bj-D8b" firstAttribute="trailing" secondItem="qVp-EU-3mW" secondAttribute="trailing" id="Cas-nZ-Cb7"/>
                             <constraint firstItem="TT3-Bj-D8b" firstAttribute="leading" secondItem="qVp-EU-3mW" secondAttribute="leading" id="MCi-AQ-f7q"/>
@@ -194,39 +151,13 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="128.57142857142856"/>
         </scene>
-        <!--Calendar Picker View Controller-->
-        <scene sceneID="grf-7V-Zaz">
-            <objects>
-                <viewController id="yby-ON-YZM" customClass="CalendarPickerViewController" customModule="FocusFoodie" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="1wv-Rc-MJR">
-                        <rect key="frame" x="0.0" y="0.0" width="348" height="416"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="v9c-Sm-gE7">
-                                <rect key="frame" x="0.0" y="0.0" width="348" height="416"/>
-                            </datePicker>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Dwl-XX-gy2"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="v9c-Sm-gE7" firstAttribute="leading" secondItem="1wv-Rc-MJR" secondAttribute="leading" id="1rs-d1-mAo"/>
-                            <constraint firstItem="v9c-Sm-gE7" firstAttribute="top" secondItem="1wv-Rc-MJR" secondAttribute="top" id="D1C-Pt-9d5"/>
-                            <constraint firstAttribute="bottom" secondItem="v9c-Sm-gE7" secondAttribute="bottom" id="dBQ-3R-5ak"/>
-                            <constraint firstAttribute="trailing" secondItem="v9c-Sm-gE7" secondAttribute="trailing" id="viB-BX-aEi"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="calendarPicker" destination="v9c-Sm-gE7" id="fXg-iF-PfY"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ueb-10-rkp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1769.5652173913045" y="-413.16964285714283"/>
-        </scene>
     </scenes>
     <resources>
         <namedColor name="G1">
             <color red="0.89803921568627454" green="0.97647058823529409" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="G3">
+            <color red="0.1803921568627451" green="0.7686274509803922" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
