@@ -14,12 +14,21 @@ class RecordViewController: BaseViewController,
                              UITableViewDataSource,
                              UITableViewDelegate {
     
-    private struct Segue {
-
-        static let picker = "SeguePicker"
+    var db: Firestore!
+        
+    @IBOutlet weak var weekLabel: UILabel!
+    
+    @IBOutlet weak var dateButton: UIButton! {
+        
+        didSet {
+            
+            dateButton.alpha = 0.75
+            
+            dateButton.layer.cornerRadius = 10
+        }
     }
     
-    var db: Firestore!
+    @IBOutlet weak var weekView: WeekView!
     
     @IBOutlet weak var recordTableView: UITableView! {
         
@@ -31,47 +40,23 @@ class RecordViewController: BaseViewController,
         }
     }
     
-    @IBOutlet weak var profileButton: UIButton! {
-        
-        didSet {
-            
-            profileButton.alpha = 10
-        }
-    }
-    
-    @IBOutlet weak var calendarPickerView: UIView! {
-        
-        didSet {
-            
-            calendarPickerView.cornerRadius = 10
-        }
-    }
-    
-    @IBOutlet weak var calendarButton: UIButton! {
-        
-        didSet {
-            
-            calendarButton.backgroundColor = .G1
-            
-            calendarButton.setTitleColor(.G3, for: .normal)
-            
-            calendarButton.setTitleColor(.G3, for: .selected)
-            
-            calendarButton.setTitle("Today ▾ ", for: .normal)
-            
-            calendarButton.cornerRadius = 10
-            
-        }
-    }
-    
-    @IBOutlet weak var baseView: UIView!
-    
-    var pickerViewController: CalendarPickerViewController?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setUpDate()
+        
         setUpTableView()
+    }
+    
+    private func setUpDate() {
+        
+        let month = Date().monthOfDate()
+        
+        let date = Date().currentDate()
+        
+        weekLabel.text = Date().dayOfWeek()
+        
+        dateButton.setTitle(" \(month) \(date) ", for: .normal)
     }
     
     private func setUpTableView() {
@@ -79,46 +64,6 @@ class RecordViewController: BaseViewController,
         recordTableView.registerCellWithNib(identifier:
             String(describing: RecordCell.self),
                                             bundle: nil
-        )
-    }
-    
-    // MARK: - Action
-    @IBAction func didTouchCalendarBtn(_ sender: UIButton) {
-        
-            showCalendarPickerView()
-    }
-    
-    func showCalendarPickerView() {
-
-        let maxY = recordTableView.frame.maxY
-
-        calendarPickerView.frame = CGRect(
-            x: 0,
-            y: maxY,
-            width: UIScreen.width,
-            height: 0.0
-        )
-        
-        baseView.insertSubview(calendarPickerView, belowSubview: calendarButton.superview!)
-//        baseView.addSubview(calendarPickerView)
-//        baseView.insertSubview(blurView, belowSubview: calendarPickerView)
-
-        UIView.animate(
-            withDuration: 0.3,
-            animations: { [weak self] in
-
-                guard let strongSelf = self else { return }
-
-                let height =
-                451.0 / 586.0 * strongSelf.recordTableView.frame.height
-
-                self?.calendarPickerView.frame = CGRect(
-                    x: 0,
-                    y: maxY - height,
-                    width: UIScreen.width,
-                    height: maxY
-                )
-            }
         )
     }
     
@@ -137,6 +82,19 @@ class RecordViewController: BaseViewController,
         )
         
         guard let cell = cell as? RecordCell else { return cell }
+//
+//        RecordManager.shared.fetchRecord { result in
+//
+//            switch result {
+//
+//            case .success(let myRecord):
+//
+//
+//            case .failure(let error):
+//                
+//                print(error)
+//            }
+//        }
         
         return cell
     }

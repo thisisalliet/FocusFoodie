@@ -74,5 +74,55 @@ class WeekView: UIView {
             options: nil)
         
         stickSubView(contentView)
+        
+        setUpDateLabels()
+    }
+    
+    private func setUpDateLabels() {
+        
+        var calendar = Calendar.autoupdatingCurrent
+        
+        calendar.firstWeekday = 2 // Start on Monday (or 1 for Sunday)
+        
+        let today = calendar.startOfDay(for: Date())
+        
+        var week = [Date]()
+        
+        if let weekInterval = calendar.dateInterval(of: .weekOfYear, for: today) {
+            
+            for i in 0...6 {
+                if let day = calendar.date(byAdding: .day, value: i, to: weekInterval.start) {
+                    week += [day]
+                }
+            }
+            
+            let monday = week[0].dateOfWeek()
+            
+            let tuesday = week[1].dateOfWeek()
+            
+            let wednesday = week[2].dateOfWeek()
+            
+            let thursday = week[3].dateOfWeek()
+            
+            let friday = week[4].dateOfWeek()
+            
+            let saturday = week[5].dateOfWeek()
+            
+            let sunday = week[6].dateOfWeek()
+
+            mondayDateLabel.text = "\(monday)"
+            
+            tuesdayDateLabel.text = "\(tuesday)"
+            
+            wednesdayDateLabel.text = "\(wednesday)"
+            
+            thursdayDateLabel.text = "\(thursday)"
+            
+            fridayDateLabel.text = "\(friday)"
+            
+            saturdayDateLabel.text = "\(saturday)"
+            
+            sundayDateLabel.text = "\(sunday)"
+        }
     }
 }

@@ -16,9 +16,9 @@ class RecordManager {
     lazy var db = Firestore.firestore()
     
     var myRecipeId: String?
-
+    
     static let shared = RecordManager()
-
+    
     let userId: String = {
         
         if let user = Auth.auth().currentUser {
@@ -32,13 +32,6 @@ class RecordManager {
     }()
     
     func createRecord(record: Record) {
-        
-//        RecipeManager.shared.recipeIdHandler = { [ weak self ] id in
-//
-//            guard let strongSelf = self else { return }
-//
-//            strongSelf.myRecipeId = id
-//        }
         
         let recordRef = db.collection(CollectionName.record.rawValue).document()
         
@@ -59,6 +52,30 @@ class RecordManager {
         } catch {
             
             print("Fail to create record.")
+        }
+    }
+    
+    func fetchRecord(completion: @escaping (Result<[Record], Error>) -> Void) {
+        
+        let myRecordRef = db.collection(CollectionName.record.rawValue)
+            .order(by: "created_time", descending: true)
+            .whereField("owner_Id", isEqualTo: userId)
+        
+        myRecordRef.getDocuments { snapshot, error in
+            
+            if let error = error {
+                
+                completion(Result.failure(error))
+            }
+            
+            guard let snapshot = snapshot else { return }
+            
+            let myRecord = snapshot.documents.compactMap { snapshot in
+                
+                try? snapshot.data(as: Record.self)
+            }
+            
+            completion(Result.success(myRecord))
         }
     }
 }

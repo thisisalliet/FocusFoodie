@@ -22,7 +22,7 @@
 		0942892E272D7E7D0083CF6B /* burger-machine.json in Resources */ = {isa = PBXBuildFile; fileRef = 0942892D272D7E7D0083CF6B /* burger-machine.json */; };
 		09428933272D975C0083CF6B /* ComingSoonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09428932272D975C0083CF6B /* ComingSoonView.swift */; };
 		09428935272DC64E0083CF6B /* ComingSoonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09428934272DC64E0083CF6B /* ComingSoonView.xib */; };
-		09428938272E84970083CF6B /* Timestamp+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09428937272E84970083CF6B /* Timestamp+Extension.swift */; };
+		09428938272E84970083CF6B /* Time+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09428937272E84970083CF6B /* Time+Extension.swift */; };
 		09524F76271FF4A00061C36B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524F75271FF4A00061C36B /* AppDelegate.swift */; };
 		09524F78271FF4A00061C36B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524F77271FF4A00061C36B /* SceneDelegate.swift */; };
 		09524F7A271FF4A00061C36B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524F79271FF4A00061C36B /* ViewController.swift */; };
@@ -119,7 +119,7 @@
 		0942892D272D7E7D0083CF6B /* burger-machine.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "burger-machine.json"; sourceTree = "<group>"; };
 		09428932272D975C0083CF6B /* ComingSoonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonView.swift; sourceTree = "<group>"; };
 		09428934272DC64E0083CF6B /* ComingSoonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComingSoonView.xib; sourceTree = "<group>"; };
-		09428937272E84970083CF6B /* Timestamp+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Timestamp+Extension.swift"; sourceTree = "<group>"; };
+		09428937272E84970083CF6B /* Time+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Time+Extension.swift"; sourceTree = "<group>"; };
 		09428939272F17020083CF6B /* FocusFoodie.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FocusFoodie.entitlements; sourceTree = "<group>"; };
 		09524F72271FF4A00061C36B /* FocusFoodie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FocusFoodie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09524F75271FF4A00061C36B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -309,7 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				09524FDC2720494A0061C36B /* Bundle+Extension.swift */,
-				09428937272E84970083CF6B /* Timestamp+Extension.swift */,
+				09428937272E84970083CF6B /* Time+Extension.swift */,
 				09C1C7DC2722AACB00D2C9B2 /* UIFont+Extension.swift */,
 				09524F95271FFCC00061C36B /* UIView+Extension.swift */,
 				09C1C7CD2722833000D2C9B2 /* UIColor+Extension.swift */,
@@ -757,7 +757,7 @@
 				09DB4777273A46F7003703C1 /* SetUpViewController.swift in Sources */,
 				09428933272D975C0083CF6B /* ComingSoonView.swift in Sources */,
 				09DB475827351DE8003703C1 /* CollectionManager.swift in Sources */,
-				09428938272E84970083CF6B /* Timestamp+Extension.swift in Sources */,
+				09428938272E84970083CF6B /* Time+Extension.swift in Sources */,
 				09524F7A271FF4A00061C36B /* ViewController.swift in Sources */,
 				09524F96271FFCC00061C36B /* UIView+Extension.swift in Sources */,
 				0901E68D273D5584005375B4 /* FirebaseManager.swift in Sources */,

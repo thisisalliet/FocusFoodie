@@ -13,6 +13,9 @@
         <array key="Dongle-Bold.ttf">
             <string>Dongle-Bold</string>
         </array>
+        <array key="Dongle-Regular.ttf">
+            <string>Dongle-Regular</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Record View Controller-->
@@ -23,50 +26,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSV-2M-T8W">
-                                <rect key="frame" x="30" y="80" width="53" height="72"/>
-                                <fontDescription key="fontDescription" name="Dongle-Bold" family="Dongle" pointSize="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.25" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSV-2M-T8W">
+                                <rect key="frame" x="25" y="103" width="106" height="87"/>
+                                <fontDescription key="fontDescription" name="Dongle-Bold" family="Dongle" pointSize="60"/>
                                 <color key="textColor" name="G3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOVEMBER 15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zIG-bg-cXm">
-                                <rect key="frame" x="30" y="132" width="102" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Dongle-Bold" family="Dongle" pointSize="25"/>
-                                <color key="textColor" name="G3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hnL-0y-DRZ">
-                                <rect key="frame" x="30" y="280" width="354" height="582"/>
-                                <color key="backgroundColor" name="G1"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="582" id="bQx-B5-ibK"/>
-                                </constraints>
-                            </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MZy-ta-U9v" customClass="WeekView" customModule="FocusFoodie" customModuleProvider="target">
-                                <rect key="frame" x="30" y="189" width="354" height="61"/>
+                                <rect key="frame" x="30" y="230" width="354" height="60"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="2i6-1H-NGG"/>
+                                </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hnL-0y-DRZ">
+                                <rect key="frame" x="0.0" y="320" width="414" height="542"/>
+                                <color key="backgroundColor" name="G1"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h80-cI-QnW">
+                                <rect key="frame" x="25" y="160" width="110" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="kqF-tU-AYZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Dongle-Regular" family="Dongle" pointSize="25"/>
+                                <color key="tintColor" name="G3"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title=" NOVEMBER 18 ">
+                                    <color key="titleColor" name="G3"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="G1"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="hnL-0y-DRZ" secondAttribute="trailing" constant="30" id="30b-TK-JUx"/>
+                            <constraint firstItem="hnL-0y-DRZ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="0CQ-0t-efk"/>
+                            <constraint firstItem="h80-cI-QnW" firstAttribute="top" secondItem="YSV-2M-T8W" secondAttribute="bottom" constant="-30" id="2wZ-qL-GEX"/>
                             <constraint firstItem="hnL-0y-DRZ" firstAttribute="top" secondItem="MZy-ta-U9v" secondAttribute="bottom" constant="30" id="B7M-gu-MvI"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="MZy-ta-U9v" secondAttribute="trailing" constant="30" id="Ehq-IV-luh"/>
+                            <constraint firstItem="h80-cI-QnW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="IgH-r3-XvR"/>
+                            <constraint firstItem="hnL-0y-DRZ" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="WbC-dR-5oz"/>
+                            <constraint firstItem="MZy-ta-U9v" firstAttribute="top" secondItem="h80-cI-QnW" secondAttribute="bottom" constant="30" id="dCb-UB-D04"/>
                             <constraint firstItem="hnL-0y-DRZ" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="ejZ-cX-I5j"/>
-                            <constraint firstItem="YSV-2M-T8W" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="80" id="jw5-nc-2QM"/>
+                            <constraint firstItem="YSV-2M-T8W" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="15" id="jw5-nc-2QM"/>
                             <constraint firstItem="MZy-ta-U9v" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="tAL-pv-OJo"/>
-                            <constraint firstItem="zIG-bg-cXm" firstAttribute="top" secondItem="YSV-2M-T8W" secondAttribute="bottom" constant="-20" id="uSS-hf-Cuh"/>
-                            <constraint firstItem="MZy-ta-U9v" firstAttribute="top" secondItem="zIG-bg-cXm" secondAttribute="bottom" constant="20" id="vWr-HP-ib9"/>
-                            <constraint firstItem="zIG-bg-cXm" firstAttribute="leading" secondItem="hnL-0y-DRZ" secondAttribute="leading" id="z9w-yY-649"/>
-                            <constraint firstItem="YSV-2M-T8W" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="zZs-n6-bat"/>
+                            <constraint firstItem="YSV-2M-T8W" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="zZs-n6-bat"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bFt-1m-PRt"/>
                     <connections>
-                        <outlet property="calendarPickerView" destination="xHc-Le-4aN" id="tiC-tM-Hbi"/>
+                        <outlet property="dateButton" destination="h80-cI-QnW" id="4n8-dY-tDI"/>
                         <outlet property="recordTableView" destination="hnL-0y-DRZ" id="Jy0-xf-UK6"/>
+                        <outlet property="weekLabel" destination="YSV-2M-T8W" id="nDg-PZ-sq3"/>
+                        <outlet property="weekView" destination="MZy-ta-U9v" id="r0J-iT-7ad"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
