@@ -19,48 +19,20 @@ class AuthViewController: BaseViewController {
     
     weak var sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate
     
-    lazy var appIcon: UIImageView = {
-        
-        let image = UIImageView()
-        
-        image.layer.cornerRadius = image.frame.width / 2
-        
-        image.image = UIImage(named: "AppIcon")
-        
-        image.alpha = 0.5
-        
-        return image
-    }()
+    @IBOutlet weak var appIconImage: UIImageView!
     
-    private lazy var noticeLabel: UILabel = {
-        
-        let label = UILabel()
-        
-        label.textColor = .G3
-        
-        label.textAlignment = .center
-        
-        label.font = UIFont.regular(size: 20)
-        
-        label.text = "By using FocusFoodie you agree to accept our"
-        
-        return label
-    }()
+    @IBOutlet weak var noticeLabel: UILabel!
     
-    private lazy var privacyButton: UIButton = {
-        
-        let button = UIButton()
-        
-        button.setTitle("Privacy Policy", for: .normal)
-        
-        button.setTitleColor(.G3, for: .normal)
-        
-        button.addTarget(self, action: #selector(showPolicy), for: .touchUpInside)
-        
-        return button
-    }()
+    @IBOutlet weak var privacyPolicyButton: UIButton!
     
-    @objc func showPolicy() {
+    func configure() {
+        
+        appIconImage.image = UIImage(named: "AppIcon")
+        
+        appIconImage.alpha = 0.75
+    }
+    
+    @IBAction func privacyPolicyButtonTapped(_ sender: UIButton) {
         
         guard let privacyVC = UIStoryboard
                 .main
@@ -76,12 +48,6 @@ class AuthViewController: BaseViewController {
         super.viewDidLoad()
         
         self.tabBarController?.tabBar.isHidden = true
-        
-        setUpAppIcon()
-        
-        setUpNoticeLabel()
-        
-        setUpPrivacyButton()
         
         setUpSignInButton()
     }
@@ -117,9 +83,9 @@ class AuthViewController: BaseViewController {
         
         NSLayoutConstraint.activate([
             
-            button.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
-            button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
-            button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
+            button.leadingAnchor.constraint(equalTo: noticeLabel.leadingAnchor),
+            button.trailingAnchor.constraint(equalTo: noticeLabel.trailingAnchor),
+            button.topAnchor.constraint(equalTo: privacyPolicyButton.bottomAnchor, constant: 15),
             button.heightAnchor.constraint(equalToConstant: 50)
         ])
         
@@ -307,46 +273,4 @@ private func randomNonceString(length: Int = 32) -> String {
         }
     }
     return result
-}
-
-// MARK: - Layout -
-extension AuthViewController {
-    
-    private func setUpAppIcon() {
-        
-        view.addSubview(appIcon)
-        
-        appIcon.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            appIcon.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            appIcon.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
-            appIcon.heightAnchor.constraint(equalToConstant: 80),
-            appIcon.widthAnchor.constraint(equalToConstant: 80)
-        ])
-    }
-    
-    private func setUpNoticeLabel() {
-        
-        view.addSubview(noticeLabel)
-        
-        noticeLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            noticeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            noticeLabel.topAnchor.constraint(equalTo: appIcon.bottomAnchor, constant: 15)
-        ])
-    }
-    
-    private func setUpPrivacyButton() {
-        
-        view.addSubview(privacyButton)
-        
-        privacyButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            privacyButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            privacyButton.topAnchor.constraint(equalTo: noticeLabel.bottomAnchor, constant: 5)
-        ])
-    }
 }

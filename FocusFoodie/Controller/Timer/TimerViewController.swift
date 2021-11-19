@@ -27,7 +27,7 @@ class TimerViewController: BaseViewController {
     
     @IBOutlet weak var categoryImage: UIImageView!
     
-    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var resetButton: UIButton!
     
     @IBOutlet weak var controlButton: UIButton! {
         
@@ -42,6 +42,24 @@ class TimerViewController: BaseViewController {
     @IBOutlet weak var toContentEditButton: UIButton!
     
     @IBOutlet weak var notificationButton: UIButton!
+    
+    //NEW
+    var timerCounting: Bool = false
+    
+    var startTime: Date?
+    
+    var stopTime: Date?
+    
+    let userDefaults = UserDefaults.standard
+    
+    let START_TIME_KEY = "startTime"
+    
+    let STOP_TIME_KEY = "stopTime"
+    
+    let COUNTING_KEY = "countingKey"
+    
+    var scheduledTimer: Timer!
+    // NEW
     
     var timer = Timer()
     
@@ -82,6 +100,35 @@ class TimerViewController: BaseViewController {
         super.viewDidLoad()
         
         configure()
+        
+        // NEW
+        startTime = userDefaults.object(forKey: START_TIME_KEY) as? Date
+
+        stopTime = userDefaults.object(forKey: STOP_TIME_KEY) as? Date
+
+        timerCounting = userDefaults.bool(forKey: COUNTING_KEY)
+
+        if timerCounting {
+
+            startTimer()
+
+        } else {
+
+            stopTimer()
+
+            if let start = startTime {
+
+                if let stop = stopTime {
+
+                    let time = calcRestartTime(start: start, stop: stop)
+
+                    let diff = Date().timeIntervalSince(time)
+
+                    setTimeLabel(Int(diff))
+                }
+            }
+        }
+        // NEW
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -163,7 +210,7 @@ class TimerViewController: BaseViewController {
             
             self.buttonStatus = .start
             
-            self.doneButton.isEnabled = true
+            self.resetButton.isEnabled = true
             
         case .start:
             
@@ -185,9 +232,7 @@ class TimerViewController: BaseViewController {
     }
     
     @IBAction func didTapDoneBtn(_ sender: UIButton) {
-        
-        // 應該歸零 發出聲響
-        
+                
         let tuple = secondsToHoursMinutesSeconds(seconds: originalSeconds)
         
         countDownLabel.text = String(format: "%02i:%02i:%02i", tuple.0, tuple.1, tuple.2)
@@ -195,11 +240,11 @@ class TimerViewController: BaseViewController {
     
     func configure() {
         
-        doneButton.isEnabled = false
+        resetButton.isEnabled = false
         
-        doneButton.titleLabel?.font = UIFont.regular(size: 35)
+        resetButton.titleLabel?.font = UIFont.regular(size: 35)
         
-        doneButton.layer.cornerRadius = doneButton.frame.width / 2
+        resetButton.layer.cornerRadius = resetButton.frame.width / 2
         
         controlButton.titleLabel?.font = UIFont.regular(size: 35)
         
@@ -207,6 +252,24 @@ class TimerViewController: BaseViewController {
         
         countDownLabel.text = "00:00"
     }
+    
+    // NEW
+    func startTimer() {
+        
+        scheduledTimer = Timer.scheduledTimer(
+            timeInterval: 0.1,
+            target: self,
+            selector: #selector(refreshValue),
+            userInfo: nil,
+            repeats: true)
+
+        setTimerCounting(true)
+        
+//        startStopButton.setTitle("STOP", for: .normal)
+//
+//        startStopButton.setTitleColor(UIColor.red, for: .normal)
+    }
+    // NEW
     
     func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int, Int) {
         

@@ -2,12 +2,16 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Dongle-Bold.ttf">
+            <string>Dongle-Bold</string>
+        </array>
         <array key="Dongle-Regular.ttf">
             <string>Dongle-Regular</string>
         </array>
@@ -20,9 +24,55 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iBK-xo-Eia">
+                                <rect key="frame" x="107" y="298" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="0RQ-xN-2dj"/>
+                                    <constraint firstAttribute="height" constant="200" id="5SJ-oI-LOn"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="-20" translatesAutoresizingMaskIntoConstraints="NO" id="McK-Ex-40u">
+                                <rect key="frame" x="70" y="648" width="274" height="62"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By using FocusFoodie you agree to accept our" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0H-V7-DXf">
+                                        <rect key="frame" x="5" y="0.0" width="264" height="41"/>
+                                        <color key="tintColor" name="G3"/>
+                                        <fontDescription key="fontDescription" name="Dongle-Regular" family="Dongle" pointSize="20"/>
+                                        <color key="textColor" name="G3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvJ-jF-aFg">
+                                        <rect key="frame" x="96" y="21" width="82" height="41"/>
+                                        <fontDescription key="fontDescription" name="Dongle-Bold" family="Dongle" pointSize="20"/>
+                                        <color key="tintColor" name="G3"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Privacy Policy">
+                                            <color key="titleColor" name="G3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="privacyPolicyButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="EJ1-Op-cWG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="G1"/>
+                        <constraints>
+                            <constraint firstItem="McK-Ex-40u" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="70" id="CHX-Aa-7gc"/>
+                            <constraint firstItem="McK-Ex-40u" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="GPX-mH-VJ9"/>
+                            <constraint firstItem="iBK-xo-Eia" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" constant="-50" id="Kmt-B4-NOg"/>
+                            <constraint firstItem="McK-Ex-40u" firstAttribute="top" secondItem="iBK-xo-Eia" secondAttribute="bottom" constant="150" id="QYR-Fg-aIg"/>
+                            <constraint firstItem="iBK-xo-Eia" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="avg-bz-F8D"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="McK-Ex-40u" secondAttribute="trailing" constant="70" id="dPf-HZ-DZZ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="appIconImage" destination="iBK-xo-Eia" id="EjG-tL-np9"/>
+                        <outlet property="noticeLabel" destination="W0H-V7-DXf" id="g2d-oX-OJl"/>
+                        <outlet property="privacyPolicyButton" destination="jvJ-jF-aFg" id="lcU-Kp-K0o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
