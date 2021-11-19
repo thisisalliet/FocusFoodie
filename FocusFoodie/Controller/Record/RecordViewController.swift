@@ -84,7 +84,7 @@ class RecordViewController: BaseViewController,
         
         weekDayLabel.text = Date().dayOfWeek()
         
-        dateButton.setTitle(" \(month) \(date) ", for: .normal)
+        dateButton.setTitle("  \(month) \(date)  ", for: .normal)
     }
     
     private func setUpTableView() {

@@ -13,7 +13,7 @@ class DetailImageTableViewCell: UITableViewCell {
         
         didSet {
             
-            endImageView.image = UIImage.asset(.icon_loading)
+            endImageView.image = UIImage.asset(.icon_image)
 
             endImageView.contentMode = .scaleAspectFit
             
@@ -22,20 +22,6 @@ class DetailImageTableViewCell: UITableViewCell {
                 y: 0,
                 width: UIScreen.width,
                 height: UIScreen.height * 2 / 3)
-            
-//            print(endImageView.frame.height)
-        }
-    }
-    
-    @IBOutlet weak var likeButton: UIButton! {
-        
-        didSet {
-                        
-//            likeButton.setBackgroundImage(UIImage.asset(.icon_heart_normal), for: .normal)
-//
-//            likeButton.setBackgroundImage(UIImage.asset(.icon_heart_selected), for: .selected)
-            
-            likeButton.setTitle("", for: .normal)
         }
     }
 }

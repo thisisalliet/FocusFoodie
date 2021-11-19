@@ -51,6 +51,7 @@
 		09524FEA272168E80061C36B /* DetailInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524FE8272168E80061C36B /* DetailInfoTableViewCell.swift */; };
 		09524FEB272168E80061C36B /* DetailInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09524FE9272168E80061C36B /* DetailInfoTableViewCell.xib */; };
 		09524FF42721B2B80061C36B /* RecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09524FF62721B2B80061C36B /* RecordCell.xib */; };
+		0966E719274778FE000FE743 /* CommunityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0966E718274778FE000FE743 /* CommunityProvider.swift */; };
 		0974F113273AB6D70016FEC1 /* CommunityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0974F111273AB6D70016FEC1 /* CommunityCollectionViewCell.swift */; };
 		0974F114273AB6D70016FEC1 /* CommunityCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0974F112273AB6D70016FEC1 /* CommunityCollectionViewCell.xib */; };
 		0974F117273B71340016FEC1 /* ProfileInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0974F115273B71340016FEC1 /* ProfileInfoCell.swift */; };
@@ -150,6 +151,7 @@
 		09524FE8272168E80061C36B /* DetailInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInfoTableViewCell.swift; sourceTree = "<group>"; };
 		09524FE9272168E80061C36B /* DetailInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailInfoTableViewCell.xib; sourceTree = "<group>"; };
 		09524FF52721B2B80061C36B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RecordCell.xib; sourceTree = "<group>"; };
+		0966E718274778FE000FE743 /* CommunityProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityProvider.swift; sourceTree = "<group>"; };
 		0974F111273AB6D70016FEC1 /* CommunityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCollectionViewCell.swift; sourceTree = "<group>"; };
 		0974F112273AB6D70016FEC1 /* CommunityCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityCollectionViewCell.xib; sourceTree = "<group>"; };
 		0974F115273B71340016FEC1 /* ProfileInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoCell.swift; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 		09524F8E271FF95A0061C36B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0966E718274778FE000FE743 /* CommunityProvider.swift */,
 				09DB475527351BC3003703C1 /* User.swift */,
 				09DB475327351B75003703C1 /* Recipe.swift */,
 				09C1C7DA27229D3D00D2C9B2 /* Record.swift */,
@@ -769,6 +772,7 @@
 				09524F76271FF4A00061C36B /* AppDelegate.swift in Sources */,
 				093169AE2727CEC900360885 /* IngredientSelectionCell.swift in Sources */,
 				09E42D3327425E600014C4B9 /* RecipeManager.swift in Sources */,
+				0966E719274778FE000FE743 /* CommunityProvider.swift in Sources */,
 				09524F90271FFA000061C36B /* UIStoryboard+Extension.swift in Sources */,
 				09DB475F27357043003703C1 /* ProfileViewController.swift in Sources */,
 				09524FB1272003480061C36B /* UIImage+Extension.swift in Sources */,

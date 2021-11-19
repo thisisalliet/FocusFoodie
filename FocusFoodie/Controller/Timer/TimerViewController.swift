@@ -52,11 +52,11 @@ class TimerViewController: BaseViewController {
     
     let userDefaults = UserDefaults.standard
     
-    let START_TIME_KEY = "startTime"
+    let startTimeKey = "startTime"
     
-    let STOP_TIME_KEY = "stopTime"
+    let stopTimeKey = "stopTime"
     
-    let COUNTING_KEY = "countingKey"
+    let countingKey = "countingKey"
     
     var scheduledTimer: Timer!
     // NEW
@@ -102,32 +102,32 @@ class TimerViewController: BaseViewController {
         configure()
         
         // NEW
-        startTime = userDefaults.object(forKey: START_TIME_KEY) as? Date
+        startTime = userDefaults.object(forKey: startTimeKey) as? Date
 
-        stopTime = userDefaults.object(forKey: STOP_TIME_KEY) as? Date
+        stopTime = userDefaults.object(forKey: stopTimeKey) as? Date
 
-        timerCounting = userDefaults.bool(forKey: COUNTING_KEY)
+        timerCounting = userDefaults.bool(forKey: countingKey)
 
-        if timerCounting {
-
-            startTimer()
-
-        } else {
-
-            stopTimer()
-
-            if let start = startTime {
-
-                if let stop = stopTime {
-
-                    let time = calcRestartTime(start: start, stop: stop)
-
-                    let diff = Date().timeIntervalSince(time)
-
-                    setTimeLabel(Int(diff))
-                }
-            }
-        }
+//        if timerCounting {
+//
+//            startTimer()
+//
+//        } else {
+//
+//            stopTimer()
+//
+//            if let start = startTime {
+//
+//                if let stop = stopTime {
+//
+//                    let time = calcRestartTime(start: start, stop: stop)
+//
+//                    let diff = Date().timeIntervalSince(time)
+//
+//                    setTimeLabel(Int(diff))
+//                }
+//            }
+//        }
         // NEW
     }
     
@@ -254,21 +254,21 @@ class TimerViewController: BaseViewController {
     }
     
     // NEW
-    func startTimer() {
-        
-        scheduledTimer = Timer.scheduledTimer(
-            timeInterval: 0.1,
-            target: self,
-            selector: #selector(refreshValue),
-            userInfo: nil,
-            repeats: true)
-
-        setTimerCounting(true)
+//    func startTimer() {
+//
+//        scheduledTimer = Timer.scheduledTimer(
+//            timeInterval: 0.1,
+//            target: self,
+//            selector: #selector(refreshValue),
+//            userInfo: nil,
+//            repeats: true)
+//
+//        setTimerCounting(true)
         
 //        startStopButton.setTitle("STOP", for: .normal)
 //
 //        startStopButton.setTitleColor(UIColor.red, for: .normal)
-    }
+//    }
     // NEW
     
     func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int, Int) {
@@ -307,7 +307,6 @@ class TimerViewController: BaseViewController {
             endVC.modalPresentationStyle = .overFullScreen
             
             present(endVC, animated: true, completion: nil)
-            
             
             timer.invalidate()
                         

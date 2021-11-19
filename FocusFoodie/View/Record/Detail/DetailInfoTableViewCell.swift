@@ -13,85 +13,20 @@ class DetailInfoTableViewCell: UITableViewCell {
     
     var record: Record?
     
-    @IBOutlet weak var dateGreyView: UIView! {
-        
-        didSet {
-            
-            dateGreyView.backgroundColor = .G1
-            
-            dateGreyView.cornerRadius = 5
-        }
-    }
+    @IBOutlet weak var dateLabel: UILabel!
     
-    @IBOutlet weak var dateTitleLabel: UILabel! {
-        
-        didSet {
-            
-            dateTitleLabel.text = "DATE"
-            
-            dateTitleLabel.textColor = .white
-            
-            dateTitleLabel.font = UIFont.regular(size: 20)
-        }
-    }
+    @IBOutlet weak var timeLabel: UILabel!
     
-    @IBOutlet weak var dateLabel: UILabel! {
-        
-        didSet {
-                        
-            dateLabel.textColor = .G3
-        }
-    }
+    @IBOutlet weak var focusTimeLabel: UILabel!
     
-    @IBOutlet weak var timeGreyView: UIView! {
-        
-        didSet {
-            
-            timeGreyView.backgroundColor = .G2
-            
-            timeGreyView.cornerRadius = 10
-        }
-    }
+    @IBOutlet weak var unitLabel: UILabel!
     
-    @IBOutlet weak var timeTitleLabel: UILabel! {
+    func layoutCell(date: String, time: String, focusTime: Int) {
         
-        didSet {
-            
-            timeTitleLabel.text = "TIME"
-            
-            timeTitleLabel.textColor = .white
-            
-            timeTitleLabel.font = UIFont.regular(size: 20)
-        }
-    }
-    
-    @IBOutlet weak var timeLabel: UILabel! {
+        dateLabel.text = date
         
-        didSet {
-            
-            timeLabel.text = "17:00 - 18:00"
-            
-            timeLabel.textColor = .G3
-        }
-    }
-    
-    @IBOutlet weak var focusTimeLabel: UILabel! {
+        timeLabel.text = time
         
-        didSet {
-            
-            focusTimeLabel.text = String(describing: record?.focusTime)
-            
-            focusTimeLabel.textColor = .G3
-        }
-    }
-    
-    @IBOutlet weak var unitLabel: UILabel! {
-        
-        didSet {
-            
-            unitLabel.text = "min"
-            
-            unitLabel.textColor = .G3
-        }
+        focusTimeLabel.text = "\(focusTime)"
     }
 }
