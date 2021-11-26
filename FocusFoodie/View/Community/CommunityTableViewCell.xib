@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -27,8 +26,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="324" height="109"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZUn-4g-9UM">
-                        <rect key="frame" x="70" y="10" width="254" height="89"/>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZUn-4g-9UM">
+                        <rect key="frame" x="80" y="10" width="244" height="89"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_invitation" translatesAutoresizingMaskIntoConstraints="NO" id="JaR-5w-deh">
                                 <rect key="frame" x="-50" y="-20.5" width="130" height="130"/>
@@ -71,20 +70,14 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jli-7W-I88">
-                        <rect key="frame" x="0.0" y="0.0" width="70" height="109"/>
-                        <color key="backgroundColor" name="G1"/>
-                    </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rU1-s4-oT4">
-                        <rect key="frame" x="15" y="39.5" width="30" height="30"/>
+                        <rect key="frame" x="15" y="34.5" width="40" height="40"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="30" id="0iJ-zf-QtO"/>
-                            <constraint firstAttribute="height" constant="30" id="KCg-z1-jrN"/>
+                            <constraint firstAttribute="width" constant="40" id="0iJ-zf-QtO"/>
+                            <constraint firstAttribute="height" constant="40" id="KCg-z1-jrN"/>
                         </constraints>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain">
-                            <backgroundConfiguration key="background" image="icon_accept"/>
-                        </buttonConfiguration>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" backgroundImage="icon_check_green"/>
                         <connections>
                             <action selector="acceptButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Smo-0h-6Uh"/>
                         </connections>
@@ -96,20 +89,13 @@
                     <constraint firstAttribute="bottom" secondItem="ZUn-4g-9UM" secondAttribute="bottom" constant="10" id="7ZM-0Q-CcQ"/>
                     <constraint firstItem="ZUn-4g-9UM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="BVe-aM-PiF"/>
                     <constraint firstItem="ZUn-4g-9UM" firstAttribute="leading" secondItem="rU1-s4-oT4" secondAttribute="trailing" constant="25" id="FYr-rA-mXv"/>
-                    <constraint firstItem="ZUn-4g-9UM" firstAttribute="leading" secondItem="jli-7W-I88" secondAttribute="trailing" id="KCr-RD-bsO"/>
                     <constraint firstItem="rU1-s4-oT4" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Vif-Ep-gpx"/>
                     <constraint firstAttribute="trailing" secondItem="ZUn-4g-9UM" secondAttribute="trailing" id="vzV-au-JYb"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <constraints>
-                <constraint firstItem="jli-7W-I88" firstAttribute="top" secondItem="njF-e1-oar" secondAttribute="top" id="9Cr-ks-R19"/>
-                <constraint firstItem="jli-7W-I88" firstAttribute="leading" secondItem="njF-e1-oar" secondAttribute="leading" id="Mwb-da-XJy"/>
-                <constraint firstItem="njF-e1-oar" firstAttribute="bottom" secondItem="jli-7W-I88" secondAttribute="bottom" id="VqS-iB-e0K"/>
-            </constraints>
             <connections>
                 <outlet property="acceptButton" destination="rU1-s4-oT4" id="glt-NU-2je"/>
-                <outlet property="buttonBackground" destination="jli-7W-I88" id="Y4G-j7-BBe"/>
                 <outlet property="emailLabel" destination="6PM-a3-ZCQ" id="3EO-sJ-uVh"/>
                 <outlet property="inviteBackground" destination="JaR-5w-deh" id="8Hl-8c-sal"/>
                 <outlet property="nameLabel" destination="7BE-F6-w0f" id="Pwz-VQ-Yqm"/>
@@ -119,11 +105,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="icon_accept" width="128" height="128"/>
+        <image name="icon_check_green" width="128" height="128"/>
         <image name="icon_invitation" width="128" height="128"/>
-        <namedColor name="G1">
-            <color red="0.89803921568627454" green="0.97647058823529409" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

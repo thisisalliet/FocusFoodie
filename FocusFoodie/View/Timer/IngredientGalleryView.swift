@@ -9,15 +9,18 @@ import UIKit
 
 class IngredientGalleryView: UIView {
 
-    @IBOutlet weak var contentView: UIView! {
-        
+    @IBOutlet weak var contentView: UIView!
+    {
+
         didSet {
             
             contentView.cornerRadius = 10
-            
+
             contentView.borderWidth = 5
+
+            contentView.borderColor = .G3
             
-            contentView.borderColor = .Y2
+            contentView.inputViewController?.setupGradientBackground()
         }
     }
     
@@ -29,15 +32,16 @@ class IngredientGalleryView: UIView {
     
     @IBOutlet weak var sideImage: UIImageView!
     
-    @IBOutlet weak var timerImage: UIImageView! {
+    @IBOutlet weak var timerImage: UIImageView!
+    
+    @IBOutlet weak var minuteLabel: UILabel! {
         
         didSet {
             
-            timerImage.transform.rotated(by: 10.0)
+            minuteLabel.cornerRadius = 25
         }
     }
     
-    @IBOutlet weak var minuteLabel: UILabel!    
     override init(frame: CGRect) {
         super.init(frame: frame)
         

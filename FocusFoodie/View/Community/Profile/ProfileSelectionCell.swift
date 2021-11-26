@@ -8,9 +8,18 @@
 import UIKit
 import WebKit
 
-class ProfileSelectionCell: ProfileBasicCell {
+class ProfileSelectionCell: UITableViewCell {
 
+    @IBOutlet weak var selectionBackground: UIView! {
+        
+        didSet {
+            
+            selectionBackground.cornerRadius = 10
+        }
+    }
+    
     @IBOutlet weak var statusLabel: UILabel!
+    
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var profileSwitch: UISwitch!
@@ -22,7 +31,8 @@ class ProfileSelectionCell: ProfileBasicCell {
         // Initialization code
     }
     
-    override func layoutCellWithSwitch(status: Bool, category: String, image: UIImage?) {
+//    override
+    func layoutCellWithSwitch(status: Bool, category: String, image: UIImage?) {
         
         if status == true {
             

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileLabelCell: ProfileBasicCell {
+class ProfileLabelCell: UITableViewCell {
     
     let label: UILabel = {
         
@@ -51,7 +51,8 @@ class ProfileLabelCell: ProfileBasicCell {
         ])
     }
     
-    override func layoutCellWithLabel(content: String) {
+//    override
+    func layoutCellWithLabel(content: String) {
         
         label.text = content
     }

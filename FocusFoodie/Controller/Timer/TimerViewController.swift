@@ -1,8 +1,8 @@
 //
-//  PickerViewController.swift
+//  TimerViewController.swift
 //  FocusFoodie
 //
-//  Created by Allie T on 2021/10/20.
+//  Created by Allie T on 2021/11/25.
 //
 
 import UIKit
@@ -107,6 +107,8 @@ class TimerViewController: BaseViewController {
         stopTime = userDefaults.object(forKey: stopTimeKey) as? Date
 
         timerCounting = userDefaults.bool(forKey: countingKey)
+        
+        self.tabBarController?.tabBar.isHidden = false
 
 //        if timerCounting {
 //
@@ -158,7 +160,7 @@ class TimerViewController: BaseViewController {
             }
         }
         
-        if segue.identifier == "toContentEdit" {
+        if segue.identifier == "toContentEditor" {
             
             guard let contentEditVC = segue.destination as? ContentEditViewController else { return }
             
@@ -185,17 +187,6 @@ class TimerViewController: BaseViewController {
     // MARK: - Button Actions -
     
     @IBAction func didTapControlButton(_ sender: UIButton) {
-        
-        let record = Record(
-            ownerId: "",
-            recordTitle: timerTitle.text,
-            recordCategory: hiddenCategory,
-            recordNote: hiddenNote,
-            focusTime: originalSeconds,
-            createdTime: Date().timeIntervalSince1970,
-            recipeId: "")
-        
-        RecordManager.shared.createRecord(record: record)
         
         switch buttonStatus {
             
@@ -250,7 +241,7 @@ class TimerViewController: BaseViewController {
         
         controlButton.layer.cornerRadius = controlButton.frame.width / 2
         
-        countDownLabel.text = "00:00"
+        countDownLabel.text = "00:00:00"
     }
     
     // NEW
@@ -309,6 +300,17 @@ class TimerViewController: BaseViewController {
             present(endVC, animated: true, completion: nil)
             
             timer.invalidate()
+            
+            let record = Record(
+                ownerId: "",
+                recordTitle: timerTitle.text,
+                recordCategory: hiddenCategory,
+                recordNote: hiddenNote,
+                focusTime: originalSeconds,
+                createdTime: Date().timeIntervalSince1970,
+                recipeId: "")
+            
+            RecordManager.shared.createRecord(record: record)
                         
             return
         }

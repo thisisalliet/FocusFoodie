@@ -11,6 +11,45 @@ import FirebaseStorage
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
+private enum ProfileCellType: String {
+    
+    case profileInfo = ""
+    
+    case appSecurity = "BIOMETIRC PASSCODE"
+    
+    case appAlert = "COUNTDOWN ALERT"
+    
+    case appAppearance = "DARK MODE COMING SOON"
+    
+    case profileSignOut = "SIGN OUT"
+    
+    case profileDeletion = "DELETE ACCOUNT"
+    
+    case appVersion = "1.0.0"
+    
+    var identifier: String {
+        
+        switch self {
+            
+        case .profileInfo:
+            
+            return String(describing: ProfileInfoCell.self)
+            
+        case .appSecurity, .appAlert, .appAppearance:
+            
+            return String(describing: ProfileSelectionCell.self)
+            
+        case .profileSignOut, .profileDeletion:
+            
+            return String(describing: ProfileButtonCell.self)
+            
+        case .appVersion:
+            
+            return String(describing: ProfileLabelCell.self)
+        }
+    }
+}
+
 class ProfileViewController: BaseViewController,
                              UITableViewDataSource,
                              UITableViewDelegate {
@@ -25,54 +64,42 @@ class ProfileViewController: BaseViewController,
         
         didSet {
             
+            profileTableView.showsVerticalScrollIndicator = false
+            
             profileTableView.dataSource = self
-
+            
             profileTableView.delegate = self
         }
     }
     
-    lazy var logoutButton: UIButton = {
+    @IBOutlet weak var logOutButton: UIButton! {
         
-        let button = UIButton()
-        
-        button.backgroundColor = UIColor.G1
-        
-        button.tintColor = UIColor.white
-        
-        button.layer.cornerRadius = 10
-        
-        button.setTitle("Sign out", for: .normal)
-                        
-        button.addTarget(self, action: #selector(logOutAction(_:)), for: .touchUpInside)
-        
-        return button
-    }()
+        didSet {
+            
+            logOutButton.layer.cornerRadius = 10
+        }
+    }
     
     var imageUrl = String()
     
     let storage = Storage.storage().reference()
     
-    private let datas: [ProfileCellType] = [.profileInfo, .appSecurity, .appAlert, .appAppearance, .profileSignOut, .profileDeletion, .appVersion]
+    private let datas: [ProfileCellType] = [
+        .profileInfo,
+        .appSecurity, .appAlert,
+        .appAppearance,
+        .profileSignOut, .profileDeletion,
+        .appVersion]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupLogoutButton()
-        
         navigationController?.setupBackButton(color: .G3!)
-    }
-    
-    override func viewDidLayoutSubviews() {
         
-        setupLogoutButton()
+        setUpTableView()
     }
     
-    @IBAction func profileButtonTapped(_ sender: UIButton) {
-        
-        showImagePickerControllerActionSheet()
-    }
-    
-    @objc func logOutAction(_ sender: UIButton) {
+    @IBAction func onLogOut(_ sender: UIButton) {
         
         let controller = UIAlertController(title: nil, message: "Are you sure you want to logout?", preferredStyle: .alert)
         
@@ -97,6 +124,7 @@ class ProfileViewController: BaseViewController,
                 print("Error signing out: \(signOutError)")
                 
             }
+            
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -108,19 +136,9 @@ class ProfileViewController: BaseViewController,
         present(controller, animated: true, completion: nil)
     }
     
-    private func setupLogoutButton() {
+    @IBAction func profileButtonTapped(_ sender: UIButton) {
         
-        view.addSubview(logoutButton)
-        
-        logoutButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            
-            logoutButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
-            logoutButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
-            logoutButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
-            logoutButton.heightAnchor.constraint(equalToConstant: 40)
-        ])
+        showImagePickerControllerActionSheet()
     }
     
     private func setUpTableView() {
@@ -135,17 +153,17 @@ class ProfileViewController: BaseViewController,
         
         profileTableView.register(
             ProfileButtonCell.self,
-            forCellReuseIdentifier: ProfileCellType.profileSignOut.identifier()
+            forCellReuseIdentifier: ProfileCellType.profileSignOut.identifier
         )
         
         profileTableView.register(
             ProfileButtonCell.self,
-            forCellReuseIdentifier: ProfileCellType.profileDeletion.identifier()
+            forCellReuseIdentifier: ProfileCellType.profileDeletion.identifier
         )
-
+        
         profileTableView.register(
             ProfileLabelCell.self,
-            forCellReuseIdentifier: ProfileCellType.appVersion.identifier()
+            forCellReuseIdentifier: ProfileCellType.appVersion.identifier
         )
     }
     
@@ -158,10 +176,72 @@ class ProfileViewController: BaseViewController,
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = profileTableView.dequeueReusableCell(
-            withIdentifier: datas[indexPath.row].identifier(), for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: datas[indexPath.row].identifier, for: indexPath)
         
         return cell
+        
+//        switch indexPath.row {
+//
+//        case 0:
+//
+//            guard let infoCell = profileTableView.dequeueReusableCell(
+//                withIdentifier: String(describing: ProfileInfoCell.self),
+//                for: indexPath) as? ProfileInfoCell else { fatalError() }
+//
+//            infoCell.layoutCellWithInfo(
+//                name: "Allie",
+//                email: "theallietang@gmail.com")
+//
+//            return infoCell
+//
+//        case 1:
+//
+//            guard let alertCell = profileTableView.dequeueReusableCell(
+//                withIdentifier: String(describing: ProfileSelectionCell.self),
+//                for: indexPath) as? ProfileSelectionCell else { fatalError() }
+//
+//            alertCell.layoutCellWithSwitch(
+//                status: true,
+//                category: "COUNTDOWN ALERT",
+//                image: UIImage.asset(.icon_fingerprint))
+//
+//            return alertCell
+//
+//        case 2:
+//
+//            guard let labelCell = profileTableView.dequeueReusableCell(
+//                withIdentifier: String(describing: ProfileLabelCell.self),
+//                for: indexPath) as? ProfileLabelCell else { fatalError() }
+//
+//            labelCell.layoutCellWithLabel(
+//                content: "1.0.0")
+//
+//            return labelCell
+//
+//        default:
+//            break
+//        }
+//
+//        return UITableViewCell()
+    }
+    
+    // MARK: - UITableView Delegate -
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if indexPath.row == 0 {
+            
+            return 200
+            
+        } else {
+            
+            return 150
+        }        
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        UITableView.automaticDimension
     }
 }
 

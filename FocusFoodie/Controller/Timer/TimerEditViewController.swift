@@ -10,12 +10,28 @@ import Firebase
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-class TimerEditViewController: UIViewController,
+class TimerEditViewController: BaseViewController,
                                UITableViewDataSource,
                                UITableViewDelegate,
                                IngredientSelectionCellDelegate {
     
+    @IBOutlet weak var crossBackground: UIView! {
+        
+        didSet {
+            
+            crossBackground.cornerRadius = 10
+        }
+    }
+    
     @IBOutlet weak var crossButton: UIButton!
+    
+    @IBOutlet weak var checkBackground: UIView! {
+        
+        didSet {
+            
+            checkBackground.cornerRadius = 10
+        }
+    }
     
     @IBOutlet weak var checkButton: UIButton!
     
@@ -73,8 +89,6 @@ class TimerEditViewController: UIViewController,
         super.viewDidLoad()
         
         setupTableView()
-        
-        isModalInPresentation = true
     }
     
     private func setupTableView() {
@@ -129,12 +143,12 @@ class TimerEditViewController: UIViewController,
     
     // MARK: - Action -
     @IBAction func onDismiss(_ sender: UIButton) {
-        
-        presentingViewController?.dismiss(animated: true, completion: nil)
-        
+                
         buttonHandler?(.notStarted)
         
 //        delegate?.dismissEditor(self)
+        
+        backToTimer()
     }
     
     @IBAction func onDone(_ sender: UIButton) {
@@ -152,8 +166,27 @@ class TimerEditViewController: UIViewController,
         timeHandler?(totalTime)
         
         buttonHandler?(.notStarted)
+                
+        backToTimer()
+    }
+    
+    func backToTimer() {
         
-        presentingViewController?.dismiss(animated: true, completion: nil)
+//        guard let timerVC = UIStoryboard
+//                            .timer
+//                            .instantiateViewController(
+//                                withIdentifier: String(describing: TimerViewController.self)
+//                            ) as? TimerViewController else { return }
+//
+//        let navVC = UINavigationController(rootViewController: timerVC)
+//
+//        navVC.modalPresentationStyle = .overFullScreen
+//
+//        present(navVC, animated: true, completion: nil)
+        
+        let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate
+
+        sceneDelegate?.window?.rootViewController?.dismiss(animated: true)
     }
     
     // MARK: - UITableViewDataSource -

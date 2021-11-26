@@ -9,6 +9,14 @@ import UIKit
 
 class DetailImageTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var whiteView: UIView! {
+        
+        didSet {
+            
+            whiteView.cornerRadius = 10
+        }
+    }
+    
     @IBOutlet weak var endImageView: UIImageView! {
         
         didSet {

@@ -13,11 +13,11 @@ opt_in_rules:
   - force_unwrapping
 
 excluded: # excluded via string array
-    - id
-    - URL
-    - url
-    - app
-    - Pods
+  - id
+  - URL
+  - url
+  - app
+  - Pods
 
 file_length:
   warning: 500

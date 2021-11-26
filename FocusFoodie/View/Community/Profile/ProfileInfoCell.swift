@@ -7,8 +7,16 @@
 
 import UIKit
 
-class ProfileInfoCell: ProfileBasicCell {
-
+class ProfileInfoCell: UITableViewCell {
+    
+    @IBOutlet weak var infoBackground: UIView! {
+        
+        didSet {
+            
+            infoBackground.cornerRadius = 10
+        }
+    }
+    
     @IBOutlet weak var nameTextfield: UITextField!
     
     @IBOutlet weak var emailTextfield: UITextField!
@@ -18,7 +26,8 @@ class ProfileInfoCell: ProfileBasicCell {
         // Initialization code
     }
     
-    override func layoutCellWithInfo(name: String, email: String) {
+//    override
+    func layoutCellWithInfo(name: String, email: String) {
         
         nameTextfield.text = name
         

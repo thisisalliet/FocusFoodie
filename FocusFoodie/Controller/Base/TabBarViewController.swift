@@ -32,6 +32,8 @@ private enum Tab {
         
         controller.tabBarItem.imageInsets = UIEdgeInsets(top: 45.0, left: 0.0, bottom: 45.0, right: 0.0)
         
+        controller.tabBarController?.tabBar.barTintColor = .white
+        
         return controller
     }
     
@@ -49,8 +51,8 @@ private enum Tab {
         case .timer:
             return UITabBarItem(
                 title: nil,
-                image: UIImage.asset(.icon_plus),
-                selectedImage: UIImage.asset(.icon_plus)
+                image: UIImage.asset(.icon_home),
+                selectedImage: UIImage.asset(.icon_home)
             )
             
         case .community:
@@ -74,15 +76,34 @@ class TabBarViewController: UITabBarController,
         viewControllers = tabs.map({ $0.controller() })
         
         delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        tabBar.isTranslucent = false
+        setupTabBarAppearance()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         
-        tabBar.frame.size.height = 80
+        tabBar.frame.size.height *= 1.2
         
-        tabBar.cornerRadius = 10
+        tabBar.frame.origin.y = view.frame.height - tabBar.frame.size.height
+    }
+    
+    func setupTabBarAppearance() {
+        
+        tabBar.layer.masksToBounds = true
+        
+        tabBar.isTranslucent = true
         
         tabBar.tintColor = .G3
         
         tabBar.barTintColor = .white
+        
+        tabBar.layer.cornerRadius = 25
+        
+        self.tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
 }

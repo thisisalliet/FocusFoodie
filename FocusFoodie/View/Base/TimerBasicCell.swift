@@ -17,9 +17,9 @@ protocol SelectionCellDataSource: AnyObject {
 }
 
 class TimerBasicCell: UITableViewCell,
-                          UICollectionViewDataSource,
-                          UICollectionViewDelegate,
-                          SelectionCellDataSource {
+                       UICollectionViewDataSource,
+                       UICollectionViewDelegate,
+                       SelectionCellDataSource {
 
     lazy var ingredientCollectionView: UICollectionView = {
 
@@ -71,6 +71,8 @@ class TimerBasicCell: UITableViewCell,
         setupCollectionView()
         
         dataSource = self
+        
+        backgroundColor = .G1
 
         selectionStyle = .default
     }

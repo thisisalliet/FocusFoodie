@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "008-turkey.png",
+      "filename" : "icon_turkey.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "008-turkey@2x.png",
+      "filename" : "icon_turkey@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "008-turkey@3x.png",
+      "filename" : "icon_turkey@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

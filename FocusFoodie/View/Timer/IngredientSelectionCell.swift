@@ -59,7 +59,6 @@ class IngredientSelectionCell: TimerBasicCell {
         ingredientCollectionView.backgroundColor = .clear
     }
     
-    
     override func numberOfItem(_ cell: TimerBasicCell) -> Int {
         
         return ingredientObjects.count

@@ -24,7 +24,9 @@ public struct User: Codable {
     let blockList: [BlockList]?
     
     let friendList: [FriendList]?
-    
+
+    let recipeList: [String]?
+
     enum CodingKeys: String, CodingKey {
         
         case userId = "user_id"
@@ -40,6 +42,9 @@ public struct User: Codable {
         case blockList = "block_list"
         
         case friendList = "friend_list"
+        
+        case recipeList = "recipe_list"
+
     }
 }
 
@@ -62,3 +67,13 @@ struct FriendList: Codable {
         case friendId = "friend_id"
     }
 }
+
+//struct Recipe: Codable {
+//    
+//    var recipeId: String
+//    
+//    enum CodingKeys: String, CodingKey {
+//        
+//        case recipeId = "recipe_id"
+//    }
+//}

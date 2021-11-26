@@ -41,7 +41,7 @@ class IngredientItemView: UIView {
     
     func layoutCell(image: UIImage, title: String, minute: Int, isSelected: Bool) {
         
-        contentView.backgroundColor = .Y1
+//        contentView.backgroundColor = .Y1
         
         ingredientImage.image = image
         

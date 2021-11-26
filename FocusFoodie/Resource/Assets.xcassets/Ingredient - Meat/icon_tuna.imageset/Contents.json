@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "006-tuna.png",
+      "filename" : "icon_tuna.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "006-tuna@2x.png",
+      "filename" : "icon_tuna@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "006-tuna@3x.png",
+      "filename" : "icon_tuna@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

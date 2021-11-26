@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "avocado.png",
+      "filename" : "icon_avocado.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "avocado@2x.png",
+      "filename" : "icon_avocado@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "avocado@3x.png",
+      "filename" : "icon_avocado@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -7,11 +7,16 @@
 
 import UIKit
 
+enum CommunityLayout {
+    
+    case basic
+    
+    case withInvitation
+}
+
 class CommunityTableViewCell: UITableViewCell {
     
     weak var delegate: CommunityViewController?
-
-    @IBOutlet weak var buttonBackground: UIView!
     
     @IBOutlet weak var acceptButton: UIButton!
     
@@ -22,17 +27,21 @@ class CommunityTableViewCell: UITableViewCell {
     @IBOutlet weak var emailLabel: UILabel!
         
     @IBOutlet weak var inviteBackground: UIImageView!
-        
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
     
     @IBAction func acceptButtonTapped(_ sender: UIButton) {
-
+        
     }
     
     func layoutCell(name: String, email: String) {
+        
+        acceptButton.isHidden = true
+
+        nameLabel.text = name
+
+        emailLabel.text = email
+    }
+    
+    func layoutCellWithInvitation(name: String, email: String) {
 
         nameLabel.text = name
 

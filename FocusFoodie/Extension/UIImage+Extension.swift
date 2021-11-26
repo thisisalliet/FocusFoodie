@@ -10,46 +10,40 @@ import UIKit
 enum ImageAsset: String {
     
     // swiftlint:disable identifier_name
+    
+    // Logo
+    case icon_appLogo
+    
     // Tabbar
     case icon_community
     case icon_home
     case icon_record
-    case icon_plus
     
     // Button
     case icon_arrow_left
-    case icon_check_normal
-    case icon_check_selected
-    case icon_cross_normal
-    case icon_cross_selected
-    case icon_heart_normal
-    case icon_heart_selected
-    case icon_notification
-    case icon_notification_filled
-    
-    // Placeholder
-    case icon_loading
-    case icon_image
-    case icon_timer
-    
-    // Community
-    case icon_accept
-    case icon_decline
-    case icon_profile
-    case icon_fingerprint
+    case icon_arrow_right
+    case icon_check_green
+    case icon_cross_green
+    case icon_cross_yellow
     case icon_delete
-    
-    // Record
-    case icon_coding
+    case icon_notification
     
     // Category
-    case icon_sleep
+    case icon_work
+    case icon_school
+    case icon_baking
+    case icon_chores
+    case icon_coding
     case icon_fitness
+    case icon_gaming
+    case icon_shopping
+    case icon_relaxing
     
-    // Ingredient Gallery
-    case icon_knife
-    case icon_oil
-    
+    // Community
+    case icon_fingerprint
+    case icon_invitation
+    case icon_profile
+        
     // Ingredient: Bread
     case icon_toast
     case icon_burger_bun
@@ -67,7 +61,7 @@ enum ImageAsset: String {
     
     // Ingredient: Meat
     case icon_bacon
-    case icon_chicken
+    case icon_beef
     case icon_falafel
     case icon_shrimp
     case icon_tuna
@@ -75,11 +69,19 @@ enum ImageAsset: String {
     
     // Ingredient: Side
     case icon_egg
-    case icon_peanutButter
     case icon_honey
     case icon_mayonnaise
+    case icon_ketchup
     case icon_mustard
     case icon_cheese
+    
+    // Others
+    case icon_image
+    case icon_timer
+    
+    case icon_cheese_burger
+    case icon_falafel_wrap
+    case icon_jerk_chicken
 
     // swiftlint:enable identifier_name
 }

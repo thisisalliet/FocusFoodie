@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "027-mustard.png",
+      "filename" : "icon_mustard.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "027-mustard@2x.png",
+      "filename" : "icon_mustard@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "027-mustard@3x.png",
+      "filename" : "icon_mustard@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

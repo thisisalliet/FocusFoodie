@@ -32,15 +32,16 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fitness" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sCB-9U-rYU">
                         <rect key="frame" x="55" y="6" width="80" height="43.5"/>
+                        <color key="tintColor" name="G3"/>
                         <fontDescription key="fontDescription" name="Dongle-Regular" family="Dongle" pointSize="30"/>
-                        <color key="textColor" name="Y3"/>
+                        <color key="textColor" name="G3"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <color key="tintColor" name="Y3"/>
+            <color key="backgroundColor" name="G2"/>
+            <color key="tintColor" name="G3"/>
             <constraints>
                 <constraint firstItem="wh8-uj-dl7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="PnC-Hh-R9a"/>
                 <constraint firstItem="sCB-9U-rYU" firstAttribute="leading" secondItem="wh8-uj-dl7" secondAttribute="trailing" constant="5" id="Y2B-NT-qYo"/>
@@ -63,8 +64,11 @@
     </objects>
     <resources>
         <image name="icon_fitness" width="128" height="128"/>
-        <namedColor name="Y3">
-            <color red="1" green="0.62352941176470589" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="G2">
+            <color red="0.79607843137254897" green="0.95294117647058818" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="G3">
+            <color red="0.1803921568627451" green="0.7686274509803922" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

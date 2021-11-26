@@ -27,18 +27,18 @@ class AuthViewController: BaseViewController {
     
     func configure() {
         
-        appIconImage.image = UIImage(named: "AppIcon")
+        appIconImage.image = UIImage.asset(.icon_appLogo)
         
         appIconImage.alpha = 0.75
     }
     
     @IBAction func privacyPolicyButtonTapped(_ sender: UIButton) {
         
-        guard let privacyVC = UIStoryboard
-                .main
+        guard UIStoryboard
+                .auth
                 .instantiateViewController(
                     withIdentifier: String(describing: PrivacyViewController.self)
-                ) as? PrivacyViewController else {
+                ) is PrivacyViewController else {
                     
                     return
                 }
@@ -49,15 +49,21 @@ class AuthViewController: BaseViewController {
         
         self.tabBarController?.tabBar.isHidden = true
         
+        configure()
+        
         setUpSignInButton()
+        
+        performSignIn()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.tabBarController?.tabBar.isHidden = true
+        
         setUpSignInButton()
         
-        self.tabBarController?.tabBar.isHidden = true
+        configure()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -69,6 +75,8 @@ class AuthViewController: BaseViewController {
         super.viewWillDisappear(animated)
         
         self.tabBarController?.tabBar.isHidden = false
+        
+        configure()
     }
     
     func setUpSignInButton() {
@@ -82,29 +90,19 @@ class AuthViewController: BaseViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            
             button.leadingAnchor.constraint(equalTo: noticeLabel.leadingAnchor),
             button.trailingAnchor.constraint(equalTo: noticeLabel.trailingAnchor),
-            button.topAnchor.constraint(equalTo: privacyPolicyButton.bottomAnchor, constant: 15),
-            button.heightAnchor.constraint(equalToConstant: 50)
+            button.heightAnchor.constraint(equalToConstant: 45),
+            button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100)
         ])
         
-        button.addTarget(self, action: #selector(appleSignTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(signInWithAppleTapped), for: .touchUpInside)
     }
     
-    @objc func appleSignTapped() {
-        
-        performSignIn()
-        
-        guard UIStoryboard
-                .auth
-                .instantiateViewController(
-                    withIdentifier: String(describing: SetUpViewController.self)
-                ) is SetUpViewController else {
-                    
-                    return
-                }
-    }
+    @objc func signInWithAppleTapped() {
+           
+           performSignIn()
+       }
     
     func performSignIn() {
         

@@ -11,6 +11,17 @@ import FirebaseAuth
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
+typealias GenericCompletion<T: Decodable> = (([T]?, Error?) -> Void)
+
+enum CommunityType {
+    
+    case friend
+    
+    case invitation
+    
+    case block
+}
+
 class UserManager {
     
     lazy var db = Firestore.firestore()
@@ -67,7 +78,9 @@ class UserManager {
                         userEmail: userEmail,
                         providerId: "Apple",
                         blockList: nil,
-                        friendList: nil)
+                        friendList: nil,
+                        recipeList: nil
+        )
         
         do {
             
@@ -81,8 +94,7 @@ class UserManager {
     
     func fetchUserInfo(uid: String, completion: @escaping (Result<User, Error>) -> Void) {
         
-        db.collection(CollectionName.user.rawValue).document(uid)
-            .getDocument { document, error in
+        db.collection(CollectionName.user.rawValue).document(uid).getDocument { document, error in
                 
                 if let error = error {
                     
@@ -90,48 +102,28 @@ class UserManager {
                 }
                 
                 guard let document = document,
-                      document.exists,
-                      let user = try? document.data(as: User.self)
+                      document.exists
+
+                else {
+                    print(#function)
+                    return
+                    
+                }
+                
+                do {
+                    
+                    let user = try? document.data(as: User.self)
+                    
+                    if let user = user {
+                        completion(Result.success(user))
                         
-                else { return }
-                
-                completion(Result.success(user))
-            }
-    }
-    
-    func monitorInvitation(uid: String, completion: @escaping (Result<[Invitation], Error>) -> Void) {
-        
-        db.collection(CollectionName.invitation.rawValue)
-            .whereField("receiver_id",isEqualTo: userId)
-            .addSnapshotListener { snapshot, error in
-                
-                guard let snapshot = snapshot else { return }
-                
-                if let error = error {
-                    
-                    completion(.failure(error))
-                    
-                } else {
-                    
-                    var allInvitations = [Invitation]()
-                    
-                    for document in snapshot.documents {
-                        
-                        do {
-                            
-                            if let invite = try document.data(as: Invitation.self, decoder: Firestore.Decoder()) {
-                                
-                                allInvitations.append(invite)
-                            }
-                            
-                        } catch {
-                            
-                            completion(.failure(error))
-                        }
                     }
                     
-                    completion(.success(allInvitations))
+                } catch {
+                    
+                    print(error)
                 }
+                
             }
     }
     
@@ -192,6 +184,50 @@ class UserManager {
                     print(error)
                 }
             }
+        }
+    }
+    
+    func fetchFriendBlockList(_ type: CommunityType, completion: @escaping (Result<[Any], Error>) -> Void) {
+        
+        let friendBlockRef = db.collection(CollectionName.user.rawValue).document(userId)
+        
+        friendBlockRef.getDocument { document, error in
+            
+            if let error = error {
+                completion(Result.failure(error))
+            }
+            
+            guard let document = document else { return }
+            
+            let object = try? document.data(as: User.self)
+            
+            switch type {
+                
+            case .friend:
+                let friendList = object?.friendList
+                completion(Result.success((friendList ?? []) as [Any]))
+                
+            case .block:
+                let blockList = object?.blockList
+                completion(Result.success((blockList ?? []) as [Any]))
+                
+            case .invitation:
+                break
+            }
+        }
+    }
+    
+    func findFriend(friendId: String) {
+        
+        let myfriendRef = db.collection(CollectionName.user.rawValue).document(friendId)
+        
+        myfriendRef.getDocument { document, error in
+            
+            guard let document = document,
+                  document.exists,
+                  let myFriend = try? document.data(as: User.self)
+                    
+            else { return }
         }
     }
 }

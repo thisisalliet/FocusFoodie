@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ContentEditViewController: UIViewController,
+class ContentEditViewController: BaseViewController,
                                   UICollectionViewDataSource,
                                   UICollectionViewDelegate,
                                   UICollectionViewDelegateFlowLayout{
@@ -28,21 +28,23 @@ class ContentEditViewController: UIViewController,
     
     @IBOutlet weak var noteTextField: UITextField!
     
-    @IBOutlet weak var saveButton: UIButton! {
+    @IBOutlet weak var saveButtonBackground: UIView! {
         
         didSet {
             
-            saveButton.layer.cornerRadius = 10
+            saveButtonBackground.cornerRadius = 10
         }
     }
+    
+    @IBOutlet weak var saveButton: UIButton!
     
     let category = Category.allCases
     
     var categoryObject: [CategoryItem] = []
     
-    var categoryHandler: ((_ title: String, _ image: UIImage) -> ())?
+    var categoryHandler: ((_ title: String, _ image: UIImage) -> Void)?
     
-    var contentHandler: ((_ title: String, _ note: String) -> ())?
+    var contentHandler: ((_ title: String, _ note: String) -> Void)?
     
     var datas: [Category] = []
     
@@ -56,11 +58,9 @@ class ContentEditViewController: UIViewController,
     
     // MARK: - Button Actions -
     
-    @IBAction func onSave(_ sender: UIButton) {
+    @IBAction func toTimerEdit(_ sender: UIButton) {
         
         contentHandler?(titleTextField.text ?? "", noteTextField.text ?? "")
-        
-        presentingViewController?.dismiss(animated: true, completion: nil)
     }
         
     func setUpCollectionView() {
@@ -81,8 +81,6 @@ class ContentEditViewController: UIViewController,
         categoryCollectionView.registerCellWithNib(
             identifier: String(describing: CategorySelectionCell.self),
             bundle: nil)
-
-//        categoryCollectionView.backgroundColor = .Y2
 
         categoryCollectionView.showsHorizontalScrollIndicator = false
     }
@@ -112,9 +110,20 @@ class ContentEditViewController: UIViewController,
         return selectionCell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        
+        let cellToDeselect: UICollectionViewCell = collectionView.cellForItem(at: indexPath)!
+        
+        cellToDeselect.contentView.backgroundColor = .G2
+        }
+    
     // MARK: - UICollectionView Delegate
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let selectedCell: UICollectionViewCell = collectionView.cellForItem(at: indexPath)!
+        
+        selectedCell.contentView.backgroundColor = .white
         
         categoryHandler?(category[indexPath.row].title, category[indexPath.row].image ?? UIImage())
     }

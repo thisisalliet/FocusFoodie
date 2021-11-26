@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -25,47 +26,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iBK-xo-Eia">
-                                <rect key="frame" x="107" y="298" width="200" height="200"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_appLogo" translatesAutoresizingMaskIntoConstraints="NO" id="iBK-xo-Eia">
+                                <rect key="frame" x="107" y="308" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="0RQ-xN-2dj"/>
                                     <constraint firstAttribute="height" constant="200" id="5SJ-oI-LOn"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="-20" translatesAutoresizingMaskIntoConstraints="NO" id="McK-Ex-40u">
-                                <rect key="frame" x="70" y="648" width="274" height="62"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By using FocusFoodie you agree to accept our" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0H-V7-DXf">
-                                        <rect key="frame" x="5" y="0.0" width="264" height="41"/>
-                                        <color key="tintColor" name="G3"/>
-                                        <fontDescription key="fontDescription" name="Dongle-Regular" family="Dongle" pointSize="20"/>
-                                        <color key="textColor" name="G3"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvJ-jF-aFg">
-                                        <rect key="frame" x="96" y="21" width="82" height="41"/>
-                                        <fontDescription key="fontDescription" name="Dongle-Bold" family="Dongle" pointSize="20"/>
-                                        <color key="tintColor" name="G3"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Privacy Policy">
-                                            <color key="titleColor" name="G3"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="privacyPolicyButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="EJ1-Op-cWG"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvJ-jF-aFg">
+                                <rect key="frame" x="166" y="676" width="82" height="41"/>
+                                <fontDescription key="fontDescription" name="Dongle-Bold" family="Dongle" pointSize="20"/>
+                                <color key="tintColor" name="G3"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Privacy Policy">
+                                    <color key="titleColor" name="G3"/>
+                                </state>
+                                <connections>
+                                    <action selector="privacyPolicyButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="EJ1-Op-cWG"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By using FocusFoodie you agree to accept our" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0H-V7-DXf">
+                                <rect key="frame" x="75" y="657" width="264" height="29"/>
+                                <color key="tintColor" name="G3"/>
+                                <fontDescription key="fontDescription" name="Dongle-Regular" family="Dongle" pointSize="20"/>
+                                <color key="textColor" name="G3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="G1"/>
                         <constraints>
-                            <constraint firstItem="McK-Ex-40u" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="70" id="CHX-Aa-7gc"/>
-                            <constraint firstItem="McK-Ex-40u" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="GPX-mH-VJ9"/>
-                            <constraint firstItem="iBK-xo-Eia" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" constant="-50" id="Kmt-B4-NOg"/>
-                            <constraint firstItem="McK-Ex-40u" firstAttribute="top" secondItem="iBK-xo-Eia" secondAttribute="bottom" constant="150" id="QYR-Fg-aIg"/>
+                            <constraint firstItem="jvJ-jF-aFg" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="7b1-f0-dY6"/>
+                            <constraint firstItem="W0H-V7-DXf" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Dsw-5M-LkY"/>
+                            <constraint firstItem="jvJ-jF-aFg" firstAttribute="top" secondItem="W0H-V7-DXf" secondAttribute="bottom" constant="-10" id="G55-x4-oNa"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="jvJ-jF-aFg" secondAttribute="bottom" constant="145" id="KjG-f6-BQS"/>
+                            <constraint firstItem="iBK-xo-Eia" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" constant="-40" id="Kmt-B4-NOg"/>
                             <constraint firstItem="iBK-xo-Eia" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="avg-bz-F8D"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="McK-Ex-40u" secondAttribute="trailing" constant="70" id="dPf-HZ-DZZ"/>
                         </constraints>
                     </view>
                     <connections>
@@ -78,103 +74,32 @@
             </objects>
             <point key="canvasLocation" x="-26.086956521739133" y="138.61607142857142"/>
         </scene>
-        <!--Set Up View Controller-->
-        <scene sceneID="WjY-Yv-joa">
+        <!--Privacy View Controller-->
+        <scene sceneID="jUZ-mL-6KI">
             <objects>
-                <viewController storyboardIdentifier="SetUpViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="l2f-Ku-XBx" customClass="SetUpViewController" customModule="FocusFoodie" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="owp-5M-m1K">
+                <viewController storyboardIdentifier="PrivacyViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dCP-jG-7RF" customClass="PrivacyViewController" customModule="FocusFoodie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zQU-Fq-V8Q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCM-NS-gRf">
-                                <rect key="frame" x="22" y="244" width="289" height="58"/>
-                                <string key="text">What should we call you?
-</string>
-                                <fontDescription key="fontDescription" name="Dongle-Regular" family="Dongle" pointSize="40"/>
-                                <color key="textColor" name="G3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="@ username" textAlignment="natural" minimumFontSize="25" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ht2-2f-ClS">
-                                <rect key="frame" x="20" y="302" width="374" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="mBa-w3-bUj"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Dongle-Regular" family="Dongle" pointSize="25"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oops, this name is already taken" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVR-8Z-VHZ">
-                                <rect key="frame" x="22" y="352" width="190" height="29"/>
-                                <fontDescription key="fontDescription" name="Dongle-Regular" family="Dongle" pointSize="20"/>
-                                <color key="textColor" name="G3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FIf-BC-OmW">
-                                <rect key="frame" x="179" y="425" width="56" height="52"/>
-                                <color key="backgroundColor" name="G3"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHf-6k-9mD">
-                                <rect key="frame" x="187" y="431" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="GFr-lb-D6M"/>
-                                    <constraint firstAttribute="width" constant="40" id="dDh-5P-sq6"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background" image="icon_arrow_right"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="nextButtonTapped:" destination="l2f-Ku-XBx" eventType="touchUpInside" id="XqV-XE-XV2"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="27z-e8-aNc"/>
-                        <color key="backgroundColor" name="G1"/>
-                        <constraints>
-                            <constraint firstItem="UVR-8Z-VHZ" firstAttribute="top" secondItem="Ht2-2f-ClS" secondAttribute="bottom" constant="10" id="2o0-Ie-cpj"/>
-                            <constraint firstItem="yHf-6k-9mD" firstAttribute="top" secondItem="UVR-8Z-VHZ" secondAttribute="bottom" constant="50" id="86b-vm-ZLR"/>
-                            <constraint firstItem="yHf-6k-9mD" firstAttribute="centerX" secondItem="owp-5M-m1K" secondAttribute="centerX" id="Bi0-T4-atu"/>
-                            <constraint firstItem="FCM-NS-gRf" firstAttribute="top" secondItem="27z-e8-aNc" secondAttribute="top" constant="200" id="N5U-6V-7vA"/>
-                            <constraint firstItem="FIf-BC-OmW" firstAttribute="centerX" secondItem="yHf-6k-9mD" secondAttribute="centerX" id="NX6-nN-7Vs"/>
-                            <constraint firstItem="27z-e8-aNc" firstAttribute="trailing" secondItem="Ht2-2f-ClS" secondAttribute="trailing" constant="20" id="Npi-T8-JGR"/>
-                            <constraint firstItem="FIf-BC-OmW" firstAttribute="centerY" secondItem="yHf-6k-9mD" secondAttribute="centerY" id="PSN-xi-PCs"/>
-                            <constraint firstItem="Ht2-2f-ClS" firstAttribute="top" secondItem="FCM-NS-gRf" secondAttribute="bottom" id="QnD-VT-g0Q"/>
-                            <constraint firstItem="UVR-8Z-VHZ" firstAttribute="leading" secondItem="27z-e8-aNc" secondAttribute="leading" constant="22" id="UdH-bR-IYl"/>
-                            <constraint firstItem="FIf-BC-OmW" firstAttribute="width" secondItem="yHf-6k-9mD" secondAttribute="width" multiplier="1.16" constant="10" id="kNz-lp-MmP"/>
-                            <constraint firstItem="Ht2-2f-ClS" firstAttribute="leading" secondItem="27z-e8-aNc" secondAttribute="leading" constant="20" id="sFE-VH-IE7"/>
-                            <constraint firstItem="FCM-NS-gRf" firstAttribute="leading" secondItem="27z-e8-aNc" secondAttribute="leading" constant="22" id="x2A-ee-23a"/>
-                            <constraint firstItem="FIf-BC-OmW" firstAttribute="height" secondItem="yHf-6k-9mD" secondAttribute="height" multiplier="1.04" constant="10" id="xzY-cm-bmg"/>
-                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pAi-WB-eB2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <connections>
-                        <outlet property="buttonBackground" destination="FIf-BC-OmW" id="1pa-fV-JKN"/>
-                        <outlet property="hintLabel" destination="UVR-8Z-VHZ" id="Lhk-xM-oFA"/>
-                        <outlet property="nextButton" destination="yHf-6k-9mD" id="DqR-kI-fBJ"/>
-                        <outlet property="setUpTitleLabel" destination="FCM-NS-gRf" id="o0d-Es-VAo"/>
-                        <outlet property="uniqueIdTextField" destination="Ht2-2f-ClS" id="3RV-Ow-XNN"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2w1-Hr-7ep" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hIy-0F-9T1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="804.34782608695662" y="138.61607142857142"/>
+            <point key="canvasLocation" x="770" y="139"/>
         </scene>
     </scenes>
     <resources>
-        <image name="icon_arrow_right" width="128" height="128"/>
+        <image name="icon_appLogo" width="128" height="128"/>
         <namedColor name="G1">
             <color red="0.89803921568627454" green="0.97647058823529409" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="G3">
             <color red="0.1803921568627451" green="0.7686274509803922" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

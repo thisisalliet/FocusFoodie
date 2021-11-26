@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "005-shrimp.png",
+      "filename" : "icon_shrimp.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "005-shrimp@2x.png",
+      "filename" : "icon_shrimp@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "005-shrimp@3x.png",
+      "filename" : "icon_shrimp@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

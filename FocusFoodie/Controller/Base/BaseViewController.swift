@@ -94,7 +94,6 @@ class BaseViewController: UIViewController {
         
         backToRoot(completion: nil)
     }
-    
 }
 
 extension UIViewController {
@@ -138,7 +137,7 @@ extension UIViewController {
         
          gradientLayer.colors = [
             UIColor.white.cgColor,
-            UIColor.G1?.cgColor
+            UIColor.G1?.cgColor as Any
          ]
         
          view.layer.insertSublayer(gradientLayer, at : 0)

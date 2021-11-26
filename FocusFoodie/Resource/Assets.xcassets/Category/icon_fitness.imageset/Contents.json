@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "heartbeat.png",
+      "filename" : "icon_fitness.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "heartbeat@2x.png",
+      "filename" : "icon_fitness@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "heartbeat@3x.png",
+      "filename" : "icon_fitness@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

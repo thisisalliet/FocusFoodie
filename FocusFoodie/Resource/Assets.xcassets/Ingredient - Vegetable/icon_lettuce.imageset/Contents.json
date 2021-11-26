@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "lettuce.png",
+      "filename" : "icon_lettuce.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "lettuce@2x.png",
+      "filename" : "icon_lettuce@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "lettuce@3x.png",
+      "filename" : "icon_lettuce@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

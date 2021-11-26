@@ -56,9 +56,12 @@
                                     <color key="titleColor" name="G3"/>
                                 </state>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DGS-EJ-2Vo">
-                                <rect key="frame" x="83" y="393.5" width="248" height="325"/>
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="DGS-EJ-2Vo" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="41.5" y="393.5" width="331" height="325"/>
                                 <color key="backgroundColor" name="G1"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="astronaut-light-theme"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You don't have any record today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dr-Wo-wX7">
                                 <rect key="frame" x="89.5" y="738.5" width="235.5" height="36.5"/>
@@ -84,7 +87,7 @@
                             <constraint firstItem="hnL-0y-DRZ" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="ejZ-cX-I5j"/>
                             <constraint firstItem="YSV-2M-T8W" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="15" id="jw5-nc-2QM"/>
                             <constraint firstItem="DGS-EJ-2Vo" firstAttribute="centerX" secondItem="hnL-0y-DRZ" secondAttribute="centerX" id="nJU-T5-D7u"/>
-                            <constraint firstItem="DGS-EJ-2Vo" firstAttribute="width" secondItem="hnL-0y-DRZ" secondAttribute="width" multiplier="0.6" id="nrg-xB-eQO"/>
+                            <constraint firstItem="DGS-EJ-2Vo" firstAttribute="width" secondItem="hnL-0y-DRZ" secondAttribute="width" multiplier="0.8" id="nrg-xB-eQO"/>
                             <constraint firstItem="DGS-EJ-2Vo" firstAttribute="height" secondItem="hnL-0y-DRZ" secondAttribute="height" multiplier="0.6" id="tA3-xa-YXH"/>
                             <constraint firstItem="MZy-ta-U9v" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="tAL-pv-OJo"/>
                             <constraint firstItem="DGS-EJ-2Vo" firstAttribute="centerY" secondItem="hnL-0y-DRZ" secondAttribute="centerY" constant="-35" id="wBA-j5-gjQ"/>
@@ -117,44 +120,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TT3-Bj-D8b">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="gos-Lm-LnD" customClass="DetailImageTableViewCell" customModule="FocusFoodie" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gos-Lm-LnD" id="Kh5-OO-pJt">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="kzM-7n-NdW" customClass="DetailInfoTableViewCell" customModule="FocusFoodie" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="88" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kzM-7n-NdW" id="CcY-mx-zEd">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="X8H-NH-8wC" customClass="DetailNoteTableViewCell" customModule="FocusFoodie" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="131.5" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="X8H-NH-8wC" id="WTf-8c-9Zw">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TT3-Bj-D8b">
+                                <rect key="frame" x="20" y="74" width="374" height="788"/>
+                                <color key="backgroundColor" name="G1"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qVp-EU-3mW"/>
                         <color key="backgroundColor" name="G1"/>
                         <color key="tintColor" name="G3"/>
                         <constraints>
-                            <constraint firstItem="TT3-Bj-D8b" firstAttribute="trailing" secondItem="qVp-EU-3mW" secondAttribute="trailing" id="Cas-nZ-Cb7"/>
-                            <constraint firstItem="TT3-Bj-D8b" firstAttribute="leading" secondItem="qVp-EU-3mW" secondAttribute="leading" id="MCi-AQ-f7q"/>
+                            <constraint firstItem="TT3-Bj-D8b" firstAttribute="trailing" secondItem="qVp-EU-3mW" secondAttribute="trailing" constant="-20" id="Cas-nZ-Cb7"/>
+                            <constraint firstItem="TT3-Bj-D8b" firstAttribute="leading" secondItem="qVp-EU-3mW" secondAttribute="leading" constant="20" id="MCi-AQ-f7q"/>
                             <constraint firstItem="qVp-EU-3mW" firstAttribute="bottom" secondItem="TT3-Bj-D8b" secondAttribute="bottom" id="Qka-Qv-MEL"/>
-                            <constraint firstItem="TT3-Bj-D8b" firstAttribute="top" secondItem="qVp-EU-3mW" secondAttribute="top" id="fFA-Kn-y0h"/>
+                            <constraint firstItem="TT3-Bj-D8b" firstAttribute="top" secondItem="qVp-EU-3mW" secondAttribute="top" constant="30" id="fFA-Kn-y0h"/>
                         </constraints>
                     </view>
                     <connections>

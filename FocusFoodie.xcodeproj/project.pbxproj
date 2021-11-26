@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		060D04DD9AEE9708F108A30D /* Pods_FocusFoodie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B10A2329D8AD6B769D677516 /* Pods_FocusFoodie.framework */; };
 		0901E686273D20AF005375B4 /* ProfileBasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0901E685273D20AF005375B4 /* ProfileBasicCell.swift */; };
-		0901E68D273D5584005375B4 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0901E68C273D5584005375B4 /* FirebaseManager.swift */; };
 		090E07E127303A1800136025 /* TimerBasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090E07E027303A1800136025 /* TimerBasicCell.swift */; };
 		090E07E32730E9F700136025 /* IngredientItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090E07E22730E9F600136025 /* IngredientItemView.swift */; };
 		090E07E52730EC5800136025 /* IngredientGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090E07E42730EC5800136025 /* IngredientGalleryView.swift */; };
@@ -37,7 +36,7 @@
 		09524F9E271FFD910061C36B /* Timer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09524F9D271FFD910061C36B /* Timer.storyboard */; };
 		09524FA0271FFD9C0061C36B /* Record.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09524F9F271FFD9C0061C36B /* Record.storyboard */; };
 		09524FA2271FFDA90061C36B /* Community.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09524FA1271FFDA90061C36B /* Community.storyboard */; };
-		09524FA4271FFE2D0061C36B /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524FA3271FFE2D0061C36B /* TimerViewController.swift */; };
+		09524FA4271FFE2D0061C36B /* temp_TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524FA3271FFE2D0061C36B /* temp_TimerViewController.swift */; };
 		09524FA6271FFE620061C36B /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524FA5271FFE620061C36B /* RecordViewController.swift */; };
 		09524FA8271FFEA70061C36B /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524FA7271FFEA70061C36B /* CommunityViewController.swift */; };
 		09524FAD271FFEF00061C36B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09524FAA271FFEF00061C36B /* BaseViewController.swift */; };
@@ -52,10 +51,12 @@
 		09524FEB272168E80061C36B /* DetailInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09524FE9272168E80061C36B /* DetailInfoTableViewCell.xib */; };
 		09524FF42721B2B80061C36B /* RecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09524FF62721B2B80061C36B /* RecordCell.xib */; };
 		0966E719274778FE000FE743 /* CommunityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0966E718274778FE000FE743 /* CommunityProvider.swift */; };
-		0974F113273AB6D70016FEC1 /* CommunityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0974F111273AB6D70016FEC1 /* CommunityCollectionViewCell.swift */; };
-		0974F114273AB6D70016FEC1 /* CommunityCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0974F112273AB6D70016FEC1 /* CommunityCollectionViewCell.xib */; };
+		0966E71D27479DF9000FE743 /* InvitationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0966E71C27479DF9000FE743 /* InvitationManager.swift */; };
 		0974F117273B71340016FEC1 /* ProfileInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0974F115273B71340016FEC1 /* ProfileInfoCell.swift */; };
 		0974F118273B71340016FEC1 /* ProfileInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0974F116273B71340016FEC1 /* ProfileInfoCell.xib */; };
+		09840BD7274ABD770062384F /* astronaut-light-theme.json in Resources */ = {isa = PBXBuildFile; fileRef = 09840BD6274ABD770062384F /* astronaut-light-theme.json */; };
+		09840BD9274ABD7F0062384F /* tumbleweed-rolling.json in Resources */ = {isa = PBXBuildFile; fileRef = 09840BD8274ABD7F0062384F /* tumbleweed-rolling.json */; };
+		09840BDB274F99440062384F /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09840BDA274F99440062384F /* TimerViewController.swift */; };
 		09C1C7CE2722833000D2C9B2 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C7CD2722833000D2C9B2 /* UIColor+Extension.swift */; };
 		09C1C7D12722903800D2C9B2 /* DetailNoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C7CF2722903800D2C9B2 /* DetailNoteTableViewCell.swift */; };
 		09C1C7D22722903800D2C9B2 /* DetailNoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09C1C7D02722903800D2C9B2 /* DetailNoteTableViewCell.xib */; };
@@ -81,7 +82,6 @@
 		09D83DF727451FE7005F1BE5 /* EndingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D83DF627451FE7005F1BE5 /* EndingViewController.swift */; };
 		09D83DFB27458489005F1BE5 /* WeekView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D83DFA27458489005F1BE5 /* WeekView.xib */; };
 		09D83DFD27458863005F1BE5 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D83DFC27458863005F1BE5 /* WeekView.swift */; };
-		09D83DFF27462669005F1BE5 /* CommunityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D83DFE27462668005F1BE5 /* CommunityListViewController.swift */; };
 		09DB47502734DFC1003703C1 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB474F2734DFC1003703C1 /* AuthViewController.swift */; };
 		09DB475227350C2D003703C1 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB475127350C2D003703C1 /* UserManager.swift */; };
 		09DB475427351B75003703C1 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB475327351B75003703C1 /* Recipe.swift */; };
@@ -106,7 +106,6 @@
 
 /* Begin PBXFileReference section */
 		0901E685273D20AF005375B4 /* ProfileBasicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBasicCell.swift; sourceTree = "<group>"; };
-		0901E68C273D5584005375B4 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		090E07E027303A1800136025 /* TimerBasicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerBasicCell.swift; sourceTree = "<group>"; };
 		090E07E22730E9F600136025 /* IngredientItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientItemView.swift; sourceTree = "<group>"; };
 		090E07E42730EC5800136025 /* IngredientGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientGalleryView.swift; sourceTree = "<group>"; };
@@ -137,7 +136,7 @@
 		09524F9D271FFD910061C36B /* Timer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Timer.storyboard; sourceTree = "<group>"; };
 		09524F9F271FFD9C0061C36B /* Record.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Record.storyboard; sourceTree = "<group>"; };
 		09524FA1271FFDA90061C36B /* Community.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Community.storyboard; sourceTree = "<group>"; };
-		09524FA3271FFE2D0061C36B /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		09524FA3271FFE2D0061C36B /* temp_TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = temp_TimerViewController.swift; sourceTree = "<group>"; };
 		09524FA5271FFE620061C36B /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		09524FA7271FFEA70061C36B /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
 		09524FAA271FFEF00061C36B /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -152,10 +151,12 @@
 		09524FE9272168E80061C36B /* DetailInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailInfoTableViewCell.xib; sourceTree = "<group>"; };
 		09524FF52721B2B80061C36B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RecordCell.xib; sourceTree = "<group>"; };
 		0966E718274778FE000FE743 /* CommunityProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityProvider.swift; sourceTree = "<group>"; };
-		0974F111273AB6D70016FEC1 /* CommunityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCollectionViewCell.swift; sourceTree = "<group>"; };
-		0974F112273AB6D70016FEC1 /* CommunityCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityCollectionViewCell.xib; sourceTree = "<group>"; };
+		0966E71C27479DF9000FE743 /* InvitationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationManager.swift; sourceTree = "<group>"; };
 		0974F115273B71340016FEC1 /* ProfileInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoCell.swift; sourceTree = "<group>"; };
 		0974F116273B71340016FEC1 /* ProfileInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileInfoCell.xib; sourceTree = "<group>"; };
+		09840BD6274ABD770062384F /* astronaut-light-theme.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "astronaut-light-theme.json"; sourceTree = "<group>"; };
+		09840BD8274ABD7F0062384F /* tumbleweed-rolling.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "tumbleweed-rolling.json"; sourceTree = "<group>"; };
+		09840BDA274F99440062384F /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		09C1C7CD2722833000D2C9B2 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		09C1C7CF2722903800D2C9B2 /* DetailNoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNoteTableViewCell.swift; sourceTree = "<group>"; };
 		09C1C7D02722903800D2C9B2 /* DetailNoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailNoteTableViewCell.xib; sourceTree = "<group>"; };
@@ -199,7 +200,6 @@
 		09D83DF627451FE7005F1BE5 /* EndingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndingViewController.swift; sourceTree = "<group>"; };
 		09D83DFA27458489005F1BE5 /* WeekView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeekView.xib; sourceTree = "<group>"; };
 		09D83DFC27458863005F1BE5 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
-		09D83DFE27462668005F1BE5 /* CommunityListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityListViewController.swift; sourceTree = "<group>"; };
 		09DB474F2734DFC1003703C1 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		09DB475127350C2D003703C1 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		09DB475327351B75003703C1 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
@@ -240,10 +240,10 @@
 		0901E68B273D554C005375B4 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				0966E71C27479DF9000FE743 /* InvitationManager.swift */,
 				09DB475127350C2D003703C1 /* UserManager.swift */,
 				09D83DF42744EB72005F1BE5 /* RecordManager.swift */,
 				09E42D3227425E600014C4B9 /* RecipeManager.swift */,
-				0901E68C273D5584005375B4 /* FirebaseManager.swift */,
 				09DB475727351DE8003703C1 /* CollectionManager.swift */,
 			);
 			path = Manager;
@@ -252,7 +252,8 @@
 		093169A42727CD6000360885 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
-				09524FA3271FFE2D0061C36B /* TimerViewController.swift */,
+				09524FA3271FFE2D0061C36B /* temp_TimerViewController.swift */,
+				09840BDA274F99440062384F /* TimerViewController.swift */,
 				09D83DF627451FE7005F1BE5 /* EndingViewController.swift */,
 				093169A52727CEB300360885 /* TimerEditViewController.swift */,
 				09D83DEC2744B0A8005F1BE5 /* ContentEditViewController.swift */,
@@ -265,7 +266,6 @@
 			children = (
 				09DB475E27357043003703C1 /* ProfileViewController.swift */,
 				09524FA7271FFEA70061C36B /* CommunityViewController.swift */,
-				09D83DFE27462668005F1BE5 /* CommunityListViewController.swift */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -328,6 +328,8 @@
 		09524F8B271FF9090061C36B /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				09840BD8274ABD7F0062384F /* tumbleweed-rolling.json */,
+				09840BD6274ABD770062384F /* astronaut-light-theme.json */,
 				0942892D272D7E7D0083CF6B /* burger-machine.json */,
 				09524F7E271FF4A10061C36B /* Assets.xcassets */,
 				09DB476227396E4C003703C1 /* Dongle */,
@@ -338,6 +340,7 @@
 		09524F8C271FF92E0061C36B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				09840BD5274ABCC10062384F /* Lottie */,
 				09DB475D273522DC003703C1 /* Auth */,
 				09524FEE272169350061C36B /* Base */,
 				0983ACE12727A33100DC40E1 /* Timer */,
@@ -365,7 +368,6 @@
 		09524F8E271FF95A0061C36B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0966E718274778FE000FE743 /* CommunityProvider.swift */,
 				09DB475527351BC3003703C1 /* User.swift */,
 				09DB475327351B75003703C1 /* Recipe.swift */,
 				09C1C7DA27229D3D00D2C9B2 /* Record.swift */,
@@ -374,6 +376,7 @@
 				093169B32729413100360885 /* Ingredient.swift */,
 				09C276BE273D00DB0037D65C /* ProfileContent.swift */,
 				09C1C7D827229B9900D2C9B2 /* RecordContent.swift */,
+				0966E718274778FE000FE743 /* CommunityProvider.swift */,
 				0901E68B273D554C005375B4 /* Manager */,
 			);
 			path = Model;
@@ -437,6 +440,13 @@
 				093169A82727CEC900360885 /* IngredientSelectionCell.swift */,
 			);
 			path = Timer;
+			sourceTree = "<group>";
+		};
+		09840BD5274ABCC10062384F /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Lottie;
 			sourceTree = "<group>";
 		};
 		09C1C7D32722929100D2C9B2 /* Detail */ = {
@@ -545,8 +555,6 @@
 				09524FA1271FFDA90061C36B /* Community.storyboard */,
 				09DB476B2739874E003703C1 /* CommunityTableViewCell.swift */,
 				09DB476C2739874E003703C1 /* CommunityTableViewCell.xib */,
-				0974F111273AB6D70016FEC1 /* CommunityCollectionViewCell.swift */,
-				0974F112273AB6D70016FEC1 /* CommunityCollectionViewCell.xib */,
 				09C276B9273CEE1B0037D65C /* Profile */,
 			);
 			path = Community;
@@ -631,6 +639,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09840BD9274ABD7F0062384F /* tumbleweed-rolling.json in Resources */,
 				093169B12727CEC900360885 /* IngredientGalleryView.xib in Resources */,
 				09524FA2271FFDA90061C36B /* Community.storyboard in Resources */,
 				09DB476727396E4D003703C1 /* Dongle-Regular.ttf in Resources */,
@@ -645,13 +654,13 @@
 				093169B02727CEC900360885 /* IngredientItemView.xib in Resources */,
 				09DB476827396E4D003703C1 /* OFL.txt in Resources */,
 				09C1C7D22722903800D2C9B2 /* DetailNoteTableViewCell.xib in Resources */,
-				0974F114273AB6D70016FEC1 /* CommunityCollectionViewCell.xib in Resources */,
 				0942892E272D7E7D0083CF6B /* burger-machine.json in Resources */,
 				09524FA0271FFD9C0061C36B /* Record.storyboard in Resources */,
 				09C276BD273CF7850037D65C /* ProfileSelectionCell.xib in Resources */,
 				09D83DFB27458489005F1BE5 /* WeekView.xib in Resources */,
 				09DB476E2739874E003703C1 /* CommunityTableViewCell.xib in Resources */,
 				09DB475C273522AB003703C1 /* Auth.storyboard in Resources */,
+				09840BD7274ABD770062384F /* astronaut-light-theme.json in Resources */,
 				09524FEB272168E80061C36B /* DetailInfoTableViewCell.xib in Resources */,
 				09428935272DC64E0083CF6B /* ComingSoonView.xib in Resources */,
 				09DB476927396E4D003703C1 /* Dongle-Light.ttf in Resources */,
@@ -727,7 +736,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0974F113273AB6D70016FEC1 /* CommunityCollectionViewCell.swift in Sources */,
 				09D83DF727451FE7005F1BE5 /* EndingViewController.swift in Sources */,
 				09DB47502734DFC1003703C1 /* AuthViewController.swift in Sources */,
 				09D83DF52744EB72005F1BE5 /* RecordManager.swift in Sources */,
@@ -737,7 +745,7 @@
 				09DB475627351BC3003703C1 /* User.swift in Sources */,
 				09524FDD2720494A0061C36B /* Bundle+Extension.swift in Sources */,
 				09C1C8202722BBE600D2C9B2 /* UILabel+Extension.swift in Sources */,
-				09524FA4271FFE2D0061C36B /* TimerViewController.swift in Sources */,
+				09524FA4271FFE2D0061C36B /* temp_TimerViewController.swift in Sources */,
 				090E07E127303A1800136025 /* TimerBasicCell.swift in Sources */,
 				09524FEA272168E80061C36B /* DetailInfoTableViewCell.swift in Sources */,
 				09C1C7D62722935800D2C9B2 /* DetailImageTableViewCell.swift in Sources */,
@@ -750,11 +758,10 @@
 				09428933272D975C0083CF6B /* ComingSoonView.swift in Sources */,
 				09DB475827351DE8003703C1 /* CollectionManager.swift in Sources */,
 				09428938272E84970083CF6B /* Date+Extension.swift in Sources */,
-				09D83DFF27462669005F1BE5 /* CommunityListViewController.swift in Sources */,
 				09524F7A271FF4A00061C36B /* ViewController.swift in Sources */,
 				09524F96271FFCC00061C36B /* UIView+Extension.swift in Sources */,
-				0901E68D273D5584005375B4 /* FirebaseManager.swift in Sources */,
 				09C1C7CE2722833000D2C9B2 /* UIColor+Extension.swift in Sources */,
+				0966E71D27479DF9000FE743 /* InvitationManager.swift in Sources */,
 				09C1C82D27240BFB00D2C9B2 /* CalendarPickerHeaderView.swift in Sources */,
 				09D83DED2744B0A8005F1BE5 /* ContentEditViewController.swift in Sources */,
 				09DB475227350C2D003703C1 /* UserManager.swift in Sources */,
@@ -775,6 +782,7 @@
 				0966E719274778FE000FE743 /* CommunityProvider.swift in Sources */,
 				09524F90271FFA000061C36B /* UIStoryboard+Extension.swift in Sources */,
 				09DB475F27357043003703C1 /* ProfileViewController.swift in Sources */,
+				09840BDB274F99440062384F /* TimerViewController.swift in Sources */,
 				09524FB1272003480061C36B /* UIImage+Extension.swift in Sources */,
 				09524FA8271FFEA70061C36B /* CommunityViewController.swift in Sources */,
 				09DB475427351B75003703C1 /* Recipe.swift in Sources */,

@@ -14,7 +14,7 @@ class ProfileBasicCell: UITableViewCell {
         // Initialization code
     }
 
-    //Implement by child class
+    // Implement by child class
     func layoutCellWithInfo(name: String, email: String) {
         
     }

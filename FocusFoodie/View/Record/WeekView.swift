@@ -164,8 +164,11 @@ class WeekView: UIView {
         
         if let weekInterval = calendar.dateInterval(of: .weekOfYear, for: today) {
             
-            for i in 0...6 {
-                if let day = calendar.date(byAdding: .day, value: i, to: weekInterval.start) {
+            for index in 0...6 {
+                
+                if let day = calendar.date(byAdding: .day,
+                                           value: index, to: weekInterval.start) {
+                    
                     week += [day]
                 }
             }
@@ -201,7 +204,6 @@ class WeekView: UIView {
     }
     
     private func updateTableview(type: Week) {
-        
         
     }
 }

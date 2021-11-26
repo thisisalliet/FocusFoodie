@@ -137,7 +137,7 @@ enum VegetableItem: IngredientObject, CaseIterable {
         
         switch self {
             
-        case .avocado: return "Advocado"
+        case .avocado: return "Avocado"
 
         case .bellPepper: return "Pepper"
 
@@ -174,13 +174,13 @@ enum MeatItem: IngredientObject, CaseIterable {
     
     case bacon
     
-    case chicken
+    case tuna
         
     case falafel
     
     case shrimp
     
-    case tuna
+    case beef
     
     case turkey
     
@@ -195,13 +195,13 @@ enum MeatItem: IngredientObject, CaseIterable {
             
         case .bacon: return UIImage.asset(.icon_bacon)
             
-        case .chicken: return UIImage.asset(.icon_chicken)
+        case .tuna: return UIImage.asset(.icon_tuna)
             
         case .falafel: return UIImage.asset(.icon_falafel)
             
         case .shrimp: return UIImage.asset(.icon_shrimp)
             
-        case .tuna: return UIImage.asset(.icon_tuna)
+        case .beef: return UIImage.asset(.icon_beef)
             
         case .turkey: return UIImage.asset(.icon_turkey)
         }
@@ -213,13 +213,13 @@ enum MeatItem: IngredientObject, CaseIterable {
             
         case .bacon: return "Bacon"
             
-        case .chicken: return "Chicken"
+        case .tuna: return "Tuna"
 
         case .falafel: return "Falafel"
 
         case .shrimp: return "Shrimp"
 
-        case .tuna: return "Tuna"
+        case .beef: return "Beef"
 
         case .turkey: return "Turkey"
         }
@@ -231,13 +231,13 @@ enum MeatItem: IngredientObject, CaseIterable {
             
         case .bacon: return 5
 
-        case .chicken: return 10
+        case .tuna: return 10
 
         case .falafel: return 15
 
         case .shrimp: return 20
 
-        case .tuna: return 30
+        case .beef: return 30
 
         case .turkey: return 60
         }
@@ -248,11 +248,11 @@ enum SideItem: IngredientObject, CaseIterable {
     
     case egg
     
-    case peanutButter
-    
     case honey
     
     case mayonnaise
+    
+    case ketchup
     
     case mustard
     
@@ -269,11 +269,11 @@ enum SideItem: IngredientObject, CaseIterable {
             
         case .egg: return UIImage.asset(.icon_egg)
             
-        case .peanutButter: return UIImage.asset(.icon_peanutButter)
-            
         case .honey: return UIImage.asset(.icon_honey)
             
         case .mayonnaise: return UIImage.asset(.icon_mayonnaise)
+            
+        case .ketchup: return UIImage.asset(.icon_ketchup)
             
         case .mustard: return UIImage.asset(.icon_mustard)
             
@@ -287,11 +287,11 @@ enum SideItem: IngredientObject, CaseIterable {
             
         case .egg: return "Egg"
             
-        case .peanutButter: return "Peanut\nButter"
-            
         case .honey: return "Honey"
             
         case .mayonnaise: return "Mayonnaise"
+            
+        case .ketchup: return "Ketchup"
             
         case .mustard: return "Mustard"
             
@@ -305,11 +305,11 @@ enum SideItem: IngredientObject, CaseIterable {
             
         case .egg: return 10
             
-        case .peanutButter: return 20
+        case .honey: return 20
             
-        case .honey: return 30
+        case .mayonnaise: return 30
             
-        case .mayonnaise: return 40
+        case .ketchup: return 40
             
         case .mustard: return 50
             
