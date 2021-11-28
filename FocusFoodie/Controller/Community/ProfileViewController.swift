@@ -236,7 +236,7 @@ class ProfileViewController: BaseViewController,
         } else {
             
             return 150
-        }        
+        }
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {

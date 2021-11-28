@@ -13,14 +13,14 @@ import FirebaseFirestoreSwift
 
 typealias GenericCompletion<T: Decodable> = (([T]?, Error?) -> Void)
 
-enum CommunityType {
+//enum CommunityType {
+//
+//    case friend
     
-    case friend
+//    case invitation
     
-    case invitation
-    
-    case block
-}
+//    case block
+//}
 
 class UserManager {
     
@@ -30,7 +30,9 @@ class UserManager {
     
     private init() {}
     
-    let userId: String = {
+    let users = Firestore.firestore().collection(CollectionName.user.rawValue)
+    
+    let currentUserId: String = {
         
         if let user = Auth.auth().currentUser {
             
@@ -42,7 +44,7 @@ class UserManager {
         }
     }()
     
-    let userDisplayName: String = {
+    let currentUserName: String = {
         
         if let user = Auth.auth().currentUser,
            let userName = user.displayName {
@@ -70,10 +72,10 @@ class UserManager {
     
     func createUserInfo() {
         
-        let userRef = db.collection(CollectionName.user.rawValue)
+//        let userRef = db.collection(CollectionName.user.rawValue)
         
-        let user = User(displayName: userDisplayName,
-                        userId: userId,
+        let user = User(displayName: currentUserName,
+                        userId: currentUserId,
                         appleToken: "",
                         userEmail: userEmail,
                         providerId: "Apple",
@@ -84,7 +86,7 @@ class UserManager {
         
         do {
             
-            try userRef.document(user.userId).setData(from: user)
+            try users.document(user.userId).setData(from: user)
             
         } catch {
             
@@ -94,7 +96,7 @@ class UserManager {
     
     func fetchUserInfo(uid: String, completion: @escaping (Result<User, Error>) -> Void) {
         
-        db.collection(CollectionName.user.rawValue).document(uid).getDocument { document, error in
+        users.document(uid).getDocument { document, error in
                 
                 if let error = error {
                     
@@ -130,9 +132,9 @@ class UserManager {
     func addFriend(userId: String,
                    invitorId: String) {
         
-        let friendRef = db.collection(CollectionName.user.rawValue).document(userId)
+        let friendRef = users.document(userId)
         
-        let invitorRef = db.collection(CollectionName.user.rawValue).document(invitorId)
+        let invitorRef = users.document(invitorId)
         
         let invitationRef = db.collection(CollectionName.invitation.rawValue)
             .whereField("receiver_id", isEqualTo: userId)
@@ -187,35 +189,120 @@ class UserManager {
         }
     }
     
-    func fetchFriendBlockList(_ type: CommunityType, completion: @escaping (Result<[Any], Error>) -> Void) {
+    func removeFriend(userId: String,
+                      completion: @escaping (Result<String, Error>) -> Void) {
         
-        let friendBlockRef = db.collection(CollectionName.user.rawValue).document(userId)
+        let myRef = users.document(currentUserId)
         
-        friendBlockRef.getDocument { document, error in
+        let friendRef  = users.document(userId)
+        
+        myRef.getDocument { document, error in
             
-            if let error = error {
-                completion(Result.failure(error))
+            if let document = document, document.exists {
+                    
+                document.reference.updateData(["friend_list" : FieldValue.arrayRemove([userId])])
+                
+                completion(.success("Friend ID remove from my friend list"))
+                
+            } else {
+                
+                if let error = error {
+                    
+                    completion(.failure(error))
+                }
             }
+        }
+        
+        friendRef.getDocument { document, error in
             
-            guard let document = document else { return }
-            
-            let object = try? document.data(as: User.self)
-            
-            switch type {
+            if let document = document, document.exists {
+                    
+                document.reference.updateData(["friend_list" : FieldValue.arrayRemove([self.currentUserId])])
                 
-            case .friend:
-                let friendList = object?.friendList
-                completion(Result.success((friendList ?? []) as [Any]))
+                completion(.success("My ID remove from friend's friend list"))
                 
-            case .block:
-                let blockList = object?.blockList
-                completion(Result.success((blockList ?? []) as [Any]))
+            } else {
                 
-            case .invitation:
-                break
+                if let error = error {
+                    
+                    completion(.failure(error))
+                }
             }
         }
     }
+    
+    func removeBlock(userId: String,
+                     completion: @escaping (Result<String, Error>) -> Void) {
+       
+       let myRef = users.document(currentUserId)
+       
+       let friendRef  = users.document(userId)
+       
+       myRef.getDocument { document, error in
+           
+           if let document = document, document.exists {
+                   
+               document.reference.updateData(["block_list" : FieldValue.arrayRemove([userId])])
+               
+               document.reference.updateData(["friend_list" : FieldValue.arrayUnion([userId])])
+               
+               completion(.success("Friend ID remove from my block list and add to friend list"))
+               
+           } else {
+               
+               if let error = error {
+                   
+                   completion(.failure(error))
+               }
+           }
+       }
+       
+       friendRef.getDocument { document, error in
+           
+           if let document = document, document.exists {
+                   
+               document.reference.updateData(["friend_list" : FieldValue.arrayUnion([self.currentUserId])])
+               
+               completion(.success("My ID added to friend's list"))
+               
+           } else {
+               
+               if let error = error {
+                   
+                   completion(.failure(error))
+               }
+           }
+       }
+   }
+    
+//    func fetchFriendBlockList(_ type: CommunityType, completion: @escaping (Result<[Any], Error>) -> Void) {
+        
+//        friendBlockRef.getDocument { document, error in
+//
+//            if let error = error {
+//
+//                completion(Result.failure(error))
+//            }
+//
+//            guard let document = document else { return }
+//
+//            let object = try? document.data(as: User.self)
+//
+//            switch type {
+//
+//            case .friend:
+//                let friendList = object?.friendList
+//                completion(Result.success((friendList ?? []) as [Any]))
+//
+//            case .block:
+//                let blockList = object?.blockList
+//                completion(Result.success((blockList ?? []) as [Any]))
+//
+//            case .invitation:
+//                break
+//            }
+//        }
+//    }
     
     func findFriend(friendId: String) {
         

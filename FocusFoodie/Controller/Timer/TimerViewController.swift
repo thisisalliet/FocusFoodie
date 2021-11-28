@@ -19,6 +19,13 @@ enum ButtonStatus {
     case pause
 }
 
+private struct Segue {
+
+    static let contentEditor = "SegueContent"
+
+    static let timeEditor = "SegueTime"
+}
+
 class TimerViewController: BaseViewController {
     
     @IBOutlet weak var timerTitle: UILabel!
@@ -135,7 +142,9 @@ class TimerViewController: BaseViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "toTimeEditor" {
+        let identifier = segue.identifier
+        
+        if identifier ==  Segue.timeEditor {
             
             guard let timeEditVC = segue.destination as? TimerEditViewController else { return }
             
@@ -160,7 +169,7 @@ class TimerViewController: BaseViewController {
             }
         }
         
-        if segue.identifier == "toContentEditor" {
+        if identifier == Segue.contentEditor {
             
             guard let contentEditVC = segue.destination as? ContentEditViewController else { return }
             

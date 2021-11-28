@@ -13,18 +13,20 @@ class CompondViewController: BaseViewController,
     
     @IBOutlet weak var tableView: UITableView!
     
-    var datas: [[Any]] = [[]] {
-
-        didSet {
-            reloadData()
-        }
-    }
+//    var datas: [[Any]] = [[]] {
+//
+//        didSet {
+//            reloadData()
+//        }
+//    }
 
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupTableView()
+        
+        tableView.beginHeaderRefreshing()
     }
     
     // MARK: - Private Method
@@ -39,19 +41,19 @@ class CompondViewController: BaseViewController,
             self.tableView = tableView
         }
 
-        tableView.dataSource = self
+//        tableView.dataSource = self
+//
+//        tableView.delegate = self
 
-        tableView.delegate = self
+        tableView.addRefreshHeader(refreshingBlock: { [weak self] in
 
-//        tableView.addRefreshHeader(refreshingBlock: { [weak self] in
-//
-//            self?.headerLoader()
-//        })
-//
-//        tableView.addRefreshFooter(refreshingBlock: { [weak self] in
-//
-//            self?.footerLoader()
-//        })
+            self?.headerLoader()
+        })
+
+        tableView.addRefreshFooter(refreshingBlock: { [weak self] in
+
+            self?.footerLoader()
+        })
     }
     
     // MARK: - Public Method: Manipulate table view and collection view
@@ -69,21 +71,64 @@ class CompondViewController: BaseViewController,
 
         tableView.reloadData()
     }
-
-    // MARK: - UITableViewDataSource. Subclass should override these method for setting properly.
     
-    func numberOfSections(in tableView: UITableView) -> Int {
+    func headerLoader() {
 
-        return datas.count
+        tableView.endHeaderRefreshing()
     }
+
+    func footerLoader() {
+
+        tableView.endFooterRefreshing()
+    }
+
+    func endHeaderRefreshing() {
+
+        tableView.endHeaderRefreshing()
+    }
+
+    func endFooterRefreshing() {
+
+        tableView.endFooterRefreshing()
+    }
+
+    func endWithNoMoreData() {
+
+        tableView.endWithNoMoreData()
+    }
+
+    func resetNoMoreData() {
+
+        tableView.resetNoMoreData()
+    }
+
+    // MARK: - UITableView DataSource
+    
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//
+//        return datas.count
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return datas[section].count
+//        return datas[section].count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         return UITableViewCell(style: .default, reuseIdentifier: String(describing: CompondViewController.self))
+    }
+    
+    // MARK: - UITabelview Delegate -
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 130
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return UITableView.automaticDimension
     }
 }

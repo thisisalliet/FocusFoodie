@@ -17,7 +17,7 @@ class InvitationManager {
     
     static let shared = InvitationManager()
     
-    let myId = UserManager.shared.userId
+    let myId = UserManager.shared.currentUserId
     
     func monitorInvitation(uid: String, completion: @escaping (Result<[Invitation], Error>) -> Void) {
         

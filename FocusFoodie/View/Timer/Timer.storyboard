@@ -117,7 +117,7 @@
                                     <color key="titleColor" name="G3"/>
                                 </state>
                                 <connections>
-                                    <segue destination="59W-8V-taY" kind="presentation" identifier="toContentEditor" id="dpK-ej-Tsd"/>
+                                    <segue destination="59W-8V-taY" kind="presentation" identifier="SegueContent" id="dpK-ej-Tsd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -237,7 +237,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onSave:" destination="59W-8V-taY" eventType="touchUpInside" id="9ZD-rk-Yns"/>
-                                    <segue destination="zOF-3W-jRS" kind="presentation" identifier="toTimeEditor" id="YVS-Wd-Pie"/>
+                                    <segue destination="zOF-3W-jRS" kind="presentation" identifier="SegueTime" id="YVS-Wd-Pie"/>
                                 </connections>
                             </button>
                         </subviews>

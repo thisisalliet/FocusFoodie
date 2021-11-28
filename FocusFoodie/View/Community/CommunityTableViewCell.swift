@@ -7,18 +7,18 @@
 
 import UIKit
 
-enum CommunityLayout {
-    
-    case basic
-    
-    case withInvitation
-}
+//enum CommunityLayout {
+//
+//    case basic
+//
+//    case withInvitation
+//}
 
 class CommunityTableViewCell: UITableViewCell {
     
-    weak var delegate: CommunityViewController?
+//    weak var delegate: CommunityViewController?
     
-    @IBOutlet weak var acceptButton: UIButton!
+    @IBOutlet weak var multiButton: UIButton!
     
     @IBOutlet weak var whiteView: UIView!
     
@@ -28,13 +28,29 @@ class CommunityTableViewCell: UITableViewCell {
         
     @IBOutlet weak var inviteBackground: UIImageView!
     
-    @IBAction func acceptButtonTapped(_ sender: UIButton) {
+    var touchHandler: (() -> Void)? {
         
+        didSet {
+            
+            if touchHandler == nil {
+                
+                multiButton.isHidden = true
+                
+            } else {
+                
+                multiButton.isHidden = false
+            }
+        }
+    }
+    
+    @IBAction func didTappedMultiButton(_ sender: UIButton) {
+        
+        touchHandler?()
     }
     
     func layoutCell(name: String, email: String) {
         
-        acceptButton.isHidden = true
+        multiButton.setBackgroundImage(UIImage.asset(.icon_cross_green), for: .normal)
 
         nameLabel.text = name
 
@@ -46,5 +62,11 @@ class CommunityTableViewCell: UITableViewCell {
         nameLabel.text = name
 
         emailLabel.text = email
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        touchHandler = nil
     }
 }

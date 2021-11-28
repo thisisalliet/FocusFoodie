@@ -57,6 +57,10 @@
 		09840BD7274ABD770062384F /* astronaut-light-theme.json in Resources */ = {isa = PBXBuildFile; fileRef = 09840BD6274ABD770062384F /* astronaut-light-theme.json */; };
 		09840BD9274ABD7F0062384F /* tumbleweed-rolling.json in Resources */ = {isa = PBXBuildFile; fileRef = 09840BD8274ABD7F0062384F /* tumbleweed-rolling.json */; };
 		09840BDB274F99440062384F /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09840BDA274F99440062384F /* TimerViewController.swift */; };
+		09840BDD2750C5C40062384F /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09840BDC2750C5C40062384F /* FriendViewController.swift */; };
+		09840BE02750C81C0062384F /* MJRefreshWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09840BDF2750C81C0062384F /* MJRefreshWrapper.swift */; };
+		09840BE22750EE600062384F /* InvitationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09840BE12750EE600062384F /* InvitationViewController.swift */; };
+		09840BE42750EE890062384F /* BlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09840BE32750EE890062384F /* BlockViewController.swift */; };
 		09C1C7CE2722833000D2C9B2 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C7CD2722833000D2C9B2 /* UIColor+Extension.swift */; };
 		09C1C7D12722903800D2C9B2 /* DetailNoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C7CF2722903800D2C9B2 /* DetailNoteTableViewCell.swift */; };
 		09C1C7D22722903800D2C9B2 /* DetailNoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09C1C7D02722903800D2C9B2 /* DetailNoteTableViewCell.xib */; };
@@ -157,6 +161,10 @@
 		09840BD6274ABD770062384F /* astronaut-light-theme.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "astronaut-light-theme.json"; sourceTree = "<group>"; };
 		09840BD8274ABD7F0062384F /* tumbleweed-rolling.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "tumbleweed-rolling.json"; sourceTree = "<group>"; };
 		09840BDA274F99440062384F /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		09840BDC2750C5C40062384F /* FriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendViewController.swift; path = FocusFoodie/Controller/Community/FriendViewController.swift; sourceTree = SOURCE_ROOT; };
+		09840BDF2750C81C0062384F /* MJRefreshWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MJRefreshWrapper.swift; sourceTree = "<group>"; };
+		09840BE12750EE600062384F /* InvitationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationViewController.swift; sourceTree = "<group>"; };
+		09840BE32750EE890062384F /* BlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockViewController.swift; sourceTree = "<group>"; };
 		09C1C7CD2722833000D2C9B2 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		09C1C7CF2722903800D2C9B2 /* DetailNoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNoteTableViewCell.swift; sourceTree = "<group>"; };
 		09C1C7D02722903800D2C9B2 /* DetailNoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailNoteTableViewCell.xib; sourceTree = "<group>"; };
@@ -264,7 +272,10 @@
 		09428936272DCA0D0083CF6B /* Community */ = {
 			isa = PBXGroup;
 			children = (
+				09840BE32750EE890062384F /* BlockViewController.swift */,
 				09DB475E27357043003703C1 /* ProfileViewController.swift */,
+				09840BDC2750C5C40062384F /* FriendViewController.swift */,
+				09840BE12750EE600062384F /* InvitationViewController.swift */,
 				09524FA7271FFEA70061C36B /* CommunityViewController.swift */,
 			);
 			path = Community;
@@ -293,6 +304,7 @@
 			children = (
 				09428939272F17020083CF6B /* FocusFoodie.entitlements */,
 				09524F8C271FF92E0061C36B /* View */,
+				09840BDE2750C7CF0062384F /* Third Party Wrapper */,
 				09524F8E271FF95A0061C36B /* Model */,
 				09524F8D271FF9490061C36B /* Controller */,
 				09524F8B271FF9090061C36B /* Resource */,
@@ -447,6 +459,15 @@
 			children = (
 			);
 			path = Lottie;
+			sourceTree = "<group>";
+		};
+		09840BDE2750C7CF0062384F /* Third Party Wrapper */ = {
+			isa = PBXGroup;
+			children = (
+				09840BDF2750C81C0062384F /* MJRefreshWrapper.swift */,
+			);
+			name = "Third Party Wrapper";
+			path = "View/Third Party Wrapper";
 			sourceTree = "<group>";
 		};
 		09C1C7D32722929100D2C9B2 /* Detail */ = {
@@ -744,17 +765,21 @@
 				09D83DF22744CEE6005F1BE5 /* CategorySelectionCell.swift in Sources */,
 				09DB475627351BC3003703C1 /* User.swift in Sources */,
 				09524FDD2720494A0061C36B /* Bundle+Extension.swift in Sources */,
+				09840BDD2750C5C40062384F /* FriendViewController.swift in Sources */,
 				09C1C8202722BBE600D2C9B2 /* UILabel+Extension.swift in Sources */,
 				09524FA4271FFE2D0061C36B /* temp_TimerViewController.swift in Sources */,
 				090E07E127303A1800136025 /* TimerBasicCell.swift in Sources */,
+				09840BE02750C81C0062384F /* MJRefreshWrapper.swift in Sources */,
 				09524FEA272168E80061C36B /* DetailInfoTableViewCell.swift in Sources */,
 				09C1C7D62722935800D2C9B2 /* DetailImageTableViewCell.swift in Sources */,
+				09840BE42750EE890062384F /* BlockViewController.swift in Sources */,
 				09C1C82B27240BC700D2C9B2 /* CalendarPickerFooterView.swift in Sources */,
 				09524F9C271FFD390061C36B /* UICollectionView+Extension.swift in Sources */,
 				09524FAE271FFEF00061C36B /* TabBarViewController.swift in Sources */,
 				09C1C8502725D78700D2C9B2 /* UITextfield+Extension.swift in Sources */,
 				0901E686273D20AF005375B4 /* ProfileBasicCell.swift in Sources */,
 				09DB4777273A46F7003703C1 /* SetUpViewController.swift in Sources */,
+				09840BE22750EE600062384F /* InvitationViewController.swift in Sources */,
 				09428933272D975C0083CF6B /* ComingSoonView.swift in Sources */,
 				09DB475827351DE8003703C1 /* CollectionManager.swift in Sources */,
 				09428938272E84970083CF6B /* Date+Extension.swift in Sources */,
