@@ -121,15 +121,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TT3-Bj-D8b">
-                                <rect key="frame" x="20" y="74" width="374" height="788"/>
+                                <rect key="frame" x="20" y="74" width="394" height="788"/>
                                 <color key="backgroundColor" name="G1"/>
+                                <color key="tintColor" name="G2"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qVp-EU-3mW"/>
                         <color key="backgroundColor" name="G1"/>
                         <color key="tintColor" name="G3"/>
                         <constraints>
-                            <constraint firstItem="TT3-Bj-D8b" firstAttribute="trailing" secondItem="qVp-EU-3mW" secondAttribute="trailing" constant="-20" id="Cas-nZ-Cb7"/>
+                            <constraint firstItem="TT3-Bj-D8b" firstAttribute="trailing" secondItem="qVp-EU-3mW" secondAttribute="trailing" id="Cas-nZ-Cb7"/>
                             <constraint firstItem="TT3-Bj-D8b" firstAttribute="leading" secondItem="qVp-EU-3mW" secondAttribute="leading" constant="20" id="MCi-AQ-f7q"/>
                             <constraint firstItem="qVp-EU-3mW" firstAttribute="bottom" secondItem="TT3-Bj-D8b" secondAttribute="bottom" id="Qka-Qv-MEL"/>
                             <constraint firstItem="TT3-Bj-D8b" firstAttribute="top" secondItem="qVp-EU-3mW" secondAttribute="top" constant="30" id="fFA-Kn-y0h"/>

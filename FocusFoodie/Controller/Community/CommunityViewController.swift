@@ -10,6 +10,7 @@ import Firebase
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
+
 class CommunityViewController: BaseViewController,
                                UITableViewDataSource,
                                UITableViewDelegate {
@@ -158,27 +159,31 @@ class CommunityViewController: BaseViewController,
         let identifier = segue.identifier
         
         if identifier == Segue.friend,
-           let friendVC = segue.destination as? FriendViewController {
+           let friendVC = segue.destination as? FriendBlockViewController {
             
-            friendVC.friendNumberHandler = { [ weak self ] number in
+            friendVC.friendNumberHandler = { [weak self] number in
                 
                 guard let strongSelf = self else { return }
                 
                 strongSelf.friendNumber.text = "\(number)"
             }
+            
+            friendVC.monitorFriendList()
 
         } else if identifier == Segue.invitation,
                   let invitationVC = segue.destination as? InvitationViewController {
 
         } else if identifier == Segue.block,
-                  let blockVC = segue.destination as? BlockViewController {
+                  let blockVC = segue.destination as? FriendBlockViewController {
             
-            blockVC.blockNumberHandler = { [ weak self ] number in
+            blockVC.blockNumberHandler = { [weak self] number in
                 
                 guard let strongSelf = self else { return }
                 
                 strongSelf.blockNumber.text = "\(number)"
             }
+            
+            blockVC.monitorBlockList()
         }
     }
     

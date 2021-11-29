@@ -19,9 +19,13 @@ class InvitationManager {
     
     let myId = UserManager.shared.currentUserId
     
+    let users = Firestore.firestore().collection(CollectionName.user.rawValue)
+    
+    let invitations = Firestore.firestore().collection(CollectionName.invitation.rawValue)
+    
     func monitorInvitation(uid: String, completion: @escaping (Result<[Invitation], Error>) -> Void) {
         
-        db.collection(CollectionName.invitation.rawValue)
+        invitations
             .whereField("receiver_id",isEqualTo: myId)
             .addSnapshotListener { snapshot, error in
                 
@@ -53,5 +57,65 @@ class InvitationManager {
                     completion(.success(allInvitations))
                 }
             }
+    }
+    
+    func addFriend(userId: String,
+                   invitorId: String) {
+        
+        let friendRef = users.document(userId)
+        
+        let invitorRef = users.document(invitorId)
+        
+        let invitationRef = invitations
+            .whereField("receiver_id", isEqualTo: userId)
+            .whereField("sender_id", isEqualTo: invitorId)
+        
+        friendRef.getDocument { document, error in
+            
+            if let document = document, document.exists {
+                
+                document.reference.updateData([
+                    "friend_list" : FieldValue.arrayUnion([invitorId])
+                ])
+                
+            } else {
+                
+                if let error = error {
+                    print(error)
+                }
+            }
+        }
+        
+        invitorRef.getDocument { document, error in
+            
+            if let document = document, document.exists {
+                
+                document.reference.updateData([
+                    "friend_list" : FieldValue.arrayUnion([userId])
+                ])
+                
+            } else {
+                
+                if let error = error {
+                    print(error)
+                }
+            }
+        }
+        
+        invitationRef.getDocuments { snapshot, error in
+            
+            if let snapshot = snapshot {
+                
+                snapshot.documents.forEach { snapshot in
+                    snapshot.reference.delete()
+                }
+                
+            } else {
+                
+                if let error = error {
+                    print(error)
+                }
+            }
+        }
     }
 }

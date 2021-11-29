@@ -179,22 +179,22 @@
                                     <constraint firstAttribute="height" constant="5" id="lJd-6B-DS7"/>
                                 </constraints>
                             </view>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IUO-vB-jx1">
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8BC-4b-OAr">
                                 <rect key="frame" x="25" y="314.33333333333331" width="403" height="577.66666666666674"/>
                                 <connections>
-                                    <segue destination="qt7-g3-WiN" kind="embed" identifier="SegueFriend" id="ocx-og-qU1"/>
+                                    <segue destination="CGN-f6-Fg9" kind="embed" identifier="SegueBlock" id="s03-KO-dsk"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hs8-GD-Csp">
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hs8-GD-Csp">
                                 <rect key="frame" x="25" y="314.33333333333331" width="403" height="577.66666666666674"/>
                                 <connections>
                                     <segue destination="h01-9V-i73" kind="embed" identifier="SegueInvitation" id="Q2D-ec-bbC"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8BC-4b-OAr">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IUO-vB-jx1">
                                 <rect key="frame" x="25" y="314.33333333333331" width="403" height="577.66666666666674"/>
                                 <connections>
-                                    <segue destination="CGN-f6-Fg9" kind="embed" identifier="SegueBlock" id="s03-KO-dsk"/>
+                                    <segue destination="qt7-g3-WiN" kind="embed" identifier="SegueFriend" id="ocx-og-qU1"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -378,10 +378,10 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="128.57142857142856"/>
         </scene>
-        <!--Friend View Controller-->
+        <!--Friend Block View Controller-->
         <scene sceneID="KKO-t0-3vh">
             <objects>
-                <viewController id="qt7-g3-WiN" customClass="FriendViewController" customModule="FocusFoodie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qt7-g3-WiN" customClass="FriendBlockViewController" customModule="FocusFoodie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RML-en-u5p">
                         <rect key="frame" x="0.0" y="0.0" width="403" height="577.66666666666663"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -393,13 +393,14 @@
             </objects>
             <point key="canvasLocation" x="392" y="791"/>
         </scene>
-        <!--Block View Controller-->
+        <!--Friend Block View Controller-->
         <scene sceneID="7U1-a5-nmA">
             <objects>
-                <viewController id="CGN-f6-Fg9" customClass="BlockViewController" customModule="FocusFoodie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="CGN-f6-Fg9" customClass="FriendBlockViewController" customModule="FocusFoodie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3dP-sr-rQo">
                         <rect key="frame" x="0.0" y="0.0" width="403" height="577.66666666666663"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="hDu-LW-VZK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
@@ -414,6 +415,7 @@
                     <view key="view" contentMode="scaleToFill" id="hYi-BS-XZr">
                         <rect key="frame" x="0.0" y="0.0" width="403" height="577.66666666666663"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="X5e-fl-bCM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>

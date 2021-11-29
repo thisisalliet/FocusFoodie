@@ -60,7 +60,7 @@
 		09840BDD2750C5C40062384F /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09840BDC2750C5C40062384F /* FriendViewController.swift */; };
 		09840BE02750C81C0062384F /* MJRefreshWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09840BDF2750C81C0062384F /* MJRefreshWrapper.swift */; };
 		09840BE22750EE600062384F /* InvitationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09840BE12750EE600062384F /* InvitationViewController.swift */; };
-		09840BE42750EE890062384F /* BlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09840BE32750EE890062384F /* BlockViewController.swift */; };
+		09840BE42750EE890062384F /* FriendBlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09840BE32750EE890062384F /* FriendBlockViewController.swift */; };
 		09C1C7CE2722833000D2C9B2 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C7CD2722833000D2C9B2 /* UIColor+Extension.swift */; };
 		09C1C7D12722903800D2C9B2 /* DetailNoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C7CF2722903800D2C9B2 /* DetailNoteTableViewCell.swift */; };
 		09C1C7D22722903800D2C9B2 /* DetailNoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09C1C7D02722903800D2C9B2 /* DetailNoteTableViewCell.xib */; };
@@ -164,7 +164,7 @@
 		09840BDC2750C5C40062384F /* FriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendViewController.swift; path = FocusFoodie/Controller/Community/FriendViewController.swift; sourceTree = SOURCE_ROOT; };
 		09840BDF2750C81C0062384F /* MJRefreshWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MJRefreshWrapper.swift; sourceTree = "<group>"; };
 		09840BE12750EE600062384F /* InvitationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationViewController.swift; sourceTree = "<group>"; };
-		09840BE32750EE890062384F /* BlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockViewController.swift; sourceTree = "<group>"; };
+		09840BE32750EE890062384F /* FriendBlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendBlockViewController.swift; sourceTree = "<group>"; };
 		09C1C7CD2722833000D2C9B2 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		09C1C7CF2722903800D2C9B2 /* DetailNoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNoteTableViewCell.swift; sourceTree = "<group>"; };
 		09C1C7D02722903800D2C9B2 /* DetailNoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailNoteTableViewCell.xib; sourceTree = "<group>"; };
@@ -248,10 +248,10 @@
 		0901E68B273D554C005375B4 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				0966E71C27479DF9000FE743 /* InvitationManager.swift */,
 				09DB475127350C2D003703C1 /* UserManager.swift */,
-				09D83DF42744EB72005F1BE5 /* RecordManager.swift */,
 				09E42D3227425E600014C4B9 /* RecipeManager.swift */,
+				09D83DF42744EB72005F1BE5 /* RecordManager.swift */,
+				0966E71C27479DF9000FE743 /* InvitationManager.swift */,
 				09DB475727351DE8003703C1 /* CollectionManager.swift */,
 			);
 			path = Manager;
@@ -272,7 +272,7 @@
 		09428936272DCA0D0083CF6B /* Community */ = {
 			isa = PBXGroup;
 			children = (
-				09840BE32750EE890062384F /* BlockViewController.swift */,
+				09840BE32750EE890062384F /* FriendBlockViewController.swift */,
 				09DB475E27357043003703C1 /* ProfileViewController.swift */,
 				09840BDC2750C5C40062384F /* FriendViewController.swift */,
 				09840BE12750EE600062384F /* InvitationViewController.swift */,
@@ -772,7 +772,7 @@
 				09840BE02750C81C0062384F /* MJRefreshWrapper.swift in Sources */,
 				09524FEA272168E80061C36B /* DetailInfoTableViewCell.swift in Sources */,
 				09C1C7D62722935800D2C9B2 /* DetailImageTableViewCell.swift in Sources */,
-				09840BE42750EE890062384F /* BlockViewController.swift in Sources */,
+				09840BE42750EE890062384F /* FriendBlockViewController.swift in Sources */,
 				09C1C82B27240BC700D2C9B2 /* CalendarPickerFooterView.swift in Sources */,
 				09524F9C271FFD390061C36B /* UICollectionView+Extension.swift in Sources */,
 				09524FAE271FFEF00061C36B /* TabBarViewController.swift in Sources */,

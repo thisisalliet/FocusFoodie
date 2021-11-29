@@ -49,14 +49,14 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tap to edit" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KZg-Zv-Gk7">
-                        <rect key="frame" x="20" y="171" width="315" height="56"/>
+                        <rect key="frame" x="20" y="171" width="325" height="56"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="textColor" name="G3"/>
                         <fontDescription key="fontDescription" name="Dongle-Regular" family="Dongle" pointSize="30"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                     <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Tap to edit" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F9t-6Y-1vF">
-                        <rect key="frame" x="20" y="295" width="315" height="135"/>
+                        <rect key="frame" x="20" y="295" width="325" height="135"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="textColor" name="G3"/>
                         <fontDescription key="fontDescription" name="Dongle-Regular" family="Dongle" pointSize="30"/>
@@ -81,7 +81,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="eCS-o7-x9c" firstAttribute="top" secondItem="KZg-Zv-Gk7" secondAttribute="bottom" constant="30" id="05r-ol-SvK"/>
-                    <constraint firstAttribute="trailing" secondItem="F9t-6Y-1vF" secondAttribute="trailing" constant="40" id="3Bs-VH-7ak"/>
+                    <constraint firstAttribute="trailing" secondItem="F9t-6Y-1vF" secondAttribute="trailing" constant="30" id="3Bs-VH-7ak"/>
                     <constraint firstItem="ebv-fM-YMd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="77h-kl-sdq"/>
                     <constraint firstItem="F9t-6Y-1vF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="7qI-Yy-nni"/>
                     <constraint firstItem="Er7-fa-gYQ" firstAttribute="top" secondItem="ebv-fM-YMd" secondAttribute="bottom" constant="-15" id="9nt-jv-as0"/>
@@ -99,7 +99,7 @@
             <constraints>
                 <constraint firstItem="eCS-o7-x9c" firstAttribute="leading" secondItem="njF-e1-oar" secondAttribute="leading" constant="21" id="8hf-1R-ZaW"/>
                 <constraint firstItem="F9t-6Y-1vF" firstAttribute="height" secondItem="KGk-i7-Jjw" secondAttribute="height" multiplier="0.3" id="9ww-7k-VWG"/>
-                <constraint firstItem="njF-e1-oar" firstAttribute="trailing" secondItem="KZg-Zv-Gk7" secondAttribute="trailing" constant="40" id="GsS-jB-Xzf"/>
+                <constraint firstItem="njF-e1-oar" firstAttribute="trailing" secondItem="KZg-Zv-Gk7" secondAttribute="trailing" constant="30" id="GsS-jB-Xzf"/>
                 <constraint firstItem="Er7-fa-gYQ" firstAttribute="leading" secondItem="njF-e1-oar" secondAttribute="leading" constant="25" id="SEF-Tr-539"/>
                 <constraint firstItem="BpU-G7-zxx" firstAttribute="leading" secondItem="njF-e1-oar" secondAttribute="leading" constant="20" id="XTe-wc-zTL"/>
                 <constraint firstItem="njF-e1-oar" firstAttribute="bottom" secondItem="F9t-6Y-1vF" secondAttribute="bottom" constant="20" id="YnR-KC-pPf"/>
