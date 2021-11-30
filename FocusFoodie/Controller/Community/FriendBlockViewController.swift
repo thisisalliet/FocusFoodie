@@ -36,10 +36,6 @@ class FriendBlockViewController: CompondViewController {
         super.viewDidLoad()
         
         setupTableView()
-                
-//        monitorFriendList()
-        
-//        monitorBlockList()
     }
     
     // MARK: - Private method
@@ -51,7 +47,7 @@ class FriendBlockViewController: CompondViewController {
         tableView.backgroundColor = UIColor.G1
         
         tableView.registerCellWithNib(
-            identifier: String(describing: CommunityTableViewCell.self),
+            identifier: CommunityTableViewCell.identifier,
             bundle: nil)
     }
     
@@ -66,12 +62,6 @@ class FriendBlockViewController: CompondViewController {
                 let group = DispatchGroup()
                 
                 self.friends = friendInfo.friendList ?? []
-                
-                print(self.friends)
-                
-                print(friendInfo.friendList)
-                
-//                self.blocks = friendInfo.blockList ?? []
                 
                 for friend in self.friends {
                     
@@ -108,6 +98,7 @@ class FriendBlockViewController: CompondViewController {
                 }
                 
             case .failure(let error):
+                
                 print("fetchFriendList.failure: \(error)")
             }
         }

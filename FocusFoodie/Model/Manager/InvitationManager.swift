@@ -23,10 +23,10 @@ class InvitationManager {
     
     let invitations = Firestore.firestore().collection(CollectionName.invitation.rawValue)
     
-    func monitorInvitation(uid: String, completion: @escaping (Result<[Invitation], Error>) -> Void) {
+    func monitorInvitation(completion: @escaping (Result<[Invitation], Error>) -> Void) {
         
         invitations
-            .whereField("receiver_id",isEqualTo: myId)
+            .whereField("receiver_id", isEqualTo: myId)
             .addSnapshotListener { snapshot, error in
                 
                 guard let snapshot = snapshot else { return }

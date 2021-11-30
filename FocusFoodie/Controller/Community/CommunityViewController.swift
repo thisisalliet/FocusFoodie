@@ -11,9 +11,7 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 
-class CommunityViewController: BaseViewController,
-                               UITableViewDataSource,
-                               UITableViewDelegate {
+class CommunityViewController: BaseViewController {
     
     enum CommunityType: Int {
         
@@ -70,6 +68,8 @@ class CommunityViewController: BaseViewController,
     let myId = UserManager.shared.currentUserId
     
     var db: Firestore!
+    
+    var firendBlockVC: CompondViewController?
     
     var userInfo: [String: User] = [:]
     
@@ -169,9 +169,20 @@ class CommunityViewController: BaseViewController,
             }
             
             friendVC.monitorFriendList()
+            
+            self.firendBlockVC = friendVC
 
         } else if identifier == Segue.invitation,
                   let invitationVC = segue.destination as? InvitationViewController {
+            
+            invitationVC.invitationNumberHandler = { [weak self] number in
+                
+                guard let strongself = self else { return }
+                
+                strongself.invitationNumber.text = "\(number)"
+            }
+            
+            invitationVC.monitorInvitation()
 
         } else if identifier == Segue.block,
                   let blockVC = segue.destination as? FriendBlockViewController {
@@ -211,13 +222,20 @@ class CommunityViewController: BaseViewController,
 
         case .friend:
             friendContainerView.isHidden = false
+            
+            guard let firendBlockVC = firendBlockVC as? FriendBlockViewController else { return }
+
+            firendBlockVC.friendBlockType = .friend
 
         case .invitation:
             invitationContainerView.isHidden = false
 
         case .block:
             blockContainerView.isHidden = false
+            
+            guard let firendBlockVC = firendBlockVC as? FriendBlockViewController else { return }
 
+            firendBlockVC.friendBlockType = .block
         }
     }
     
@@ -331,84 +349,4 @@ class CommunityViewController: BaseViewController,
 //            break
 //        }
 //    }
-    
-    // MARK: - UITabelview Datasource -
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        // 檢查 reload data 的時間點
-//        return communityList.count
-        return 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        // 檢查 reload data 的時間點
-//        let cell = communityTableView.dequeueReusableCell(
-//            withIdentifier: String(describing: CommunityTableViewCell.self),
-//            for: indexPath)
-//
-//        let key = communityList[indexPath.row]
-//
-//        guard let communityCell = cell as? CommunityTableViewCell
-//
-//        else {
-//
-//            return cell
-//        }
-//
-//        switch layout {
-//
-//        case .basic:
-//
-//            if let friendBlock = key as? User,
-//               let userId = friendBlock.userId as? String {
-//
-//                communityCell.layoutCell(
-//                    name: userInfo[userId]?.displayName ?? "",
-//                    email: userInfo[userId]?.userEmail ?? "")
-//            }
-//
-//        case .withInvitation:
-//
-//            if let invitation = key as? Invitation,
-//               let senderId = invitation.senderId as? String {
-//
-//                communityCell.layoutCellWithInvitation(
-//                    name:  userInfo[senderId]?.displayName ?? "",
-//                    email: userInfo[senderId]?.userEmail ?? "")
-//            }
-//
-//        default:
-//            break
-//        }
-        
-        return UITableViewCell()
-    }
-    
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        
-        let onDecline = UIContextualAction(style: .normal, title: "") { (action, view, completionHandler) in
-          
-            completionHandler(true)
-        }
-        
-        onDecline.backgroundColor = .G1
-        
-        onDecline.image = .asset(.icon_delete)
-        
-        return UISwipeActionsConfiguration(actions: [onDecline])
-    }
-    
-    // MARK: - UITabelview Delegate -
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        return 130
-    }
-    
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        return UITableView.automaticDimension
-    }
 }
