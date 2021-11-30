@@ -31,6 +31,13 @@ class TimerViewController: BaseViewController {
     @IBOutlet weak var timerTitle: UILabel!
     
     @IBOutlet weak var countDownLabel: UILabel!
+//    {
+//
+//        didSet {
+//
+//            self.passTime(minutes: <#T##Int#>)
+//        }
+//    }
     
     @IBOutlet weak var categoryImage: UIImageView!
     
@@ -79,7 +86,7 @@ class TimerViewController: BaseViewController {
     var hiddenNote: String?
         
     var hiddenCategory: String?
-    
+        
     var buttonStatus: ButtonStatus = ButtonStatus.notStarted {
         
         didSet {
@@ -355,5 +362,19 @@ extension TimerViewController {
     func removeNotification() {
         
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["alarmTrigger"])
+    }
+}
+
+extension TimerViewController: TimerEditDelegate {
+
+    func passTime(minutes: Int) {
+
+        self.seconds = minutes * 60
+
+        self.originalSeconds = minutes * 60
+
+        let tuple = self.secondsToHoursMinutesSeconds(seconds: self.seconds)
+
+        countDownLabel.text = String(format: "%02i:%02i:%02i", tuple.0, tuple.1, tuple.2)
     }
 }

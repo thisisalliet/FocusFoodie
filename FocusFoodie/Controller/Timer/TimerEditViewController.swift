@@ -10,6 +10,11 @@ import Firebase
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
+protocol TimerEditDelegate: AnyObject {
+    
+    func passTime(minutes: Int)
+}
+
 class TimerEditViewController: BaseViewController,
                                UITableViewDataSource,
                                UITableViewDelegate,
@@ -49,6 +54,8 @@ class TimerEditViewController: BaseViewController,
         }
     }
     
+    weak var delegate: TimerEditDelegate?
+    
     var db: Firestore!
     
     var ingredientCategory: [IngredientCategory: [IngredientObject]] = [
@@ -73,7 +80,7 @@ class TimerEditViewController: BaseViewController,
     
     var totalTime = 0
     
-    var timeHandler: ((_ time: Int) -> ())?
+//    var timeHandler: ((_ time: Int) -> ())?
     
     var buttonHandler: ((_ status: ButtonStatus) -> Void)?
     
@@ -90,6 +97,8 @@ class TimerEditViewController: BaseViewController,
         
         setupTableView()
     }
+    
+    // MARK: - Private Function -
     
     private func setupTableView() {
         
@@ -145,26 +154,24 @@ class TimerEditViewController: BaseViewController,
     @IBAction func onDismiss(_ sender: UIButton) {
                 
         buttonHandler?(.notStarted)
-        
-//        delegate?.dismissEditor(self)
-        
+                
         backToTimer()
     }
     
     @IBAction func onDone(_ sender: UIButton) {
         
-//        let recipe = Recipe(
-//            bread: selectedBread?.title,
-//            vegetable: selectedVegatable?.title,
-//            meat: selectedMeat?.title,
-//            side: selectedSide?.title,
-//            focusTime: totalTime,
-//            recipeId: "default")
-//
-//        RecipeManager.shared.createRecipe(recipe: recipe)
+        let recipe = Recipe(
+            bread: selectedBread?.title,
+            vegetable: selectedVegatable?.title,
+            meat: selectedMeat?.title,
+            side: selectedSide?.title,
+            focusTime: totalTime,
+            recipeId: "default")
+
+        RecipeManager.shared.createRecipe(recipe: recipe)
         
-        timeHandler?(totalTime)
-        
+        delegate?.passTime(minutes: totalTime)
+                
         buttonHandler?(.notStarted)
                 
         backToTimer()
@@ -233,3 +240,11 @@ class TimerEditViewController: BaseViewController,
         return UITableView.automaticDimension
     }
 }
+
+//extension TimerEditViewController: TimerEditDelegate {
+//
+//    func passTime(minutes: Int) {
+//
+//
+//    }
+//}

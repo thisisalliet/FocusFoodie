@@ -58,6 +58,7 @@ class RecordManager {
         
         let myRecordRef = db.collection(CollectionName.record.rawValue)
             .whereField("owner_id", isEqualTo: userId)
+        // 排
         
         myRecordRef.getDocuments { snapshot, error in
             
@@ -73,7 +74,7 @@ class RecordManager {
                 try? snapshot.data(as: Record.self)
             }
             
-            let recordDayy = myRecord.filter { record -> Bool in
+            let recordDay = myRecord.filter { record -> Bool in
                 
                 let recordDate = Date(timeIntervalSince1970: record.createdTime)
                 
@@ -101,7 +102,7 @@ class RecordManager {
 //                }
 //            }
             
-            completion(Result.success(recordDayy))
+            completion(Result.success(recordDay))
         }
     }
 }

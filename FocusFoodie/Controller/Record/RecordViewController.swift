@@ -76,13 +76,13 @@ class RecordViewController: BaseViewController,
     // FAKE DATA
     
     private var myRecords: [Record]?
-//    {
-//
-//        didSet {
-//
-//            checkEmpty()
-//        }
-//    }
+    {
+        
+        didSet {
+            
+            checkEmpty()
+        }
+    }
     
     var selectedDate = Date()
     
@@ -125,45 +125,45 @@ class RecordViewController: BaseViewController,
         )
     }
     
-//    private func checkEmpty() {
-//
-//        if let myRecords = myRecords {
-//
-//            if myRecords.count <= 0 {
-//
-//                recordLottieView.isHidden = false
-//
-//                emptyLabel.isHidden = false
-//
-//                if let recordLottieView = recordLottieView {
-//
-//                    recordLottieView.play()
-//
-//                } else {
-//
-//                    recordLottieView.isHidden = true
-//
-//                    emptyLabel.isHidden = true
-//
-//                    if let recordLottieView = recordLottieView {
-//
-//                        recordLottieView.stop()
-//                    }
-//                }
-//
-//            } else {
-//
-//                recordLottieView.isHidden = false
-//
-//                emptyLabel.isHidden = false
-//
-//                if let recordLottieView = recordLottieView {
-//
-//                    recordLottieView.play()
-//                }
-//            }
-//        }
-//    }
+    private func checkEmpty() {
+        
+        if let myRecords = myRecords {
+            
+            if myRecords.count <= 0 {
+                
+                recordLottieView.isHidden = false
+                
+                emptyLabel.isHidden = false
+                
+                if let recordLottieView = recordLottieView {
+                    
+                    recordLottieView.play()
+                    
+                } else {
+                    
+                    recordLottieView.isHidden = true
+                    
+                    emptyLabel.isHidden = true
+                    
+                    if let recordLottieView = recordLottieView {
+                        
+                        recordLottieView.stop()
+                    }
+                }
+                
+            } else {
+                
+                recordLottieView.isHidden = false
+                
+                emptyLabel.isHidden = false
+                
+                if let recordLottieView = recordLottieView {
+                    
+                    recordLottieView.play()
+                }
+            }
+        }
+    }
     
     func fetchRecord(date: Date) {
         
@@ -197,14 +197,15 @@ class RecordViewController: BaseViewController,
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        //        if let records = myRecords {
-        //
-        //            return records.count
-        //
-        //        } else {
-        
-        return 2
-        //        }
+        if let records = myRecords {
+            
+            return records.count
+            
+        } else {
+            
+            return 0
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -217,21 +218,21 @@ class RecordViewController: BaseViewController,
         guard let recordCell = cell as? RecordCell,
               let records = myRecords else { return cell }
         
-//        let record = records[indexPath.row]
+        let record = records[indexPath.row]
         
-        recordCell.timerImageForRecord.image = UIImage(named: tempTimerImage[indexPath.row])
-    
-        recordCell.timeLabelForRecord.text = tempFocusTime[indexPath.row]
+        //        recordCell.timerImageForRecord.image = UIImage(named: tempTimerImage[indexPath.row])
+        //
+        //        recordCell.timeLabelForRecord.text = tempFocusTime[indexPath.row]
+        //
+        //        recordCell.titleLabelForRecord.text = tempTitle[indexPath.row]
+        //
+        //        recordCell.categoryImageForRecord.image = UIImage(named: tempCategoryImage[indexPath.row])
         
-        recordCell.titleLabelForRecord.text = tempTitle[indexPath.row]
-        
-        recordCell.categoryImageForRecord.image = UIImage(named: tempCategoryImage[indexPath.row])
-        
-//        recordCell.layoutCell(
-//            timerImage: UIImage(named: tempTimerImage[indexPath.row]),
-//            time: record.focusTime,
-//            title: record.recordTitle ?? "",
-//            categoryImage: UIImage(named: temoCategoryImage[indexPath.row]))
+        recordCell.layoutCell(
+            timerImage: UIImage(named: tempTimerImage[indexPath.row]),
+            time: record.focusTime,
+            title: record.recordTitle ?? "",
+            categoryImage: UIImage(named: temoCategoryImage[indexPath.row]))
         
         return recordCell
     }

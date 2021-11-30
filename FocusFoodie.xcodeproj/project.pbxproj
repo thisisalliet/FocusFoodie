@@ -61,6 +61,8 @@
 		09840BE02750C81C0062384F /* MJRefreshWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09840BDF2750C81C0062384F /* MJRefreshWrapper.swift */; };
 		09840BE22750EE600062384F /* InvitationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09840BE12750EE600062384F /* InvitationViewController.swift */; };
 		09840BE42750EE890062384F /* FriendBlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09840BE32750EE890062384F /* FriendBlockViewController.swift */; };
+		09B38902275625D500C1BEEE /* TimeStamp+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B38901275625D500C1BEEE /* TimeStamp+Extension.swift */; };
+		09B389042756260A00C1BEEE /* Calendar+Eextension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B389032756260A00C1BEEE /* Calendar+Eextension.swift */; };
 		09C1C7CE2722833000D2C9B2 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C7CD2722833000D2C9B2 /* UIColor+Extension.swift */; };
 		09C1C7D12722903800D2C9B2 /* DetailNoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C7CF2722903800D2C9B2 /* DetailNoteTableViewCell.swift */; };
 		09C1C7D22722903800D2C9B2 /* DetailNoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09C1C7D02722903800D2C9B2 /* DetailNoteTableViewCell.xib */; };
@@ -165,6 +167,8 @@
 		09840BDF2750C81C0062384F /* MJRefreshWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MJRefreshWrapper.swift; sourceTree = "<group>"; };
 		09840BE12750EE600062384F /* InvitationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationViewController.swift; sourceTree = "<group>"; };
 		09840BE32750EE890062384F /* FriendBlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendBlockViewController.swift; sourceTree = "<group>"; };
+		09B38901275625D500C1BEEE /* TimeStamp+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeStamp+Extension.swift"; sourceTree = "<group>"; };
+		09B389032756260A00C1BEEE /* Calendar+Eextension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+Eextension.swift"; sourceTree = "<group>"; };
 		09C1C7CD2722833000D2C9B2 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		09C1C7CF2722903800D2C9B2 /* DetailNoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNoteTableViewCell.swift; sourceTree = "<group>"; };
 		09C1C7D02722903800D2C9B2 /* DetailNoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailNoteTableViewCell.xib; sourceTree = "<group>"; };
@@ -322,6 +326,8 @@
 			children = (
 				09428937272E84970083CF6B /* Date+Extension.swift */,
 				09524FDC2720494A0061C36B /* Bundle+Extension.swift */,
+				09B389032756260A00C1BEEE /* Calendar+Eextension.swift */,
+				09B38901275625D500C1BEEE /* TimeStamp+Extension.swift */,
 				09C1C7DC2722AACB00D2C9B2 /* UIFont+Extension.swift */,
 				09524F95271FFCC00061C36B /* UIView+Extension.swift */,
 				09C1C7CD2722833000D2C9B2 /* UIColor+Extension.swift */,
@@ -789,8 +795,10 @@
 				0966E71D27479DF9000FE743 /* InvitationManager.swift in Sources */,
 				09C1C82D27240BFB00D2C9B2 /* CalendarPickerHeaderView.swift in Sources */,
 				09D83DED2744B0A8005F1BE5 /* ContentEditViewController.swift in Sources */,
+				09B38902275625D500C1BEEE /* TimeStamp+Extension.swift in Sources */,
 				09DB475227350C2D003703C1 /* UserManager.swift in Sources */,
 				09524FD62720213B0061C36B /* RecordCell.swift in Sources */,
+				09B389042756260A00C1BEEE /* Calendar+Eextension.swift in Sources */,
 				09524FA6271FFE620061C36B /* RecordViewController.swift in Sources */,
 				09C1C7DB27229D3D00D2C9B2 /* Record.swift in Sources */,
 				09E42D2D2740FABC0014C4B9 /* CompoundViewController.swift in Sources */,
