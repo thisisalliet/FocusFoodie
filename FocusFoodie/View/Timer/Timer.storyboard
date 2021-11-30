@@ -236,7 +236,6 @@
                                     <color key="titleColor" name="G3"/>
                                 </state>
                                 <connections>
-                                    <action selector="onSave:" destination="59W-8V-taY" eventType="touchUpInside" id="9ZD-rk-Yns"/>
                                     <segue destination="zOF-3W-jRS" kind="presentation" identifier="SegueTime" id="YVS-Wd-Pie"/>
                                 </connections>
                             </button>
@@ -270,9 +269,9 @@
                         <outlet property="categoryCollectionView" destination="YGJ-5g-LpK" id="tNv-Sr-ddT"/>
                         <outlet property="categoryLabel" destination="EoV-u8-E5j" id="hQU-xM-rjY"/>
                         <outlet property="noteTextField" destination="Drn-Nk-xyp" id="MCY-JM-pxt"/>
-                        <outlet property="saveButton" destination="TR8-vy-Dr2" id="SEp-Lq-BsZ"/>
                         <outlet property="saveButtonBackground" destination="pNI-cE-xB2" id="Mpw-Kf-cCA"/>
                         <outlet property="titleTextField" destination="vNr-jj-2yY" id="2dz-4Z-fAr"/>
+                        <outlet property="toTimerEditorButton" destination="TR8-vy-Dr2" id="SEp-Lq-BsZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RCg-2b-Ya9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

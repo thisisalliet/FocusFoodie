@@ -153,15 +153,15 @@ class TimerEditViewController: BaseViewController,
     
     @IBAction func onDone(_ sender: UIButton) {
         
-        let recipe = Recipe(
-            bread: selectedBread?.title,
-            vegetable: selectedVegatable?.title,
-            meat: selectedMeat?.title,
-            side: selectedSide?.title,
-            focusTime: totalTime,
-            recipeId: "default")
-        
-        RecipeManager.shared.createRecipe(recipe: recipe)
+//        let recipe = Recipe(
+//            bread: selectedBread?.title,
+//            vegetable: selectedVegatable?.title,
+//            meat: selectedMeat?.title,
+//            side: selectedSide?.title,
+//            focusTime: totalTime,
+//            recipeId: "default")
+//
+//        RecipeManager.shared.createRecipe(recipe: recipe)
         
         timeHandler?(totalTime)
         

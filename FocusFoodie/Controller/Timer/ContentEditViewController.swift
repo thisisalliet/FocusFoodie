@@ -36,7 +36,7 @@ class ContentEditViewController: BaseViewController,
         }
     }
     
-    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var toTimerEditorButton: UIButton!
     
     let category = Category.allCases
     

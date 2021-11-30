@@ -23,7 +23,7 @@ private struct Segue {
 
     static let contentEditor = "SegueContent"
 
-    static let timeEditor = "SegueTime"
+//    static let timeEditor = "SegueTime"
 }
 
 class TimerViewController: BaseViewController {
@@ -143,31 +143,31 @@ class TimerViewController: BaseViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let identifier = segue.identifier
-        
-        if identifier ==  Segue.timeEditor {
-            
-            guard let timeEditVC = segue.destination as? TimerEditViewController else { return }
-            
-            timeEditVC.timeHandler = { [weak self] time in
-                
-                guard let strongSelf = self else { return }
-                
-                strongSelf.seconds = time * 60
-                
-                strongSelf.originalSeconds = time * 60
-                
-                let tuple = strongSelf.secondsToHoursMinutesSeconds(seconds: strongSelf.seconds)
-                
-                strongSelf.countDownLabel.text = String(format: "%02i:%02i:%02i", tuple.0, tuple.1, tuple.2)
-                
-                timeEditVC.buttonHandler = { [weak self] status in
-                    
-                    guard let strongSelf = self else { return }
-                    
-                    strongSelf.buttonStatus = status
-                }
-            }
-        }
+//
+//        if identifier ==  Segue.timeEditor {
+//
+//            guard let timeEditVC = segue.destination as? TimerEditViewController else { return }
+//
+//            timeEditVC.timeHandler = { [weak self] time in
+//
+//                guard let strongSelf = self else { return }
+//
+//                strongSelf.seconds = time * 60
+//
+//                strongSelf.originalSeconds = time * 60
+//
+//                let tuple = strongSelf.secondsToHoursMinutesSeconds(seconds: strongSelf.seconds)
+//
+//                strongSelf.countDownLabel.text = String(format: "%02i:%02i:%02i", tuple.0, tuple.1, tuple.2)
+//
+//                timeEditVC.buttonHandler = { [weak self] status in
+//
+//                    guard let strongSelf = self else { return }
+//
+//                    strongSelf.buttonStatus = status
+//                }
+//            }
+//        }
         
         if identifier == Segue.contentEditor {
             
@@ -187,6 +187,8 @@ class TimerViewController: BaseViewController {
                 guard let strongSelf = self else { return }
                 
                 strongSelf.hiddenCategory = title
+                
+                strongSelf.timerTitle.text = title
                 
                 strongSelf.categoryImage.image = image
             }
