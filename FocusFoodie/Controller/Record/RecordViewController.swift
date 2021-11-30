@@ -150,17 +150,6 @@ class RecordViewController: BaseViewController,
                         recordLottieView.stop()
                     }
                 }
-                
-            } else {
-                
-                recordLottieView.isHidden = false
-                
-                emptyLabel.isHidden = false
-                
-                if let recordLottieView = recordLottieView {
-                    
-                    recordLottieView.play()
-                }
             }
         }
     }
@@ -200,11 +189,8 @@ class RecordViewController: BaseViewController,
         if let records = myRecords {
             
             return records.count
-            
-        } else {
-            
-            return 0
         }
+        
         return 0
     }
     
@@ -229,10 +215,10 @@ class RecordViewController: BaseViewController,
         //        recordCell.categoryImageForRecord.image = UIImage(named: tempCategoryImage[indexPath.row])
         
         recordCell.layoutCell(
-            timerImage: UIImage(named: tempTimerImage[indexPath.row]),
+            timerImage: UIImage.asset(.icon_coding),
             time: record.focusTime,
             title: record.recordTitle ?? "",
-            categoryImage: UIImage(named: temoCategoryImage[indexPath.row]))
+            categoryImage: UIImage.asset(.icon_coding))
         
         return recordCell
     }

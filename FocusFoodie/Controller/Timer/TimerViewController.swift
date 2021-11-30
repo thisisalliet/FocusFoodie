@@ -150,31 +150,6 @@ class TimerViewController: BaseViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let identifier = segue.identifier
-//
-//        if identifier ==  Segue.timeEditor {
-//
-//            guard let timeEditVC = segue.destination as? TimerEditViewController else { return }
-//
-//            timeEditVC.timeHandler = { [weak self] time in
-//
-//                guard let strongSelf = self else { return }
-//
-//                strongSelf.seconds = time * 60
-//
-//                strongSelf.originalSeconds = time * 60
-//
-//                let tuple = strongSelf.secondsToHoursMinutesSeconds(seconds: strongSelf.seconds)
-//
-//                strongSelf.countDownLabel.text = String(format: "%02i:%02i:%02i", tuple.0, tuple.1, tuple.2)
-//
-//                timeEditVC.buttonHandler = { [weak self] status in
-//
-//                    guard let strongSelf = self else { return }
-//
-//                    strongSelf.buttonStatus = status
-//                }
-//            }
-//        }
         
         if identifier == Segue.contentEditor {
             
@@ -208,7 +183,7 @@ class TimerViewController: BaseViewController {
                 
                 strongSelf.seconds = time * 60
                 
-                strongSelf.originalSeconds = time * 60
+                strongSelf.originalSeconds = time
                 
                 let tuple = strongSelf.secondsToHoursMinutesSeconds(seconds: strongSelf.seconds)
                 
@@ -387,16 +362,16 @@ extension TimerViewController {
     }
 }
 
-extension TimerViewController: TimerEditDelegate {
-
-    func passTime(minutes: Int) {
-
-        self.seconds = minutes * 60
-
-        self.originalSeconds = minutes * 60
-
-        let tuple = self.secondsToHoursMinutesSeconds(seconds: self.seconds)
-
-        countDownLabel.text = String(format: "%02i:%02i:%02i", tuple.0, tuple.1, tuple.2)
-    }
-}
+//extension TimerViewController: TimerEditDelegate {
+//
+//    func passTime(minutes: Int) {
+//
+//        self.seconds = minutes * 60
+//
+//        self.originalSeconds = minutes * 60
+//
+//        let tuple = self.secondsToHoursMinutesSeconds(seconds: self.seconds)
+//
+//        countDownLabel.text = String(format: "%02i:%02i:%02i", tuple.0, tuple.1, tuple.2)
+//    }
+//}

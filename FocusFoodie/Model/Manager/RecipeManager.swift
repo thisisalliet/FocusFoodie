@@ -38,21 +38,22 @@ class RecipeManager {
         let recipeRef = db.collection(CollectionName.recipe.rawValue).document()
         
         let userRef = db.collection(CollectionName.user.rawValue).document(userId)
-                
-        let recipe = Recipe(bread: recipe.bread,
+        
+        let recipeId = recipeRef.documentID
+        let recipeWithId = Recipe(bread: recipe.bread,
                             vegetable: recipe.vegetable,
                             meat: recipe.meat,
                             side: recipe.side,
                             focusTime: recipe.focusTime,
-                            recipeId: recipeRef.documentID)
+                            recipeId: recipeId)
         
-        myRecipe = recipe.recipeId
+        myRecipe = recipeId
         
 //        recipeIdHandler?(myRecipe)
         
         do {
             
-            try recipeRef.setData(from: recipe)
+            try recipeRef.setData(from: recipeWithId)
             
         } catch {
             

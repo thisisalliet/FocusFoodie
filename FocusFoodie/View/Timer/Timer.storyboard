@@ -39,6 +39,9 @@
                                 <state key="normal" title="START">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="didTapControlButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="jAo-hC-lwg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fY1-Sj-YWz">
                                 <rect key="frame" x="40" y="443" width="100" height="100"/>
@@ -54,6 +57,9 @@
                                 <state key="normal" title="DONE">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="didTapDoneBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="LSc-1n-yvZ"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RCK-rF-zmg">
                                 <rect key="frame" x="0.0" y="643" width="414" height="219"/>
@@ -236,6 +242,7 @@
                                     <color key="titleColor" name="G3"/>
                                 </state>
                                 <connections>
+                                    <action selector="toTimerEdit:" destination="59W-8V-taY" eventType="touchUpInside" id="dB8-RK-DRv"/>
                                     <segue destination="zOF-3W-jRS" kind="presentation" identifier="SegueTime" id="YVS-Wd-Pie"/>
                                 </connections>
                             </button>
@@ -276,7 +283,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RCg-2b-Ya9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1949" y="129"/>
+            <point key="canvasLocation" x="1947.826086956522" y="128.57142857142856"/>
         </scene>
         <!--Ending View Controller-->
         <scene sceneID="cPm-jr-KCm">

@@ -35,7 +35,7 @@ class RecordManager {
         
         let recordRef = db.collection(CollectionName.record.rawValue).document()
         
-        let record = Record(
+        let recordWithId = Record(
             ownerId: userId,
             recordTitle: record.recordTitle,
             recordCategory: record.recordCategory,
@@ -46,7 +46,7 @@ class RecordManager {
         
         do {
             
-            try recordRef.setData(from: record)
+            try recordRef.setData(from: recordWithId)
             
         } catch {
             
