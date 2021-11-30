@@ -187,6 +187,8 @@ class TimerViewController: BaseViewController {
                 strongSelf.timerTitle.text = title
                 
                 strongSelf.hiddenNote = note
+                
+                //                strongSelf.seconds =
             }
             
             contentEditVC.categoryHandler = { [weak self] title, image in
@@ -198,6 +200,26 @@ class TimerViewController: BaseViewController {
                 strongSelf.timerTitle.text = title
                 
                 strongSelf.categoryImage.image = image
+            }
+            
+            contentEditVC.timeHandler = { [weak self] time in
+                
+                guard let strongSelf = self else { return }
+                
+                strongSelf.seconds = time * 60
+                
+                strongSelf.originalSeconds = time * 60
+                
+                let tuple = strongSelf.secondsToHoursMinutesSeconds(seconds: strongSelf.seconds)
+                
+                strongSelf.countDownLabel.text = String(format: "%02i:%02i:%02i", tuple.0, tuple.1, tuple.2)
+                
+//                timeEditVC.buttonHandler = { [weak self] status in
+//
+//                    guard let strongSelf = self else { return }
+//
+//                    strongSelf.buttonStatus = status
+//                }
             }
         }
     }

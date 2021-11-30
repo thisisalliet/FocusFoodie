@@ -80,7 +80,7 @@ class TimerEditViewController: BaseViewController,
     
     var totalTime = 0
     
-//    var timeHandler: ((_ time: Int) -> ())?
+    var timeHandler: ((_ time: Int) -> ())?
     
     var buttonHandler: ((_ status: ButtonStatus) -> Void)?
     
@@ -170,7 +170,9 @@ class TimerEditViewController: BaseViewController,
 
         RecipeManager.shared.createRecipe(recipe: recipe)
         
-        delegate?.passTime(minutes: totalTime)
+//        delegate?.passTime(minutes: totalTime)
+        
+        timeHandler?(totalTime)
                 
         buttonHandler?(.notStarted)
                 
@@ -191,9 +193,13 @@ class TimerEditViewController: BaseViewController,
 //
 //        present(navVC, animated: true, completion: nil)
         
-        let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate
-
-        sceneDelegate?.window?.rootViewController?.dismiss(animated: true)
+//        let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate
+//
+//        sceneDelegate?.window?.rootViewController?.dismiss(animated: true)
+        
+        if let presentingViewController = presentingViewController?.presentingViewController {
+            presentingViewController.dismiss(animated: true, completion: nil)
+        }
     }
     
     // MARK: - UITableViewDataSource -
