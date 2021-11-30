@@ -85,17 +85,19 @@ class ProfileViewController: BaseViewController,
     let storage = Storage.storage().reference()
     
     private let datas: [ProfileCellType] = [
-        .profileInfo,
-        .appSecurity, .appAlert,
-        .appAppearance,
-        .profileSignOut, .profileDeletion,
-        .appVersion]
+        .profileInfo
+//        ,
+//        .appSecurity, .appAlert,
+//        .appAppearance,
+//        .profileSignOut, .profileDeletion,
+//        .appVersion
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationController?.setupBackButton(color: .G3!)
-        
+        profileTableView.isScrollEnabled = false//todo: to remove
         setUpTableView()
     }
     

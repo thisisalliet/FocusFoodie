@@ -75,7 +75,7 @@ class RecordViewController: BaseViewController,
     var tempCategoryImage = ["icon_fitness", "icon_school"]
     // FAKE DATA
     
-    private var myRecords: [Record]?
+    private var myRecords: [Record] = []
     {
         
         didSet {
@@ -127,28 +127,25 @@ class RecordViewController: BaseViewController,
     
     private func checkEmpty() {
         
-        if let myRecords = myRecords {
+        if myRecords.isEmpty {
             
-            if myRecords.count <= 0 {
+            recordLottieView.isHidden = false
+            
+            emptyLabel.isHidden = false
+            
+            if let recordLottieView = recordLottieView {
                 
-                recordLottieView.isHidden = false
+                recordLottieView.play()
                 
-                emptyLabel.isHidden = false
+            } else {
+                
+                recordLottieView.isHidden = true
+                
+                emptyLabel.isHidden = true
                 
                 if let recordLottieView = recordLottieView {
                     
-                    recordLottieView.play()
-                    
-                } else {
-                    
-                    recordLottieView.isHidden = true
-                    
-                    emptyLabel.isHidden = true
-                    
-                    if let recordLottieView = recordLottieView {
-                        
-                        recordLottieView.stop()
-                    }
+                    recordLottieView.stop()
                 }
             }
         }
@@ -185,13 +182,7 @@ class RecordViewController: BaseViewController,
     // MARK: - UITableViewDataSource -
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if let records = myRecords {
-            
-            return records.count
-        }
-        
-        return 0
+        return myRecords.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -201,10 +192,9 @@ class RecordViewController: BaseViewController,
             for: indexPath
         )
         
-        guard let recordCell = cell as? RecordCell,
-              let records = myRecords else { return cell }
+        guard let recordCell = cell as? RecordCell else { return cell }
         
-        let record = records[indexPath.row]
+        let record = myRecords[indexPath.row]
         
         //        recordCell.timerImageForRecord.image = UIImage(named: tempTimerImage[indexPath.row])
         //
@@ -234,7 +224,7 @@ class RecordViewController: BaseViewController,
                     return
                 }
         
-        //        detailVC.product = datas[indexPath.section].products[indexPath.row]
+        detailVC.record = myRecords[indexPath.row]
         
         show(detailVC, sender: nil)
     }

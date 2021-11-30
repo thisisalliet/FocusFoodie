@@ -43,7 +43,7 @@
                                 <rect key="frame" x="0.0" y="320" width="414" height="542"/>
                                 <color key="backgroundColor" name="G1"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h80-cI-QnW">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h80-cI-QnW">
                                 <rect key="frame" x="25" y="160" width="120" height="40"/>
                                 <color key="backgroundColor" name="G2"/>
                                 <constraints>
@@ -163,6 +163,9 @@
             <point key="canvasLocation" x="137.68115942028987" y="128.57142857142856"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="DGS-EJ-2Vo"/>
+    </designables>
     <resources>
         <namedColor name="G1">
             <color red="0.89803921568627454" green="0.97647058823529409" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
