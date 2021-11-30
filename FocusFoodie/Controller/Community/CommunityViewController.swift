@@ -69,7 +69,9 @@ class CommunityViewController: BaseViewController {
     
     var db: Firestore!
     
-    var firendBlockVC: CompondViewController?
+    var friendVC: CompoundViewController?
+    
+    var blockVC: CompoundViewController?
     
     var userInfo: [String: User] = [:]
     
@@ -170,7 +172,7 @@ class CommunityViewController: BaseViewController {
             
             friendVC.monitorFriendList()
             
-            self.firendBlockVC = friendVC
+            self.friendVC = friendVC
 
         } else if identifier == Segue.invitation,
                   let invitationVC = segue.destination as? InvitationViewController {
@@ -195,6 +197,8 @@ class CommunityViewController: BaseViewController {
             }
             
             blockVC.monitorBlockList()
+            
+            self.blockVC = blockVC
         }
     }
     
@@ -223,9 +227,11 @@ class CommunityViewController: BaseViewController {
         case .friend:
             friendContainerView.isHidden = false
             
-            guard let firendBlockVC = firendBlockVC as? FriendBlockViewController else { return }
+            guard let friendVC = friendVC as? FriendBlockViewController else { return }
 
-            firendBlockVC.friendBlockType = .friend
+            friendVC.friendBlockType = .friend
+            
+            friendVC.tableView.reloadData()
 
         case .invitation:
             invitationContainerView.isHidden = false
@@ -233,9 +239,11 @@ class CommunityViewController: BaseViewController {
         case .block:
             blockContainerView.isHidden = false
             
-            guard let firendBlockVC = firendBlockVC as? FriendBlockViewController else { return }
+            guard let blockVC = blockVC as? FriendBlockViewController else { return }
 
-            firendBlockVC.friendBlockType = .block
+            blockVC.friendBlockType = .block
+            
+            blockVC.tableView.reloadData()
         }
     }
     

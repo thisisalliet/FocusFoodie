@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FriendBlockViewController: CompondViewController {
+class FriendBlockViewController: CompoundViewController {
     
     enum FriendBlockType: String {
         
@@ -190,7 +190,7 @@ class FriendBlockViewController: CompondViewController {
                 
             case .success(let reFriend):
                 
-                print("re-add friend succesfully")
+                print("Re-add friend succesfully")
                 
             case .failure(let error):
                 
@@ -210,7 +210,7 @@ class FriendBlockViewController: CompondViewController {
         case .friend:
             
             guard let friendNumberHandler = friendNumberHandler else {
-                return 0 }
+                return friends.count }
             
             friendNumberHandler(friends.count)
                         
@@ -219,7 +219,7 @@ class FriendBlockViewController: CompondViewController {
         case .block:
             
             guard let blockNumberHandler = blockNumberHandler else {
-                return 0 }
+                return blocks.count }
             
             blockNumberHandler(blocks.count)
             
@@ -280,40 +280,8 @@ class FriendBlockViewController: CompondViewController {
                 self?.friends.append(self?.blocks[indexPath.row] ?? "")
                 
                 self?.blocks.remove(at: indexPath.row)
-            }
-        }
+            }        }
         
         return cell
     }
-    
-    //    func tableView(_ tableView: UITableView,
-    //                   trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath)
-    //    -> UISwipeActionsConfiguration? {
-    //
-    //        let onRemove = UIContextualAction(style: .normal, title: "") { (action, view, completionHandler) in
-    //
-    //            completionHandler(true)
-    //        }
-    //
-    //        onRemove.backgroundColor = .G1
-    //
-    //        onRemove.image = .asset(.icon_cross_yellow)
-    //
-    //        let friendId = friends[indexPath.row]
-    //        UserManager.shared.removeFriend(userId: friendId) { result in
-    //
-    //            switch result {
-    //
-    //            case .success(let reFriend):
-    //
-    //                print("remove block succesfully")
-    //
-    //            case .failure(let error):
-    //
-    //                print(error)
-    //            }
-    //        }
-    //
-    //        return UISwipeActionsConfiguration(actions: [onRemove])
-    //    }
 }

@@ -101,7 +101,7 @@
 		09DB476E2739874E003703C1 /* CommunityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09DB476C2739874E003703C1 /* CommunityTableViewCell.xib */; };
 		09DB4775273A200B003703C1 /* Invitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB4774273A200B003703C1 /* Invitation.swift */; };
 		09DB4777273A46F7003703C1 /* SetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB4776273A46F7003703C1 /* SetUpViewController.swift */; };
-		09E42D2D2740FABC0014C4B9 /* CompondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E42D2C2740FABC0014C4B9 /* CompondViewController.swift */; };
+		09E42D2D2740FABC0014C4B9 /* CompoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E42D2C2740FABC0014C4B9 /* CompoundViewController.swift */; };
 		09E42D31274196150014C4B9 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E42D30274196150014C4B9 /* PrivacyViewController.swift */; };
 		09E42D3327425E600014C4B9 /* RecipeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E42D3227425E600014C4B9 /* RecipeManager.swift */; };
 		09F0472727264DC1009CA63B /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F0472627264DC1009CA63B /* UIButton+Extension.swift */; };
@@ -223,7 +223,7 @@
 		09DB476C2739874E003703C1 /* CommunityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityTableViewCell.xib; sourceTree = "<group>"; };
 		09DB4774273A200B003703C1 /* Invitation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invitation.swift; sourceTree = "<group>"; };
 		09DB4776273A46F7003703C1 /* SetUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpViewController.swift; sourceTree = "<group>"; };
-		09E42D2C2740FABC0014C4B9 /* CompondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompondViewController.swift; sourceTree = "<group>"; };
+		09E42D2C2740FABC0014C4B9 /* CompoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundViewController.swift; sourceTree = "<group>"; };
 		09E42D30274196150014C4B9 /* PrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
 		09E42D3227425E600014C4B9 /* RecipeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeManager.swift; sourceTree = "<group>"; };
 		09F0472627264DC1009CA63B /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
@@ -399,7 +399,7 @@
 			children = (
 				09524FAA271FFEF00061C36B /* BaseViewController.swift */,
 				09524FAB271FFEF00061C36B /* TabBarViewController.swift */,
-				09E42D2C2740FABC0014C4B9 /* CompondViewController.swift */,
+				09E42D2C2740FABC0014C4B9 /* CompoundViewController.swift */,
 				09524FAC271FFEF00061C36B /* BaseNavigationController.swift */,
 			);
 			path = Base;
@@ -793,7 +793,7 @@
 				09524FD62720213B0061C36B /* RecordCell.swift in Sources */,
 				09524FA6271FFE620061C36B /* RecordViewController.swift in Sources */,
 				09C1C7DB27229D3D00D2C9B2 /* Record.swift in Sources */,
-				09E42D2D2740FABC0014C4B9 /* CompondViewController.swift in Sources */,
+				09E42D2D2740FABC0014C4B9 /* CompoundViewController.swift in Sources */,
 				09C276BF273D00DB0037D65C /* ProfileContent.swift in Sources */,
 				09524FAF271FFEF00061C36B /* BaseNavigationController.swift in Sources */,
 				09C1C829272409C600D2C9B2 /* CalendarDateCollectionViewCell.swift in Sources */,

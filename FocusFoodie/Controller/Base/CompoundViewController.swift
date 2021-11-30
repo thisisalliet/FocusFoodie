@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CompondViewController: BaseViewController,
+class CompoundViewController: BaseViewController,
                             UITableViewDataSource,
                             UITableViewDelegate {
     
@@ -117,7 +117,7 @@ class CompondViewController: BaseViewController,
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        return UITableViewCell(style: .default, reuseIdentifier: String(describing: CompondViewController.self))
+        return UITableViewCell(style: .default, reuseIdentifier: String(describing: CompoundViewController.self))
     }
     
     // MARK: - UITabelview Delegate -

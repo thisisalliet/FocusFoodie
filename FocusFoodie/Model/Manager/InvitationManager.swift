@@ -39,28 +39,34 @@ class InvitationManager {
                     
                     var allInvitations = [Invitation]()
                     
-                    for document in snapshot.documents {
+//                    if snapshot.documents.isEmpty {
+//
+//                        return
+//
+//                    } else {
                         
-                        do {
+                        for document in snapshot.documents {
                             
-                            if let invite = try document.data(as: Invitation.self, decoder: Firestore.Decoder()) {
+                            do {
                                 
-                                allInvitations.append(invite)
+                                if let invite = try document.data(as: Invitation.self, decoder: Firestore.Decoder()) {
+                                    
+                                    allInvitations.append(invite)
+                                }
+                                
+                            } catch {
+                                
+                                completion(.failure(error))
                             }
-                            
-                        } catch {
-                            
-                            completion(.failure(error))
                         }
-                    }
-                    
+//                    }
+                                        
                     completion(.success(allInvitations))
                 }
             }
     }
     
-    func addFriend(userId: String,
-                   invitorId: String) {
+    func acceptInvitation(userId: String, invitorId: String, completion: @escaping (Result<[Invitation], Error>) -> Void) {
         
         let friendRef = users.document(userId)
         

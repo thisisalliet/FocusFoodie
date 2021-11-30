@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InvitationViewController: CompondViewController {
+class InvitationViewController: CompoundViewController {
     
     let myId = UserManager.shared.currentUserId
     
@@ -49,7 +49,7 @@ class InvitationViewController: CompondViewController {
                 let group = DispatchGroup()
                 
                 self.invitations = invitations
-                                
+                
                 for sender in invitations {
                     
                     group.enter()
@@ -89,9 +89,23 @@ class InvitationViewController: CompondViewController {
         }
     }
     
-    func acceptInvitation() {
+    func acceptInvitation(at index: Int) {
         
-        
+        InvitationManager.shared.acceptInvitation(
+            userId: myId,
+            invitorId: invitations?[index].senderId ?? "") { result in
+                
+                switch result {
+                    
+                case .success(let acceptInvitation):
+                    
+                    print("Add friend succesfully")
+                    
+                case .failure(let error):
+                    
+                    print(error)
+                }
+            }
     }
     
     // MARK: - UITableView DataSource
@@ -113,19 +127,58 @@ class InvitationViewController: CompondViewController {
             withIdentifier: CommunityTableViewCell.identifier,
             for: indexPath
         ) as? CommunityTableViewCell else {
+            
             fatalError("cannot dequeue tableViewCell")
         }
         
-        guard let senderId = invitations?[indexPath.row].senderId
-        else { fatalError("cannot fetch invitations") }
-        
-//        guard let senderInfo = senderInfo[senderId] else { return }
+        guard let senderId = invitations?[indexPath.row].senderId else {
+            
+            fatalError("cannot fetch invitations")
+        }
         
         cell.layoutCellWithInvitation(
             name: senderInfo[senderId]?.displayName ?? "",
             email: senderInfo[senderId]?.userEmail ?? "")
         
+        cell.touchHandler = { [weak self] in
+            
+            self?.acceptInvitation(at: indexPath.row)
+        }
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath)
+    -> UISwipeActionsConfiguration? {
+        
+        let onIgnore = UIContextualAction(style: .normal, title: "") { (action, view, completionHandler) in
+            
+            completionHandler(true)
+        }
+        
+        onIgnore.backgroundColor = .G1
+        
+        onIgnore.image = .asset(.icon_cross_green)
+                
+        self.invitations?.remove(at: indexPath.row)
+        
+        //        let friendId = friends[indexPath.row]
+        //        UserManager.shared.removeFriend(userId: friendId) { result in
+        //
+        //            switch result {
+        //
+        //            case .success(let reFriend):
+        //
+        //                print("remove block succesfully")
+        //
+        //            case .failure(let error):
+        //
+        //                print(error)
+        //            }
+        //        }
+        
+        return UISwipeActionsConfiguration(actions: [onIgnore])
     }
 }
 

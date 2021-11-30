@@ -104,12 +104,6 @@ class UserManager {
                 
             } else {
                 
-                //                if !snapshot.documentChanges.isEmpty {
-                
-                //                    snapshot.documentChanges.forEach { (documentChange) in
-                
-                //                    snapshot.documents.forEach { document in
-                
                 do {
                     
                     if let user = try snapshot.data(as: User.self, decoder: Firestore.Decoder()) {
@@ -121,10 +115,6 @@ class UserManager {
                     
                     completion(.failure(error))
                 }
-                //                    }
-                
-                //                    }
-                //                }
                 
                 completion(.success(userInfo))
             }
