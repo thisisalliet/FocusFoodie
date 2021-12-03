@@ -220,7 +220,7 @@ class TimerEditViewController: BaseViewController,
         
         cell.delegate = self
         
-        cell.ingredientObjects = ingredientCategory[type]!
+        cell.ingredientObjects = ingredientCategory[type] ?? []
                 
         return cell
     }

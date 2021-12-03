@@ -63,20 +63,7 @@ class RecordViewController: BaseViewController,
     
     var db: Firestore!
     
-    // FAKE DATA
-    var temoCategoryImage = ["icon_fitness", "icon_school"]
-    
-    var tempTimerImage = ["icon_falafel_wrap", "icon_cheese_burger"]
-    
-    var tempFocusTime = ["60 MIN", "60 MIN"]
-    
-    var tempTitle = ["Yoga", "AppWorks School"]
-    
-    var tempCategoryImage = ["icon_fitness", "icon_school"]
-    // FAKE DATA
-    
-    private var myRecords: [Record] = []
-    {
+    private var myRecords: [Record] = [] {
         
         didSet {
             
@@ -196,19 +183,13 @@ class RecordViewController: BaseViewController,
         
         let record = myRecords[indexPath.row]
         
-        //        recordCell.timerImageForRecord.image = UIImage(named: tempTimerImage[indexPath.row])
-        //
-        //        recordCell.timeLabelForRecord.text = tempFocusTime[indexPath.row]
-        //
-        //        recordCell.titleLabelForRecord.text = tempTitle[indexPath.row]
-        //
-        //        recordCell.categoryImageForRecord.image = UIImage(named: tempCategoryImage[indexPath.row])
+        let categoryIcon = TaskCategory(rawValue: record.recordCategory ?? "")?.image
         
         recordCell.layoutCell(
             timerImage: UIImage.asset(.icon_coding),
             time: record.focusTime,
             title: record.recordTitle ?? "",
-            categoryImage: UIImage.asset(.icon_coding))
+            categoryImage: categoryIcon)
         
         return recordCell
     }

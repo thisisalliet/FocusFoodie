@@ -43,7 +43,7 @@
                                 <rect key="frame" x="0.0" y="320" width="414" height="542"/>
                                 <color key="backgroundColor" name="G1"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h80-cI-QnW">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h80-cI-QnW">
                                 <rect key="frame" x="25" y="160" width="120" height="40"/>
                                 <color key="backgroundColor" name="G2"/>
                                 <constraints>
@@ -55,6 +55,9 @@
                                 <state key="normal" title="  NOVEMBER 18  ">
                                     <color key="titleColor" name="G3"/>
                                 </state>
+                                <connections>
+                                    <segue destination="5mf-LJ-Osg" kind="presentation" id="edb-sv-5di"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="DGS-EJ-2Vo" customClass="AnimationView" customModule="Lottie">
                                 <rect key="frame" x="41.5" y="393.5" width="331" height="325"/>
@@ -162,10 +165,43 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="128.57142857142856"/>
         </scene>
+        <!--Date View Controller-->
+        <scene sceneID="5LM-Ns-ajz">
+            <objects>
+                <viewController id="5mf-LJ-Osg" customClass="DateViewController" customModule="FocusFoodie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FBy-8O-4RX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Que-ox-7eJ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="C40-bd-M5S">
+                                <rect key="frame" x="0.0" y="340" width="414" height="502"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="G1"/>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" name="G1"/>
+                        <color key="tintColor" name="G3"/>
+                        <constraints>
+                            <constraint firstItem="Que-ox-7eJ" firstAttribute="leading" secondItem="FBy-8O-4RX" secondAttribute="leading" id="4as-7N-aNE"/>
+                            <constraint firstAttribute="bottom" secondItem="Que-ox-7eJ" secondAttribute="bottom" id="pQ0-3G-qNQ"/>
+                            <constraint firstItem="Que-ox-7eJ" firstAttribute="top" secondItem="FBy-8O-4RX" secondAttribute="top" id="pfo-wf-zQc"/>
+                            <constraint firstAttribute="trailing" secondItem="Que-ox-7eJ" secondAttribute="trailing" id="s1J-8a-kgP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="uoR-ih-YuW"/>
+                    <connections>
+                        <outlet property="blurView" destination="Que-ox-7eJ" id="Y64-po-3bb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bTv-kk-hop" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="862.5"/>
+        </scene>
     </scenes>
-    <designables>
-        <designable name="DGS-EJ-2Vo"/>
-    </designables>
     <resources>
         <namedColor name="G1">
             <color red="0.89803921568627454" green="0.97647058823529409" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

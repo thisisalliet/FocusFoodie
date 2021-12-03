@@ -63,6 +63,7 @@
 		09840BE42750EE890062384F /* FriendBlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09840BE32750EE890062384F /* FriendBlockViewController.swift */; };
 		09B38902275625D500C1BEEE /* TimeStamp+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B38901275625D500C1BEEE /* TimeStamp+Extension.swift */; };
 		09B389042756260A00C1BEEE /* Calendar+Eextension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B389032756260A00C1BEEE /* Calendar+Eextension.swift */; };
+		09B389062759F12200C1BEEE /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B389052759F12200C1BEEE /* DateViewController.swift */; };
 		09C1C7CE2722833000D2C9B2 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C7CD2722833000D2C9B2 /* UIColor+Extension.swift */; };
 		09C1C7D12722903800D2C9B2 /* DetailNoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C7CF2722903800D2C9B2 /* DetailNoteTableViewCell.swift */; };
 		09C1C7D22722903800D2C9B2 /* DetailNoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09C1C7D02722903800D2C9B2 /* DetailNoteTableViewCell.xib */; };
@@ -81,7 +82,7 @@
 		09C276C2273D09AF0037D65C /* ProfileButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C276C0273D09AF0037D65C /* ProfileButtonCell.swift */; };
 		09C276C5273D133A0037D65C /* ProfileLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C276C4273D133A0037D65C /* ProfileLabelCell.swift */; };
 		09D83DED2744B0A8005F1BE5 /* ContentEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D83DEC2744B0A8005F1BE5 /* ContentEditViewController.swift */; };
-		09D83DEF2744C9AE005F1BE5 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D83DEE2744C9AE005F1BE5 /* Category.swift */; };
+		09D83DEF2744C9AE005F1BE5 /* TaskCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D83DEE2744C9AE005F1BE5 /* TaskCategory.swift */; };
 		09D83DF22744CEE6005F1BE5 /* CategorySelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D83DF02744CEE6005F1BE5 /* CategorySelectionCell.swift */; };
 		09D83DF32744CEE6005F1BE5 /* CategorySelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D83DF12744CEE6005F1BE5 /* CategorySelectionCell.xib */; };
 		09D83DF52744EB72005F1BE5 /* RecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D83DF42744EB72005F1BE5 /* RecordManager.swift */; };
@@ -169,6 +170,7 @@
 		09840BE32750EE890062384F /* FriendBlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendBlockViewController.swift; sourceTree = "<group>"; };
 		09B38901275625D500C1BEEE /* TimeStamp+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeStamp+Extension.swift"; sourceTree = "<group>"; };
 		09B389032756260A00C1BEEE /* Calendar+Eextension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+Eextension.swift"; sourceTree = "<group>"; };
+		09B389052759F12200C1BEEE /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
 		09C1C7CD2722833000D2C9B2 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		09C1C7CF2722903800D2C9B2 /* DetailNoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNoteTableViewCell.swift; sourceTree = "<group>"; };
 		09C1C7D02722903800D2C9B2 /* DetailNoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailNoteTableViewCell.xib; sourceTree = "<group>"; };
@@ -205,7 +207,7 @@
 		09C276C0273D09AF0037D65C /* ProfileButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButtonCell.swift; sourceTree = "<group>"; };
 		09C276C4273D133A0037D65C /* ProfileLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLabelCell.swift; sourceTree = "<group>"; };
 		09D83DEC2744B0A8005F1BE5 /* ContentEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentEditViewController.swift; path = FocusFoodie/Controller/Timer/ContentEditViewController.swift; sourceTree = SOURCE_ROOT; };
-		09D83DEE2744C9AE005F1BE5 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		09D83DEE2744C9AE005F1BE5 /* TaskCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCategory.swift; sourceTree = "<group>"; };
 		09D83DF02744CEE6005F1BE5 /* CategorySelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionCell.swift; sourceTree = "<group>"; };
 		09D83DF12744CEE6005F1BE5 /* CategorySelectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategorySelectionCell.xib; sourceTree = "<group>"; };
 		09D83DF42744EB72005F1BE5 /* RecordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordManager.swift; sourceTree = "<group>"; };
@@ -390,7 +392,7 @@
 				09DB475327351B75003703C1 /* Recipe.swift */,
 				09C1C7DA27229D3D00D2C9B2 /* Record.swift */,
 				09DB4774273A200B003703C1 /* Invitation.swift */,
-				09D83DEE2744C9AE005F1BE5 /* Category.swift */,
+				09D83DEE2744C9AE005F1BE5 /* TaskCategory.swift */,
 				093169B32729413100360885 /* Ingredient.swift */,
 				09C276BE273D00DB0037D65C /* ProfileContent.swift */,
 				09C1C7D827229B9900D2C9B2 /* RecordContent.swift */,
@@ -427,6 +429,7 @@
 		09524FE7272164630061C36B /* Record */ = {
 			isa = PBXGroup;
 			children = (
+				09B389052759F12200C1BEEE /* DateViewController.swift */,
 				09524FDF27214F990061C36B /* DetailViewController.swift */,
 				09524FA5271FFE620061C36B /* RecordViewController.swift */,
 				09524FE5272164560061C36B /* CalendarPickerViewController.swift */,
@@ -787,6 +790,7 @@
 				09DB4777273A46F7003703C1 /* SetUpViewController.swift in Sources */,
 				09840BE22750EE600062384F /* InvitationViewController.swift in Sources */,
 				09428933272D975C0083CF6B /* ComingSoonView.swift in Sources */,
+				09B389062759F12200C1BEEE /* DateViewController.swift in Sources */,
 				09DB475827351DE8003703C1 /* CollectionManager.swift in Sources */,
 				09428938272E84970083CF6B /* Date+Extension.swift in Sources */,
 				09524F7A271FF4A00061C36B /* ViewController.swift in Sources */,
@@ -832,7 +836,7 @@
 				090E07E52730EC5800136025 /* IngredientGalleryView.swift in Sources */,
 				09524F94271FFCB00061C36B /* UIScreen+Extension.swift in Sources */,
 				09E42D31274196150014C4B9 /* PrivacyViewController.swift in Sources */,
-				09D83DEF2744C9AE005F1BE5 /* Category.swift in Sources */,
+				09D83DEF2744C9AE005F1BE5 /* TaskCategory.swift in Sources */,
 				09C1C7D927229B9900D2C9B2 /* RecordContent.swift in Sources */,
 				09524F98271FFCE70061C36B /* UITableView+Extension.swift in Sources */,
 				0974F117273B71340016FEC1 /* ProfileInfoCell.swift in Sources */,

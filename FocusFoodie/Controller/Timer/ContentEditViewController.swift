@@ -45,11 +45,11 @@ class ContentEditViewController: BaseViewController,
     
     @IBOutlet weak var toTimerEditorButton: UIButton!
     
-    let category = Category.allCases
+    let category = TaskCategory.allCases
     
     var hiddenMinutes: Int?
     
-    var categoryObject: [CategoryItem] = []
+    var categoryObject: [TaskObject] = []
     
     var categoryHandler: ((_ title: String, _ image: UIImage) -> Void)?
     
@@ -57,7 +57,7 @@ class ContentEditViewController: BaseViewController,
     
     var timeHandler: ((_ time: Int) -> ())?
         
-    var datas: [Category] = []
+    var datas: [TaskCategory] = []
     
     //    weak var delegate: ContentEditViewControllerDelegate?
     
