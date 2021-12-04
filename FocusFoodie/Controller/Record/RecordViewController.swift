@@ -9,21 +9,37 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 import FirebaseFirestoreSwift
+import Lottie
 
 class RecordViewController: BaseViewController,
-                             UITableViewDataSource,
-                             UITableViewDelegate {
+                            UITableViewDataSource,
+                            UITableViewDelegate {
     
-    private struct Segue {
-
-        static let picker = "SeguePicker"
+    @IBOutlet weak var weekDayLabel: UILabel!
+    
+    @IBOutlet weak var dateButton: UIButton! {
+        
+        didSet {
+            
+            dateButton.alpha = 0.75
+            
+            dateButton.layer.cornerRadius = 10
+        }
     }
     
-    var db: Firestore!
+    @IBOutlet weak var weekView: WeekView! {
+        
+        didSet {
+            
+            weekView.delegate = self
+        }
+    }
     
     @IBOutlet weak var recordTableView: UITableView! {
         
         didSet {
+            
+            recordTableView.separatorStyle = .none
             
             recordTableView.dataSource = self
             
@@ -31,102 +47,129 @@ class RecordViewController: BaseViewController,
         }
     }
     
-    @IBOutlet weak var profileButton: UIButton! {
+    @IBOutlet weak var recordLottieView: AnimationView! {
         
         didSet {
             
-            profileButton.alpha = 10
+            recordLottieView.contentMode = .scaleAspectFit
+            
+            recordLottieView.loopMode = .loop
+            
+            recordLottieView.animationSpeed = 0.5
         }
     }
     
-    @IBOutlet weak var calendarPickerView: UIView! {
+    @IBOutlet weak var emptyLabel: UILabel!
+    
+    var db: Firestore!
+    
+    private var myRecords: [Record] = [] {
         
         didSet {
             
-            calendarPickerView.cornerRadius = 10
+            checkEmpty()
         }
     }
     
-    @IBOutlet weak var calendarButton: UIButton! {
-        
-        didSet {
-            
-            calendarButton.backgroundColor = .G1
-            
-            calendarButton.setTitleColor(.G3, for: .normal)
-            
-            calendarButton.setTitleColor(.G3, for: .selected)
-            
-            calendarButton.setTitle("Today ▾ ", for: .normal)
-            
-            calendarButton.cornerRadius = 10
-            
-        }
-    }
-    
-    @IBOutlet weak var baseView: UIView!
-    
-    var pickerViewController: CalendarPickerViewController?
+    var selectedDate = Date()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        setUpDate()
+        
         setUpTableView()
+        
+        recordLottieView.isHidden = true
+        
+        emptyLabel.isHidden = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.selectedDate = Date()
+        
+        fetchRecord(date: self.selectedDate)
+    }
+    
+    private func setUpDate() {
+        
+        let month = Date().monthOfDate()
+        
+        let date = Date().dateOfWeek()
+        
+        weekDayLabel.text = Date().dayOfWeek()
+        
+        dateButton.setTitle("  \(month) \(date)  ", for: .normal)
     }
     
     private func setUpTableView() {
         
-        recordTableView.registerCellWithNib(identifier:
-            String(describing: RecordCell.self),
-                                            bundle: nil
+        recordTableView.registerCellWithNib(
+            identifier: String(describing: RecordCell.self),
+            bundle: nil
         )
     }
     
-    // MARK: - Action
-    @IBAction func didTouchCalendarBtn(_ sender: UIButton) {
+    private func checkEmpty() {
         
-            showCalendarPickerView()
-    }
-    
-    func showCalendarPickerView() {
-
-        let maxY = recordTableView.frame.maxY
-
-        calendarPickerView.frame = CGRect(
-            x: 0,
-            y: maxY,
-            width: UIScreen.width,
-            height: 0.0
-        )
-        
-        baseView.insertSubview(calendarPickerView, belowSubview: calendarButton.superview!)
-//        baseView.addSubview(calendarPickerView)
-//        baseView.insertSubview(blurView, belowSubview: calendarPickerView)
-
-        UIView.animate(
-            withDuration: 0.3,
-            animations: { [weak self] in
-
-                guard let strongSelf = self else { return }
-
-                let height =
-                451.0 / 586.0 * strongSelf.recordTableView.frame.height
-
-                self?.calendarPickerView.frame = CGRect(
-                    x: 0,
-                    y: maxY - height,
-                    width: UIScreen.width,
-                    height: maxY
-                )
+        if myRecords.isEmpty {
+            
+            recordLottieView.isHidden = false
+            
+            emptyLabel.isHidden = false
+            
+            if let recordLottieView = recordLottieView {
+                
+                recordLottieView.play()
+                
+            } else {
+                
+                recordLottieView.isHidden = true
+                
+                emptyLabel.isHidden = true
+                
+                if let recordLottieView = recordLottieView {
+                    
+                    recordLottieView.stop()
+                }
             }
-        )
+        }
+    }
+    
+    func fetchRecord(date: Date) {
+        
+        RecordManager.shared.fetchRecord(date: selectedDate) { result in
+            
+            switch result {
+                
+            case .success(let record):
+                
+                self.myRecords = record
+                
+                self.recordTableView.performBatchUpdates {
+                    
+                    let indexSet = IndexSet(integersIn: 0...0)
+                    
+                    self.recordTableView.reloadSections(indexSet, with: .fade)
+                }
+                
+            case .failure(let error):
+                
+                print(error)
+            }
+        }
+    }
+    
+    func checkCategory(image: UIImage) {
+        
     }
     
     // MARK: - UITableViewDataSource -
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return 10
+        return myRecords.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -136,36 +179,79 @@ class RecordViewController: BaseViewController,
             for: indexPath
         )
         
-        guard let cell = cell as? RecordCell else { return cell }
+        guard let recordCell = cell as? RecordCell else { return cell }
         
-        return cell
+        let record = myRecords[indexPath.row]
+        
+        let categoryIcon = TaskCategory(rawValue: record.recordCategory ?? "")?.image
+        
+        recordCell.layoutCell(
+            timerImage: UIImage.asset(.icon_coding),
+            time: record.focusTime,
+            title: record.recordTitle ?? "",
+            categoryImage: categoryIcon)
+        
+        return recordCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         guard let detailVC = UIStoryboard
-            .record
-            .instantiateViewController(
-                withIdentifier: String(describing: DetailViewController.self)
-            ) as? DetailViewController else {
-                
-                return
-        }
+                .record
+                .instantiateViewController(
+                    withIdentifier: String(describing: DetailViewController.self)
+                ) as? DetailViewController else {
+                    
+                    return
+                }
         
-//        detailVC.product = datas[indexPath.section].products[indexPath.row]
+        detailVC.record = myRecords[indexPath.row]
         
         show(detailVC, sender: nil)
     }
     
+    //    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+    //
+    //        let declineAction = UIContextualAction(style: .destructive, title: "") {
+    //            (action, sourceView, complete) in
+    //
+    //            self.myRecords.remove(at: indexPath.row)
+    //
+    //            self.recordTableView.deleteRows(at: [indexPath], with: .top)
+    //
+    //            complete(true)
+    //        }
+    //
+    //        declineAction.backgroundColor = .G1
+    //
+    //        declineAction.image = UIGraphicsImageRenderer(
+    //            size: CGSize(width: 40.0, height: 40.0)).image(
+    //            actions: { _ in UIImage.asset(.icon_delete)?.draw(
+    //                in: CGRect(x: 0, y: 0, width: 40, height: 40))
+    //            })
+    //
+    //        let trailingSwipConfiguration = UISwipeActionsConfiguration(actions: [declineAction])
+    //
+    //        return trailingSwipConfiguration
+    //    }
+    
     // MARK: - UITableViewDelegate -
-
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 80
+        return 150
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return UITableView.automaticDimension
+    }
+}
+
+extension RecordViewController: WeekViewDelegate {
+    
+    func changeDate(date: Date) {
+        
+        fetchRecord(date: date)
     }
 }

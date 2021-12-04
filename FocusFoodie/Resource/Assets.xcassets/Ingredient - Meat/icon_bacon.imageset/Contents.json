@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "bacon.png",
+      "filename" : "icon_bacon.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "bacon@2x.png",
+      "filename" : "icon_bacon@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "bacon@3x.png",
+      "filename" : "icon_bacon@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

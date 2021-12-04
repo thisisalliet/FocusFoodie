@@ -5,8 +5,8 @@
 //  Created by Allie T on 2021/10/27.
 //
 
-import Foundation
 import UIKit
+import Foundation
 
 protocol IngredientObject {
 
@@ -14,9 +14,9 @@ protocol IngredientObject {
     
     var image: UIImage? { get }
 
-    var title: String? { get }
+    var title: String { get }
 
-    var minute: Int? { get }
+    var minute: Int { get }
 }
 
 enum IngredientCategory: Int {
@@ -39,6 +39,8 @@ enum BreadItem: IngredientObject, CaseIterable {
     case baguette
     
     case croissant
+    
+    case flatBread
         
     var type: IngredientCategory {
         
@@ -56,24 +58,28 @@ enum BreadItem: IngredientObject, CaseIterable {
         case .baguette: return UIImage.asset(.icon_baguette)
 
         case .croissant: return UIImage.asset(.icon_croissant)
+            
+        case .flatBread: return UIImage.asset(.icon_flatbread)
         }
     }
     
-    var title: String? {
+    var title: String {
         
         switch self {
             
         case .toast: return "Toast"
             
-        case .burgerBun: return "Burger\nBun"
+        case .burgerBun: return "Bun"
             
         case .baguette: return "Baguette"
 
         case .croissant: return "Croissant"
+            
+        case .flatBread: return "Flatbread"
         }
     }
     
-    var minute: Int? {
+    var minute: Int {
         
         switch self {
             
@@ -84,6 +90,8 @@ enum BreadItem: IngredientObject, CaseIterable {
         case .baguette: return 5
 
         case .croissant: return 10
+            
+        case .flatBread: return 15
         }
     }
 }
@@ -121,19 +129,19 @@ enum VegetableItem: IngredientObject, CaseIterable {
 
         case .tomato: return UIImage.asset(.icon_tomato)
 
-        case .onion: return UIImage.asset(.icon_lettuce)
+        case .onion: return UIImage.asset(.icon_onion)
         }
     }
     
-    var title: String? {
+    var title: String {
         
         switch self {
             
-        case .avocado: return "Advocado"
+        case .avocado: return "Avocado"
 
-        case .bellPepper: return "Bell\nPepper"
+        case .bellPepper: return "Pepper"
 
-        case .cucumber: return "Cucumer"
+        case .cucumber: return "Cucumber"
 
         case .lettuce: return "Lettuce"
 
@@ -143,7 +151,7 @@ enum VegetableItem: IngredientObject, CaseIterable {
         }
     }
     
-    var minute: Int? {
+    var minute: Int {
         
         switch self {
             
@@ -166,13 +174,13 @@ enum MeatItem: IngredientObject, CaseIterable {
     
     case bacon
     
-    case chicken
+    case tuna
         
     case falafel
     
     case shrimp
     
-    case tuna
+    case beef
     
     case turkey
     
@@ -187,49 +195,49 @@ enum MeatItem: IngredientObject, CaseIterable {
             
         case .bacon: return UIImage.asset(.icon_bacon)
             
-        case .chicken: return UIImage.asset(.icon_baguette)
+        case .tuna: return UIImage.asset(.icon_tuna)
             
-        case .falafel: return UIImage.asset(.icon_baguette)
+        case .falafel: return UIImage.asset(.icon_falafel)
             
-        case .shrimp: return UIImage.asset(.icon_baguette)
+        case .shrimp: return UIImage.asset(.icon_shrimp)
             
-        case .tuna: return UIImage.asset(.icon_baguette)
+        case .beef: return UIImage.asset(.icon_beef)
             
-        case .turkey: return UIImage.asset(.icon_baguette)
+        case .turkey: return UIImage.asset(.icon_turkey)
         }
     }
     
-    var title: String? {
+    var title: String {
         
         switch self {
             
         case .bacon: return "Bacon"
             
-        case .chicken: return "Chicken"
+        case .tuna: return "Tuna"
 
         case .falafel: return "Falafel"
 
         case .shrimp: return "Shrimp"
 
-        case .tuna: return "Tuna"
+        case .beef: return "Beef"
 
         case .turkey: return "Turkey"
         }
     }
     
-    var minute: Int? {
+    var minute: Int {
         
         switch self {
             
         case .bacon: return 5
 
-        case .chicken: return 10
+        case .tuna: return 10
 
         case .falafel: return 15
 
         case .shrimp: return 20
 
-        case .tuna: return 30
+        case .beef: return 30
 
         case .turkey: return 60
         }
@@ -240,11 +248,11 @@ enum SideItem: IngredientObject, CaseIterable {
     
     case egg
     
-    case peanutButter
-    
     case honey
     
     case mayonnaise
+    
+    case ketchup
     
     case mustard
     
@@ -259,31 +267,31 @@ enum SideItem: IngredientObject, CaseIterable {
         
         switch self {
             
-        case .egg: return UIImage.asset(.icon_cheese)
+        case .egg: return UIImage.asset(.icon_egg)
             
-        case .peanutButter: return UIImage.asset(.icon_cheese)
+        case .honey: return UIImage.asset(.icon_honey)
             
-        case .honey: return UIImage.asset(.icon_cheese)
+        case .mayonnaise: return UIImage.asset(.icon_mayonnaise)
             
-        case .mayonnaise: return UIImage.asset(.icon_cheese)
+        case .ketchup: return UIImage.asset(.icon_ketchup)
             
-        case .mustard: return UIImage.asset(.icon_cheese)
+        case .mustard: return UIImage.asset(.icon_mustard)
             
         case .cheese: return UIImage.asset(.icon_cheese)
         }
     }
     
-    var title: String? {
+    var title: String {
         
         switch self {
             
         case .egg: return "Egg"
             
-        case .peanutButter: return "Peanut\nButter"
-            
         case .honey: return "Honey"
             
         case .mayonnaise: return "Mayonnaise"
+            
+        case .ketchup: return "Ketchup"
             
         case .mustard: return "Mustard"
             
@@ -291,17 +299,17 @@ enum SideItem: IngredientObject, CaseIterable {
         }
     }
     
-    var minute: Int? {
+    var minute: Int {
         
         switch self {
             
         case .egg: return 10
             
-        case .peanutButter: return 20
+        case .honey: return 20
             
-        case .honey: return 30
+        case .mayonnaise: return 30
             
-        case .mayonnaise: return 40
+        case .ketchup: return 40
             
         case .mustard: return 50
             

@@ -9,64 +9,22 @@ import UIKit
 
 class RecordCell: UITableViewCell {
         
-    @IBOutlet weak var timerImage: UIImageView! {
-        
-        didSet {
-            
-            timerImage.image = UIImage.asset(.icon_loading)
-            
-            timerImage.contentMode = .scaleAspectFit
-        }
-    }
+    @IBOutlet weak var timerImageForRecord: UIImageView!
     
-    @IBOutlet weak var descriptionLabel: UILabel! {
-        
-        didSet {
-            
-            descriptionLabel.text = "Personal Project"
-        }
-    }
+    @IBOutlet weak var timeLabelForRecord: UILabel!
     
-    @IBOutlet weak var greyView: UIView! {
-        
-        didSet {
-            
-            greyView.cornerRadius = 5
-            
-            greyView.backgroundColor = .G1
-        }
-    }
+    @IBOutlet weak var titleLabelForRecord: UILabel!
     
-    @IBOutlet weak var categoryLabel: UILabel! {
-        
-        didSet {
-            
-            categoryLabel.text = "Coding"
-            
-            categoryLabel.contentMode = .center
-            
-            categoryLabel.textColor = .G3
-        }
-    }
+    @IBOutlet weak var categoryImageForRecord: UIImageView!
     
-    @IBOutlet weak var minLabel: UILabel! {
+    func layoutCell(timerImage: UIImage?, time: Int, title: String, categoryImage: UIImage?) {
         
-        didSet {
-            
-            minLabel.text = "180"
-            
-            minLabel.textColor = .G3
-            
-        }
-    }
-    
-    @IBOutlet weak var unitLabel: UILabel! {
+        timerImageForRecord?.image = timerImage
         
-        didSet {
-            
-            unitLabel.text = "min"
-            
-            unitLabel.textColor = .G3
-        }
+        timeLabelForRecord.text = "\(time) min"
+        
+        titleLabelForRecord.text = title
+        
+        categoryImageForRecord.image = categoryImage
     }
 }

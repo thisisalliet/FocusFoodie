@@ -30,23 +30,23 @@ class BaseViewController: UIViewController {
         
         overrideUserInterfaceStyle = .light
         
-        navigationController?.navigationBar.isTranslucent = true
-        
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        
-        navigationController?.navigationBar.shadowImage = UIImage()
-        
-        navigationController?.navigationBar.barTintColor = UIColor.white.withAlphaComponent(0.9)
-        
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        
-        navigationController?.navigationItem.leftBarButtonItem?.image = UIImage.asset(.icon_arrow_left)
-        
-        navigationController?.navigationItem.leftBarButtonItem?.customView?.cornerRadius = 10
-        
-        navigationController?.navigationItem.leftBarButtonItem?.customView?.alpha = 1
-
-        navigationController?.navigationItem.leftBarButtonItem?.image?.withTintColor(.white)
+//        navigationController?.navigationBar.isTranslucent = true
+//
+//        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+//
+//        navigationController?.navigationBar.shadowImage = UIImage()
+//
+//        navigationController?.navigationBar.barTintColor = UIColor.white.withAlphaComponent(0.9)
+//
+//        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+//
+//        navigationController?.navigationItem.leftBarButtonItem?.image = UIImage.asset(.icon_arrow_left)
+//
+//        navigationController?.navigationItem.leftBarButtonItem?.customView?.cornerRadius = 10
+//
+//        navigationController?.navigationItem.leftBarButtonItem?.customView?.alpha = 1
+//
+//        navigationController?.navigationItem.leftBarButtonItem?.image?.withTintColor(.white)
         
 //        setupGradientBackground()
     }
@@ -94,7 +94,6 @@ class BaseViewController: UIViewController {
         
         backToRoot(completion: nil)
     }
-    
 }
 
 extension UIViewController {
@@ -138,7 +137,7 @@ extension UIViewController {
         
          gradientLayer.colors = [
             UIColor.white.cgColor,
-            UIColor.G1?.cgColor
+            UIColor.G1?.cgColor as Any
          ]
         
          view.layer.insertSublayer(gradientLayer, at : 0)

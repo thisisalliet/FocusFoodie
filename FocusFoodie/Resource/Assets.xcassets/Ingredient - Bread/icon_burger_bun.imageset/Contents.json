@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "burger_bun.png",
+      "filename" : "icon_burger_bun.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "burger_bun@2x.png",
+      "filename" : "icon_burger_bun@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "burger_bun@3x.png",
+      "filename" : "icon_burger_bun@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

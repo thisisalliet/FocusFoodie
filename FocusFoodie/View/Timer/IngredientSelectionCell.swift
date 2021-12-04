@@ -27,28 +27,20 @@ struct SelectedItem {
     var status: SelectedStatus
 }
 
-class IngredientSelectionCell: BasicSelectionCell {
+protocol IngredientSelectionCellDelegate: AnyObject {
     
-    weak var delegate: TimerEditViewController?
+    func getIngredientInfo(_ object: IngredientObject)
+}
+
+class IngredientSelectionCell: TimerBasicCell {
+    
+    weak var delegate: IngredientSelectionCellDelegate?
     
     var selectedIngredientObject: IngredientObject?
-    
-    var touchHandler: ((IndexPath) -> Void)?
-    
-    var ingredientObjects: [IngredientObject] = [] {
         
-        didSet {
-            ingredientCollectionView.reloadData()
-        }
-    }
+    var ingredientObjects: [IngredientObject] = []
     
-    var selectedIngredient: [IngredientCategory: IngredientObject] = [:] {
-        
-        didSet {
-            
-            ingredientCollectionView.reloadData()
-        }
-    }
+    var selectedIngredient: [IngredientCategory: IngredientObject] = [:]
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -64,25 +56,25 @@ class IngredientSelectionCell: BasicSelectionCell {
     
     private func setupiIngredientView() {
                         
-        ingredientCollectionView.backgroundColor = .white
+        ingredientCollectionView.backgroundColor = .clear
     }
     
-    
-    override func numberOfItem(_ cell: BasicSelectionCell) -> Int {
+    override func numberOfItem(_ cell: TimerBasicCell) -> Int {
         
         return ingredientObjects.count
     }
     
-    override func viewIn(_ cell: BasicSelectionCell, selectionCell: SelectionCell, indexPath: IndexPath) {
+    override func viewIn(_ cell: TimerBasicCell, selectionCell: SelectionCell, indexPath: IndexPath) {
         
         guard (selectionCell.objectView as? IngredientItemView) != nil else {
             
             let ingredientView = IngredientItemView()
             
-            ingredientView.layoutCell(image: ingredientObjects[indexPath.row].image!,
-                                      title: ingredientObjects[indexPath.row].title!,
-                                      minute: ingredientObjects[indexPath.row].minute!,
-                                      isSelected: false)
+            ingredientView.layoutCell(
+                image: ingredientObjects[indexPath.row].image!,
+                title: ingredientObjects[indexPath.row].title,
+                minute: ingredientObjects[indexPath.row].minute,
+                isSelected: false)
             
             selectionCell.objectView = ingredientView
             
@@ -90,54 +82,8 @@ class IngredientSelectionCell: BasicSelectionCell {
         }
     }
     
-    override func didSelected(_ cell: BasicSelectionCell, at indexPath: IndexPath) {
+    override func didSelected(_ cell: TimerBasicCell, at indexPath: IndexPath) {
 
-        switch self.ingredientObjects.first?.type {
-            
-        case .bread:
-            
-            delegate?.galleryView.breadImage.image = ingredientObjects[indexPath.row].image!
-            
-        case .vegetable:
-            
-            delegate?.galleryView.vegetableImage.image = ingredientObjects[indexPath.row].image!
-            
-        case .meat:
-            
-            delegate?.galleryView.meatImage.image = ingredientObjects[indexPath.row].image!
-
-        case .side:
-            
-            delegate?.galleryView.sideImage.image = ingredientObjects[indexPath.row].image!
-            
-        default:
-            break
-        }
-        
-        //        guard touchHandler?(ingredientObjects[indexPath.row].minute ?? 0) == true else { return }
-        //
-        //        for (index, object) in ingredientObjects.enumerated() where object.status == .selected {
-        //
-        //            ingredientObjects[index].status = .avaliable
-        //        }
-        //
-        //        ingredientObjects[indexPath.row].status = .selected
-        //
- 
-        //
-        //        ingredientObjects[indexPath.row].isSelected = !ingredientObjects[indexPath.row].isSelected
-        //
-//        touchHandler?(indexPath)
-        
-//        ingredientCollectionView.reloadData()
-        
-        
-        
-        
-//        delegate?.galleryView.knifeImage
-        
-        
-        
-        
+        delegate?.getIngredientInfo(ingredientObjects[indexPath.row])
     }
 }

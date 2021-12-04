@@ -19,20 +19,51 @@ class AuthViewController: BaseViewController {
     
     weak var sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate
     
+    @IBOutlet weak var appIconImage: UIImageView!
+    
+    @IBOutlet weak var noticeLabel: UILabel!
+    
+    @IBOutlet weak var privacyPolicyButton: UIButton!
+    
+    func configure() {
+        
+        appIconImage.image = UIImage.asset(.icon_appLogo)
+        
+        appIconImage.alpha = 0.75
+    }
+    
+    @IBAction func privacyPolicyButtonTapped(_ sender: UIButton) {
+        
+        guard UIStoryboard
+                .auth
+                .instantiateViewController(
+                    withIdentifier: String(describing: PrivacyViewController.self)
+                ) is PrivacyViewController else {
+                    
+                    return
+                }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.tabBarController?.tabBar.isHidden = true
         
+        configure()
+        
         setUpSignInButton()
+        
+        performSignIn()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.tabBarController?.tabBar.isHidden = true
+        
         setUpSignInButton()
         
-        self.tabBarController?.tabBar.isHidden = true
+        configure()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -44,6 +75,8 @@ class AuthViewController: BaseViewController {
         super.viewWillDisappear(animated)
         
         self.tabBarController?.tabBar.isHidden = false
+        
+        configure()
     }
     
     func setUpSignInButton() {
@@ -57,29 +90,19 @@ class AuthViewController: BaseViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            
-            button.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
-            button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
-            button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
-            button.heightAnchor.constraint(equalToConstant: 50)
+            button.leadingAnchor.constraint(equalTo: noticeLabel.leadingAnchor),
+            button.trailingAnchor.constraint(equalTo: noticeLabel.trailingAnchor),
+            button.heightAnchor.constraint(equalToConstant: 45),
+            button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100)
         ])
         
-        button.addTarget(self, action: #selector(appleSignTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(signInWithAppleTapped), for: .touchUpInside)
     }
     
-    @objc func appleSignTapped() {
-        
-        performSignIn()
-        
-        guard UIStoryboard
-                .auth
-                .instantiateViewController(
-                    withIdentifier: String(describing: SetUpViewController.self)
-                ) is SetUpViewController else {
-                    
-                    return
-                }
-    }
+    @objc func signInWithAppleTapped() {
+           
+           performSignIn()
+       }
     
     func performSignIn() {
         
@@ -96,8 +119,8 @@ class AuthViewController: BaseViewController {
     
     func createAppleIdRequest() -> ASAuthorizationAppleIDRequest {
         
-            let appleIdProvider = ASAuthorizationAppleIDProvider()
-            
+        let appleIdProvider = ASAuthorizationAppleIDProvider()
+        
         let request = appleIdProvider.createRequest()
         
         request.requestedScopes = [.fullName, .email]
@@ -218,7 +241,7 @@ private func randomNonceString(length: Int = 32) -> String {
     precondition(length > 0)
     
     let charset: [Character] =
-        Array("0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._")
+    Array("0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._")
     
     var result = ""
     

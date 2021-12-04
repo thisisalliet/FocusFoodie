@@ -8,54 +8,39 @@
 import UIKit
 
 class DetailNoteTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var categoryGreyView: UIView! {
+    
+    @IBOutlet weak var categoryImage: UIImageView!
+    
+    @IBOutlet weak var categoryLabel: UILabel!
+        
+    @IBOutlet weak var categoryButton: UIButton! {
         
         didSet {
             
-            categoryGreyView.backgroundColor = .G1
-            
-            categoryGreyView.cornerRadius = 10
+            categoryButton.cornerRadius = 10
         }
     }
     
-    @IBOutlet weak var categoryTitleLabel: UILabel! {
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var titleTextfield: UITextField!
+    
+    @IBOutlet weak var noteLabel: UILabel!
+    
+    @IBOutlet weak var noteTextfield: UITextField!
+    
+    @IBAction func onEdit(_ sender: UIButton) {
         
-        didSet {
-            
-            categoryTitleLabel.text = "CODING"
-
-            categoryTitleLabel.textColor = .white
-        }
     }
     
-    @IBOutlet weak var noteGreyView: UIView! {
+    func layoutNoteCell(image: UIImage, category: String, title: String?, note: String) {
         
-        didSet {
-            
-            noteGreyView.backgroundColor = .G1
-            
-            noteGreyView.cornerRadius = 10
-        }
-    }
-    
-    @IBOutlet weak var noteTitleLabel: UILabel! {
+        categoryImage.image = image
         
-        didSet {
-            
-            noteTitleLabel.text = "NOTE"
-            
-            noteTitleLabel.textColor = .white
-        }
-    }
-    
-    @IBOutlet weak var noteLabel: UILabel! {
+        categoryButton.setTitle("\(category) (tap to edit)", for: .normal)
+                
+        titleTextfield.text = title
         
-        didSet {
-            
-            noteLabel.textColor = UIColor.G1
-            
-            noteLabel.text = "Coding is hard..."
-        }
+        noteTextfield.text = note
     }
 }

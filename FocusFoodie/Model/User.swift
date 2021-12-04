@@ -21,10 +21,12 @@ public struct User: Codable {
     
     let providerId: String
     
-    let blockList: [BlockList]?
+    let blockList: [String]?
     
-    let friendList: [FriendList]?
-    
+    let friendList: [String]?
+
+    let recipeList: [String]?
+
     enum CodingKeys: String, CodingKey {
         
         case userId = "user_id"
@@ -40,25 +42,38 @@ public struct User: Codable {
         case blockList = "block_list"
         
         case friendList = "friend_list"
+        
+        case recipeList = "recipe_list"
+
     }
 }
 
-struct BlockList: Codable {
-    
-    var blockId: String
-    
-    enum CodingKeys: String, CodingKey {
-        
-        case blockId = "block_id"
-    }
-}
+//struct BlockList: Codable {
+//
+//    var blockId: String
+//
+//    enum CodingKeys: String, CodingKey {
+//
+//        case blockId = "block_id"
+//    }
+//}
+//
+//struct FriendList: Codable {
+//
+//    var friendId: String
+//
+//    enum CodingKeys: String, CodingKey {
+//
+//        case friendId = "friend_id"
+//    }
+//}
 
-struct FriendList: Codable {
-    
-    var friendId: String
-    
-    enum CodingKeys: String, CodingKey {
-        
-        case friendId = "friend_id"
-    }
-}
+//struct Recipe: Codable {
+//    
+//    var recipeId: String
+//    
+//    enum CodingKeys: String, CodingKey {
+//        
+//        case recipeId = "recipe_id"
+//    }
+//}

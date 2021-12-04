@@ -12,7 +12,6 @@ import Firebase
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -23,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         FirebaseApp.configure()
         
         registerForPushNotifications()
+        
+        UNUserNotificationCenter.current().delegate = self
         
         return true
     }
@@ -46,7 +47,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         let customFont = UIFont.regular(size: 16)
         
-        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: customFont ?? .systemFont(ofSize: 16)], for: .normal)
+        UIBarButtonItem.appearance().setTitleTextAttributes([
+            NSAttributedString.Key.font: customFont ?? .systemFont(ofSize: 16)], for: .normal)
         
         UILabel.appearance().substituteFontName = FontName.regular.rawValue
         
@@ -68,7 +70,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     //        }
     //    }
     
-    
     // MARK: - Notification -
     func registerForPushNotifications() {
         UNUserNotificationCenter.current()
@@ -89,6 +90,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
     }
     
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        willPresent notification: UNNotification,
+        withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        completionHandler([.badge, .sound, .alert])
+    }
+    
     func application(
       _ application: UIApplication,
       didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
@@ -104,5 +113,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     ) {
       print("Failed to register: \(error)")
     }
-
+    
+    func showTabTwoAsDefault() {
+        
+//        if window?.rootViewController as? TabBarViewController != nil {
+//            
+//            let tabBarController = window!.rootViewController as! UITabBarController
+//            
+//            tabBarController.selectedIndex = 1
+//            }
+    }
 }

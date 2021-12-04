@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "tomato.png",
+      "filename" : "icon_tomato.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "tomato@2x.png",
+      "filename" : "icon_tomato@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "tomato@3x.png",
+      "filename" : "icon_tomato@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

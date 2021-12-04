@@ -7,33 +7,66 @@
 
 import UIKit
 
-class CommunityTableViewCell: UITableViewCell {
+//enum CommunityLayout {
+//
+//    case basic
+//
+//    case withInvitation
+//}
 
-    @IBOutlet weak var acceptButton: UIButton!
+class CommunityTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var whiteView: UIView! {
-        
-        didSet {
-            
-            whiteView.cornerRadius = 10
-        }
-    }
+//    weak var delegate: CommunityViewController?
+    
+    @IBOutlet weak var multiButton: UIButton!
+    
+    @IBOutlet weak var whiteView: UIView!
     
     @IBOutlet weak var nameLabel: UILabel!
     
     @IBOutlet weak var emailLabel: UILabel!
+        
+    @IBOutlet weak var inviteBackground: UIImageView!
     
-    @IBOutlet weak var profileImage: UIImageView!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    var touchHandler: (() -> Void)? {
+        
+        didSet {
+            
+            if touchHandler == nil {
+                
+                multiButton.isHidden = true
+                
+            } else {
+                
+                multiButton.isHidden = false
+            }
+        }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    @IBAction func didTappedMultiButton(_ sender: UIButton) {
+        
+        touchHandler?()
     }
     
+    func layoutCell(name: String, email: String) {
+        
+        multiButton.setBackgroundImage(UIImage.asset(.icon_cross_green), for: .normal)
+
+        nameLabel.text = name
+
+        emailLabel.text = email
+    }
+    
+    func layoutCellWithInvitation(name: String, email: String) {
+
+        nameLabel.text = name
+
+        emailLabel.text = email
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        touchHandler = nil
+    }
 }

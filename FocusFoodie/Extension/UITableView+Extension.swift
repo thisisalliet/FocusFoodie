@@ -15,6 +15,12 @@ extension UITableView {
 
         register(nib, forCellReuseIdentifier: identifier)
     }
+    
+    func dequeueCell<T: UITableViewCell>(for indexPath: IndexPath) -> T {
+            // swiftlint:disable force_cast
+            return dequeueReusableCell(withIdentifier: "(T.self)", for: indexPath) as! T
+            // swiftlint:enable force_cast
+        }
 }
 
 extension UITableViewCell {
