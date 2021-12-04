@@ -29,13 +29,6 @@ class TimerViewController: BaseViewController {
     @IBOutlet weak var timerTitle: UILabel!
     
     @IBOutlet weak var countDownLabel: UILabel!
-//    {
-//
-//        didSet {
-//
-//            self.passTime(minutes: <#T##Int#>)
-//        }
-//    }
     
     @IBOutlet weak var categoryImage: UIImageView!
     
@@ -143,6 +136,11 @@ class TimerViewController: BaseViewController {
 //            }
 //        }
         // NEW
+        
+        if isInitial() {
+            
+            setButtonsEnabled(false)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -160,8 +158,6 @@ class TimerViewController: BaseViewController {
                 strongSelf.timerTitle.text = title
                 
                 strongSelf.hiddenNote = note
-                
-                //                strongSelf.seconds =
             }
             
             contentEditVC.categoryHandler = { [weak self] title, image in
@@ -186,6 +182,8 @@ class TimerViewController: BaseViewController {
                 let tuple = strongSelf.secondsToHoursMinutesSeconds(seconds: strongSelf.seconds)
                 
                 strongSelf.countDownLabel.text = String(format: "%02i:%02i:%02i", tuple.0, tuple.1, tuple.2)
+                
+                strongSelf.setButtonsEnabled(true)
                 
 //                timeEditVC.buttonHandler = { [weak self] status in
 //
@@ -326,6 +324,30 @@ class TimerViewController: BaseViewController {
             RecordManager.shared.createRecord(record: record)
                         
             return
+        }
+    }
+    
+    func isInitial() -> Bool {
+        return self.originalSeconds == 0
+    }
+    
+    func setButtonsEnabled(_ enabled: Bool) {
+        
+        controlButton.isEnabled = enabled
+        
+        resetButton.isEnabled = enabled
+        
+        if enabled {
+            
+            controlButton.backgroundColor = .G3
+            
+            resetButton.backgroundColor = .G3
+            
+        } else {
+                        
+            controlButton.backgroundColor = .lightGray
+                        
+            resetButton.backgroundColor = .lightGray
         }
     }
 }
