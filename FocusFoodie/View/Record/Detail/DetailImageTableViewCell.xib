@@ -19,11 +19,11 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v1H-1L-MEA">
-                        <rect key="frame" x="30" y="20" width="354" height="450"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="470"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_falafel_wrap" translatesAutoresizingMaskIntoConstraints="NO" id="Deu-ss-KZo">
-                        <rect key="frame" x="27" y="65" width="360" height="360"/>
+                        <rect key="frame" x="19" y="47" width="376" height="376"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="Deu-ss-KZo" secondAttribute="height" multiplier="1:1" id="ROl-Fa-cny"/>
                         </constraints>
@@ -31,10 +31,10 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="v1H-1L-MEA" secondAttribute="bottom" constant="30" id="2zG-Bd-tFE"/>
-                    <constraint firstItem="v1H-1L-MEA" firstAttribute="leading" secondItem="K0A-nn-aqv" secondAttribute="leading" constant="30" id="6Ux-6R-V5h"/>
+                    <constraint firstItem="v1H-1L-MEA" firstAttribute="leading" secondItem="K0A-nn-aqv" secondAttribute="leading" id="6Ux-6R-V5h"/>
                     <constraint firstItem="Deu-ss-KZo" firstAttribute="centerY" secondItem="v1H-1L-MEA" secondAttribute="centerY" id="8vb-Pm-tg7"/>
-                    <constraint firstItem="v1H-1L-MEA" firstAttribute="top" secondItem="K0A-nn-aqv" secondAttribute="top" constant="20" id="bih-zN-3Rq"/>
-                    <constraint firstAttribute="trailing" secondItem="v1H-1L-MEA" secondAttribute="trailing" constant="30" id="f8j-vI-4KD"/>
+                    <constraint firstItem="v1H-1L-MEA" firstAttribute="top" secondItem="K0A-nn-aqv" secondAttribute="top" id="bih-zN-3Rq"/>
+                    <constraint firstAttribute="trailing" secondItem="v1H-1L-MEA" secondAttribute="trailing" id="f8j-vI-4KD"/>
                     <constraint firstItem="Deu-ss-KZo" firstAttribute="height" secondItem="v1H-1L-MEA" secondAttribute="height" multiplier="0.8" id="kFe-Lh-lfv"/>
                     <constraint firstItem="Deu-ss-KZo" firstAttribute="centerX" secondItem="v1H-1L-MEA" secondAttribute="centerX" id="mKG-Hd-TFa"/>
                 </constraints>

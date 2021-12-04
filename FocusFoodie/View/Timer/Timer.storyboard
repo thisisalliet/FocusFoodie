@@ -562,6 +562,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="qiv-fY-UfN"/>
                         <color key="backgroundColor" name="G1"/>
                         <color key="tintColor" name="G3"/>
                         <constraints>
@@ -585,6 +586,7 @@
                     <view key="view" contentMode="scaleToFill" id="U4g-2b-43Q">
                         <rect key="frame" x="0.0" y="0.0" width="290" height="448"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="QKx-c3-BHc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
@@ -599,6 +601,7 @@
                     <view key="view" contentMode="scaleToFill" id="Lx0-PG-er6">
                         <rect key="frame" x="0.0" y="0.0" width="290" height="448"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="0Gk-rQ-fpf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
@@ -613,6 +616,7 @@
                     <view key="view" contentMode="scaleToFill" id="Zcf-PV-tDd">
                         <rect key="frame" x="0.0" y="0.0" width="290" height="448"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="d3r-Bo-Qfj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
@@ -627,6 +631,7 @@
                     <view key="view" contentMode="scaleToFill" id="KiQ-7U-eyZ">
                         <rect key="frame" x="0.0" y="0.0" width="290" height="448"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="08Y-Me-aGV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>

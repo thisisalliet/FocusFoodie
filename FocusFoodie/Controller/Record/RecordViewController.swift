@@ -186,7 +186,7 @@ class RecordViewController: BaseViewController,
         let categoryIcon = TaskCategory(rawValue: record.recordCategory ?? "")?.image
         
         recordCell.layoutCell(
-            timerImage: UIImage.asset(.icon_coding),
+            timerImage: categoryIcon,
             time: record.focusTime,
             title: record.recordTitle ?? "",
             categoryImage: categoryIcon)

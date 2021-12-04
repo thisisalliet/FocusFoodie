@@ -23,55 +23,48 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_coding" translatesAutoresizingMaskIntoConstraints="NO" id="kN2-gS-ckv">
-                        <rect key="frame" x="-30" y="-50" width="550" height="550"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="550" id="4sK-V6-lv4"/>
-                            <constraint firstAttribute="width" constant="550" id="fg5-0d-7wM"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebv-fM-YMd">
-                        <rect key="frame" x="20" y="20" width="104.5" height="58"/>
+                        <rect key="frame" x="30" y="20" width="104.5" height="51"/>
                         <fontDescription key="fontDescription" name="Dongle-Regular" family="Dongle" pointSize="40"/>
                         <color key="textColor" name="G3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCS-o7-x9c">
-                        <rect key="frame" x="21" y="257" width="54" height="58"/>
+                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="753" text="Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCS-o7-x9c">
+                        <rect key="frame" x="30" y="242" width="54" height="58"/>
                         <fontDescription key="fontDescription" name="Dongle-Regular" family="Dongle" pointSize="40"/>
                         <color key="textColor" name="G3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BpU-G7-zxx">
-                        <rect key="frame" x="20" y="133" width="49" height="58"/>
+                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BpU-G7-zxx">
+                        <rect key="frame" x="30" y="121" width="49" height="58"/>
                         <fontDescription key="fontDescription" name="Dongle-Regular" family="Dongle" pointSize="40"/>
                         <color key="textColor" name="G3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tap to edit" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KZg-Zv-Gk7">
-                        <rect key="frame" x="20" y="171" width="325" height="56"/>
+                    <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="752" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tap to edit" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KZg-Zv-Gk7">
+                        <rect key="frame" x="30" y="174" width="310" height="53"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="textColor" name="G3"/>
                         <fontDescription key="fontDescription" name="Dongle-Regular" family="Dongle" pointSize="30"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                     <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Tap to edit" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F9t-6Y-1vF">
-                        <rect key="frame" x="20" y="295" width="325" height="135"/>
+                        <rect key="frame" x="30" y="295" width="310" height="135"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="textColor" name="G3"/>
                         <fontDescription key="fontDescription" name="Dongle-Regular" family="Dongle" pointSize="30"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Er7-fa-gYQ">
-                        <rect key="frame" x="25" y="63" width="137" height="40"/>
+                        <rect key="frame" x="35" y="61" width="100" height="35"/>
                         <color key="backgroundColor" name="G2"/>
                         <constraints>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="1hI-xR-1V4"/>
-                            <constraint firstAttribute="height" constant="40" id="x4q-xi-idm"/>
+                            <constraint firstAttribute="height" constant="35" id="7dV-6v-N3t"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Dongle-Regular" family="Dongle" pointSize="25"/>
+                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                        <state key="normal" title=" Work (tap to edit)">
+                        <state key="normal" title="Work">
                             <color key="titleColor" name="G3"/>
                         </state>
                         <connections>
@@ -80,34 +73,32 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="eCS-o7-x9c" firstAttribute="top" secondItem="KZg-Zv-Gk7" secondAttribute="bottom" constant="30" id="05r-ol-SvK"/>
-                    <constraint firstAttribute="trailing" secondItem="F9t-6Y-1vF" secondAttribute="trailing" constant="30" id="3Bs-VH-7ak"/>
+                    <constraint firstItem="eCS-o7-x9c" firstAttribute="top" secondItem="KZg-Zv-Gk7" secondAttribute="bottom" constant="15" id="05r-ol-SvK"/>
+                    <constraint firstAttribute="trailing" secondItem="F9t-6Y-1vF" secondAttribute="trailing" constant="35" id="3Bs-VH-7ak"/>
                     <constraint firstItem="ebv-fM-YMd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="77h-kl-sdq"/>
-                    <constraint firstItem="F9t-6Y-1vF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="7qI-Yy-nni"/>
-                    <constraint firstItem="Er7-fa-gYQ" firstAttribute="top" secondItem="ebv-fM-YMd" secondAttribute="bottom" constant="-15" id="9nt-jv-as0"/>
-                    <constraint firstItem="KZg-Zv-Gk7" firstAttribute="top" secondItem="BpU-G7-zxx" secondAttribute="bottom" constant="-20" id="Brt-B6-NNH"/>
-                    <constraint firstItem="F9t-6Y-1vF" firstAttribute="top" secondItem="eCS-o7-x9c" secondAttribute="bottom" constant="-20" id="C4a-Cj-lna"/>
-                    <constraint firstItem="BpU-G7-zxx" firstAttribute="top" secondItem="Er7-fa-gYQ" secondAttribute="bottom" constant="30" id="cBW-QV-9dU"/>
-                    <constraint firstItem="ebv-fM-YMd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="cii-cd-0Fu"/>
-                    <constraint firstItem="kN2-gS-ckv" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="mJ2-kU-xwT"/>
-                    <constraint firstItem="kN2-gS-ckv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-50" id="yT4-9v-tJK"/>
+                    <constraint firstItem="F9t-6Y-1vF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="7qI-Yy-nni"/>
+                    <constraint firstItem="KZg-Zv-Gk7" firstAttribute="top" secondItem="BpU-G7-zxx" secondAttribute="bottom" constant="-5" id="Brt-B6-NNH"/>
+                    <constraint firstItem="F9t-6Y-1vF" firstAttribute="top" secondItem="eCS-o7-x9c" secondAttribute="bottom" constant="-5" id="C4a-Cj-lna"/>
+                    <constraint firstItem="Er7-fa-gYQ" firstAttribute="top" secondItem="ebv-fM-YMd" secondAttribute="bottom" constant="-10" id="L6Z-LF-Qha"/>
+                    <constraint firstItem="ebv-fM-YMd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="cii-cd-0Fu"/>
+                    <constraint firstItem="BpU-G7-zxx" firstAttribute="top" secondItem="Er7-fa-gYQ" secondAttribute="bottom" constant="25" id="wxP-Ju-ilE"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" name="G1"/>
             <color key="tintColor" name="G3"/>
             <constraints>
-                <constraint firstItem="eCS-o7-x9c" firstAttribute="leading" secondItem="njF-e1-oar" secondAttribute="leading" constant="21" id="8hf-1R-ZaW"/>
+                <constraint firstItem="njF-e1-oar" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Er7-fa-gYQ" secondAttribute="trailing" constant="240" id="8Ty-pi-8Gv"/>
+                <constraint firstItem="eCS-o7-x9c" firstAttribute="leading" secondItem="njF-e1-oar" secondAttribute="leading" constant="30" id="8hf-1R-ZaW"/>
                 <constraint firstItem="F9t-6Y-1vF" firstAttribute="height" secondItem="KGk-i7-Jjw" secondAttribute="height" multiplier="0.3" id="9ww-7k-VWG"/>
-                <constraint firstItem="njF-e1-oar" firstAttribute="trailing" secondItem="KZg-Zv-Gk7" secondAttribute="trailing" constant="30" id="GsS-jB-Xzf"/>
-                <constraint firstItem="Er7-fa-gYQ" firstAttribute="leading" secondItem="njF-e1-oar" secondAttribute="leading" constant="25" id="SEF-Tr-539"/>
-                <constraint firstItem="BpU-G7-zxx" firstAttribute="leading" secondItem="njF-e1-oar" secondAttribute="leading" constant="20" id="XTe-wc-zTL"/>
+                <constraint firstItem="njF-e1-oar" firstAttribute="trailing" secondItem="KZg-Zv-Gk7" secondAttribute="trailing" constant="35" id="GsS-jB-Xzf"/>
+                <constraint firstItem="BpU-G7-zxx" firstAttribute="leading" secondItem="njF-e1-oar" secondAttribute="leading" constant="30" id="XTe-wc-zTL"/>
                 <constraint firstItem="njF-e1-oar" firstAttribute="bottom" secondItem="F9t-6Y-1vF" secondAttribute="bottom" constant="20" id="YnR-KC-pPf"/>
-                <constraint firstItem="KZg-Zv-Gk7" firstAttribute="leading" secondItem="njF-e1-oar" secondAttribute="leading" constant="20" id="y6S-Vn-W6Y"/>
+                <constraint firstItem="Er7-fa-gYQ" firstAttribute="leading" secondItem="njF-e1-oar" secondAttribute="leading" constant="35" id="bYP-su-l5k"/>
+                <constraint firstItem="KZg-Zv-Gk7" firstAttribute="leading" secondItem="njF-e1-oar" secondAttribute="leading" constant="30" id="y6S-Vn-W6Y"/>
             </constraints>
             <connections>
                 <outlet property="categoryButton" destination="Er7-fa-gYQ" id="yFq-ro-jdb"/>
-                <outlet property="categoryImage" destination="kN2-gS-ckv" id="sGa-Fs-zOi"/>
                 <outlet property="categoryLabel" destination="ebv-fM-YMd" id="Jy1-pp-IZ7"/>
                 <outlet property="noteLabel" destination="eCS-o7-x9c" id="7zB-TD-zob"/>
                 <outlet property="noteTextfield" destination="F9t-6Y-1vF" id="lsG-Ag-0zI"/>
@@ -118,7 +109,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="icon_coding" width="128" height="128"/>
         <namedColor name="G1">
             <color red="0.89803921568627454" green="0.97647058823529409" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

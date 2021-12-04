@@ -13,7 +13,7 @@ class DetailImageTableViewCell: UITableViewCell {
         
         didSet {
             
-            whiteView.cornerRadius = 10
+            whiteView.cornerRadius = 25
         }
     }
     
