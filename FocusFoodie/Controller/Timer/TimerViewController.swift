@@ -22,8 +22,6 @@ enum ButtonStatus {
 private struct Segue {
 
     static let contentEditor = "SegueContent"
-
-//    static let timeEditor = "SegueTime"
 }
 
 class TimerViewController: BaseViewController {

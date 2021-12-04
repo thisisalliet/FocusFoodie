@@ -7,6 +7,7 @@
 
 import Foundation
 import Firebase
+import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 extension Timestamp {
@@ -19,7 +20,7 @@ extension Timestamp {
         
         let dateFormatter = DateFormatter()
         
-        dateFormatter.dateFormat = "yyy/MM/dd HH:mm"
+        dateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
         
         let formatTime = dateFormatter.string(from: date as Date)
         

@@ -85,31 +85,31 @@ class WeekView: UIView {
         switch sender {
             
         case weekButtons[0]:
-            print(week[0])
+
             delegate?.changeDate(date: week[0])
             
         case weekButtons[1]:
-            print(week[1])
+
             delegate?.changeDate(date: week[1])
         
         case weekButtons[2]:
-            print(week[2])
+
             delegate?.changeDate(date: week[2])
             
         case weekButtons[3]:
-            print(week[3])
+
             delegate?.changeDate(date: week[3])
 
         case weekButtons[4]:
-            print(week[4])
+
             delegate?.changeDate(date: week[4])
             
         case weekButtons[5]:
-            print(week[5])
+
             delegate?.changeDate(date: week[5])
             
         case weekButtons[6]:
-            print(week[6])
+
             delegate?.changeDate(date: week[6])
             
         default:
@@ -125,7 +125,7 @@ class WeekView: UIView {
         
         sender.backgroundColor = .G2
         
-        sender.alpha = 0.25
+        sender.alpha = 0.5
         
         guard let date = Week(rawValue: sender.tag) else { return }
         
