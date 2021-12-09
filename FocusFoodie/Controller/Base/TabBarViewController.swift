@@ -44,15 +44,15 @@ private enum Tab {
         case .record:
             return UITabBarItem(
                 title: nil,
-                image: UIImage.asset(.icon_home),
-                selectedImage: UIImage.asset(.icon_home)
+                image: UIImage.asset(.icon_record),
+                selectedImage: UIImage.asset(.icon_record)
             )
             
         case .timer:
             return UITabBarItem(
                 title: nil,
-                image: UIImage.asset(.icon_home),
-                selectedImage: UIImage.asset(.icon_home)
+                image: UIImage.asset(.icon_clock),
+                selectedImage: UIImage.asset(.icon_clock)
             )
             
         case .community:

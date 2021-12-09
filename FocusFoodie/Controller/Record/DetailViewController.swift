@@ -18,24 +18,6 @@ class DetailViewController: BaseViewController,
     
     var record: Record?
     
-    // FAKE DATA
-//    var tempImage = ["icon_falafel_wrap", "icon_cheese_burger"]
-//        
-//    var tempCreatedTime = ["07:00-07:15", "02:00-03:00"]
-//    
-//    var tempCreatedDate = ["NOVEMBER 23","NOVEMBER 23"]
-//    
-//    var tempFocusTime = [ "60", "60"]
-//    
-//    var tempCategory = ["", "", "  Ftiness  ", "  School  "]
-//    
-//    var tempCategoryImage = ["", "", "icon_fitness", "icon_school"]
-//    
-//    var tempTitle = ["", "", "Yoga", "AppWorks School"]
-//    
-//    var tempNote = ["", "", "back stress release and meditation", "final testing of personal project"]
-    // FAKE DATA
-    
     @IBOutlet weak var detailTableView: UITableView! {
         
         didSet {
@@ -55,7 +37,7 @@ class DetailViewController: BaseViewController,
         
         db = Firestore.firestore()
         
-        navigationController?.setupBackButton(color: .G3!)
+        navigationController?.setupBackButton(color: .G3 ?? .white)
         
         setUpTableView()
 
@@ -108,7 +90,6 @@ class DetailViewController: BaseViewController,
                 for: indexPath
             ) as? DetailInfoTableViewCell else {fatalError("Couldn't generate infoCell")}
             
-//            let month = record[indexPath.row].createdTime
             let recordTime = Date(timeIntervalSince1970: record.createdTime)
             
             let dateFormatter = DateFormatter()
@@ -135,16 +116,6 @@ class DetailViewController: BaseViewController,
             noteCell.titleTextfield.text = record.recordTitle
 
             noteCell.noteTextfield.text = record.recordNote
-            
-//            layoutNoteCell(
-//                image: UIImage(named: tempCategoryImage[indexPath.row]) ?? UIImage(),
-//                category: tempCategory[indexPath.row],
-//                title: tempTitle[indexPath.row],
-//                note: tempNote[indexPath.row])
-            
-//            noteCell.categoryTitleLabel.text = record[indexPath.row].recordCategory
-//
-//            noteCell.noteLabel.text = record[indexPath.row].recordNote
             
             return noteCell
             

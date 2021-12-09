@@ -104,11 +104,6 @@ class CompoundViewController: BaseViewController,
 
     // MARK: - UITableView DataSource
     
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//
-//        return datas.count
-//    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
 //        return datas[section].count

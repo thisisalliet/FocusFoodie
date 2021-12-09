@@ -19,6 +19,8 @@ class RecipeManager {
     
     static let shared = RecipeManager()
     
+    let recipes = Firestore.firestore().collection(CollectionName.recipe.rawValue)
+    
     let userId: String = {
         
         if let user = Auth.auth().currentUser {
@@ -31,48 +33,85 @@ class RecipeManager {
         }
     }()
     
-    var myRecipe: String?
+    var myRecipeId: String?
     
-    func createRecipe(recipe: Recipe) {
+    func createRecipe(recipe: Recipe, completion: @escaping (Result<String, Error>) -> Void) {
         
-        let recipeRef = db.collection(CollectionName.recipe.rawValue).document()
+        let recipeRef = recipes.document()
         
-        let userRef = db.collection(CollectionName.user.rawValue).document(userId)
+        //        let userRef = recipes.document(userId)
         
         let recipeId = recipeRef.documentID
-        let recipeWithId = Recipe(bread: recipe.bread,
-                            vegetable: recipe.vegetable,
-                            meat: recipe.meat,
-                            side: recipe.side,
-                            focusTime: recipe.focusTime,
-                            recipeId: recipeId)
         
-        myRecipe = recipeId
-        
-//        recipeIdHandler?(myRecipe)
-        
+        let recipeWithId = Recipe(
+            bread: recipe.bread,
+            vegetable: recipe.vegetable,
+            meat: recipe.meat,
+            side: recipe.side,
+            focusTime: recipe.focusTime,
+            recipeId: recipeId)
+                
         do {
             
             try recipeRef.setData(from: recipeWithId)
             
+            completion(Result.success(recipeId))
+                        
         } catch {
             
             print("Fail to create recipe.")
+            
+            completion(Result.failure(error))
         }
         
-        userRef.getDocument { document, error in
+        //        userRef.getDocument { document, error in
+        //
+        //            if let document = document, document.exists {
+        //
+        //                document.reference.updateData([
+        //                    "recipe_list" : FieldValue.arrayUnion([self.myRecipeId as Any])
+        //                ])
+        //
+        //            } else {
+        //
+        //                if let error = error {
+        //                    print(error)
+        //                }
+        //            }
+        //        }
+    }
+    
+    func fetchRecipeInfo(recipeId: String, completion: @escaping (Result<Recipe, Error>) -> Void) {
+        
+        recipes.document(recipeId).getDocument { document, error in
             
-            if let document = document, document.exists {
+            if let error = error {
                 
-                document.reference.updateData([
-                    "recipe_list" : FieldValue.arrayUnion([self.myRecipe as Any])
-                ])
+                completion(Result.failure(error))
+            }
+            
+            guard let document = document,
+                  document.exists
+                    
+            else {
                 
-            } else {
+                print("Couldn't find recipe.")
                 
-                if let error = error {
-                    print(error)
+                return
+            }
+            
+            do {
+                
+                let recipe = try? document.data(as: Recipe.self)
+                
+                if let recipe = recipe {
+                    
+                    completion(Result.success(recipe))
                 }
+                
+            } catch {
+                
+                print(error)
             }
         }
     }

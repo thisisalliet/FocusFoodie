@@ -18,6 +18,7 @@ enum ImageAsset: String {
     case icon_community
     case icon_home
     case icon_record
+    case icon_clock
     
     // Button
     case icon_arrow_left
@@ -61,6 +62,11 @@ enum ImageAsset: String {
     case icon_tomato
     case icon_onion
     
+    case icon_cucumber_color
+    case icon_lettuce_color
+    case icon_tomato_color
+    case icon_onion_color
+    
     // Ingredient: Meat
     case icon_bacon
     case icon_beef
@@ -68,6 +74,8 @@ enum ImageAsset: String {
     case icon_shrimp
     case icon_tuna
     case icon_turkey
+    
+    case icon_bacon_color
     
     // Ingredient: Side
     case icon_egg
@@ -77,6 +85,9 @@ enum ImageAsset: String {
     case icon_mustard
     case icon_cheese
     
+    case icon_egg_color
+    case icon_cheese_color
+
     // Others
     case icon_image
     case icon_timer

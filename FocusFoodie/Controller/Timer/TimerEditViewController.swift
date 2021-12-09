@@ -80,7 +80,7 @@ class TimerEditViewController: BaseViewController,
     
     var totalTime = 0
     
-    var timeHandler: ((_ time: Int) -> ())?
+    var timeHandler: ((_ time: Int) -> Void)?
     
     var buttonHandler: ((_ status: ButtonStatus) -> Void)?
     
@@ -139,14 +139,11 @@ class TimerEditViewController: BaseViewController,
             
         case .side:
 
-            galleryView.sideImage.image = object.image!
+            galleryView.sideImage.image = object.image ?? UIImage()
             sideMin = object.minute
             totalTime = breadMin + vegetableMin + meatMin + sideMin
             galleryView.minuteLabel.text = String(totalTime)
             selectedSide = object
-
-        default:
-            break
         }
     }
     
@@ -155,7 +152,7 @@ class TimerEditViewController: BaseViewController,
                 
         buttonHandler?(.notStarted)
                 
-        backToTimer()
+        backToTimer(recipeId: "No recipe yet.")
     }
     
     @IBAction func onDone(_ sender: UIButton) {
@@ -168,18 +165,26 @@ class TimerEditViewController: BaseViewController,
             focusTime: totalTime,
             recipeId: "default")
 
-        RecipeManager.shared.createRecipe(recipe: recipe)
-        
-//        delegate?.passTime(minutes: totalTime)
-        
-        timeHandler?(totalTime)
+        RecipeManager.shared.createRecipe(recipe: recipe) { [weak self] result in
+            
+            switch result {
                 
-        buttonHandler?(.notStarted)
+            case .success(let recipeId):
                 
-        backToTimer()
+                self?.backToTimer(recipeId: recipeId)
+                
+                self?.timeHandler?(self?.totalTime ?? 0)
+                
+                self?.buttonHandler?(.notStarted)
+                
+            case .failure(let error):
+                
+                print(error)
+            }
+        }
     }
     
-    func backToTimer() {
+    func backToTimer(recipeId: String) {
         
 //        guard let timerVC = UIStoryboard
 //                            .timer
@@ -196,6 +201,8 @@ class TimerEditViewController: BaseViewController,
 //        let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate
 //
 //        sceneDelegate?.window?.rootViewController?.dismiss(animated: true)
+        
+        // delegate
         
         if let presentingViewController = presentingViewController?.presentingViewController {
             presentingViewController.dismiss(animated: true, completion: nil)
@@ -238,7 +245,7 @@ class TimerEditViewController: BaseViewController,
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 200
+        return 150
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -246,11 +253,3 @@ class TimerEditViewController: BaseViewController,
         return UITableView.automaticDimension
     }
 }
-
-//extension TimerEditViewController: TimerEditDelegate {
-//
-//    func passTime(minutes: Int) {
-//
-//
-//    }
-//}
