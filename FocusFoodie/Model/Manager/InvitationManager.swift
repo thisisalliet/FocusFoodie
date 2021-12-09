@@ -38,6 +38,12 @@ class InvitationManager {
                 } else {
                     
                     var allInvitations = [Invitation]()
+                    
+//                    if snapshot.documents.isEmpty {
+//
+//                        return
+//
+//                    } else {
                         
                         for document in snapshot.documents {
                             
@@ -53,6 +59,7 @@ class InvitationManager {
                                 completion(.failure(error))
                             }
                         }
+//                    }
                                         
                     completion(.success(allInvitations))
                 }

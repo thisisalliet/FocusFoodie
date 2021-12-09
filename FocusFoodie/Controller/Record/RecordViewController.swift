@@ -162,10 +162,13 @@ class RecordViewController: BaseViewController,
         }
     }
     
+    func checkCategory(image: UIImage) {
+        
+    }
+    
     // MARK: - UITableViewDataSource -
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return myRecords.count
     }
     
@@ -206,6 +209,31 @@ class RecordViewController: BaseViewController,
         
         show(detailVC, sender: nil)
     }
+    
+    //    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+    //
+    //        let declineAction = UIContextualAction(style: .destructive, title: "") {
+    //            (action, sourceView, complete) in
+    //
+    //            self.myRecords.remove(at: indexPath.row)
+    //
+    //            self.recordTableView.deleteRows(at: [indexPath], with: .top)
+    //
+    //            complete(true)
+    //        }
+    //
+    //        declineAction.backgroundColor = .G1
+    //
+    //        declineAction.image = UIGraphicsImageRenderer(
+    //            size: CGSize(width: 40.0, height: 40.0)).image(
+    //            actions: { _ in UIImage.asset(.icon_delete)?.draw(
+    //                in: CGRect(x: 0, y: 0, width: 40, height: 40))
+    //            })
+    //
+    //        let trailingSwipConfiguration = UISwipeActionsConfiguration(actions: [declineAction])
+    //
+    //        return trailingSwipConfiguration
+    //    }
     
     // MARK: - UITableViewDelegate -
     

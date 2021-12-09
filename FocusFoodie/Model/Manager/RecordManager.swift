@@ -19,8 +19,6 @@ class RecordManager {
     
     static let shared = RecordManager()
     
-    let records = Firestore.firestore().collection(CollectionName.record.rawValue)
-    
     let userId: String = {
         
         if let user = Auth.auth().currentUser {
@@ -33,8 +31,10 @@ class RecordManager {
         }
     }()
     
-    func createRecord(record: Record, completion: @escaping (Result<String, Error>) -> Void) {
-                
+    func createRecord(record: Record) {
+        
+        let recordRef = db.collection(CollectionName.record.rawValue).document()
+        
         let recordWithId = Record(
             ownerId: userId,
             recordTitle: record.recordTitle,
@@ -42,27 +42,23 @@ class RecordManager {
             recordNote: record.recordNote,
             focusTime: record.focusTime,
             createdTime: record.createdTime,
-            recipeId: RecipeManager.shared.myRecipeId ?? "default")
+            recipeId: RecipeManager.shared.myRecipe ?? "default")
         
         do {
             
-            try records.document().setData(from: recordWithId)
+            try recordRef.setData(from: recordWithId)
             
-            completion(Result.success(recordWithId.recipeId))
-                        
         } catch {
             
             print("Fail to create record.")
-            
-            completion(Result.failure(error))
         }
     }
     
-    func fetchRecord(date: Date = Date(), completion: @escaping (Result<[Record], Error>) -> Void) {
+    func fetchRecord(date: Date, completion: @escaping (Result<[Record], Error>) -> Void) {
         
-        let myRecordRef = records
+        let myRecordRef = db.collection(CollectionName.record.rawValue)
             .whereField("owner_id", isEqualTo: userId)
-            .order(by: "created_time", descending: true)
+        // 排
         
         myRecordRef.getDocuments { snapshot, error in
             
@@ -82,12 +78,29 @@ class RecordManager {
                 
                 let recordDate = Date(timeIntervalSince1970: record.createdTime)
                 
-                let selectedRecord = recordDate.hasSame(.year, as: date)
+                let haseSame = recordDate.hasSame(.year, as: date)
                     && recordDate.hasSame(.month, as: date)
                     && recordDate.hasSame(.day, as: date)
                 
-                return selectedRecord
+                return haseSame
             }
+            
+//            let recordDay = myRecord.compactMap { (record) -> Record? in
+//
+//                let recordDate = Date(timeIntervalSince1970: record.createdTime)
+//
+//                if recordDate.hasSame(.year, as: date)
+//                    && recordDate.hasSame(.month, as: date)
+//                    && recordDate.hasSame(.day, as: date) {
+//
+//                    return record
+//
+//                } else {
+//
+//                    return nil
+//
+//                }
+//            }
             
             completion(Result.success(recordDay))
         }

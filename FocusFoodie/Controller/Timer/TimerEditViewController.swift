@@ -80,7 +80,7 @@ class TimerEditViewController: BaseViewController,
     
     var totalTime = 0
     
-    var timeHandler: ((_ time: Int) -> Void)?
+    var timeHandler: ((_ time: Int) -> ())?
     
     var buttonHandler: ((_ status: ButtonStatus) -> Void)?
     
@@ -118,7 +118,7 @@ class TimerEditViewController: BaseViewController,
             galleryView.breadImage.image = object.image!
             breadMin = object.minute
             totalTime = breadMin + vegetableMin + meatMin + sideMin
-            galleryView.minuteLabel.text = String(totalTime)
+            galleryView.totalMinuteLabel.text = String(totalTime)
             selectedBread = object
 
         case .vegetable:
@@ -126,7 +126,7 @@ class TimerEditViewController: BaseViewController,
             galleryView.vegetableImage.image = object.image!
             vegetableMin = object.minute
             totalTime = breadMin + vegetableMin + meatMin + sideMin
-            galleryView.minuteLabel.text = String(totalTime)
+            galleryView.totalMinuteLabel.text = String(totalTime)
             selectedVegatable = object
 
         case .meat:
@@ -134,16 +134,19 @@ class TimerEditViewController: BaseViewController,
             galleryView.meatImage.image = object.image!
             meatMin = object.minute
             totalTime = breadMin + vegetableMin + meatMin + sideMin
-            galleryView.minuteLabel.text = String(totalTime)
+            galleryView.totalMinuteLabel.text = String(totalTime)
             selectedMeat = object
             
         case .side:
 
-            galleryView.sideImage.image = object.image ?? UIImage()
+            galleryView.sideImage.image = object.image!
             sideMin = object.minute
             totalTime = breadMin + vegetableMin + meatMin + sideMin
-            galleryView.minuteLabel.text = String(totalTime)
+            galleryView.totalMinuteLabel.text = String(totalTime)
             selectedSide = object
+
+        default:
+            break
         }
     }
     
@@ -152,7 +155,7 @@ class TimerEditViewController: BaseViewController,
                 
         buttonHandler?(.notStarted)
                 
-        backToTimer(recipeId: "No recipe yet.")
+        backToTimer()
     }
     
     @IBAction func onDone(_ sender: UIButton) {
@@ -165,26 +168,18 @@ class TimerEditViewController: BaseViewController,
             focusTime: totalTime,
             recipeId: "default")
 
-        RecipeManager.shared.createRecipe(recipe: recipe) { [weak self] result in
-            
-            switch result {
+        RecipeManager.shared.createRecipe(recipe: recipe)
+        
+//        delegate?.passTime(minutes: totalTime)
+        
+        timeHandler?(totalTime)
                 
-            case .success(let recipeId):
+        buttonHandler?(.notStarted)
                 
-                self?.backToTimer(recipeId: recipeId)
-                
-                self?.timeHandler?(self?.totalTime ?? 0)
-                
-                self?.buttonHandler?(.notStarted)
-                
-            case .failure(let error):
-                
-                print(error)
-            }
-        }
+        backToTimer()
     }
     
-    func backToTimer(recipeId: String) {
+    func backToTimer() {
         
 //        guard let timerVC = UIStoryboard
 //                            .timer
@@ -201,8 +196,6 @@ class TimerEditViewController: BaseViewController,
 //        let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate
 //
 //        sceneDelegate?.window?.rootViewController?.dismiss(animated: true)
-        
-        // delegate
         
         if let presentingViewController = presentingViewController?.presentingViewController {
             presentingViewController.dismiss(animated: true, completion: nil)
@@ -245,7 +238,7 @@ class TimerEditViewController: BaseViewController,
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 150
+        return 170
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {

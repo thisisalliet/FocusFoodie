@@ -8,18 +8,18 @@
 import UIKit
 
 private struct Segue {
-        
+    
+    //    static let contentEditor = "SegueContent"
+    
     static let timeEditor = "SegueTime"
 }
 
 class ContentEditViewController: BaseViewController,
                                  UICollectionViewDataSource,
                                  UICollectionViewDelegate,
-                                 UICollectionViewDelegateFlowLayout {
+                                 UICollectionViewDelegateFlowLayout{
     
-    @IBOutlet weak var categoryLabelOne: UILabel!
-    
-    @IBOutlet weak var categoryLabelTwo: UILabel!
+    @IBOutlet weak var categoryLabel: UILabel!
     
     @IBOutlet weak var categoryCollectionView: UICollectionView! {
         
@@ -31,25 +31,9 @@ class ContentEditViewController: BaseViewController,
         }
     }
     
-    @IBOutlet weak var titleTextField: UITextField! {
-        
-        didSet {
-            
-            titleTextField.borderStyle = .none
-            
-            titleTextField.cornerRadius = 15
-        }
-    }
+    @IBOutlet weak var titleTextField: UITextField!
     
-    @IBOutlet weak var noteTextView: UITextView! {
-        
-        didSet {
-            
-            noteTextView.cornerRadius = 15
-            
-            noteTextView.delegate = self
-        }
-    }
+    @IBOutlet weak var noteTextField: UITextField!
     
     @IBOutlet weak var saveButtonBackground: UIView! {
         
@@ -71,13 +55,9 @@ class ContentEditViewController: BaseViewController,
     
     var contentHandler: ((_ title: String, _ note: String) -> Void)?
     
-    var timeHandler: ((_ time: Int) -> Void)?
-    
-    var selectedCategoryPosition: Int = -1
+    var timeHandler: ((_ time: Int) -> ())?
         
     var datas: [TaskCategory] = []
-    
-    var content = ""
     
     //    weak var delegate: ContentEditViewControllerDelegate?
     
@@ -85,9 +65,6 @@ class ContentEditViewController: BaseViewController,
         super.viewDidLoad()
         
         setUpCollectionView()
-        
-        noteTextView.textColor = .lightGray
-
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -106,7 +83,7 @@ class ContentEditViewController: BaseViewController,
     
     @IBAction func toTimerEdit(_ sender: UIButton) {
         
-        contentHandler?(titleTextField.text ?? "", content)
+        contentHandler?(titleTextField.text ?? "", noteTextField.text ?? "")
     }
     
     func setUpCollectionView() {
@@ -153,21 +130,13 @@ class ContentEditViewController: BaseViewController,
             
             selectionCell.layoutCell(image: item.image, title: item.title)
             
-            if indexPath.row == selectedCategoryPosition {
-                
-                selectionCell.contentView.backgroundColor = .white
-            } else {
-                
-                selectionCell.contentView.backgroundColor = .G2
-            }
-            
             return selectionCell
         }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-
-        guard let cellToDeselect: UICollectionViewCell = collectionView.cellForItem(at: indexPath) else { return }
-
+        
+        let cellToDeselect: UICollectionViewCell = collectionView.cellForItem(at: indexPath)!
+        
         cellToDeselect.contentView.backgroundColor = .G2
     }
     
@@ -179,27 +148,7 @@ class ContentEditViewController: BaseViewController,
         
         selectedCell.contentView.backgroundColor = .white
         
-        selectedCategoryPosition = indexPath.row
-        
         categoryHandler?(category[indexPath.row].title, category[indexPath.row].image ?? UIImage())
-    }
-}
-
-extension ContentEditViewController: UITextViewDelegate {
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        content = noteTextView.text
-        if noteTextView.text.isEmpty {
-            noteTextView.text = "Add some notes ..."
-            noteTextView.textColor = .lightGray
-        }
-    }
-    
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if noteTextView.textColor == UIColor.lightGray {
-            noteTextView.text = nil
-            noteTextView.textColor = .G3
-        }
     }
 }
 

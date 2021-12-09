@@ -36,7 +36,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BpU-G7-zxx">
-                        <rect key="frame" x="30" y="121" width="49" height="58"/>
+                        <rect key="frame" x="30" y="121" width="48.5" height="58"/>
                         <fontDescription key="fontDescription" name="Dongle-Regular" family="Dongle" pointSize="40"/>
                         <color key="textColor" name="G3"/>
                         <nil key="highlightedColor"/>

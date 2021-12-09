@@ -68,22 +68,16 @@ class TimerViewController: BaseViewController {
     
     var timer = Timer()
     
-    var recipe: Recipe?
-    
-    var breadType: String?
+    var recipe: [Recipe]?
     
     var seconds = 0
     
     var originalSeconds = 0
     
-    var recipeIdForEndImage: String?
-    
     var hiddenNote: String?
         
     var hiddenCategory: String?
-    
-    var recipeHandler: ((_ recipe: Recipe) -> Void)?
-            
+        
     var buttonStatus: ButtonStatus = ButtonStatus.notStarted {
         
         didSet {
@@ -120,6 +114,28 @@ class TimerViewController: BaseViewController {
         timerCounting = userDefaults.bool(forKey: countingKey)
         
         self.tabBarController?.tabBar.isHidden = false
+
+//        if timerCounting {
+//
+//            startTimer()
+//
+//        } else {
+//
+//            stopTimer()
+//
+//            if let start = startTime {
+//
+//                if let stop = stopTime {
+//
+//                    let time = calcRestartTime(start: start, stop: stop)
+//
+//                    let diff = Date().timeIntervalSince(time)
+//
+//                    setTimeLabel(Int(diff))
+//                }
+//            }
+//        }
+        // NEW
         
         if isInitial() {
             
@@ -168,6 +184,13 @@ class TimerViewController: BaseViewController {
                 strongSelf.countDownLabel.text = String(format: "%02i:%02i:%02i", tuple.0, tuple.1, tuple.2)
                 
                 strongSelf.setButtonsEnabled(true)
+                
+//                timeEditVC.buttonHandler = { [weak self] status in
+//
+//                    guard let strongSelf = self else { return }
+//
+//                    strongSelf.buttonStatus = status
+//                }
             }
         }
     }
@@ -232,6 +255,24 @@ class TimerViewController: BaseViewController {
         countDownLabel.text = "00:00:00"
     }
     
+    // NEW
+//    func startTimer() {
+//
+//        scheduledTimer = Timer.scheduledTimer(
+//            timeInterval: 0.1,
+//            target: self,
+//            selector: #selector(refreshValue),
+//            userInfo: nil,
+//            repeats: true)
+//
+//        setTimerCounting(true)
+        
+//        startStopButton.setTitle("STOP", for: .normal)
+//
+//        startStopButton.setTitleColor(UIColor.red, for: .normal)
+//    }
+    // NEW
+    
     func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int, Int) {
         
         return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
@@ -257,9 +298,19 @@ class TimerViewController: BaseViewController {
         
         if seconds <= 0 {
             
-            timer.invalidate()
+            guard let endVC = UIStoryboard
+                    .timer
+                    .instantiateViewController(
+                        withIdentifier: String(describing: EndingViewController.self)
+                    ) as? EndingViewController else { return }
             
             setupNotification()
+            
+            endVC.modalPresentationStyle = .overFullScreen
+            
+            present(endVC, animated: true, completion: nil)
+            
+            timer.invalidate()
             
             let record = Record(
                 ownerId: "",
@@ -268,77 +319,15 @@ class TimerViewController: BaseViewController {
                 recordNote: hiddenNote,
                 focusTime: originalSeconds,
                 createdTime: Date().timeIntervalSince1970,
-                recipeId: id)
+                recipeId: "")
             
-            RecordManager.shared.createRecord(record: record) { [weak self] result in
-                
-                let semaphore = DispatchSemaphore(value: 1)
-                                
-                switch result {
-                    
-                case .success(let recipeId):
-                    
-                    RecipeManager.shared.fetchRecipeInfo(recipeId: recipeId) { result in
+            RecordManager.shared.createRecord(record: record)
                         
-                        switch result {
-                            
-                        case .success(let recipeInfo):
-                            
-                            guard let recipeHandler = self?.recipeHandler else { return }
-                            
-                            recipeHandler(recipeInfo)
-                            
-                            self?.recipe = recipeInfo
-                            
-                            self?.breadType = recipeInfo.bread
-                            
-                            semaphore.signal()
-
-                        case .failure(let error):
-                            
-                            print(error)
-                            
-                            semaphore.signal()
-                        }
-                    }
-                    
-                case .failure(let error):
-                    
-                    print(error)
-                    
-                    semaphore.signal()
-                }
-                
-            }
-            
-            guard let endVC = UIStoryboard
-                    .timer
-                    .instantiateViewController(
-                        withIdentifier: String(describing: EndingViewController.self)
-                    ) as? EndingViewController else {
-                        return
-                    }
-            
-            guard let breadType = breadType else { return }
-            
-            endVC.updateContainer(type: EndingViewController.BreadType(rawValue: breadType) ?? .toast)
-            
-            endVC.vegetableItem = recipe?.vegetable ?? "Lettuce"
-            
-            endVC.meatItem = recipe?.meat ?? "Bacon"
-            
-            endVC.sideItem = recipe?.side ?? "Egg"
-                        
-            endVC.modalPresentationStyle = .overFullScreen
-            
-            present(endVC, animated: true, completion: nil)
-            
             return
         }
     }
     
     func isInitial() -> Bool {
-        
         return self.originalSeconds == 0
     }
     

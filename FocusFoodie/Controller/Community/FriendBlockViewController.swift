@@ -31,7 +31,7 @@ class FriendBlockViewController: CompoundViewController {
     var friendNumberHandler: ((_ number: Int) -> Void)?
     
     var blockNumberHandler: ((_ number: Int) -> Void)?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,7 +53,7 @@ class FriendBlockViewController: CompoundViewController {
     
     func monitorFriendList() {
         
-        UserManager.shared.monitorUserInfo { [self] result in
+        UserManager.shared.monitorUserInfo() { [self] result in
             
             switch result {
                 
@@ -67,7 +67,9 @@ class FriendBlockViewController: CompoundViewController {
                     
                     group.enter()
                     
-                    UserManager.shared.fetchUserInfo(uid: friend) { result in
+                    UserManager.shared.fetchUserInfo(uid: friend) {
+                        
+                        result in
                         
                         switch result {
                             
@@ -104,7 +106,7 @@ class FriendBlockViewController: CompoundViewController {
     
     func monitorBlockList() {
         
-        UserManager.shared.monitorUserInfo { [self] result in
+        UserManager.shared.monitorUserInfo() { [self] result in
             
             switch result {
                 
@@ -118,7 +120,9 @@ class FriendBlockViewController: CompoundViewController {
                     
                     group.enter()
                     
-                    UserManager.shared.fetchUserInfo(uid: block) { result in
+                    UserManager.shared.fetchUserInfo(uid: block) {
+                        
+                        result in
                         
                         switch result {
                             
@@ -157,7 +161,9 @@ class FriendBlockViewController: CompoundViewController {
     func unFriend(at index: Int) {
         
         UserManager.shared.removeFriend(
-            userId: friends[index]) { result in
+            userId: friends[index]) {
+                
+                result in
                 
                 switch result {
                     
@@ -176,7 +182,9 @@ class FriendBlockViewController: CompoundViewController {
     
     func reFriend(at index: Int) {
         
-        UserManager.shared.removeBlock(userId: blocks[index]) { result in
+        UserManager.shared.removeBlock(userId: blocks[index]) {
+            
+            result in
             
             switch result {
                 
@@ -220,7 +228,9 @@ class FriendBlockViewController: CompoundViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-                
+        
+        //        let cell: CommunityTableViewCell = tableView.dequeueCell(for: indexPath)
+        
         guard let cell = tableView.dequeueReusableCell(
             withIdentifier: CommunityTableViewCell.identifier,
             for: indexPath

@@ -13,8 +13,6 @@ protocol IngredientObject {
     var type: IngredientCategory { get }
     
     var image: UIImage? { get }
-    
-    var colorImage: UIImage? { get }
 
     var title: String { get }
 
@@ -32,17 +30,17 @@ enum IngredientCategory: Int {
     case side
 }
 
-enum BreadItem: String, IngredientObject, CaseIterable {
+enum BreadItem: IngredientObject, CaseIterable {
     
-    case toast = "Toast"
+    case toast
     
-    case burgerBun = "Bun"
+    case burgerBun
         
-    case baguette = "Baguette"
+    case baguette
     
-    case croissant = "Croissant"
+    case croissant
     
-    case flatBread = "Flatbread"
+    case flatBread
         
     var type: IngredientCategory {
         
@@ -62,22 +60,6 @@ enum BreadItem: String, IngredientObject, CaseIterable {
         case .croissant: return UIImage.asset(.icon_croissant)
             
         case .flatBread: return UIImage.asset(.icon_flatbread)
-        }
-    }
-    
-    var colorImage: UIImage? {
-        
-        switch self {
-            
-        case .toast: return UIImage.asset(.icon_toast_color)
-            
-        case .burgerBun: return UIImage.asset(.icon_toast_color)
-            
-        case .baguette: return UIImage.asset(.icon_toast_color)
-            
-        case .croissant: return UIImage.asset(.icon_toast_color)
-            
-        case .flatBread: return UIImage.asset(.icon_toast_color)
         }
     }
     
@@ -114,19 +96,19 @@ enum BreadItem: String, IngredientObject, CaseIterable {
     }
 }
 
-enum VegetableItem: String, IngredientObject, CaseIterable {
+enum VegetableItem: IngredientObject, CaseIterable {
     
-    case avocado = "Avocado"
+    case avocado
     
-    case bellPepper = "Pepper"
+    case bellPepper
     
-    case cucumber = "Cucumber"
+    case cucumber
     
-    case lettuce = "Lettuce"
+    case lettuce
     
-    case tomato = "Tomato"
+    case tomato
     
-    case onion = "Onion"
+    case onion
     
     var type: IngredientCategory {
         
@@ -148,24 +130,6 @@ enum VegetableItem: String, IngredientObject, CaseIterable {
         case .tomato: return UIImage.asset(.icon_tomato)
 
         case .onion: return UIImage.asset(.icon_onion)
-        }
-    }
-    
-    var colorImage: UIImage? {
-        
-        switch self {
-            
-        case .avocado: return UIImage.asset(.icon_tomato_color)
-            
-        case .bellPepper: return UIImage.asset(.icon_tomato_color)
-            
-        case .cucumber: return UIImage.asset(.icon_cucumber_color)
-            
-        case .lettuce: return UIImage.asset(.icon_lettuce_color)
-            
-        case .tomato: return UIImage.asset(.icon_tomato_color)
-            
-        case .onion: return UIImage.asset(.icon_onion_color)
         }
     }
     
@@ -197,7 +161,7 @@ enum VegetableItem: String, IngredientObject, CaseIterable {
             
         case .cucumber: return 15
             
-        case .lettuce: return 1
+        case .lettuce: return 20
             
         case .tomato: return 30
             
@@ -206,19 +170,19 @@ enum VegetableItem: String, IngredientObject, CaseIterable {
     }
 }
 
-enum MeatItem: String, IngredientObject, CaseIterable {
+enum MeatItem: IngredientObject, CaseIterable {
     
-    case bacon = "Bacon"
+    case bacon
     
-    case tuna = "Tuna"
+    case tuna
         
-    case falafel = "Falafel"
+    case falafel
     
-    case shrimp = "Shrimp"
+    case shrimp
     
-    case beef = "Beef"
+    case beef
     
-    case turkey = "Turkey"
+    case turkey
     
     var type: IngredientCategory {
         
@@ -240,24 +204,6 @@ enum MeatItem: String, IngredientObject, CaseIterable {
         case .beef: return UIImage.asset(.icon_beef)
             
         case .turkey: return UIImage.asset(.icon_turkey)
-        }
-    }
-    
-    var colorImage: UIImage? {
-        
-        switch self {
-            
-        case .bacon: return UIImage.asset(.icon_bacon_color)
-            
-        case .tuna: return UIImage.asset(.icon_bacon_color)
-            
-        case .falafel: return UIImage.asset(.icon_bacon_color)
-            
-        case .shrimp: return UIImage.asset(.icon_bacon_color)
-            
-        case .beef: return UIImage.asset(.icon_bacon_color)
-            
-        case .turkey: return UIImage.asset(.icon_bacon_color)
         }
     }
     
@@ -283,7 +229,7 @@ enum MeatItem: String, IngredientObject, CaseIterable {
         
         switch self {
             
-        case .bacon: return 1
+        case .bacon: return 5
 
         case .tuna: return 10
 
@@ -298,19 +244,19 @@ enum MeatItem: String, IngredientObject, CaseIterable {
     }
 }
 
-enum SideItem: String, IngredientObject, CaseIterable {
+enum SideItem: IngredientObject, CaseIterable {
     
-    case egg = "Egg"
+    case egg
     
-    case honey = "Honey"
+    case honey
     
-    case mayonnaise = "Mayonnaise"
+    case mayonnaise
     
-    case ketchup = "Ketchup"
+    case ketchup
     
-    case mustard = "Mustard"
+    case mustard
     
-    case cheese = "Cheese"
+    case cheese
     
     var type: IngredientCategory {
      
@@ -332,24 +278,6 @@ enum SideItem: String, IngredientObject, CaseIterable {
         case .mustard: return UIImage.asset(.icon_mustard)
             
         case .cheese: return UIImage.asset(.icon_cheese)
-        }
-    }
-    
-    var colorImage: UIImage? {
-        
-        switch self {
-            
-        case .egg: return UIImage.asset(.icon_egg_color)
-            
-        case .honey: return UIImage.asset(.icon_egg_color)
-            
-        case .mayonnaise: return UIImage.asset(.icon_egg_color)
-            
-        case .ketchup: return UIImage.asset(.icon_egg_color)
-            
-        case .mustard: return UIImage.asset(.icon_egg_color)
-            
-        case .cheese: return UIImage.asset(.icon_cheese_color)
         }
     }
     
@@ -375,7 +303,7 @@ enum SideItem: String, IngredientObject, CaseIterable {
         
         switch self {
             
-        case .egg: return 1
+        case .egg: return 10
             
         case .honey: return 20
             

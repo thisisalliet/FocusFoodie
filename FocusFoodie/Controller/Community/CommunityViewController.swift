@@ -80,6 +80,34 @@ class CommunityViewController: BaseViewController {
         return [friendContainerView, invitationContainerView, blockContainerView]
     }
     
+//    var listType: ButtonType? {
+//
+//        didSet {
+//
+//            switch listType {
+//
+//            case .friend: updateFriendBlockList(type: CommunityType.friend)
+//
+//            case .invitation: updateInvitationList(type: CommunityType.invitation )
+//
+//            case .block: updateFriendBlockList(type: CommunityType.block)
+//
+//            default:
+//                break
+//            }
+//        }
+//    }
+    
+//    var layout: CommunityLayout?
+    
+//    var communityList = [Any]() {
+//
+//        didSet {
+//
+//            searchUser()
+//        }
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
                 
@@ -101,6 +129,31 @@ class CommunityViewController: BaseViewController {
         guard let type = CommunityType(rawValue: sender.tag) else { return }
 
         updateContainer(type: type)
+//    }
+        
+//        for btn in communityButtons {
+//
+//            btn.isSelected = false
+//        }
+//
+//        sender.isSelected = true
+//
+//        changeContent(reference: sender)
+//
+//        switch sender.tag {
+//
+//        case 0: listType = .friend
+//            layout = .basic
+//
+//        case 1: listType = .invitation
+//            layout = .withInvitation
+//
+//        case 2: listType = .block
+//            layout = .basic
+//
+//        default:
+//            break
+//        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -193,4 +246,115 @@ class CommunityViewController: BaseViewController {
             blockVC.tableView.reloadData()
         }
     }
+    
+//    private func updateFriendBlockList(type: CommunityType) {
+//
+//        UserManager.shared.fetchFriendBlockList(type) { result in
+//
+//            switch result {
+//
+//            case .success(let friendBlockList):
+//                self.communityList = friendBlockList
+//
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
+//    }
+    
+//    private func updateInvitationList(type: CommunityType) {
+//
+//        InvitationManager.shared.monitorInvitation(uid: myId) { result in
+//
+//            switch result {
+//
+//            case .success(let invitationList):
+//                self.communityList = invitationList
+//
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
+//    }
+    
+//    func searchUser() {
+//
+//        switch listType {
+//
+//        case .friend:
+//
+//            let friendList = communityList as? [FriendList]
+//
+//            friendList?.forEach({ friendList in
+//
+//                UserManager.shared.fetchUserInfo(uid: friendList.friendId) { result in
+//
+//                    switch result {
+//
+//                    case .success(let user):
+//
+//                        guard let name = user.displayName else { return }
+//
+//                        self.userInfo[name] = user
+//
+//                        self.communityTableView.reloadData()
+//
+//                    case .failure(let error):
+//                        print(error)
+//                    }
+//                }
+//            })
+//
+//        case .invitation:
+//
+//            let invitation = communityList as? [Invitation]
+//
+//            invitation?.forEach({ invitation in
+//
+//                UserManager.shared.fetchUserInfo(uid: invitation.senderId) { result in
+//
+//                    switch result {
+//
+//                    case .success(let user):
+//
+//                        guard let name = user.displayName else { return }
+//
+//                        self.userInfo[user.userId] = user
+//
+//                    case .failure(let error):
+//
+//                        print(error)
+//                    }
+//                }
+//            })
+//
+//            self.communityTableView.reloadData()
+//
+//        case .block:
+//
+//            let blockList = communityList as? [BlockList]
+//
+//            blockList?.forEach({ blockList in
+//
+//                UserManager.shared.fetchUserInfo(uid: blockList.blockId) { result in
+//
+//                    switch result {
+//
+//                    case .success(let user):
+//
+//                        guard let name = user.displayName else { return }
+//
+//                        self.userInfo[user.userId] = user
+//
+//                    case .failure(let error):
+//
+//                        print(error)
+//                    }
+//                }
+//            })
+//
+//        default:
+//            break
+//        }
+//    }
 }
