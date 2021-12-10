@@ -98,7 +98,7 @@ class DetailViewController: BaseViewController,
                 for: indexPath
             ) as? DetailImageTableViewCell else {fatalError("Couldn't generate imageCell")}
             
-            imageCell.endImageView.image = UIImage.asset(.icon_coding)
+//            imageCell.endImageView.image = UIImage.asset(.icon_jerk_chicken)
             
             return imageCell
             
@@ -131,22 +131,10 @@ class DetailViewController: BaseViewController,
             guard let noteCell = cell as? DetailNoteTableViewCell else { return cell }
             
             noteCell.categoryButton.setTitle(record.recordCategory, for: .normal)
-            
-            noteCell.categoryImage.image = UIImage.asset(.icon_coding)
-                    
+                                
             noteCell.titleTextfield.text = record.recordTitle
 
             noteCell.noteTextfield.text = record.recordNote
-            
-//            layoutNoteCell(
-//                image: UIImage(named: tempCategoryImage[indexPath.row]) ?? UIImage(),
-//                category: tempCategory[indexPath.row],
-//                title: tempTitle[indexPath.row],
-//                note: tempNote[indexPath.row])
-            
-//            noteCell.categoryTitleLabel.text = record[indexPath.row].recordCategory
-//
-//            noteCell.noteLabel.text = record[indexPath.row].recordNote
             
             return noteCell
             
@@ -163,7 +151,7 @@ class DetailViewController: BaseViewController,
             
         case 0: return 300
             
-        case 1: return 150
+        case 1: return 120
             
         case 2: return 450
             

@@ -8,9 +8,7 @@
 import UIKit
 
 private struct Segue {
-    
-    //    static let contentEditor = "SegueContent"
-    
+        
     static let timeEditor = "SegueTime"
 }
 
@@ -55,12 +53,12 @@ class ContentEditViewController: BaseViewController,
     
     var contentHandler: ((_ title: String, _ note: String) -> Void)?
     
-    var timeHandler: ((_ time: Int) -> ())?
+    var timeHandler: ((_ time: Int) -> Void)?
+    
+    var recipeHandler: ((_ recipe: Recipe) -> Void)?
         
     var datas: [TaskCategory] = []
-    
-    //    weak var delegate: ContentEditViewControllerDelegate?
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -76,6 +74,8 @@ class ContentEditViewController: BaseViewController,
             guard let timeEditVC = segue.destination as? TimerEditViewController else { return }
             
             timeEditVC.timeHandler = timeHandler
+            
+            timeEditVC.recipeHandler = recipeHandler
         }
     }
     

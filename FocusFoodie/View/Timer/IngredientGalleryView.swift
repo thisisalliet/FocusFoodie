@@ -8,39 +8,54 @@
 import UIKit
 
 class IngredientGalleryView: UIView {
-
+    
     @IBOutlet weak var contentView: UIView!
-    {
-
-        didSet {
-            
-            contentView.cornerRadius = 10
-
-            contentView.borderWidth = 5
-
-            contentView.borderColor = .G3
-            
-            contentView.inputViewController?.setupGradientBackground()
-        }
-    }
     
-    @IBOutlet weak var breadImage: UIImageView!
+    @IBOutlet weak var plusImage: UIImageView!
     
-    @IBOutlet weak var vegetableImage: UIImageView!
+    @IBOutlet weak var minusImage: UIImageView!
     
-    @IBOutlet weak var meatImage: UIImageView!
-    
-    @IBOutlet weak var sideImage: UIImageView!
-    
-    @IBOutlet weak var timerImage: UIImageView!
-    
-    @IBOutlet weak var minuteLabel: UILabel! {
+    @IBOutlet weak var breadImage: UIImageView! {
         
         didSet {
             
-            minuteLabel.cornerRadius = 25
+            breadImage.cornerRadius = 25
         }
     }
+    
+    @IBOutlet weak var vegetableImage: UIImageView! {
+        
+        didSet {
+            
+            vegetableImage.cornerRadius = 25
+        }
+    }
+    
+    @IBOutlet weak var meatImage: UIImageView! {
+        
+        didSet {
+            
+            meatImage.cornerRadius = 25
+        }
+    }
+    
+    @IBOutlet weak var sideImage: UIImageView! {
+        
+        didSet {
+            
+            sideImage.cornerRadius = 25
+        }
+    }
+        
+    @IBOutlet weak var totalMinuteLabel: UILabel! {
+        
+        didSet {
+            
+            totalMinuteLabel.cornerRadius = 25
+        }
+    }
+    
+    @IBOutlet weak var minuteLabel: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)

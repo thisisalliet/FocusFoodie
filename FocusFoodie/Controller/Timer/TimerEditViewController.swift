@@ -82,6 +82,8 @@ class TimerEditViewController: BaseViewController,
     
     var timeHandler: ((_ time: Int) -> ())?
     
+    var recipeHandler: ((_ recipe: Recipe) -> ())?
+    
     var buttonHandler: ((_ status: ButtonStatus) -> Void)?
     
     var breadMin = 0
@@ -118,7 +120,7 @@ class TimerEditViewController: BaseViewController,
             galleryView.breadImage.image = object.image!
             breadMin = object.minute
             totalTime = breadMin + vegetableMin + meatMin + sideMin
-            galleryView.minuteLabel.text = String(totalTime)
+            galleryView.totalMinuteLabel.text = String(totalTime)
             selectedBread = object
 
         case .vegetable:
@@ -126,7 +128,7 @@ class TimerEditViewController: BaseViewController,
             galleryView.vegetableImage.image = object.image!
             vegetableMin = object.minute
             totalTime = breadMin + vegetableMin + meatMin + sideMin
-            galleryView.minuteLabel.text = String(totalTime)
+            galleryView.totalMinuteLabel.text = String(totalTime)
             selectedVegatable = object
 
         case .meat:
@@ -134,7 +136,7 @@ class TimerEditViewController: BaseViewController,
             galleryView.meatImage.image = object.image!
             meatMin = object.minute
             totalTime = breadMin + vegetableMin + meatMin + sideMin
-            galleryView.minuteLabel.text = String(totalTime)
+            galleryView.totalMinuteLabel.text = String(totalTime)
             selectedMeat = object
             
         case .side:
@@ -142,7 +144,7 @@ class TimerEditViewController: BaseViewController,
             galleryView.sideImage.image = object.image!
             sideMin = object.minute
             totalTime = breadMin + vegetableMin + meatMin + sideMin
-            galleryView.minuteLabel.text = String(totalTime)
+            galleryView.totalMinuteLabel.text = String(totalTime)
             selectedSide = object
 
         default:
@@ -168,10 +170,15 @@ class TimerEditViewController: BaseViewController,
             focusTime: totalTime,
             recipeId: "default")
 
-        RecipeManager.shared.createRecipe(recipe: recipe)
-        
-//        delegate?.passTime(minutes: totalTime)
-        
+        RecipeManager.shared.createRecipe(recipe: recipe) { result in
+            switch result {
+            case .success(let recipeWithId):
+                self.recipeHandler?(recipeWithId)
+            case .failure(let error):
+                print(error)
+            }
+        }
+                
         timeHandler?(totalTime)
                 
         buttonHandler?(.notStarted)
@@ -238,7 +245,7 @@ class TimerEditViewController: BaseViewController,
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 200
+        return 170
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -246,11 +253,3 @@ class TimerEditViewController: BaseViewController,
         return UITableView.automaticDimension
     }
 }
-
-//extension TimerEditViewController: TimerEditDelegate {
-//
-//    func passTime(minutes: Int) {
-//
-//
-//    }
-//}

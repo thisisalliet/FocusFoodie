@@ -27,6 +27,8 @@ enum ImageAsset: String {
     case icon_cross_yellow
     case icon_delete
     case icon_notification
+    case icon_plus
+    case icon_equal
     
     // Category
     case icon_work
@@ -60,6 +62,9 @@ enum ImageAsset: String {
     case icon_lettuce
     case icon_tomato
     case icon_onion
+    
+    case icon_lettuce_color
+
     
     // Ingredient: Meat
     case icon_bacon

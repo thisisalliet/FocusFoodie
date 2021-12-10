@@ -68,7 +68,7 @@ class TimerViewController: BaseViewController {
     
     var timer = Timer()
     
-    var recipe: [Recipe]?
+    var recipe: Recipe?
     
     var seconds = 0
     
@@ -175,8 +175,9 @@ class TimerViewController: BaseViewController {
                 
                 guard let strongSelf = self else { return }
                 
-                strongSelf.seconds = time * 60
-                
+//                strongSelf.seconds = time * 60
+                strongSelf.seconds = 5
+
                 strongSelf.originalSeconds = time
                 
                 let tuple = strongSelf.secondsToHoursMinutesSeconds(seconds: strongSelf.seconds)
@@ -184,13 +185,13 @@ class TimerViewController: BaseViewController {
                 strongSelf.countDownLabel.text = String(format: "%02i:%02i:%02i", tuple.0, tuple.1, tuple.2)
                 
                 strongSelf.setButtonsEnabled(true)
+            }
+            
+            contentEditVC.recipeHandler = { [weak self] recipe in
                 
-//                timeEditVC.buttonHandler = { [weak self] status in
-//
-//                    guard let strongSelf = self else { return }
-//
-//                    strongSelf.buttonStatus = status
-//                }
+                guard let strongSelf = self else { return }
+                
+                strongSelf.recipe = recipe
             }
         }
     }
@@ -297,7 +298,22 @@ class TimerViewController: BaseViewController {
         countDownLabel.text = "\(showHours):\(showMinutes):\(showSeconds)"
         
         if seconds <= 0 {
+            //
+            timer.invalidate()
             
+            //
+            let record = Record(
+                ownerId: UserManager.shared.currentUserId,
+                recordTitle: timerTitle.text,
+                recordCategory: hiddenCategory,
+                recordNote: hiddenNote,
+                focusTime: originalSeconds,
+                createdTime: Date().timeIntervalSince1970,
+                recipeId: recipe?.recipeId ?? "")
+            
+            RecordManager.shared.createRecord(record: record)
+            
+            //
             guard let endVC = UIStoryboard
                     .timer
                     .instantiateViewController(
@@ -307,23 +323,9 @@ class TimerViewController: BaseViewController {
             setupNotification()
             
             endVC.modalPresentationStyle = .overFullScreen
+            endVC.recipe = recipe
             
             present(endVC, animated: true, completion: nil)
-            
-            timer.invalidate()
-            
-            let record = Record(
-                ownerId: "",
-                recordTitle: timerTitle.text,
-                recordCategory: hiddenCategory,
-                recordNote: hiddenNote,
-                focusTime: originalSeconds,
-                createdTime: Date().timeIntervalSince1970,
-                recipeId: "")
-            
-            RecordManager.shared.createRecord(record: record)
-                        
-            return
         }
     }
     

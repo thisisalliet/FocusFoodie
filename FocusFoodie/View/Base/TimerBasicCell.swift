@@ -25,7 +25,7 @@ class TimerBasicCell: UITableViewCell,
 
         let layoutObject = UICollectionViewFlowLayout()
 
-        layoutObject.itemSize = CGSize(width: UIScreen.width / 3.5, height: 180)
+        layoutObject.itemSize = CGSize(width: UIScreen.width / 3.5, height: 150)
 
         layoutObject.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
 
@@ -93,7 +93,7 @@ class TimerBasicCell: UITableViewCell,
 
         bottomConstraint.isActive = true
 
-        ingredientCollectionView.heightAnchor.constraint(equalToConstant: 190.0).isActive = true
+        ingredientCollectionView.heightAnchor.constraint(equalToConstant: 150).isActive = true
         
         ingredientCollectionView.register(
             SelectionCell.self,

@@ -96,7 +96,7 @@ enum BreadItem: IngredientObject, CaseIterable {
     }
 }
 
-enum VegetableItem: IngredientObject, CaseIterable {
+enum VegetableItem: String, IngredientObject, CaseIterable {
     
     case avocado
     
