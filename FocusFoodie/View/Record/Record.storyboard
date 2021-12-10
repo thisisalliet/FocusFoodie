@@ -27,21 +27,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.25" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSV-2M-T8W">
-                                <rect key="frame" x="25" y="103" width="106" height="87"/>
+                                <rect key="frame" x="25" y="93" width="106" height="87"/>
                                 <fontDescription key="fontDescription" name="Dongle-Bold" family="Dongle" pointSize="60"/>
                                 <color key="textColor" name="G3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MZy-ta-U9v" customClass="WeekView" customModule="FocusFoodie" customModuleProvider="target">
-                                <rect key="frame" x="30" y="230" width="354" height="60"/>
+                                <rect key="frame" x="30" y="215" width="354" height="60"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="2i6-1H-NGG"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hnL-0y-DRZ">
-                                <rect key="frame" x="0.0" y="320" width="414" height="542"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hnL-0y-DRZ">
+                                <rect key="frame" x="0.0" y="285" width="414" height="577"/>
                                 <color key="backgroundColor" name="G1"/>
+                                <color key="tintColor" name="G3"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h80-cI-QnW">
                                 <rect key="frame" x="25" y="160" width="120" height="40"/>
@@ -60,14 +61,14 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="DGS-EJ-2Vo" customClass="AnimationView" customModule="Lottie">
-                                <rect key="frame" x="41.5" y="393.5" width="331" height="325"/>
+                                <rect key="frame" x="41.5" y="365.5" width="331" height="346"/>
                                 <color key="backgroundColor" name="G1"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="astronaut-light-theme"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You don't have any record today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dr-Wo-wX7">
-                                <rect key="frame" x="89.5" y="738.5" width="235.5" height="36.5"/>
+                                <rect key="frame" x="89.5" y="731.5" width="235.5" height="36.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" name="G3"/>
                                 <fontDescription key="fontDescription" name="Dongle-Regular" family="Dongle" pointSize="25"/>
@@ -79,16 +80,16 @@
                         <color key="backgroundColor" name="G1"/>
                         <constraints>
                             <constraint firstItem="hnL-0y-DRZ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="0CQ-0t-efk"/>
-                            <constraint firstItem="h80-cI-QnW" firstAttribute="top" secondItem="YSV-2M-T8W" secondAttribute="bottom" constant="-30" id="2wZ-qL-GEX"/>
-                            <constraint firstItem="hnL-0y-DRZ" firstAttribute="top" secondItem="MZy-ta-U9v" secondAttribute="bottom" constant="30" id="B7M-gu-MvI"/>
+                            <constraint firstItem="h80-cI-QnW" firstAttribute="top" secondItem="YSV-2M-T8W" secondAttribute="bottom" constant="-20" id="2wZ-qL-GEX"/>
+                            <constraint firstItem="hnL-0y-DRZ" firstAttribute="top" secondItem="MZy-ta-U9v" secondAttribute="bottom" constant="10" id="B7M-gu-MvI"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="MZy-ta-U9v" secondAttribute="trailing" constant="30" id="Ehq-IV-luh"/>
                             <constraint firstItem="h80-cI-QnW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="IgH-r3-XvR"/>
                             <constraint firstItem="5dr-Wo-wX7" firstAttribute="centerX" secondItem="DGS-EJ-2Vo" secondAttribute="centerX" id="No4-gO-IrW"/>
                             <constraint firstItem="5dr-Wo-wX7" firstAttribute="top" secondItem="DGS-EJ-2Vo" secondAttribute="bottom" constant="20" id="WEP-Ea-hSz"/>
                             <constraint firstItem="hnL-0y-DRZ" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="WbC-dR-5oz"/>
-                            <constraint firstItem="MZy-ta-U9v" firstAttribute="top" secondItem="h80-cI-QnW" secondAttribute="bottom" constant="30" id="dCb-UB-D04"/>
+                            <constraint firstItem="MZy-ta-U9v" firstAttribute="top" secondItem="h80-cI-QnW" secondAttribute="bottom" constant="15" id="dCb-UB-D04"/>
                             <constraint firstItem="hnL-0y-DRZ" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="ejZ-cX-I5j"/>
-                            <constraint firstItem="YSV-2M-T8W" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="15" id="jw5-nc-2QM"/>
+                            <constraint firstItem="YSV-2M-T8W" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="5" id="jw5-nc-2QM"/>
                             <constraint firstItem="DGS-EJ-2Vo" firstAttribute="centerX" secondItem="hnL-0y-DRZ" secondAttribute="centerX" id="nJU-T5-D7u"/>
                             <constraint firstItem="DGS-EJ-2Vo" firstAttribute="width" secondItem="hnL-0y-DRZ" secondAttribute="width" multiplier="0.8" id="nrg-xB-eQO"/>
                             <constraint firstItem="DGS-EJ-2Vo" firstAttribute="height" secondItem="hnL-0y-DRZ" secondAttribute="height" multiplier="0.6" id="tA3-xa-YXH"/>
@@ -123,8 +124,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TT3-Bj-D8b">
-                                <rect key="frame" x="20" y="74" width="394" height="788"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TT3-Bj-D8b">
+                                <rect key="frame" x="5" y="44" width="404" height="818"/>
                                 <color key="backgroundColor" name="G1"/>
                                 <color key="tintColor" name="G2"/>
                             </tableView>
@@ -133,10 +134,10 @@
                         <color key="backgroundColor" name="G1"/>
                         <color key="tintColor" name="G3"/>
                         <constraints>
-                            <constraint firstItem="TT3-Bj-D8b" firstAttribute="trailing" secondItem="qVp-EU-3mW" secondAttribute="trailing" id="Cas-nZ-Cb7"/>
-                            <constraint firstItem="TT3-Bj-D8b" firstAttribute="leading" secondItem="qVp-EU-3mW" secondAttribute="leading" constant="20" id="MCi-AQ-f7q"/>
+                            <constraint firstItem="TT3-Bj-D8b" firstAttribute="trailing" secondItem="qVp-EU-3mW" secondAttribute="trailing" constant="-5" id="Cas-nZ-Cb7"/>
+                            <constraint firstItem="TT3-Bj-D8b" firstAttribute="leading" secondItem="qVp-EU-3mW" secondAttribute="leading" constant="5" id="MCi-AQ-f7q"/>
                             <constraint firstItem="qVp-EU-3mW" firstAttribute="bottom" secondItem="TT3-Bj-D8b" secondAttribute="bottom" id="Qka-Qv-MEL"/>
-                            <constraint firstItem="TT3-Bj-D8b" firstAttribute="top" secondItem="qVp-EU-3mW" secondAttribute="top" constant="30" id="fFA-Kn-y0h"/>
+                            <constraint firstItem="TT3-Bj-D8b" firstAttribute="top" secondItem="qVp-EU-3mW" secondAttribute="top" id="fFA-Kn-y0h"/>
                         </constraints>
                     </view>
                     <connections>

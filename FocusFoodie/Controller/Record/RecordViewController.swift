@@ -70,9 +70,7 @@ class RecordViewController: BaseViewController,
             checkEmpty()
         }
     }
-    
-    var selectedDate = Date()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -87,10 +85,8 @@ class RecordViewController: BaseViewController,
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        self.selectedDate = Date()
-        
-        fetchRecord(date: self.selectedDate)
+                
+        fetchRecord(date: Date())
     }
     
     private func setUpDate() {
@@ -124,23 +120,23 @@ class RecordViewController: BaseViewController,
                 
                 recordLottieView.play()
                 
-            } else {
+            }
+        } else {
+            
+            recordLottieView.isHidden = true
+            
+            emptyLabel.isHidden = true
+            
+            if let recordLottieView = recordLottieView {
                 
-                recordLottieView.isHidden = true
-                
-                emptyLabel.isHidden = true
-                
-                if let recordLottieView = recordLottieView {
-                    
-                    recordLottieView.stop()
-                }
+                recordLottieView.stop()
             }
         }
     }
     
     func fetchRecord(date: Date) {
         
-        RecordManager.shared.fetchRecord(date: selectedDate) { result in
+        RecordManager.shared.fetchRecord(date: date) { result in
             
             switch result {
                 
@@ -186,7 +182,7 @@ class RecordViewController: BaseViewController,
         let categoryIcon = TaskCategory(rawValue: record.recordCategory ?? "")?.image
         
         recordCell.layoutCell(
-            timerImage: UIImage.asset(.icon_coding),
+            timerImage: categoryIcon,
             time: record.focusTime,
             title: record.recordTitle ?? "",
             categoryImage: categoryIcon)

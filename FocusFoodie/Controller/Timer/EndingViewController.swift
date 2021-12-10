@@ -8,7 +8,7 @@
 import UIKit
 
 class EndingViewController: BaseViewController {
-    
+        
     @IBOutlet weak var blurView: UIView! {
         
         didSet {
@@ -17,11 +17,11 @@ class EndingViewController: BaseViewController {
         }
     }
     
-    @IBOutlet weak var endingImage: UIView! {
+    @IBOutlet weak var endingImageView: ToastView! {
         
         didSet {
             
-            endingImage.cornerRadius = 10
+            endingImageView.cornerRadius = 10
         }
     }
     
@@ -33,11 +33,18 @@ class EndingViewController: BaseViewController {
         }
     }
     
+    var recipe: Recipe?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        guard let recipe = recipe else {
+            return
+        }
+        
+        endingImageView.layoutView(recipe: recipe)
     }
+    
     
     @IBAction func onDismiss(_ sender: UIButton) {
         
