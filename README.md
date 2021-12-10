@@ -13,10 +13,10 @@
 ## FEATURES 🥪 
 ### How To Start a Foodie Timer
 
-<height = "300" img src="https://github.com/thisisalliet/FocusFoodie/blob/main/Screenshots/Enter%20Category%20and%20Notes.png">
-<height = "300" img src="https://github.com/thisisalliet/FocusFoodie/blob/main/Screenshots/Choose%20Ingredients.png">
-<height = "300" img src="https://github.com/thisisalliet/FocusFoodie/blob/main/Screenshots/Start%20Focusing.png">
-<height = "300" img src="https://github.com/thisisalliet/FocusFoodie/blob/main/Screenshots/Check%20Records.png">
+<img src="https://github.com/thisisalliet/FocusFoodie/blob/main/Screenshots/Enter%20Category%20and%20Notes.png" height = "300" >
+<img src="https://github.com/thisisalliet/FocusFoodie/blob/main/Screenshots/Choose%20Ingredients.png" height = "300" >
+<img src="https://github.com/thisisalliet/FocusFoodie/blob/main/Screenshots/Start%20Focusing.png" height = "300" >
+<img src="https://github.com/thisisalliet/FocusFoodie/blob/main/Screenshots/Check%20Records.png" height = "300" >
 
 
 ## TECHNICAL HIGHLIGHTS 🥪
