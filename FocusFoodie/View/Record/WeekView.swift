@@ -118,14 +118,12 @@ class WeekView: UIView {
         
         for button in weekButtons {
             
-            button.isSelected = false
+            button.backgroundColor = .clear
         }
-        
-        sender.isSelected = true
-        
+                
         sender.backgroundColor = .G2
         
-        sender.alpha = 0.5
+        sender.alpha = 0.75
         
         guard let date = Week(rawValue: sender.tag) else { return }
         
