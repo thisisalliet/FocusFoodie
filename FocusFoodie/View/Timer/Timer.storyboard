@@ -352,6 +352,13 @@
                                     <segue destination="DTz-WY-IgO" kind="embed" id="xzP-uF-7RI"/>
                                 </connections>
                             </containerView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IEF-Yv-Gwf">
+                                <rect key="frame" x="87" y="328" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="PAR-D5-7t3"/>
+                                    <constraint firstAttribute="width" secondItem="IEF-Yv-Gwf" secondAttribute="height" multiplier="1:1" id="aeW-Ze-01H"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2aY-l9-ldi">
                                 <rect key="frame" x="322" y="204" width="50" height="50"/>
                                 <color key="backgroundColor" name="G2"/>
@@ -388,10 +395,12 @@
                             <constraint firstItem="8rA-Hh-kbJ" firstAttribute="height" secondItem="FIp-Az-AX8" secondAttribute="height" multiplier="0.5" id="Ksp-Zu-bBx"/>
                             <constraint firstItem="wOv-6U-bqb" firstAttribute="height" secondItem="FIp-Az-AX8" secondAttribute="height" multiplier="0.5" id="Rb5-3l-h5h"/>
                             <constraint firstItem="ljw-wj-8bo" firstAttribute="centerY" secondItem="FIp-Az-AX8" secondAttribute="centerY" id="UbK-HZ-3sQ"/>
+                            <constraint firstItem="IEF-Yv-Gwf" firstAttribute="centerY" secondItem="FIp-Az-AX8" secondAttribute="centerY" id="VET-Tc-tyw"/>
                             <constraint firstItem="ljw-wj-8bo" firstAttribute="width" secondItem="FIp-Az-AX8" secondAttribute="width" multiplier="0.7" id="Vwd-oP-bik"/>
                             <constraint firstItem="8rA-Hh-kbJ" firstAttribute="centerY" secondItem="FIp-Az-AX8" secondAttribute="centerY" id="WWz-Sp-LaR"/>
                             <constraint firstItem="7e9-N3-Ohm" firstAttribute="centerY" secondItem="FIp-Az-AX8" secondAttribute="centerY" id="XIf-Pf-1qI"/>
                             <constraint firstItem="eot-E6-lF3" firstAttribute="height" secondItem="FIp-Az-AX8" secondAttribute="height" multiplier="0.5" id="aTt-Ez-Pkz"/>
+                            <constraint firstItem="IEF-Yv-Gwf" firstAttribute="centerX" secondItem="FIp-Az-AX8" secondAttribute="centerX" id="aly-pU-Eva"/>
                             <constraint firstItem="ljw-wj-8bo" firstAttribute="height" secondItem="FIp-Az-AX8" secondAttribute="height" multiplier="0.5" id="anc-0q-y7v"/>
                             <constraint firstItem="R5A-Fx-pEo" firstAttribute="top" secondItem="FIp-Az-AX8" secondAttribute="topMargin" id="b46-Qf-8DU"/>
                             <constraint firstItem="efB-T7-FWU" firstAttribute="centerY" secondItem="FIp-Az-AX8" secondAttribute="centerY" id="fXI-pk-XYJ"/>
@@ -409,6 +418,7 @@
                         <outlet property="blurView" destination="R5A-Fx-pEo" id="J74-Kq-ClC"/>
                         <outlet property="dissmissButton" destination="2aY-l9-ldi" id="uzs-c1-uQi"/>
                         <outlet property="endingImage" destination="8rA-Hh-kbJ" id="q6k-TI-8D7"/>
+                        <outlet property="tempImage" destination="IEF-Yv-Gwf" id="OqY-id-oq0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rFR-J0-X3R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -561,6 +571,9 @@
                                 <color key="textColor" name="G3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RzA-P1-y59">
+                                <rect key="frame" x="75.5" y="110" width="139" height="188"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qiv-fY-UfN"/>
                         <color key="backgroundColor" name="G1"/>
@@ -568,9 +581,13 @@
                         <constraints>
                             <constraint firstItem="qBA-IC-5dn" firstAttribute="centerY" secondItem="v9M-f6-CuM" secondAttribute="centerY" constant="-20" id="5UJ-H0-zur"/>
                             <constraint firstItem="cVD-UT-DQA" firstAttribute="centerX" secondItem="v9M-f6-CuM" secondAttribute="centerX" id="Arn-Cn-lx6"/>
+                            <constraint firstItem="RzA-P1-y59" firstAttribute="height" secondItem="qBA-IC-5dn" secondAttribute="height" multiplier="0.6" id="FgU-MC-wSk"/>
                             <constraint firstItem="qBA-IC-5dn" firstAttribute="centerX" secondItem="v9M-f6-CuM" secondAttribute="centerX" id="NMg-tL-mqC"/>
                             <constraint firstItem="cVD-UT-DQA" firstAttribute="top" secondItem="qBA-IC-5dn" secondAttribute="bottom" constant="15" id="UXh-Ld-cp7"/>
                             <constraint firstItem="qBA-IC-5dn" firstAttribute="height" secondItem="v9M-f6-CuM" secondAttribute="height" multiplier="0.7" id="Wxp-GP-5C7"/>
+                            <constraint firstItem="RzA-P1-y59" firstAttribute="width" secondItem="qBA-IC-5dn" secondAttribute="width" multiplier="0.6" id="eIL-Ax-Dwh"/>
+                            <constraint firstItem="RzA-P1-y59" firstAttribute="centerX" secondItem="qBA-IC-5dn" secondAttribute="centerX" id="pFQ-jn-YDT"/>
+                            <constraint firstItem="RzA-P1-y59" firstAttribute="centerY" secondItem="qBA-IC-5dn" secondAttribute="centerY" id="s7M-vy-PvO"/>
                             <constraint firstItem="qBA-IC-5dn" firstAttribute="width" secondItem="v9M-f6-CuM" secondAttribute="width" multiplier="0.8" id="tvQ-Ge-hvS"/>
                         </constraints>
                     </view>

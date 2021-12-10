@@ -87,4 +87,44 @@ class RecipeManager {
 //            }
 //        }
     }
+    
+    func fetchRecipe(recipeId: String, completion: @escaping (Result<Recipe, Error>) -> Void) {
+        
+//        let recipeRef = recipes.document()
+//
+//        let userRef = users.document(userId)
+//
+//        let recipeId = recipeRef.documentID
+//
+//
+        recipes.document(recipeId).getDocument{ document, error in
+            
+            if let error = error {
+                
+                completion(Result.failure(error))
+            }
+            
+            guard let document = document,
+                  document.exists
+                    
+            else {
+                print(#function)
+                return
+                
+            }
+            
+            do {
+                
+                let recipe = try document.data(as: Recipe.self)
+                guard let recipe = recipe else { return }
+                completion(Result.success(recipe))
+
+                
+            } catch {
+                completion(Result.failure(error))
+                print(error)
+            }
+            
+        }
+    }
 }

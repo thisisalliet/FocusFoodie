@@ -175,8 +175,9 @@ class TimerViewController: BaseViewController {
                 
                 guard let strongSelf = self else { return }
                 
-                strongSelf.seconds = time * 60
-                
+//                strongSelf.seconds = time * 60
+                strongSelf.seconds = 5
+
                 strongSelf.originalSeconds = time
                 
                 let tuple = strongSelf.secondsToHoursMinutesSeconds(seconds: strongSelf.seconds)

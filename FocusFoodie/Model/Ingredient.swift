@@ -96,7 +96,7 @@ enum BreadItem: IngredientObject, CaseIterable {
     }
 }
 
-enum VegetableItem: IngredientObject, CaseIterable {
+enum VegetableItem: String, IngredientObject, CaseIterable {
     
     case avocado
     
@@ -104,7 +104,7 @@ enum VegetableItem: IngredientObject, CaseIterable {
     
     case cucumber
     
-    case lettuce
+    case lettuce = "Lettuce"
     
     case tomato
     

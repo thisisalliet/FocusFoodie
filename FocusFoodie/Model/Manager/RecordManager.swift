@@ -51,7 +51,7 @@ class RecordManager {
                 try? snapshot.data(as: Record.self)
             }
             
-            let recordDay = myRecord.filter { record -> Bool in
+            var recordDay = myRecord.filter { record -> Bool in
                 
                 let recordDate = Date(timeIntervalSince1970: record.createdTime)
                 
@@ -60,6 +60,23 @@ class RecordManager {
                     && recordDate.hasSame(.day, as: date)
                 
                 return haseSame
+            }
+            
+            for (index, record) in recordDay.enumerated() {
+                
+                RecipeManager.shared.fetchRecipe(recipeId: record.recipeId) { result in
+                    
+                    switch result {
+                        
+                    case .success(let recipe):
+                        
+                        recordDay[index].recipe = recipe
+                        
+                    case .failure(let error):
+                        
+                        print(error)
+                    }
+                }
             }
             
 //            let recordDay = myRecord.compactMap { (record) -> Record? in

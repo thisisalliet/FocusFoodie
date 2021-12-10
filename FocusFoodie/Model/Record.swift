@@ -41,4 +41,6 @@ public struct Record: Codable {
                 
         case recipeId = "recipe_id"
     }
+    
+    var recipe: Recipe?
 }

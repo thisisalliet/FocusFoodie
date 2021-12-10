@@ -63,6 +63,9 @@ enum ImageAsset: String {
     case icon_tomato
     case icon_onion
     
+    case icon_lettuce_color
+
+    
     // Ingredient: Meat
     case icon_bacon
     case icon_beef

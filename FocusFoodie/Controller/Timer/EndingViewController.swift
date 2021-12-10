@@ -9,6 +9,8 @@ import UIKit
 
 class EndingViewController: BaseViewController {
     
+    @IBOutlet weak var tempImage: UIImageView!
+    
     @IBOutlet weak var blurView: UIView! {
         
         didSet {
@@ -38,7 +40,9 @@ class EndingViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        let vegetableIcon = VegetableItem(rawValue: recipe?.vegetable ?? "")?.image
+        
+        tempImage.image = vegetableIcon
     }
     
     @IBAction func onDismiss(_ sender: UIButton) {
