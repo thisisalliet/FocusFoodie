@@ -136,16 +136,6 @@ class DetailViewController: BaseViewController,
 
             noteCell.noteTextfield.text = record.recordNote
             
-//            layoutNoteCell(
-//                image: UIImage(named: tempCategoryImage[indexPath.row]) ?? UIImage(),
-//                category: tempCategory[indexPath.row],
-//                title: tempTitle[indexPath.row],
-//                note: tempNote[indexPath.row])
-            
-//            noteCell.categoryTitleLabel.text = record[indexPath.row].recordCategory
-//
-//            noteCell.noteLabel.text = record[indexPath.row].recordNote
-            
             return noteCell
             
         default:

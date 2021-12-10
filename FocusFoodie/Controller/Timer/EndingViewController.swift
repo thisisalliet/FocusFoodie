@@ -33,6 +33,8 @@ class EndingViewController: BaseViewController {
         }
     }
     
+    var recipe: Recipe?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

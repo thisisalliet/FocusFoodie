@@ -82,6 +82,8 @@ class TimerEditViewController: BaseViewController,
     
     var timeHandler: ((_ time: Int) -> ())?
     
+    var recipeHandler: ((_ recipe: Recipe) -> ())?
+    
     var buttonHandler: ((_ status: ButtonStatus) -> Void)?
     
     var breadMin = 0
@@ -168,10 +170,15 @@ class TimerEditViewController: BaseViewController,
             focusTime: totalTime,
             recipeId: "default")
 
-        RecipeManager.shared.createRecipe(recipe: recipe)
-        
-//        delegate?.passTime(minutes: totalTime)
-        
+        RecipeManager.shared.createRecipe(recipe: recipe) { result in
+            switch result {
+            case .success(let recipeWithId):
+                self.recipeHandler?(recipeWithId)
+            case .failure(let error):
+                print(error)
+            }
+        }
+                
         timeHandler?(totalTime)
                 
         buttonHandler?(.notStarted)

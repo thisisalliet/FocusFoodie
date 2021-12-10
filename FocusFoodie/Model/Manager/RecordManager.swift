@@ -14,39 +14,16 @@ import FirebaseFirestoreSwift
 class RecordManager {
     
     lazy var db = Firestore.firestore()
-    
-    var myRecipeId: String?
-    
-    static let shared = RecordManager()
-    
-    let userId: String = {
         
-        if let user = Auth.auth().currentUser {
-            
-            return user.uid
-            
-        } else {
-            
-            return "0"
-        }
-    }()
+    static let shared = RecordManager()
     
     func createRecord(record: Record) {
         
         let recordRef = db.collection(CollectionName.record.rawValue).document()
         
-        let recordWithId = Record(
-            ownerId: userId,
-            recordTitle: record.recordTitle,
-            recordCategory: record.recordCategory,
-            recordNote: record.recordNote,
-            focusTime: record.focusTime,
-            createdTime: record.createdTime,
-            recipeId: RecipeManager.shared.myRecipe ?? "default")
-        
         do {
             
-            try recordRef.setData(from: recordWithId)
+            try recordRef.setData(from: record)
             
         } catch {
             
@@ -57,7 +34,7 @@ class RecordManager {
     func fetchRecord(date: Date, completion: @escaping (Result<[Record], Error>) -> Void) {
         
         let myRecordRef = db.collection(CollectionName.record.rawValue)
-            .whereField("owner_id", isEqualTo: userId)
+            .whereField("owner_id", isEqualTo: UserManager.shared.currentUserId)
         // 排
         
         myRecordRef.getDocuments { snapshot, error in
