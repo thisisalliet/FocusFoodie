@@ -9,27 +9,11 @@ import UIKit
 
 class DetailImageTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var whiteView: UIView! {
+    @IBOutlet weak var whiteView: ToastView! {
         
         didSet {
             
             whiteView.cornerRadius = 25
-        }
-    }
-    
-    @IBOutlet weak var endImageView: UIImageView! {
-        
-        didSet {
-            
-            endImageView.image = UIImage.asset(.icon_image)
-
-            endImageView.contentMode = .scaleAspectFit
-            
-            endImageView.frame = CGRect(
-                x: 0,
-                y: 0,
-                width: UIScreen.width,
-                height: UIScreen.height * 2 / 3)
         }
     }
 }

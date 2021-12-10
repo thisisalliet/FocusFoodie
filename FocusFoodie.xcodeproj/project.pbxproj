@@ -109,6 +109,8 @@
 		09E42D3327425E600014C4B9 /* RecipeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E42D3227425E600014C4B9 /* RecipeManager.swift */; };
 		09F0472727264DC1009CA63B /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F0472627264DC1009CA63B /* UIButton+Extension.swift */; };
 		09F04729272678D8009CA63B /* DetailImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F04728272678D8009CA63B /* DetailImageTableViewCell.xib */; };
+		09F7C67A27635D2B00532C78 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F7C67927635D2B00532C78 /* ToastView.swift */; };
+		09F7C67C27635D3B00532C78 /* ToastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F7C67B27635D3B00532C78 /* ToastView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -234,6 +236,8 @@
 		09E42D3227425E600014C4B9 /* RecipeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeManager.swift; sourceTree = "<group>"; };
 		09F0472627264DC1009CA63B /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		09F04728272678D8009CA63B /* DetailImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailImageTableViewCell.xib; sourceTree = "<group>"; };
+		09F7C67927635D2B00532C78 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		09F7C67B27635D3B00532C78 /* ToastView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToastView.xib; sourceTree = "<group>"; };
 		290B1C7432FC0558604112FB /* Pods-FocusFoodie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FocusFoodie.debug.xcconfig"; path = "Target Support Files/Pods-FocusFoodie/Pods-FocusFoodie.debug.xcconfig"; sourceTree = "<group>"; };
 		393F58596B0720378D428E8F /* Pods-FocusFoodie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FocusFoodie.release.xcconfig"; path = "Target Support Files/Pods-FocusFoodie/Pods-FocusFoodie.release.xcconfig"; sourceTree = "<group>"; };
 		B10A2329D8AD6B769D677516 /* Pods_FocusFoodie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FocusFoodie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -360,6 +364,7 @@
 		09524F8C271FF92E0061C36B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				09F7C67627635CE100532C78 /* Recipe */,
 				09840BD5274ABCC10062384F /* Lottie */,
 				09DB475D273522DC003703C1 /* Auth */,
 				09524FEE272169350061C36B /* Base */,
@@ -590,6 +595,15 @@
 			path = Community;
 			sourceTree = "<group>";
 		};
+		09F7C67627635CE100532C78 /* Recipe */ = {
+			isa = PBXGroup;
+			children = (
+				09F7C67927635D2B00532C78 /* ToastView.swift */,
+				09F7C67B27635D3B00532C78 /* ToastView.xib */,
+			);
+			path = Recipe;
+			sourceTree = "<group>";
+		};
 		1493E2A44FC9F6CAADF931E3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -685,6 +699,7 @@
 				09DB476827396E4D003703C1 /* OFL.txt in Resources */,
 				09C1C7D22722903800D2C9B2 /* DetailNoteTableViewCell.xib in Resources */,
 				0942892E272D7E7D0083CF6B /* burger-machine.json in Resources */,
+				09F7C67C27635D3B00532C78 /* ToastView.xib in Resources */,
 				09524FA0271FFD9C0061C36B /* Record.storyboard in Resources */,
 				09C276BD273CF7850037D65C /* ProfileSelectionCell.xib in Resources */,
 				09D83DFB27458489005F1BE5 /* WeekView.xib in Resources */,
@@ -830,6 +845,7 @@
 				09C276C5273D133A0037D65C /* ProfileLabelCell.swift in Sources */,
 				093169A62727CEB300360885 /* TimerEditViewController.swift in Sources */,
 				09DB476D2739874E003703C1 /* CommunityTableViewCell.swift in Sources */,
+				09F7C67A27635D2B00532C78 /* ToastView.swift in Sources */,
 				09524F78271FF4A00061C36B /* SceneDelegate.swift in Sources */,
 				09C276C2273D09AF0037D65C /* ProfileButtonCell.swift in Sources */,
 				090E07E32730E9F700136025 /* IngredientItemView.swift in Sources */,

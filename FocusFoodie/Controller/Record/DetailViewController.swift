@@ -98,7 +98,7 @@ class DetailViewController: BaseViewController,
                 for: indexPath
             ) as? DetailImageTableViewCell else {fatalError("Couldn't generate imageCell")}
             
-            imageCell.endImageView.image = UIImage.asset(.icon_jerk_chicken)
+//            imageCell.endImageView.image = UIImage.asset(.icon_jerk_chicken)
             
             return imageCell
             

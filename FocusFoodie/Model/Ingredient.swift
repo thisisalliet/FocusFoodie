@@ -104,7 +104,7 @@ enum VegetableItem: String, IngredientObject, CaseIterable {
     
     case cucumber
     
-    case lettuce = "Lettuce"
+    case lettuce
     
     case tomato
     
