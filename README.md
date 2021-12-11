@@ -6,9 +6,9 @@
 
 
 <p align="center">
-<img src="https://img.shields.io/github/license/Naereen/StrapDown.js.svg"> 
-<img src="https://img.shields.io/github/release/Naereen/StrapDown.js.svg"> 
-<img src="https://cocoapod-badges.herokuapp.com/p/NSStringMask/badge.svg">
+<img src="https://img.shields.io/badge/license-MIT-brightgreen"> 
+<img src="https://img.shields.io/badge/release-1.0.0-brightgreen"> 
+<img src="https://img.shields.io/badge/swift-5-brightgreen">
 </p>
 
 ## FEATURES
