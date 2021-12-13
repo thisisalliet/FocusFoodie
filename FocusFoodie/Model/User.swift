@@ -47,33 +47,3 @@ public struct User: Codable {
 
     }
 }
-
-//struct BlockList: Codable {
-//
-//    var blockId: String
-//
-//    enum CodingKeys: String, CodingKey {
-//
-//        case blockId = "block_id"
-//    }
-//}
-//
-//struct FriendList: Codable {
-//
-//    var friendId: String
-//
-//    enum CodingKeys: String, CodingKey {
-//
-//        case friendId = "friend_id"
-//    }
-//}
-
-//struct Recipe: Codable {
-//    
-//    var recipeId: String
-//    
-//    enum CodingKeys: String, CodingKey {
-//        
-//        case recipeId = "recipe_id"
-//    }
-//}

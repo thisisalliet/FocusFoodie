@@ -12,15 +12,9 @@ class CompoundViewController: BaseViewController,
                             UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    
-//    var datas: [[Any]] = [[]] {
-//
-//        didSet {
-//            reloadData()
-//        }
-//    }
 
     // MARK: - View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,6 +24,7 @@ class CompoundViewController: BaseViewController,
     }
     
     // MARK: - Private Method
+    
     private func setupTableView() {
 
         if tableView == nil {
@@ -40,10 +35,6 @@ class CompoundViewController: BaseViewController,
 
             self.tableView = tableView
         }
-
-//        tableView.dataSource = self
-//
-//        tableView.delegate = self
 
         tableView.addRefreshHeader(refreshingBlock: { [weak self] in
 
@@ -56,7 +47,8 @@ class CompoundViewController: BaseViewController,
         })
     }
     
-    // MARK: - Public Method: Manipulate table view and collection view
+    // MARK: - Public Method -
+    
     func reloadData() {
 
         guard Thread.isMainThread == true else {
@@ -104,14 +96,8 @@ class CompoundViewController: BaseViewController,
 
     // MARK: - UITableView DataSource
     
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//
-//        return datas.count
-//    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-//        return datas[section].count
         return 1
     }
     

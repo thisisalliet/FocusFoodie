@@ -34,15 +34,11 @@ class RecipeManager {
             return "0"
         }
     }()
-    
-//    var myRecipe: String?
-    
+        
     func createRecipe(recipe: Recipe, completion: @escaping (Result<Recipe, Error>) -> Void) {
         
         let recipeRef = recipes.document()
-        
-        let userRef = users.document(userId)
-        
+                
         let recipeId = recipeRef.documentID
         let recipeWithId = Recipe(bread: recipe.bread,
                             vegetable: recipe.vegetable,
@@ -51,17 +47,16 @@ class RecipeManager {
                             focusTime: recipe.focusTime,
                             recipeId: recipeId)
         
-//        myRecipe = recipeId
-        
-//        recipeIdHandler?(myRecipe)
-        
         do {
             
             try recipeRef.setData(from: recipeWithId, completion: { error in
                 
                 if let error = error {
+                    
                     completion(.failure(error))
+                    
                 } else {
+                    
                     completion(.success(recipeWithId))
                 }
             })
@@ -90,14 +85,7 @@ class RecipeManager {
     
     func fetchRecipe(recipeId: String, completion: @escaping (Result<Recipe, Error>) -> Void) {
         
-//        let recipeRef = recipes.document()
-//
-//        let userRef = users.document(userId)
-//
-//        let recipeId = recipeRef.documentID
-//
-//
-        recipes.document(recipeId).getDocument{ document, error in
+        recipes.document(recipeId).getDocument { document, error in
             
             if let error = error {
                 
@@ -116,15 +104,17 @@ class RecipeManager {
             do {
                 
                 let recipe = try document.data(as: Recipe.self)
+                
                 guard let recipe = recipe else { return }
+                
                 completion(Result.success(recipe))
 
-                
             } catch {
+                
                 completion(Result.failure(error))
+                
                 print(error)
             }
-            
         }
     }
 }

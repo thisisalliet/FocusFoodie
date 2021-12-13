@@ -23,10 +23,8 @@ class ProfileInfoCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
-//    override
     func layoutCellWithInfo(name: String, email: String) {
         
         nameTextfield.text = name

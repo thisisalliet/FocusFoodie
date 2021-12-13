@@ -80,9 +80,9 @@ class TimerEditViewController: BaseViewController,
     
     var totalTime = 0
     
-    var timeHandler: ((_ time: Int) -> ())?
+    var timeHandler: ((_ time: Int) -> Void)?
     
-    var recipeHandler: ((_ recipe: Recipe) -> ())?
+    var recipeHandler: ((_ recipe: Recipe) -> Void)?
     
     var buttonHandler: ((_ status: ButtonStatus) -> Void)?
     
@@ -100,59 +100,8 @@ class TimerEditViewController: BaseViewController,
         setupTableView()
     }
     
-    // MARK: - Private Function -
+    // MARK: - Button Action -
     
-    private func setupTableView() {
-        
-        ingredientTableView.register(
-            IngredientSelectionCell.self,
-            forCellReuseIdentifier: String(describing: IngredientSelectionCell.self))
-    }
-    
-    // MARK: - Cell Pass Value -
-    
-    func getIngredientInfo(_ object: IngredientObject) {
-                                
-        switch object.type {
-            
-        case .bread:
-
-            galleryView.breadImage.image = object.image!
-            breadMin = object.minute
-            totalTime = breadMin + vegetableMin + meatMin + sideMin
-            galleryView.totalMinuteLabel.text = String(totalTime)
-            selectedBread = object
-
-        case .vegetable:
-
-            galleryView.vegetableImage.image = object.image!
-            vegetableMin = object.minute
-            totalTime = breadMin + vegetableMin + meatMin + sideMin
-            galleryView.totalMinuteLabel.text = String(totalTime)
-            selectedVegatable = object
-
-        case .meat:
-
-            galleryView.meatImage.image = object.image!
-            meatMin = object.minute
-            totalTime = breadMin + vegetableMin + meatMin + sideMin
-            galleryView.totalMinuteLabel.text = String(totalTime)
-            selectedMeat = object
-            
-        case .side:
-
-            galleryView.sideImage.image = object.image!
-            sideMin = object.minute
-            totalTime = breadMin + vegetableMin + meatMin + sideMin
-            galleryView.totalMinuteLabel.text = String(totalTime)
-            selectedSide = object
-
-        default:
-            break
-        }
-    }
-    
-    // MARK: - Action -
     @IBAction func onDismiss(_ sender: UIButton) {
                 
         buttonHandler?(.notStarted)
@@ -186,30 +135,64 @@ class TimerEditViewController: BaseViewController,
         backToTimer()
     }
     
+    // MARK: - Private Function -
+    
+    private func setupTableView() {
+        
+        ingredientTableView.register(
+            IngredientSelectionCell.self,
+            forCellReuseIdentifier: String(describing: IngredientSelectionCell.self))
+    }
+    
+    // MARK: - Public Method -
+    
+    func getIngredientInfo(_ object: IngredientObject) {
+                                
+        switch object.type {
+            
+        case .bread:
+
+            galleryView.breadImage.image = object.image ?? UIImage()
+            breadMin = object.minute
+            totalTime = breadMin + vegetableMin + meatMin + sideMin
+            galleryView.totalMinuteLabel.text = String(totalTime)
+            selectedBread = object
+
+        case .vegetable:
+
+            galleryView.vegetableImage.image = object.image ?? UIImage()
+            vegetableMin = object.minute
+            totalTime = breadMin + vegetableMin + meatMin + sideMin
+            galleryView.totalMinuteLabel.text = String(totalTime)
+            selectedVegatable = object
+
+        case .meat:
+
+            galleryView.meatImage.image = object.image ?? UIImage()
+            meatMin = object.minute
+            totalTime = breadMin + vegetableMin + meatMin + sideMin
+            galleryView.totalMinuteLabel.text = String(totalTime)
+            selectedMeat = object
+            
+        case .side:
+
+            galleryView.sideImage.image = object.image ?? UIImage()
+            sideMin = object.minute
+            totalTime = breadMin + vegetableMin + meatMin + sideMin
+            galleryView.totalMinuteLabel.text = String(totalTime)
+            selectedSide = object
+        }
+    }
+    
     func backToTimer() {
         
-//        guard let timerVC = UIStoryboard
-//                            .timer
-//                            .instantiateViewController(
-//                                withIdentifier: String(describing: TimerViewController.self)
-//                            ) as? TimerViewController else { return }
-//
-//        let navVC = UINavigationController(rootViewController: timerVC)
-//
-//        navVC.modalPresentationStyle = .overFullScreen
-//
-//        present(navVC, animated: true, completion: nil)
-        
-//        let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate
-//
-//        sceneDelegate?.window?.rootViewController?.dismiss(animated: true)
-        
         if let presentingViewController = presentingViewController?.presentingViewController {
+            
             presentingViewController.dismiss(animated: true, completion: nil)
         }
     }
     
-    // MARK: - UITableViewDataSource -
+    // MARK: - UITableView DataSource -
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -241,7 +224,7 @@ class TimerEditViewController: BaseViewController,
         else { fatalError("SelectionCell error") }
     }
     
-    // MARK: - UITableViewDelegate -
+    // MARK: - UITableView Delegate -
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         

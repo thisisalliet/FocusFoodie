@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 extension UIView {
 
     // Border Color
@@ -55,6 +54,7 @@ extension UIView {
     }
     
     // MARK: - Layout -
+    
     func stickSubView(_ objectView: UIView) {
 
         objectView.removeFromSuperview()
@@ -104,6 +104,7 @@ extension UIView {
     }
     
     // MARK: - Appearance -
+    
     func setShadow() {
         
         self.layer.masksToBounds = false
@@ -115,5 +116,23 @@ extension UIView {
         self.layer.shadowOpacity = 0.3
         
         self.layer.shadowRadius = 10
+    }
+    
+    func roundCornersOnTop(cornerRadius: Double) {
+        
+        self.layer.cornerRadius = CGFloat(cornerRadius)
+
+        self.clipsToBounds = true
+
+        self.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+    }
+    
+    func roundCornersAtBottom(cornerRadius: Double) {
+        
+        self.layer.cornerRadius = CGFloat(cornerRadius)
+
+        self.clipsToBounds = true
+
+        self.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
     }
 }

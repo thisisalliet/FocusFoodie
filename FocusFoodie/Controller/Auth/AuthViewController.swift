@@ -100,9 +100,9 @@ class AuthViewController: BaseViewController {
     }
     
     @objc func signInWithAppleTapped() {
-           
-           performSignIn()
-       }
+        
+        performSignIn()
+    }
     
     func performSignIn() {
         

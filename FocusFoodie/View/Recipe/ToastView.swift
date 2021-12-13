@@ -15,6 +15,10 @@ class ToastView: UIView {
     
     @IBOutlet weak var vegetableImage: UIImageView!
     
+    @IBOutlet weak var sideImage: UIImageView!
+    
+    @IBOutlet weak var meatImage: UIImageView!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -38,9 +42,17 @@ class ToastView: UIView {
     }
     
     func layoutView(recipe: Recipe) {
+                        
+        let meatIcon = MeatItem(rawValue: recipe.meat?.lowercased() ?? "")?.colorfulImage
         
-        let vegetableIcon = VegetableItem(rawValue: recipe.vegetable?.lowercased() ?? "")?.image
+        let vegetableIcon = VegetableItem(rawValue: recipe.vegetable?.lowercased() ?? "")?.colorfulImage
+        
+        let sideIcon = SideItem(rawValue: recipe.side?.lowercased() ?? "")?.colorfulImage
 
+        meatImage.image = meatIcon
+        
         vegetableImage.image = vegetableIcon
+        
+        sideImage.image = sideIcon
     }
 }

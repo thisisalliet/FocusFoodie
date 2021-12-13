@@ -48,24 +48,6 @@ class TimerViewController: BaseViewController {
     
     @IBOutlet weak var notificationButton: UIButton!
     
-    //NEW
-    var timerCounting: Bool = false
-    
-    var startTime: Date?
-    
-    var stopTime: Date?
-    
-    let userDefaults = UserDefaults.standard
-    
-    let startTimeKey = "startTime"
-    
-    let stopTimeKey = "stopTime"
-    
-    let countingKey = "countingKey"
-    
-    var scheduledTimer: Timer!
-    // NEW
-    
     var timer = Timer()
     
     var recipe: Recipe?
@@ -106,37 +88,6 @@ class TimerViewController: BaseViewController {
         
         configure()
         
-        // NEW
-        startTime = userDefaults.object(forKey: startTimeKey) as? Date
-
-        stopTime = userDefaults.object(forKey: stopTimeKey) as? Date
-
-        timerCounting = userDefaults.bool(forKey: countingKey)
-        
-        self.tabBarController?.tabBar.isHidden = false
-
-//        if timerCounting {
-//
-//            startTimer()
-//
-//        } else {
-//
-//            stopTimer()
-//
-//            if let start = startTime {
-//
-//                if let stop = stopTime {
-//
-//                    let time = calcRestartTime(start: start, stop: stop)
-//
-//                    let diff = Date().timeIntervalSince(time)
-//
-//                    setTimeLabel(Int(diff))
-//                }
-//            }
-//        }
-        // NEW
-        
         if isInitial() {
             
             setButtonsEnabled(false)
@@ -175,7 +126,6 @@ class TimerViewController: BaseViewController {
                 
                 guard let strongSelf = self else { return }
                 
-//                strongSelf.seconds = time * 60
                 strongSelf.seconds = 5
 
                 strongSelf.originalSeconds = time
@@ -196,7 +146,7 @@ class TimerViewController: BaseViewController {
         }
     }
     
-    // MARK: - Button Actions -
+    // MARK: - Button Action -
     
     @IBAction func didTapControlButton(_ sender: UIButton) {
         
@@ -241,7 +191,9 @@ class TimerViewController: BaseViewController {
         countDownLabel.text = String(format: "%02i:%02i:%02i", tuple.0, tuple.1, tuple.2)
     }
     
-    func configure() {
+    // MARK: - Private Method -
+    
+    private func configure() {
         
         resetButton.isEnabled = false
         
@@ -256,25 +208,32 @@ class TimerViewController: BaseViewController {
         countDownLabel.text = "00:00:00"
     }
     
-    // NEW
-//    func startTimer() {
-//
-//        scheduledTimer = Timer.scheduledTimer(
-//            timeInterval: 0.1,
-//            target: self,
-//            selector: #selector(refreshValue),
-//            userInfo: nil,
-//            repeats: true)
-//
-//        setTimerCounting(true)
+    private func isInitial() -> Bool {
         
-//        startStopButton.setTitle("STOP", for: .normal)
-//
-//        startStopButton.setTitleColor(UIColor.red, for: .normal)
-//    }
-    // NEW
+        return self.originalSeconds == 0
+    }
     
-    func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int, Int) {
+    private func setButtonsEnabled(_ enabled: Bool) {
+        
+        controlButton.isEnabled = enabled
+        
+        resetButton.isEnabled = enabled
+        
+        if enabled {
+            
+            controlButton.backgroundColor = .G3
+            
+            resetButton.backgroundColor = .G3
+            
+        } else {
+                        
+            controlButton.backgroundColor = .lightGray
+                        
+            resetButton.backgroundColor = .lightGray
+        }
+    }
+    
+    private func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int, Int) {
         
         return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
     }
@@ -298,59 +257,45 @@ class TimerViewController: BaseViewController {
         countDownLabel.text = "\(showHours):\(showMinutes):\(showSeconds)"
         
         if seconds <= 0 {
-            //
+            
             timer.invalidate()
             
-            //
-            let record = Record(
-                ownerId: UserManager.shared.currentUserId,
-                recordTitle: timerTitle.text,
-                recordCategory: hiddenCategory,
-                recordNote: hiddenNote,
-                focusTime: originalSeconds,
-                createdTime: Date().timeIntervalSince1970,
-                recipeId: recipe?.recipeId ?? "")
+            createRecord()
             
-            RecordManager.shared.createRecord(record: record)
-            
-            //
-            guard let endVC = UIStoryboard
-                    .timer
-                    .instantiateViewController(
-                        withIdentifier: String(describing: EndingViewController.self)
-                    ) as? EndingViewController else { return }
+            showEndImage()
             
             setupNotification()
-            
-            endVC.modalPresentationStyle = .overFullScreen
-            endVC.recipe = recipe
-            
-            present(endVC, animated: true, completion: nil)
         }
     }
     
-    func isInitial() -> Bool {
-        return self.originalSeconds == 0
+    private func createRecord() {
+        
+        let record = Record(
+            ownerId: UserManager.shared.currentUserId,
+            recordTitle: timerTitle.text,
+            recordCategory: hiddenCategory,
+            recordNote: hiddenNote,
+            focusTime: originalSeconds,
+            createdTime: Date().timeIntervalSince1970,
+            recipeId: recipe?.recipeId ?? "")
+        
+        RecordManager.shared.createRecord(record: record)
     }
     
-    func setButtonsEnabled(_ enabled: Bool) {
+    private func showEndImage() {
         
-        controlButton.isEnabled = enabled
+        guard let endVC = UIStoryboard
+                .timer
+                .instantiateViewController(
+                    withIdentifier: String(describing: EndingViewController.self)
+                ) as? EndingViewController else {
+                    return }
         
-        resetButton.isEnabled = enabled
+        endVC.modalPresentationStyle = .overFullScreen
         
-        if enabled {
-            
-            controlButton.backgroundColor = .G3
-            
-            resetButton.backgroundColor = .G3
-            
-        } else {
-                        
-            controlButton.backgroundColor = .lightGray
-                        
-            resetButton.backgroundColor = .lightGray
-        }
+        endVC.recipe = recipe
+        
+        present(endVC, animated: true, completion: nil)
     }
 }
 
@@ -383,17 +328,3 @@ extension TimerViewController {
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["alarmTrigger"])
     }
 }
-
-//extension TimerViewController: TimerEditDelegate {
-//
-//    func passTime(minutes: Int) {
-//
-//        self.seconds = minutes * 60
-//
-//        self.originalSeconds = minutes * 60
-//
-//        let tuple = self.secondsToHoursMinutesSeconds(seconds: self.seconds)
-//
-//        countDownLabel.text = String(format: "%02i:%02i:%02i", tuple.0, tuple.1, tuple.2)
-//    }
-//}

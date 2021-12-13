@@ -51,7 +51,6 @@ class ProfileLabelCell: UITableViewCell {
         ])
     }
     
-//    override
     func layoutCellWithLabel(content: String) {
         
         label.text = content

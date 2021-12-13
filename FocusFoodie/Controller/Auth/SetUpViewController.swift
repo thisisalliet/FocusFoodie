@@ -59,7 +59,7 @@ class SetUpViewController: UIViewController {
                 
             } else {
                 
-                if querySnapshot!.documents.isEmpty {
+                if ((querySnapshot?.documents.isEmpty) != nil) {
                     
                     self.nextButton.isHidden = false
                     

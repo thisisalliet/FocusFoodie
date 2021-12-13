@@ -21,11 +21,11 @@ private enum Tab {
         
         switch self {
             
-        case .record: controller = UIStoryboard.record.instantiateInitialViewController()!
+        case .record: controller = UIStoryboard.record.instantiateInitialViewController() ?? UIViewController()
             
-        case .timer: controller = UIStoryboard.timer.instantiateInitialViewController()!
+        case .timer: controller = UIStoryboard.timer.instantiateInitialViewController() ?? UIViewController()
             
-        case .community: controller = UIStoryboard.community.instantiateInitialViewController()!
+        case .community: controller = UIStoryboard.community.instantiateInitialViewController() ?? UIViewController()
         }
         
         controller.tabBarItem = tabBarItem()
