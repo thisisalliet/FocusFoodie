@@ -33,14 +33,14 @@ class EndingViewController: BaseViewController {
         configure()
     }
     
-    // MARK: - Button Actions -
+    // MARK: - Button Action -
     
     @IBAction func onDismiss(_ sender: UIButton) {
         
         presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
-    // MARK: - Private method -
+    // MARK: - Private Method -
     
     private func configure() {
         

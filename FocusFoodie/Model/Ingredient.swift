@@ -32,7 +32,7 @@ enum IngredientCategory: Int {
     case side
 }
 
-enum BreadItem: IngredientObject, CaseIterable {
+enum BreadItem: String, IngredientObject, CaseIterable {
     
     case toast
     
@@ -81,7 +81,6 @@ enum BreadItem: IngredientObject, CaseIterable {
             
         }
     }
-    
     
     var title: String {
         
@@ -262,7 +261,6 @@ enum MeatItem: String, IngredientObject, CaseIterable {
         case .turkey: return UIImage.asset(.icon_bacon_color)
         }
     }
-    
     
     var title: String {
         

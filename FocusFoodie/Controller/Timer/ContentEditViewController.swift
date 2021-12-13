@@ -15,7 +15,7 @@ private struct Segue {
 class ContentEditViewController: BaseViewController,
                                  UICollectionViewDataSource,
                                  UICollectionViewDelegate,
-                                 UICollectionViewDelegateFlowLayout{
+                                 UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var categoryLabel: UILabel!
     
@@ -43,11 +43,11 @@ class ContentEditViewController: BaseViewController,
     
     @IBOutlet weak var toTimerEditorButton: UIButton!
     
-    let category = TaskCategory.allCases
+    let category = Category.allCases
     
     var hiddenMinutes: Int?
     
-    var categoryObject: [TaskObject] = []
+    var categoryObject: [CategoryObject] = []
     
     var categoryHandler: ((_ title: String, _ image: UIImage) -> Void)?
     
@@ -57,7 +57,7 @@ class ContentEditViewController: BaseViewController,
     
     var recipeHandler: ((_ recipe: Recipe) -> Void)?
         
-    var datas: [TaskCategory] = []
+    var datas: [Category] = []
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,27 +79,16 @@ class ContentEditViewController: BaseViewController,
         }
     }
     
-    // MARK: - Button Actions -
+    // MARK: - Button Action -
     
     @IBAction func toTimerEdit(_ sender: UIButton) {
         
         contentHandler?(titleTextField.text ?? "", noteTextField.text ?? "")
     }
     
-    func setUpCollectionView() {
-        
-        //        let layoutObject = UICollectionViewFlowLayout()
-        //
-        //        layoutObject.itemSize = CGSize(width: UIScreen.width / 4.0, height: 60)
-        //
-        //        layoutObject.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        //
-        //        layoutObject.minimumLineSpacing = 8.0
-        //
-        //        layoutObject.minimumInteritemSpacing = 0
-        //
-        //        layoutObject.scrollDirection = .horizontal
-        //
+    // MARK: - Private Method -
+    
+    private func setUpCollectionView() {
         
         categoryCollectionView.registerCellWithNib(
             identifier: String(describing: CategorySelectionCell.self),
@@ -151,42 +140,3 @@ class ContentEditViewController: BaseViewController,
         categoryHandler?(category[indexPath.row].title, category[indexPath.row].image ?? UIImage())
     }
 }
-
-//extension ContentEditViewController: UICollectionViewDelegateFlowLayout {
-//
-//    func collectionView(
-//        _ collectionView: UICollectionView,
-//        layout collectionViewLayout: UICollectionViewLayout,
-//        sizeForItemAt indexPath: IndexPath
-//    ) -> CGSize {
-//
-//            return CGSize(width: UIScreen.width / 5.0, height: 60.0)
-//    }
-//
-//    func collectionView(
-//        _ collectionView: UICollectionView,
-//        layout collectionViewLayout: UICollectionViewLayout,
-//        insetForSectionAt section: Int
-//    ) -> UIEdgeInsets {
-//
-//        return UIEdgeInsets(top: 5.0, left: 5.0, bottom: 5.0, right: 5.0)
-//    }
-//
-//    func collectionView(
-//        _ collectionView: UICollectionView,
-//        layout collectionViewLayout: UICollectionViewLayout,
-//        minimumLineSpacingForSectionAt section: Int
-//    ) -> CGFloat {
-//
-//        return 8.0
-//    }
-//
-//    func collectionView(
-//        _ collectionView: UICollectionView,
-//        layout collectionViewLayout: UICollectionViewLayout,
-//        minimumInteritemSpacingForSectionAt section: Int
-//    ) -> CGFloat {
-//
-//        return 0
-//    }
-//}

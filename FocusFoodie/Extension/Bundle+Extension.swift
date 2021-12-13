@@ -9,7 +9,9 @@
 import Foundation
 
 extension Bundle {
+    
     // swiftlint:disable force_cast
+    
     static func valueForString(key: String) -> String {
         
         return Bundle.main.infoDictionary![key] as! String
@@ -19,5 +21,6 @@ extension Bundle {
 
         return Bundle.main.infoDictionary![key] as! Int32
     }
+    
     // swiftlint:enable force_cast
 }

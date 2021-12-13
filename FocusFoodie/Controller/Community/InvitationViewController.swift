@@ -25,7 +25,7 @@ class InvitationViewController: CompoundViewController {
         setupTableView()
     }
     
-    // MARK: - Private method
+    // MARK: - Private Method -
     
     private func setupTableView() {
         
@@ -38,9 +38,11 @@ class InvitationViewController: CompoundViewController {
             bundle: nil)
     }
     
+    // MARK: - Public Method -
+    
     func monitorInvitation() {
         
-        InvitationManager.shared.monitorInvitation() { [self] result in
+        InvitationManager.shared.monitorInvitation { [self] result in
             
             switch result {
                 
@@ -122,7 +124,6 @@ class InvitationViewController: CompoundViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
         guard let cell = tableView.dequeueReusableCell(
             withIdentifier: CommunityTableViewCell.identifier,
             for: indexPath
@@ -163,22 +164,6 @@ class InvitationViewController: CompoundViewController {
                 
         self.invitations?.remove(at: indexPath.row)
         
-        //        let friendId = friends[indexPath.row]
-        //        UserManager.shared.removeFriend(userId: friendId) { result in
-        //
-        //            switch result {
-        //
-        //            case .success(let reFriend):
-        //
-        //                print("remove block succesfully")
-        //
-        //            case .failure(let error):
-        //
-        //                print(error)
-        //            }
-        //        }
-        
         return UISwipeActionsConfiguration(actions: [onIgnore])
     }
 }
-

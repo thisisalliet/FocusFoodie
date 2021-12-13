@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 extension UIView {
 
     // Border Color
@@ -55,6 +54,7 @@ extension UIView {
     }
     
     // MARK: - Layout -
+    
     func stickSubView(_ objectView: UIView) {
 
         objectView.removeFromSuperview()
@@ -104,6 +104,7 @@ extension UIView {
     }
     
     // MARK: - Appearance -
+    
     func setShadow() {
         
         self.layer.masksToBounds = false

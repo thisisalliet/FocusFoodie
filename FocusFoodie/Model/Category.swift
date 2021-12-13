@@ -9,58 +9,30 @@ import UIKit
 import Foundation
 import FBLPromises
 
-//protocol TaskObject {
-//
-//    var title: String  { get }
-//
-//    var image: UIImage? { get }
-//}
-
-protocol TaskObject {
-    
-//    var type: TaskCategory { get }
-    
-    var title: String  { get }
+protocol CategoryObject {
+        
+    var title: String { get }
     
     var image: UIImage? { get }
 }
 
-//enum TaskCategory: Int {
-//
-//    case work
-//
-//    case school
-//
-//    case chores
-//
-//    case coding
-//
-//    case fitness
-//
-//    case gaming
-//
-//    case relaxing
-//
-//    case shopping
-//}
+enum Category: String, CategoryObject, CaseIterable {
 
-enum TaskCategory: String, TaskObject, CaseIterable {
+    case work
 
-    case work = "Work"
+    case school
 
-    case school = "School"
+    case chores
 
-    case chores = "Chores"
+    case coding
 
-    case coding = "Coding"
+    case fitness
 
-    case fitness = "Fitness"
+    case gaming
 
-    case gaming = "Gaming"
+    case relaxing
 
-    case relaxing = "Relaxing"
-
-    case shopping = "Shopping"
+    case shopping
 
     var title: String {
 

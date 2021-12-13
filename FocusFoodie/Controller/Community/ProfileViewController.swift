@@ -96,14 +96,21 @@ class ProfileViewController: BaseViewController,
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.setupBackButton(color: .G3!)
-        profileTableView.isScrollEnabled = false//todo: to remove
+        navigationController?.setupBackButton(color: .G3 ?? UIColor())
+        
+        profileTableView.isScrollEnabled = false // todo: to remove
+        
         setUpTableView()
     }
     
+    // MARK: - Button Action -
+    
     @IBAction func onLogOut(_ sender: UIButton) {
         
-        let controller = UIAlertController(title: nil, message: "Are you sure you want to logout?", preferredStyle: .alert)
+        let controller = UIAlertController(
+            title: nil,
+            message: "Are you sure you want to logout?",
+            preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
             
@@ -124,7 +131,6 @@ class ProfileViewController: BaseViewController,
             } catch let signOutError as NSError {
                 
                 print("Error signing out: \(signOutError)")
-                
             }
             
         }
@@ -143,6 +149,7 @@ class ProfileViewController: BaseViewController,
         showImagePickerControllerActionSheet()
     }
     
+    // MARK: - Private Method -
     private func setUpTableView() {
         
         profileTableView.registerCellWithNib(
@@ -331,5 +338,3 @@ extension ProfileViewController: UIImagePickerControllerDelegate,
         }
     }
 }
-
-

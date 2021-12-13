@@ -71,7 +71,7 @@ class IngredientSelectionCell: TimerBasicCell {
             let ingredientView = IngredientItemView()
             
             ingredientView.layoutCell(
-                image: ingredientObjects[indexPath.row].image!,
+                image: ingredientObjects[indexPath.row].image ?? UIImage(),
                 title: ingredientObjects[indexPath.row].title,
                 minute: ingredientObjects[indexPath.row].minute,
                 isSelected: false)

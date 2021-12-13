@@ -14,28 +14,6 @@ class DetailViewController: BaseViewController,
                              UITableViewDataSource,
                              UITableViewDelegate {
     
-    var db: Firestore!
-    
-    var record: Record?
-    
-    // FAKE DATA
-//    var tempImage = ["icon_falafel_wrap", "icon_cheese_burger"]
-//        
-//    var tempCreatedTime = ["07:00-07:15", "02:00-03:00"]
-//    
-//    var tempCreatedDate = ["NOVEMBER 23","NOVEMBER 23"]
-//    
-//    var tempFocusTime = [ "60", "60"]
-//    
-//    var tempCategory = ["", "", "  Ftiness  ", "  School  "]
-//    
-//    var tempCategoryImage = ["", "", "icon_fitness", "icon_school"]
-//    
-//    var tempTitle = ["", "", "Yoga", "AppWorks School"]
-//    
-//    var tempNote = ["", "", "back stress release and meditation", "final testing of personal project"]
-    // FAKE DATA
-    
     @IBOutlet weak var detailTableView: UITableView! {
         
         didSet {
@@ -50,16 +28,21 @@ class DetailViewController: BaseViewController,
         }
     }
     
+    var db: Firestore!
+    
+    var record: Record?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         db = Firestore.firestore()
         
-        navigationController?.setupBackButton(color: .G3!)
+        navigationController?.setupBackButton(color: .G3 ?? UIColor())
         
         setUpTableView()
-
     }
+    
+    // MARK: - Private Method  -
     
     private func setUpTableView() {
         
@@ -79,7 +62,7 @@ class DetailViewController: BaseViewController,
         )
     }
     
-    // MARK: - UITableViewDataSource -
+    // MARK: - UITableView DataSource -
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -93,22 +76,21 @@ class DetailViewController: BaseViewController,
         switch indexPath.row {
             
         case 0:
+            
             guard let imageCell = detailTableView.dequeueReusableCell(
                 withIdentifier: String(describing: DetailImageTableViewCell.self),
                 for: indexPath
             ) as? DetailImageTableViewCell else {fatalError("Couldn't generate imageCell")}
-            
-//            imageCell.endImageView.image = UIImage.asset(.icon_jerk_chicken)
-            
+                        
             return imageCell
             
         case 1:
+            
             guard let infoCell = detailTableView.dequeueReusableCell(
                 withIdentifier: String(describing: DetailInfoTableViewCell.self),
                 for: indexPath
             ) as? DetailInfoTableViewCell else {fatalError("Couldn't generate infoCell")}
             
-//            let month = record[indexPath.row].createdTime
             let recordTime = Date(timeIntervalSince1970: record.createdTime)
             
             let dateFormatter = DateFormatter()
@@ -143,7 +125,7 @@ class DetailViewController: BaseViewController,
         }
     }
     
-    // MARK: - UITableViewDelegate -
+    // MARK: - UITableView Delegate -
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         

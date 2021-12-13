@@ -28,10 +28,9 @@ class ProfileSelectionCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
     
-//    override
     func layoutCellWithSwitch(status: Bool, category: String, image: UIImage?) {
         
         if status == true {

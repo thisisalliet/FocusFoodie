@@ -157,7 +157,6 @@ class UserManager {
         
     }
     
-    
     func removeFriend(userId: String,
                       completion: @escaping (Result<String, Error>) -> Void) {
         

@@ -7,17 +7,8 @@
 
 import UIKit
 
-//enum CommunityLayout {
-//
-//    case basic
-//
-//    case withInvitation
-//}
-
 class CommunityTableViewCell: UITableViewCell {
-    
-//    weak var delegate: CommunityViewController?
-    
+        
     @IBOutlet weak var multiButton: UIButton!
     
     @IBOutlet weak var whiteView: UIView!

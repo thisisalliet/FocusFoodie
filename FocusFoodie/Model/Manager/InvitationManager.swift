@@ -38,12 +38,6 @@ class InvitationManager {
                 } else {
                     
                     var allInvitations = [Invitation]()
-                    
-//                    if snapshot.documents.isEmpty {
-//
-//                        return
-//
-//                    } else {
                         
                         for document in snapshot.documents {
                             
@@ -59,14 +53,15 @@ class InvitationManager {
                                 completion(.failure(error))
                             }
                         }
-//                    }
                                         
                     completion(.success(allInvitations))
                 }
             }
     }
     
-    func acceptInvitation(userId: String, invitorId: String, completion: @escaping (Result<[Invitation], Error>) -> Void) {
+    func acceptInvitation(userId: String,
+                          invitorId: String,
+                          completion: @escaping (Result<[Invitation], Error>) -> Void) {
         
         let friendRef = users.document(userId)
         

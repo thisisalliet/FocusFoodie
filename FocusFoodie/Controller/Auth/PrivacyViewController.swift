@@ -51,6 +51,7 @@ class PrivacyViewController: BaseViewController {
 }
 
 // MARK: - WKNavigationDelegate -
+
 extension PrivacyViewController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
@@ -68,6 +69,7 @@ extension PrivacyViewController: WKNavigationDelegate {
 }
 
 // MARK: - Layout -
+
 extension PrivacyViewController {
     
     private func setWebView() {
