@@ -21,6 +21,7 @@ class CompoundViewController: BaseViewController,
 //    }
 
     // MARK: - View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,6 +31,7 @@ class CompoundViewController: BaseViewController,
     }
     
     // MARK: - Private Method
+    
     private func setupTableView() {
 
         if tableView == nil {

@@ -116,4 +116,22 @@ extension UIView {
         
         self.layer.shadowRadius = 10
     }
+    
+    func roundCornersOnTop(cornerRadius: Double) {
+        
+        self.layer.cornerRadius = CGFloat(cornerRadius)
+
+        self.clipsToBounds = true
+
+        self.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+    }
+    
+    func roundCornersAtBottom(cornerRadius: Double) {
+        
+        self.layer.cornerRadius = CGFloat(cornerRadius)
+
+        self.clipsToBounds = true
+
+        self.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+    }
 }

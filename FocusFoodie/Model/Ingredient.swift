@@ -13,6 +13,8 @@ protocol IngredientObject {
     var type: IngredientCategory { get }
     
     var image: UIImage? { get }
+    
+    var colorfulImage: UIImage? { get }
 
     var title: String { get }
 
@@ -62,6 +64,24 @@ enum BreadItem: IngredientObject, CaseIterable {
         case .flatBread: return UIImage.asset(.icon_flatbread)
         }
     }
+    
+    var colorfulImage: UIImage? {
+        
+        switch self {
+            
+        case .toast: return UIImage.asset(.icon_toast_color)
+            
+        case .burgerBun: return UIImage.asset(.icon_toast_color)
+            
+        case .baguette: return UIImage.asset(.icon_toast_color)
+            
+        case .croissant: return UIImage.asset(.icon_toast_color)
+            
+        case .flatBread: return UIImage.asset(.icon_toast_color)
+            
+        }
+    }
+    
     
     var title: String {
         
@@ -133,6 +153,24 @@ enum VegetableItem: String, IngredientObject, CaseIterable {
         }
     }
     
+    var colorfulImage: UIImage? {
+        
+        switch self {
+            
+        case .avocado: return UIImage.asset(.icon_onion_color)
+            
+        case .bellPepper: return UIImage.asset(.icon_onion_color)
+            
+        case .cucumber: return UIImage.asset(.icon_cucumber_color)
+            
+        case .lettuce: return UIImage.asset(.icon_lettuce_color)
+            
+        case .tomato: return UIImage.asset(.icon_tomato_color)
+            
+        case .onion: return UIImage.asset(.icon_onion_color)
+        }
+    }
+    
     var title: String {
         
         switch self {
@@ -170,7 +208,7 @@ enum VegetableItem: String, IngredientObject, CaseIterable {
     }
 }
 
-enum MeatItem: IngredientObject, CaseIterable {
+enum MeatItem: String, IngredientObject, CaseIterable {
     
     case bacon
     
@@ -206,6 +244,25 @@ enum MeatItem: IngredientObject, CaseIterable {
         case .turkey: return UIImage.asset(.icon_turkey)
         }
     }
+    
+    var colorfulImage: UIImage? {
+        
+        switch self {
+            
+        case .bacon: return UIImage.asset(.icon_bacon_color)
+            
+        case .tuna: return UIImage.asset(.icon_bacon_color)
+            
+        case .falafel: return UIImage.asset(.icon_bacon_color)
+            
+        case .shrimp: return UIImage.asset(.icon_shrimp_color)
+            
+        case .beef: return UIImage.asset(.icon_bacon_color)
+            
+        case .turkey: return UIImage.asset(.icon_bacon_color)
+        }
+    }
+    
     
     var title: String {
         
@@ -244,7 +301,7 @@ enum MeatItem: IngredientObject, CaseIterable {
     }
 }
 
-enum SideItem: IngredientObject, CaseIterable {
+enum SideItem: String, IngredientObject, CaseIterable {
     
     case egg
     
@@ -278,6 +335,24 @@ enum SideItem: IngredientObject, CaseIterable {
         case .mustard: return UIImage.asset(.icon_mustard)
             
         case .cheese: return UIImage.asset(.icon_cheese)
+        }
+    }
+    
+    var colorfulImage: UIImage? {
+        
+        switch self {
+            
+        case .egg: return UIImage.asset(.icon_egg_color)
+            
+        case .honey: return UIImage.asset(.icon_honey)
+            
+        case .mayonnaise: return UIImage.asset(.icon_mayonnaise)
+            
+        case .ketchup: return UIImage.asset(.icon_ketchup)
+            
+        case .mustard: return UIImage.asset(.icon_mustard)
+            
+        case .cheese: return UIImage.asset(.icon_cheese_color)
         }
     }
     

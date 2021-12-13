@@ -303,6 +303,26 @@
                                 <color key="backgroundColor" name="G1"/>
                                 <color key="tintColor" name="G3"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m5b-vg-2J6">
+                                <rect key="frame" x="62" y="672" width="290" height="43.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bon Appétit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ffs-0t-F6d">
+                                        <rect key="frame" x="50" y="0.0" width="190" height="43.5"/>
+                                        <color key="backgroundColor" name="G2"/>
+                                        <fontDescription key="fontDescription" name="Dongle-Regular" family="Dongle" pointSize="30"/>
+                                        <color key="textColor" name="G3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="G2"/>
+                                <constraints>
+                                    <constraint firstItem="Ffs-0t-F6d" firstAttribute="top" secondItem="m5b-vg-2J6" secondAttribute="top" id="BAL-YQ-AR9"/>
+                                    <constraint firstItem="Ffs-0t-F6d" firstAttribute="centerY" secondItem="m5b-vg-2J6" secondAttribute="centerY" id="Hp5-QN-hDn"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ffs-0t-F6d" secondAttribute="trailing" constant="50" id="OEU-81-IRv"/>
+                                    <constraint firstItem="Ffs-0t-F6d" firstAttribute="leading" secondItem="m5b-vg-2J6" secondAttribute="leading" constant="50" id="doc-LI-oqj"/>
+                                    <constraint firstItem="Ffs-0t-F6d" firstAttribute="centerX" secondItem="m5b-vg-2J6" secondAttribute="centerX" id="xym-BH-crL"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2aY-l9-ldi">
                                 <rect key="frame" x="322" y="204" width="50" height="50"/>
                                 <color key="backgroundColor" name="G2"/>
@@ -324,8 +344,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" name="G3"/>
                         <constraints>
+                            <constraint firstItem="m5b-vg-2J6" firstAttribute="trailing" secondItem="8rA-Hh-kbJ" secondAttribute="trailing" id="01K-Qs-UsW"/>
                             <constraint firstItem="8rA-Hh-kbJ" firstAttribute="width" secondItem="FIp-Az-AX8" secondAttribute="width" multiplier="0.7" id="1ax-9p-v1Z"/>
                             <constraint firstItem="R5A-Fx-pEo" firstAttribute="trailing" secondItem="FIp-Az-AX8" secondAttribute="trailing" id="39N-uG-1e4"/>
+                            <constraint firstItem="m5b-vg-2J6" firstAttribute="leading" secondItem="8rA-Hh-kbJ" secondAttribute="leading" id="C5u-w5-Y2u"/>
                             <constraint firstItem="8rA-Hh-kbJ" firstAttribute="centerX" secondItem="FIp-Az-AX8" secondAttribute="centerX" id="DuV-dQ-yV3"/>
                             <constraint firstItem="2aY-l9-ldi" firstAttribute="trailing" secondItem="8rA-Hh-kbJ" secondAttribute="trailing" constant="20" id="K8c-h5-fwo"/>
                             <constraint firstItem="8rA-Hh-kbJ" firstAttribute="height" secondItem="FIp-Az-AX8" secondAttribute="height" multiplier="0.5" id="Ksp-Zu-bBx"/>
@@ -333,12 +355,15 @@
                             <constraint firstItem="R5A-Fx-pEo" firstAttribute="top" secondItem="FIp-Az-AX8" secondAttribute="topMargin" id="b46-Qf-8DU"/>
                             <constraint firstItem="2aY-l9-ldi" firstAttribute="top" secondItem="8rA-Hh-kbJ" secondAttribute="top" constant="-20" id="jei-Fh-kUh"/>
                             <constraint firstItem="R5A-Fx-pEo" firstAttribute="leading" secondItem="FIp-Az-AX8" secondAttribute="leading" id="mlC-Qs-oXY"/>
+                            <constraint firstItem="m5b-vg-2J6" firstAttribute="top" secondItem="8rA-Hh-kbJ" secondAttribute="bottom" id="n5m-gv-vwt"/>
                             <constraint firstAttribute="bottom" secondItem="R5A-Fx-pEo" secondAttribute="bottom" id="oGi-ib-rLH"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="blurView" destination="R5A-Fx-pEo" id="J74-Kq-ClC"/>
                         <outlet property="dissmissButton" destination="2aY-l9-ldi" id="uzs-c1-uQi"/>
+                        <outlet property="endMessageBackground" destination="m5b-vg-2J6" id="eUT-f5-8QE"/>
+                        <outlet property="endMessageLabel" destination="Ffs-0t-F6d" id="eh8-VV-bwp"/>
                         <outlet property="endingImageView" destination="8rA-Hh-kbJ" id="8tn-cg-ZAl"/>
                     </connections>
                 </viewController>

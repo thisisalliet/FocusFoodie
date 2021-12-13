@@ -298,42 +298,53 @@ class TimerViewController: BaseViewController {
         countDownLabel.text = "\(showHours):\(showMinutes):\(showSeconds)"
         
         if seconds <= 0 {
-            //
+            
             timer.invalidate()
             
-            //
-            let record = Record(
-                ownerId: UserManager.shared.currentUserId,
-                recordTitle: timerTitle.text,
-                recordCategory: hiddenCategory,
-                recordNote: hiddenNote,
-                focusTime: originalSeconds,
-                createdTime: Date().timeIntervalSince1970,
-                recipeId: recipe?.recipeId ?? "")
+            createRecord()
             
-            RecordManager.shared.createRecord(record: record)
-            
-            //
-            guard let endVC = UIStoryboard
-                    .timer
-                    .instantiateViewController(
-                        withIdentifier: String(describing: EndingViewController.self)
-                    ) as? EndingViewController else { return }
+            showEndImage()
             
             setupNotification()
-            
-            endVC.modalPresentationStyle = .overFullScreen
-            endVC.recipe = recipe
-            
-            present(endVC, animated: true, completion: nil)
         }
+    }
+    
+    // MARK: - Private Method -
+    private func createRecord() {
+        
+        let record = Record(
+            ownerId: UserManager.shared.currentUserId,
+            recordTitle: timerTitle.text,
+            recordCategory: hiddenCategory,
+            recordNote: hiddenNote,
+            focusTime: originalSeconds,
+            createdTime: Date().timeIntervalSince1970,
+            recipeId: recipe?.recipeId ?? "")
+        
+        RecordManager.shared.createRecord(record: record)
+    }
+    
+    private func showEndImage() {
+        
+        guard let endVC = UIStoryboard
+                .timer
+                .instantiateViewController(
+                    withIdentifier: String(describing: EndingViewController.self)
+                ) as? EndingViewController else {
+                    return }
+        
+        endVC.modalPresentationStyle = .overFullScreen
+        
+        endVC.recipe = recipe
+        
+        present(endVC, animated: true, completion: nil)
     }
     
     func isInitial() -> Bool {
         return self.originalSeconds == 0
     }
     
-    func setButtonsEnabled(_ enabled: Bool) {
+    private func setButtonsEnabled(_ enabled: Bool) {
         
         controlButton.isEnabled = enabled
         
